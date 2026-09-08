@@ -58,6 +58,11 @@ FROM nginxinc/nginx-unprivileged:1.31-alpine
 # second site quietly listening on :80.
 COPY --chown=nginx:nginx docker/nginx.conf /etc/nginx/conf.d/default.conf
 
+# Deliberately NOT in conf.d/: the base image includes conf.d/*.conf at http
+# level, so a snippet there would be loaded as a stray config as well as by the
+# `include` in each location. This path is only ever reached explicitly.
+COPY --chown=nginx:nginx docker/security-headers.conf /etc/nginx/security-headers.conf
+
 COPY --from=build --chown=nginx:nginx /app/dist/wiki/browser /usr/share/nginx/html
 
 EXPOSE 8080
