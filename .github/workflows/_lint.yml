@@ -1,0 +1,103 @@
+# Reusable: everything that checks the source without producing an artifact
+# anyone keeps.
+#
+# Called by ci.yml, main.yml and nothing else. It takes no inputs on purpose --
+# a branch and main are checked identically, and an input here would be a place
+# for the two to quietly drift apart.
+name: lint
+
+on:
+  workflow_call:
+
+permissions:
+  contents: read
+
+jobs:
+  python:
+    name: lint + tests (python)
+    runs-on: ubuntu-latest
+    # tools/ is the Python project root -- pyproject.toml, the `generator`
+    # package and its tests all live there.
+    defaults:
+      run:
+        working-directory: tools
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+          cache: pip
+          # There is no requirements.txt to find. Without this, setup-python
+          # falls back to globbing for one and fails the job before ruff runs.
+          # The path is relative to the workspace, not to `working-directory`.
+          cache-dependency-path: tools/pyproject.toml
+
+      # Only the dev tools. The extraction dependencies (UnityPy,
+      # TypeTreeGeneratorAPI) are not installed here because nothing that runs
+      # on a runner imports them -- see the pytest step below. That is also why
+      # this does not use `pip install -e ".[dev]"`, which would drag them in.
+      #
+      # Bounded on both sides, and kept in step with the `dev` extra in
+      # tools/pyproject.toml. There is no lockfile for the Python side, so
+      # these constraints are the only thing stopping a new ruff minor from
+      # failing a commit that changed nothing.
+      - run: pip install "ruff>=0.16,<0.17" "pytest>=9,<10"
+
+      # From the repo root over both trees, overriding the job's tools/ default:
+      # scripts/gen-og-card.py is Python too, and living outside tools/ meant
+      # nothing linted it at all. The config stays in tools/pyproject.toml --
+      # its per-file-ignores and isort first-party are written to resolve the
+      # same from either directory, so this and a developer's bare `ruff check .`
+      # inside tools/ cannot disagree.
+      - name: ruff
+        working-directory: ${{ github.workspace }}
+        run: ruff check --config tools/pyproject.toml tools scripts
+
+      # Most of the suite needs the game install, which no runner has: the
+      # extraction tools open globalgamemanagers.assets and level0 directly.
+      # What runs here is everything that reads only committed files -- the
+      # availability engine, the .env parsing, and the data files themselves.
+      # The rest is covered on a machine with the game, by `pytest` in tools/.
+      - name: pytest (game-independent tests)
+        run: pytest tests/test_availability.py -q
+
+  web:
+    name: lint + tests + build (angular)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - run: npm ci
+
+      # A data change with a stale manifest would serve new bytes under an old
+      # ?v=, which is a cache poisoning bug that no other test can see. A data
+      # change with a stale sitemap is quieter but the same shape: the wiki
+      # gains a page and tells every crawler it did not.
+      # `gen` compiles the guides first: their output lives under data/ and is
+      # hashed by the manifest, so a manifest generated without them is wrong.
+      #
+      # The diff covers the whole tree, not the three named files, so a fourth
+      # generated file added later is checked without anyone remembering to
+      # come back here.
+      - name: generated files are up to date
+        run: |
+          npm run gen
+          git diff --exit-code
+
+      - run: npm run format:check
+
+      # Includes angular-eslint's template accessibility rules, which is the
+      # half that catches things a type checker never will.
+      - run: npm run lint
+
+      # vitest with jsdom -- no browser flag, and none is accepted
+      - run: npx ng test --watch=false
+
+      - run: npm run build:prod

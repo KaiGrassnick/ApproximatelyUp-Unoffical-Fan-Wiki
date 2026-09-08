@@ -4,15 +4,21 @@
 # does at runtime happens in the reader's browser, and the extracted data is
 # committed, so there is nothing for a server to compute.
 #
-#   docker build -t approximately-up-wiki .
-#   docker run --rm -p 8080:8080 approximately-up-wiki
+#   docker build -f docker/Dockerfile -t approximatelyup-unoffical-fan-wiki .
+#   docker run --rm -p 8080:8080 approximatelyup-unoffical-fan-wiki
 #
-# The build context is the repo root, which is also the Angular workspace.
-# .dockerignore is what keeps it small -- tools/ holds the Python pipeline and
-# the IL2CPP dump it derives, and none of that belongs in the daemon.
+# The build context is the repo ROOT, not this directory: the build stage
+# compiles the Angular workspace, which lives up there. So `-f` is required,
+# every COPY path below is relative to the repo root rather than to this file,
+# and .dockerignore stays at the root because BuildKit resolves it against the
+# context.
+#
+# .dockerignore is what keeps the context small -- tools/ holds the Python
+# pipeline and the IL2CPP dump it derives, and none of that belongs in the
+# daemon.
 
 # ---------------------------------------------------------------- build stage
-FROM node:22-alpine AS build
+FROM node:24-alpine AS build
 WORKDIR /app
 
 # Dependencies first, so a source-only change does not re-run npm ci.
@@ -36,11 +42,21 @@ RUN find /app/dist/wiki/browser -type f \
 # -------------------------------------------------------------- runtime stage
 # nginx-unprivileged: the stock nginx image starts its master process as root.
 # Nothing here needs it -- the container serves files it cannot write.
-FROM nginxinc/nginx-unprivileged:1.27-alpine
+#
+# 1.31 is the current mainline branch (odd minor), which is what nginx itself
+# recommends running: fixes land here first, and the stable branch only gets
+# the subset backported to it.
+#
+# The cost is that this pin has to move. A mainline branch stops getting
+# patches the moment the next one opens, with no notice and no warning in the
+# tag -- that is how the 1.27 pinned here before went fifteen months without a
+# rebuild. When 1.33 appears, this line is stale the same day, so treat a
+# mainline bump as part of keeping the image alive rather than an upgrade.
+FROM nginxinc/nginx-unprivileged:1.31-alpine
 
 # Replaces the default server block rather than adding to it, so there is no
 # second site quietly listening on :80.
-COPY --chown=nginx:nginx nginx.conf /etc/nginx/conf.d/default.conf
+COPY --chown=nginx:nginx docker/nginx.conf /etc/nginx/conf.d/default.conf
 
 COPY --from=build --chown=nginx:nginx /app/dist/wiki/browser /usr/share/nginx/html
 

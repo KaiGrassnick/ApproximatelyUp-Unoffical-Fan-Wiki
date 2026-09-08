@@ -1,0 +1,131 @@
+# Releases move tags. They do not build.
+#
+# The image for a commit already exists -- main built it, smoke tested it and
+# pushed it as `sha-<commit>`. Rebuilding here would produce a *different*
+# image from the same source (a base image moved, a transitive dependency
+# republished) and ship something no test ever saw. `imagetools create` copies
+# the manifest instead, so the released digest is the tested digest.
+name: release
+
+on:
+  push:
+    tags: ['v*']
+  # Fallback for retagging a commit whose git tag already exists, or for
+  # promoting an older build.
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Existing git tag to publish, e.g. v1.2.3
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+# Never cancel a release: an interrupted retag leaves some tags moved and
+# others pointing at the previous digest.
+concurrency:
+  group: release-${{ inputs.tag || github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  retag:
+    name: publish release tags
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    env:
+      IMAGE: ghcr.io/${{ github.repository }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ inputs.tag || github.ref }}
+          # The tag has to resolve to the commit it names, and an annotated
+          # tag object is not that commit until the history is there.
+          fetch-depth: 0
+
+      - uses: docker/setup-buildx-action@v4
+
+      - uses: docker/login-action@v4
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ github.token }}
+
+      # `^{commit}` dereferences an annotated tag to the commit it points at.
+      # Without it a tag object's own hash would be used, and no image is ever
+      # published under that.
+      #
+      # Everything below reaches the shell through `env:` rather than `${{ }}`
+      # interpolation. A tag name is attacker-influenced input in the general
+      # case, and pasting one into a `run:` block is how it becomes a command.
+      - name: resolve source image
+        id: src
+        env:
+          REPOSITORY: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          # GHCR requires a lowercase path; this repository's name is not.
+          image="ghcr.io/$(tr '[:upper:]' '[:lower:]' <<<"$REPOSITORY")"
+          sha=$(git rev-parse "HEAD^{commit}")
+          {
+            echo "image=$image"
+            echo "source=$image:sha-$sha"
+          } >> "$GITHUB_OUTPUT"
+          echo "Release commit $sha"
+
+      # Checked explicitly so the failure says what went wrong. Left to
+      # `imagetools create`, this surfaces as `manifest unknown`, which reads
+      # like a registry outage rather than "this commit was never on main".
+      - name: source image exists
+        env:
+          SOURCE: ${{ steps.src.outputs.source }}
+        run: |
+          set -euo pipefail
+          if ! docker buildx imagetools inspect "$SOURCE" >/dev/null 2>&1; then
+            echo "::error::No published image at $SOURCE"
+            echo "::error::main publishes sha-<commit> for every commit it builds."
+            echo "::error::Was this tag cut from a commit that never reached main?"
+            exit 1
+          fi
+
+      # v1.2.3     -> v1.2.3, 1.2, latest
+      # v1.2.3-rc1 -> v1.2.3-rc1 only
+      #
+      # A pre-release that moved `latest` would hand every `docker pull` with
+      # no tag a release candidate.
+      #
+      # `imagetools create` copies the source manifest, so these tags end up on
+      # the exact digest main built and smoke tested. No layer is rebuilt.
+      - name: retag
+        env:
+          IMAGE: ${{ steps.src.outputs.image }}
+          SOURCE: ${{ steps.src.outputs.source }}
+          REF: ${{ inputs.tag || github.ref_name }}
+        run: |
+          set -euo pipefail
+          version=${REF#refs/tags/}
+
+          tags=("$IMAGE:$version")
+          if [[ "$version" == *-* ]]; then
+            echo "Pre-release $version: version tag only."
+          else
+            # Strip the leading v, then keep major.minor.
+            n=${version#v}
+            tags+=("$IMAGE:${n%.*}" "$IMAGE:latest")
+          fi
+
+          args=()
+          for t in "${tags[@]}"; do args+=(-t "$t"); done
+
+          printf 'Publishing: %s\n' "${tags[@]}"
+          docker buildx imagetools create "${args[@]}" "$SOURCE"
+
+          {
+            echo "### Released \`$version\`"
+            echo
+            echo "Retagged from \`$SOURCE\` -- no rebuild."
+            echo
+            printf '- \`%s\`\n' "${tags[@]}"
+          } >> "$GITHUB_STEP_SUMMARY"

@@ -95,8 +95,15 @@ npm run format              # Prettier
 Or run the container:
 
 ```bash
-docker build -t approximately-up-wiki .
-docker run --rm -p 8080:8080 approximately-up-wiki
+docker build -f docker/Dockerfile -t approximatelyup-unoffical-fan-wiki .
+docker run --rm -p 8080:8080 approximatelyup-unoffical-fan-wiki
+```
+
+Published images are on GHCR — `latest` for the newest release, `edge` for the
+tip of `main`, and `sha-<commit>` for any individual build:
+
+```bash
+docker run --rm -p 8080:8080 ghcr.io/kaigrassnick/approximatelyup-unoffical-fan-wiki:latest
 ```
 
 ## Contributing

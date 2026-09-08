@@ -364,7 +364,18 @@ def _sample(faces, x, y, z):
     return faces[face, sv, su]
 
 
-def render(name, out_path, size=512):
+def render(name, out_path, size=512, fit=DISC_PX):
+    """Render `name` as a lit disc and write it to `out_path`.
+
+    `size` is the internal raster; `fit` is the size actually written, and
+    keeping the two apart is the point -- downsampling a larger raster
+    antialiases the limb better than rasterising at the target size would.
+
+    `fit` is a parameter rather than DISC_PX outright because the OG card
+    draws this disc at 720, far larger than anything the wiki serves. It used
+    to read the served 288 and upscale, which was visibly soft on the one
+    image every shared link renders.
+    """
     heights, bioms = _faces(name)
     if heights is None:
         return False
@@ -412,7 +423,7 @@ def render(name, out_path, size=512):
     out = np.zeros((size, size, 4), dtype=np.uint8)
     out[..., :3] = rgb
     out[..., 3] = np.where(inside, 255, 0)
-    images.save_web(Image.fromarray(out, "RGBA"), out_path, lossy=True, fit=DISC_PX)
+    images.save_web(Image.fromarray(out, "RGBA"), out_path, lossy=True, fit=fit)
     return True
 
 

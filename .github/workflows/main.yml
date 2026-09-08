@@ -1,0 +1,33 @@
+# main. Same checks as every branch, and then the image is published.
+#
+# Publishing is gated on `needs: lint`, so `edge` always points at a commit
+# that passed lint, tests and a production build.
+name: main
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: main-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    uses: ./.github/workflows/_lint.yml
+
+  publish:
+    needs: lint
+    permissions:
+      contents: read
+      packages: write
+      # Build provenance and the SBOM are attested against the repository's
+      # OIDC identity, which is what makes them worth more than a text file.
+      id-token: write
+      attestations: write
+    uses: ./.github/workflows/_image.yml
+    with:
+      push: true

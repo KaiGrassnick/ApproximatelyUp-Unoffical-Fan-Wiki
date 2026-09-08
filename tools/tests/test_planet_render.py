@@ -82,10 +82,15 @@ def test_earth_renders_a_non_empty_globe():
     out = os.path.join(config.DATA, "planets", "Earth.webp")
     assert os.path.exists(out), "run generator/planet_render.py Earth first"
     img = Image.open(out).convert("RGBA")
-    assert img.size == (512, 512)
+    # pr.DISC_PX rather than a literal. The disc size is a display decision --
+    # twice the 140 CSS px the detail page draws -- and it has already moved
+    # once, from 512 down to 288, without this test following. A literal also
+    # breaks in two places rather than one: the frac denominator below goes
+    # quietly out of band, so the size assert is not the only thing to fix.
+    assert img.size == (pr.DISC_PX, pr.DISC_PX)
     alpha = img.getchannel("A")
     opaque = sum(1 for a in alpha.get_flattened_data() if a > 0)
-    frac = opaque / (512 * 512)
+    frac = opaque / (pr.DISC_PX * pr.DISC_PX)
     assert 0.6 < frac < 0.9, "expected a disc covering ~pi/4 of the square"
     disc = [p[:3] for p in img.get_flattened_data() if p[3] > 0]
     assert len(set(disc)) > 200, "globe is flat colour - height or biome data is wrong"
