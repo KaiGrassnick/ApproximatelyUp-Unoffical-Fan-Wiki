@@ -1,0 +1,91 @@
+# Version updates. Security updates are a repository setting and need no entry
+# here -- and would not have caught what this file exists for: nothing below is
+# a CVE. Actions sat three to five majors behind, and the nginx base image spent
+# fifteen months on a superseded mainline branch with no advisory to say so.
+#
+# Every `ignore` here encodes a constraint that is documented somewhere else in
+# the repository. Without them Dependabot reopens the same broken PR every week
+# and the whole thing gets muted, which is the usual way this ends.
+version: 2
+updates:
+  # The drift that started this. Grouped into one PR: seven actions bumping
+  # separately is seven reviews of the same decision.
+  - package-ecosystem: 'github-actions'
+    directory: '/'
+    schedule:
+      interval: 'weekly'
+    groups:
+      actions:
+        patterns: ['*']
+    commit-message:
+      prefix: 'ci'
+    labels: ['dependencies', 'github-actions']
+
+  # /docker, because that is where the Dockerfile lives now.
+  - package-ecosystem: 'docker'
+    directory: '/docker'
+    schedule:
+      interval: 'weekly'
+    commit-message:
+      prefix: 'chore'
+    labels: ['dependencies', 'docker']
+    ignore:
+      # node:24-alpine is deliberately the Active LTS. Node 26 does not become
+      # LTS until 2026-10-28, so a major bump would take the build OFF LTS
+      # rather than onto a newer one. Minor and patch still flow.
+      #
+      # nginx is intentionally NOT ignored: 1.31 -> 1.33 is a minor bump, and
+      # catching it is the entire reason this ecosystem is here. A mainline
+      # branch stops getting patches the day its successor opens.
+      - dependency-name: 'node'
+        update-types: ['version-update:semver-major']
+
+  - package-ecosystem: 'npm'
+    directory: '/'
+    schedule:
+      interval: 'weekly'
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: 'chore'
+    labels: ['dependencies', 'javascript']
+    groups:
+      # Angular ships ~8 packages on one release train; they must move together
+      # or the peer ranges reject the result.
+      angular:
+        patterns: ['@angular*', 'angular-eslint']
+      # Lint and test tooling churns often and is low risk to review in a batch.
+      tooling:
+        patterns: ['eslint*', '@eslint/*', 'typescript-eslint', 'prettier', 'vitest', 'jsdom']
+        update-types: ['minor', 'patch']
+    ignore:
+      # @angular/build declares NON-OPTIONAL peers of `typescript >=6.0 <6.1`
+      # and `vitest ^4.0.8`. TS 7 and vitest 5 are both released and both break
+      # the build outright; these are ceilings, not neglect, and they lift with
+      # the next Angular major rather than on Dependabot's schedule.
+      - dependency-name: 'typescript'
+        update-types: ['version-update:semver-major']
+      - dependency-name: 'vitest'
+        update-types: ['version-update:semver-major']
+      # @types/node tracks the RUNTIME, which is pinned to Node 24 LTS in the
+      # Dockerfile and the CI job. Typing against 26 while building on 24 is
+      # how you get types that describe APIs the runtime does not have.
+      - dependency-name: '@types/node'
+        update-types: ['version-update:semver-major']
+
+  # tools/pyproject.toml is PEP 621, which the pip ecosystem reads directly --
+  # there is no requirements.txt here and does not need to be one.
+  - package-ecosystem: 'pip'
+    directory: '/tools'
+    schedule:
+      interval: 'weekly'
+    commit-message:
+      prefix: 'chore'
+    labels: ['dependencies', 'python']
+    ignore:
+      # Pinned exactly, on purpose: both reach into Unity's serialized-file
+      # internals, both have changed APIs across patch releases, and the data
+      # committed under data/ was produced by these exact versions. Bumping
+      # either is a re-extraction, not a dependency update. See the comment in
+      # tools/pyproject.toml.
+      - dependency-name: 'UnityPy'
+      - dependency-name: 'TypeTreeGeneratorAPI'
