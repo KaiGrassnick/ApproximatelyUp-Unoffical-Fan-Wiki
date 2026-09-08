@@ -1,6 +1,14 @@
-# The build context is the repo root, so the first job is excluding
-# everything that is not the wiki. tools/ carries the extraction pipeline,
-# its virtualenv and ~45 MB of IL2CPP dump; none of it reaches the image.
+# This file governs what crosses to the Docker daemon, and nothing more.
+#
+# What reaches the IMAGE is decided in docker/Dockerfile, which names its build
+# inputs explicitly rather than copying the tree. So this list does not have to
+# be exhaustive, and should not be treated as a security boundary: a file
+# missing from here is a slower build, not a file in the image. That division
+# is deliberate -- the deny-list had already drifted (.idea and .ruff_cache
+# were never added) which is precisely why the Dockerfile stopped relying on it.
+#
+# tools/ carries the extraction pipeline, its virtualenv and ~45 MB of IL2CPP
+# dump; keeping that out of the transfer is the single biggest win here.
 tools
 .venv
 .git

@@ -122,6 +122,55 @@ jobs:
           grep -qi 'content-encoding: gzip' \
             <<<"$(curl -fsSI -H 'Accept-Encoding: gzip' http://127.0.0.1:8080/data/components_full.json)"
 
+          # The security headers, on EVERY location block.
+          #
+          # nginx's add_header does not accumulate: a location that sets any
+          # add_header discards the whole inherited set. Every location here
+          # sets Cache-Control, so three headers declared once at server level
+          # reached no response at all -- and nothing noticed, because this
+          # test only ever asserted cache directives and bodies.
+          #
+          # Checking one path would not catch the regression that matters,
+          # which is a NEW location block whose author did not know about the
+          # include. So each path below is chosen to land in a different
+          # location, and together they cover all eight.
+          sec() {
+            local h; h=$(curl -fsSI "http://127.0.0.1:8080$1" 2>/dev/null || true)
+            for want in 'X-Content-Type-Options: nosniff' \
+                        'Referrer-Policy: strict-origin-when-cross-origin' \
+                        'X-Frame-Options: SAMEORIGIN'; do
+              grep -qi "$want" <<<"$h" || { echo "$1 is missing: $want"; exit 1; }
+            done
+          }
+          sec /                                  # location /
+          sec /healthz                           # location = /healthz
+          sec /data/planets.json                 # location ^~ /data/
+          sec /sitemap.xml                       # location = /sitemap.xml
+          sec /favicon.ico                       # the icons regex
+          sec /site.webmanifest                  # location = /site.webmanifest
+          sec "/$(grep -oE 'main-[A-Za-z0-9_-]+\.js' <<<"$home" | head -1)"   # hashed-asset regex
+
+          # /index.csr.html is `internal`, so it cannot be requested directly.
+          # error_page routes an unknown page through it, which means a 404 is
+          # the only way to see the headers that location emits. -f would abort
+          # on the 404 itself, hence its absence here.
+          for want in 'X-Content-Type-Options: nosniff' \
+                      'Referrer-Policy: strict-origin-when-cross-origin' \
+                      'X-Frame-Options: SAMEORIGIN'; do
+            grep -qi "$want" \
+              <<<"$(curl -sSI http://127.0.0.1:8080/components/NoSuchPart)" \
+              || { echo "the 404 shell is missing: $want"; exit 1; }
+          done
+
+          # `return 200` takes its type from default_type, and the base image
+          # sets that to application/octet-stream. This endpoint used to answer
+          # with add_header Content-Type text/plain on top of it -- two
+          # Content-Type headers, and a proxy picking whichever came first.
+          [ "$(curl -fsSI http://127.0.0.1:8080/healthz \
+               | grep -ci '^content-type:')" = 1 ]
+          grep -qi '^content-type: text/plain' \
+            <<<"$(curl -fsSI http://127.0.0.1:8080/healthz)"
+
           docker stop wiki
 
       - name: log in to ghcr.io
