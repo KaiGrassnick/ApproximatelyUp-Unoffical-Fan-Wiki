@@ -2,7 +2,7 @@
 name = "approximately-up-extraction"
 version = "0.1.0"
 description = "Component/planet/objective data extraction for the Approximately Up wiki"
-requires-python = ">=3.10"
+requires-python = ">=3.12"
 
 # UnityPy and TypeTreeGeneratorAPI are pinned exactly: both reach into Unity's
 # serialized-file internals and have changed their APIs across patch releases,
@@ -17,9 +17,17 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
+# Upper bounds, unlike the JS side. There is no lockfile here: CI resolves
+# these fresh on every run, so an unbounded `ruff>=0.16` means a 0.17 that
+# enables new rules by default fails a commit that touched nothing. The
+# ceilings are what a package-lock.json does for npm.
+#
+# Keep in step with the same two pins in .github/workflows/_lint.yml, which
+# installs these directly rather than via this extra -- the extra would drag
+# in UnityPy and TypeTreeGeneratorAPI, and no runner needs those.
 dev = [
-    "pytest>=8",
-    "ruff>=0.16",
+    "pytest>=9,<10",
+    "ruff>=0.16,<0.17",
 ]
 
 [build-system]
@@ -41,7 +49,9 @@ pythonpath = ["."]
 
 [tool.ruff]
 line-length = 96
-target-version = "py310"
+# Matches requires-python. Raising this is what lets the UP rules rewrite for
+# 3.12 syntax rather than holding the code at 3.10's.
+target-version = "py312"
 
 [tool.ruff.lint]
 select = [
@@ -66,10 +76,22 @@ ignore = [
     "BLE001",
 ]
 
+# `generator` is only discoverable as first-party when ruff runs with tools/ as
+# the working directory. Stated explicitly, the import order is the same whether
+# the linter is invoked from here or from the repo root -- otherwise the two
+# disagree and every test file reports I001 from one of them.
+[tool.ruff.lint.isort]
+known-first-party = ["generator"]
+
+
+# `**/`-prefixed so the globs match whatever directory ruff is invoked from.
+# Bare `tests/*` only matches when the working directory is tools/, which meant
+# linting the repo from the root silently dropped every ignore here and
+# reported 53 errors in files that are deliberately exempt.
 [tool.ruff.lint.per-file-ignores]
 # Tests read tool sources as text to assert structural properties; a context
 # manager for a one-line read adds noise without adding safety.
-"tests/*" = ["SIM115"]
+"**/tests/*" = ["SIM115"]
 # The il2cpp.cs fixture is a verbatim excerpt of the dumper's output, tabs and
 # all, so that the parser under test sees the whitespace it sees in the wild.
-"tests/test_parse_cs.py" = ["E101", "W191"]
+"**/tests/test_parse_cs.py" = ["E101", "W191"]

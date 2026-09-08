@@ -1,0 +1,156 @@
+# Reusable: build the container, prove it serves the app, and -- only when the
+# caller asks -- publish it to GHCR.
+#
+# The smoke test sits between the build and the push on purpose. The nginx
+# config in docker/nginx.conf is
+# not covered by any unit test, so this is the only thing
+# standing between a broken cache header and the registry.
+name: image
+
+on:
+  workflow_call:
+    inputs:
+      push:
+        description: >-
+          Publish to ghcr.io as `edge` and `sha-<commit>`. Requires the caller
+          to grant packages/id-token/attestations write.
+        type: boolean
+        default: false
+    outputs:
+      digest:
+        description: Digest of the pushed image. Empty when push was false.
+        value: ${{ jobs.image.outputs.digest }}
+
+# No workflow-level `permissions:` either -- in a called workflow that would
+# also only narrow, and `contents: read` here would strip the `packages: write`
+# main.yml grants for the push.
+
+jobs:
+  image:
+    name: build container${{ inputs.push && ' + publish' || '' }}
+    runs-on: ubuntu-latest
+    # Deliberately no `permissions:` block. A called workflow may only narrow
+    # what the caller granted, never widen it, so the write scopes are declared
+    # on main.yml's `publish` job. ci.yml grants none of them, which means a
+    # `push: true` reaching this workflow from CI fails at the login step
+    # instead of publishing something unreviewed.
+    outputs:
+      digest: ${{ steps.push.outputs.digest }}
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: docker/setup-buildx-action@v4
+
+      # amd64 only. The build stage runs `npm ci` and `ng build`, and emulating
+      # that under QEMU for arm64 costs more than the arm64 image is worth
+      # here. Add `platforms:` to both build steps if that changes.
+      - name: build
+        uses: docker/build-push-action@v7
+        with:
+          context: .
+          file: docker/Dockerfile
+          push: false
+          load: true
+          tags: approximatelyup-unoffical-fan-wiki:ci
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      # Proves the image actually serves the app, not just that it built:
+      # the health endpoint, a deep link, an address with no page, and the
+      # data the wiki is useless without.
+      - name: smoke test the image
+        run: |
+          docker run -d --rm --name wiki -p 8080:8080 approximatelyup-unoffical-fan-wiki:ci
+          for i in $(seq 1 30); do
+            curl -fsS http://127.0.0.1:8080/healthz >/dev/null && break
+            [ "$i" = 30 ] && { docker logs wiki; echo "container never came up"; exit 1; }
+            sleep 1
+          done
+
+          # Each page is fetched once and asserted against in memory. Piping
+          # curl into `grep -q` makes grep close the pipe on its first match,
+          # which curl then reports as "Recv failure: Connection reset by
+          # peer" -- noise that reads exactly like a broken container. The
+          # prerendered pages are 40 kB, so it would happen on every one.
+          get() { curl -fsS "http://127.0.0.1:8080$1"; }
+          code() { curl -so /dev/null -w '%{http_code}' "http://127.0.0.1:8080$1"; }
+
+          grep -q ok <<<"$(get /healthz)"
+
+          # <app-root> carries Angular's own attributes now that the build
+          # writes prerendered HTML into it, so the tag is no longer bare.
+          home=$(get /)
+          grep -q '<app-root' <<<"$home"
+          grep -q 'Approximately Up' <<<"$home"
+
+          # A deep link is a real prerendered file now, and it has to be the
+          # RIGHT one: every unknown address falling back to the home page
+          # would still satisfy a test that only looked for the shell.
+          grep -q '<title>Frame Full' <<<"$(get /components/FrameA)"
+
+          # And an address with no page has to say so. This answered 200 with
+          # the home page's HTML before prerendering, which is a soft 404 --
+          # an apology under a URL a crawler then indexes.
+          [ "$(code /components/NoSuchPart)" = 404 ]
+
+          # The sitemap is generated at build time and served as XML.
+          grep -q '<loc>' <<<"$(get /sitemap.xml)"
+
+          grep -q '"Earth"' <<<"$(get /data/planets.json)"
+
+          # Versioned URLs are immutable; bare ones must still revalidate, or a
+          # shared link pins stale data in a reader's cache for a year.
+          grep -qi 'cache-control: public, max-age=31536000, immutable' \
+            <<<"$(curl -fsSI 'http://127.0.0.1:8080/data/planets.json?v=deadbeef')"
+          grep -qi 'cache-control: no-cache' \
+            <<<"$(curl -fsSI http://127.0.0.1:8080/data/planets.json)"
+
+          # gzip_static found the build's .gz. Both it and the runtime gzip set
+          # Content-Encoding, so this only proves compression is on at all.
+          grep -qi 'content-encoding: gzip' \
+            <<<"$(curl -fsSI -H 'Accept-Encoding: gzip' http://127.0.0.1:8080/data/components_full.json)"
+
+          docker stop wiki
+
+      - name: log in to ghcr.io
+        if: inputs.push
+        uses: docker/login-action@v4
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ github.token }}
+
+      # `sha-<full 40 hex>`, not the 7-character default: release.yml finds the
+      # image to retag with `git rev-parse`, and a short hash makes that lookup
+      # both ambiguous in principle and unreadable in the registry UI.
+      #
+      # metadata-action lowercases the image name, which GHCR requires and this
+      # repository's mixed-case name would otherwise violate.
+      - name: tags and labels
+        if: inputs.push
+        id: meta
+        uses: docker/metadata-action@v6
+        with:
+          images: ghcr.io/${{ github.repository }}
+          tags: |
+            type=raw,value=edge
+            type=sha,format=long
+
+      # A second build rather than `load` and `push` in one step: this is an
+      # exact cache hit on the layers just built, so it costs seconds, and it
+      # keeps the push strictly downstream of the smoke test.
+      - name: push
+        if: inputs.push
+        id: push
+        uses: docker/build-push-action@v7
+        with:
+          context: .
+          file: docker/Dockerfile
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          annotations: ${{ steps.meta.outputs.annotations }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+          provenance: mode=max
+          sbom: true
