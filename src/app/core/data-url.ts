@@ -2,7 +2,7 @@ import { DATA_MANIFEST } from './data-manifest';
 
 /**
  * A URL under data/ carrying its file's content hash, so nginx can serve it
- * immutable -- see the $data_cache_control map in nginx.conf.
+ * immutable -- see the $data_cache_control map in docker/nginx.conf.
  *
  * A path the manifest has never heard of still yields a working URL, just an
  * unversioned one. That matters for ids that come from the data rather than

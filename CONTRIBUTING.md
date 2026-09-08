@@ -81,6 +81,7 @@ src/styles/         Design tokens and the HUD look
 data/               Committed JSON + images — the wiki's content
 tools/              Python extraction pipeline (see tools/README.md)
 scripts/            Build-time Node helpers
+docker/             Dockerfile and the nginx config it ships
 src/main.server.ts  Prerenderer entry, mirroring main.ts
 src/app/*.server.ts Which routes are prerendered, and with which providers
 ```
@@ -293,7 +294,7 @@ PR.
 
 ## Pull requests
 
-1. Branch off `master`.
+1. Branch off `main`.
 2. Keep the change focused. Unrelated cleanups belong in their own PR.
 3. Run the full local check before pushing:
    ```bash
@@ -308,6 +309,12 @@ PR.
 CI runs Python lint + tests, then the Angular lint/test/build, then builds the
 container and smoke-tests that it actually serves the app. All of it has to be
 green.
+
+The same checks run on every branch and on `main`; the only difference is that
+`main` also publishes the image to GHCR as `edge` and `sha-<commit>`. Releases
+do not rebuild — pushing a `v*` tag retags the image already published for that
+commit, so the released bytes are the ones CI tested. The workflows live in
+`.github/workflows/`, with the shared logic in `_lint.yml` and `_image.yml`.
 
 ## Licence
 

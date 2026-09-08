@@ -22,6 +22,8 @@ npm-debug.log*
 # Tests do not run in the image build; CI runs them against the same source.
 **/*.spec.ts
 
-# Not source.
-Dockerfile
+# Not source. Note this excludes docker/Dockerfile specifically and not the
+# whole docker/ directory: the runtime stage COPYs docker/nginx.conf out of the
+# context, so excluding the directory would break the build.
+docker/Dockerfile
 .dockerignore
