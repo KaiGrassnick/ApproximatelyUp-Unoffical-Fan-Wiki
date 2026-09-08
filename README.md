@@ -77,8 +77,8 @@ up after a clone.
 Requires **Node 22+** and npm.
 
 ```bash
-git clone git@github.com:KaiGrassnick/ApproximatelyUp-Unoffical-Wiki.git
-cd ApproximatelyUp-Unoffical-Wiki
+git clone git@github.com:KaiGrassnick/ApproximatelyUp-Unoffical-Fan-Wiki.git
+cd ApproximatelyUp-Unoffical-Fan-Wiki
 npm ci
 npm start          # dev server on http://localhost:4200
 ```
