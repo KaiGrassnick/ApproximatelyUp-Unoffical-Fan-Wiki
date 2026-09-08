@@ -1,0 +1,159 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+
+jobs:
+  python:
+    name: lint + tests (python)
+    runs-on: ubuntu-latest
+    # tools/ is the Python project root -- pyproject.toml, the `generator`
+    # package and its tests all live there.
+    defaults:
+      run:
+        working-directory: tools
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      # Only the dev tools. The extraction dependencies (UnityPy,
+      # TypeTreeGeneratorAPI) are not installed here because nothing that runs
+      # on a runner imports them -- see the pytest step below.
+      - run: pip install "ruff>=0.16" "pytest>=8"
+
+      - name: ruff
+        run: ruff check .
+
+      # Most of the suite needs the game install, which no runner has: the
+      # extraction tools open globalgamemanagers.assets and level0 directly.
+      # What runs here is everything that reads only committed files -- the
+      # availability engine, the .env parsing, and the data files themselves.
+      # The rest is covered on a machine with the game, by `pytest` in tools/.
+      - name: pytest (game-independent tests)
+        run: pytest tests/test_availability.py -q
+
+  web:
+    name: lint + tests + build (angular)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - run: npm ci
+
+      # A data change with a stale manifest would serve new bytes under an old
+      # ?v=, which is a cache poisoning bug that no other test can see. A data
+      # change with a stale sitemap is quieter but the same shape: the wiki
+      # gains a page and tells every crawler it did not.
+      # `gen` compiles the guides first: their output lives under data/ and is
+      # hashed by the manifest, so a manifest generated without them is wrong.
+      #
+      # The diff covers the whole tree, not the three named files, so a fourth
+      # generated file added later is checked without anyone remembering to
+      # come back here.
+      - name: generated files are up to date
+        run: |
+          npm run gen
+          git diff --exit-code
+
+      - run: npm run format:check
+
+      # Includes angular-eslint's template accessibility rules, which is the
+      # half that catches things a type checker never will.
+      - run: npm run lint
+
+      # vitest with jsdom -- no browser flag, and none is accepted
+      - run: npx ng test --watch=false
+
+      - run: npm run build:prod
+
+  image:
+    name: build container
+    runs-on: ubuntu-latest
+    # Only after the app itself is known good: an image built from failing
+    # source is a slower way to find out.
+    needs: web
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: docker/setup-buildx-action@v3
+
+      # Built and not pushed: this proves the Dockerfile still works on every
+      # change. Add a login step and `push: true` once there is a registry to
+      # push to.
+      - uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: false
+          load: true
+          tags: approximately-up-wiki:ci
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      # Proves the image actually serves the app, not just that it built:
+      # the health endpoint, a deep link, an address with no page, and the
+      # data the wiki is useless without.
+      - name: smoke test the image
+        run: |
+          docker run -d --rm --name wiki -p 8080:8080 approximately-up-wiki:ci
+          for i in $(seq 1 30); do
+            curl -fsS http://127.0.0.1:8080/healthz >/dev/null && break
+            [ "$i" = 30 ] && { docker logs wiki; echo "container never came up"; exit 1; }
+            sleep 1
+          done
+
+          # Each page is fetched once and asserted against in memory. Piping
+          # curl into `grep -q` makes grep close the pipe on its first match,
+          # which curl then reports as "Recv failure: Connection reset by
+          # peer" -- noise that reads exactly like a broken container. The
+          # prerendered pages are 40 kB, so it would happen on every one.
+          get() { curl -fsS "http://127.0.0.1:8080$1"; }
+          code() { curl -so /dev/null -w '%{http_code}' "http://127.0.0.1:8080$1"; }
+
+          grep -q ok <<<"$(get /healthz)"
+
+          # <app-root> carries Angular's own attributes now that the build
+          # writes prerendered HTML into it, so the tag is no longer bare.
+          home=$(get /)
+          grep -q '<app-root' <<<"$home"
+          grep -q 'Approximately Up' <<<"$home"
+
+          # A deep link is a real prerendered file now, and it has to be the
+          # RIGHT one: every unknown address falling back to the home page
+          # would still satisfy a test that only looked for the shell.
+          grep -q '<title>Frame Full' <<<"$(get /components/FrameA)"
+
+          # And an address with no page has to say so. This answered 200 with
+          # the home page's HTML before prerendering, which is a soft 404 --
+          # an apology under a URL a crawler then indexes.
+          [ "$(code /components/NoSuchPart)" = 404 ]
+
+          # The sitemap is generated at build time and served as XML.
+          grep -q '<loc>' <<<"$(get /sitemap.xml)"
+
+          grep -q '"Earth"' <<<"$(get /data/planets.json)"
+
+          # Versioned URLs are immutable; bare ones must still revalidate, or a
+          # shared link pins stale data in a reader's cache for a year.
+          grep -qi 'cache-control: public, max-age=31536000, immutable' \
+            <<<"$(curl -fsSI 'http://127.0.0.1:8080/data/planets.json?v=deadbeef')"
+          grep -qi 'cache-control: no-cache' \
+            <<<"$(curl -fsSI http://127.0.0.1:8080/data/planets.json)"
+
+          # gzip_static found the build's .gz. Both it and the runtime gzip set
+          # Content-Encoding, so this only proves compression is on at all.
+          grep -qi 'content-encoding: gzip' \
+            <<<"$(curl -fsSI -H 'Accept-Encoding: gzip' http://127.0.0.1:8080/data/components_full.json)"
+
+          docker stop wiki

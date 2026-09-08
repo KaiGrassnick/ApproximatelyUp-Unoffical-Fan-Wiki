@@ -1,0 +1,38 @@
+<h1>Stations</h1>
+<p class="lede">
+  The {{ stations().length }} orbital stations, under the body each one orbits. Missions start and
+  end at these.
+</p>
+
+@for (g of groups(); track g.planet) {
+  <section class="grp">
+    <h2>
+      <a [routerLink]="['/planets', g.planet]">{{ g.planet }}</a>
+      <span class="num">{{ g.stations.length }}</span>
+    </h2>
+    <ul class="list">
+      <!-- Every station here is one the reader has docked at: the rest are
+           left out and counted at the bottom, so there is no anonymous row to
+           draw and every one of these is a real link. -->
+      @for (s of g.stations; track s.id) {
+        <li>
+          <a [routerLink]="['/planets', s.id]">
+            <span class="name">{{ s.id }}</span>
+            <!-- The pill reports the save, not what the page is willing to
+                 show: a station named only because the reader turned the
+                 reveal on is still one they have not docked at. -->
+            @if (world.hasWorld()) {
+              @let visited = world.isVisited(s.object_id);
+              <status-pill
+                [state]="visited ? 'have' : 'locked'"
+                [text]="visited ? 'visited' : 'unvisited'"
+              />
+            }
+          </a>
+        </li>
+      }
+    </ul>
+  </section>
+}
+
+<to-come [count]="toCome()" noun="station" reason="in orbit of places you have not been to yet" />

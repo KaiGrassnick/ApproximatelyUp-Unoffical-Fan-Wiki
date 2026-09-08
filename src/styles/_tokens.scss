@@ -1,0 +1,38 @@
+:root {
+  --bg: #05070d;
+  --bg-raise: #080c16;
+  --panel: #0b1020;
+  --panel-hi: #101830;
+  --line: rgba(120, 200, 255, 0.12);
+  --line-hi: rgba(120, 200, 255, 0.32);
+
+  --text: #dfe8f5;
+  --text-dim: #8ea3bf;
+  // The dimmest text on the site, and so the one that sets the floor: 4.5:1
+  // against --panel-hi, the lightest surface anything sits on. It was #5b6d88,
+  // which came to 3.34:1 there -- a ratio that only passes for text at 24px
+  // and up, and this token is mostly used at 0.65-0.8rem. Lifting the
+  // lightness and leaving hue and saturation alone keeps it the same grey-blue.
+  --text-faint: #70839f;
+
+  --accent: #4fd8ff;
+  // Hover state for links. Lifting the colour is the whole affordance now —
+  // there is no underline to add — so it has to be clearly brighter than
+  // --accent at a glance, not a nudge.
+  --accent-hi: #b7efff;
+  --accent-dim: rgba(79, 216, 255, 0.15);
+  --violet: #a06bff;
+  --ok: #3ddc97;
+  --warn: #ffb454;
+  // Same reasoning as --text-faint. status-pill draws this at 0.6rem inside a
+  // panel, where #6b7a91 was 4.03:1.
+  --locked: #748298;
+
+  --font-head: 'Chakra Petch', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --gap: 1rem;
+  --radius: 2px;
+  --clip: 10px;
+}

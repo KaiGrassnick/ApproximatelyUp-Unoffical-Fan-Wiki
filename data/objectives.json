@@ -1,0 +1,2224 @@
+[
+ {
+  "id": 1002000,
+  "key": "Package_Earth_LostInTransit",
+  "type": "Package",
+  "hidden": false,
+  "start": "Planet_Earth",
+  "end": "Invalid",
+  "requires_components": [],
+  "reward": [
+   {
+    "component": "FrameA",
+    "amount": 180
+   },
+   {
+    "component": "AtmosphericLiftFan",
+    "amount": 2
+   },
+   {
+    "component": "Camera",
+    "amount": 1
+   },
+   {
+    "component": "MediumDisposableBattery",
+    "amount": 2
+   },
+   {
+    "component": "GyroLine",
+    "amount": 1
+   },
+   {
+    "component": "AxisRotometer",
+    "amount": 3
+   },
+   {
+    "component": "Altimeter",
+    "amount": 1
+   },
+   {
+    "component": "PowerBlocker",
+    "amount": 5
+   },
+   {
+    "component": "PowerRouter",
+    "amount": 2
+   },
+   {
+    "component": "InventoryTool_PainterMoss",
+    "amount": 1000000
+   },
+   {
+    "component": "InventoryTool_PainterRed",
+    "amount": 1000000
+   }
+  ],
+  "dependencies": [],
+  "title": "Lost In Transit",
+  "obj": "Find nearby lost package and retrieve it back to Headquarters.",
+  "desc": "You saw the massive flash that lit up the sky recently, right? We call it “The Event.” We still don’t know what caused it, but every cargo unit on the transport lost power and crashed somewhere across the planets.\n\nDozens of packages are now scattered across different planets, and we need your help retrieving them.\n\nUse your ship’s radar to find the lost cargo, recover the package, and return it safely to Headquarters. These supplies are essential for your further progress!",
+  "hints": "Required Small Gate."
+ },
+ {
+  "id": 1002001,
+  "key": "Package_Earth_LostInTheSnow",
+  "type": "Package",
+  "hidden": false,
+  "start": "Planet_Earth",
+  "end": "Invalid",
+  "requires_components": [],
+  "reward": [
+   {
+    "component": "FrameA",
+    "amount": 150
+   },
+   {
+    "component": "GlassA",
+    "amount": 25
+   },
+   {
+    "component": "SmallElectricThruster",
+    "amount": 2
+   },
+   {
+    "component": "Seat",
+    "amount": 2
+   },
+   {
+    "component": "SmallToggleableLight",
+    "amount": 2
+   },
+   {
+    "component": "MediumDisposableBattery",
+    "amount": 2
+   },
+   {
+    "component": "Whiteboard",
+    "amount": 4
+   },
+   {
+    "component": "DataCable",
+    "amount": 350
+   },
+   {
+    "component": "PowerCable",
+    "amount": 350
+   },
+   {
+    "component": "Windmeter",
+    "amount": 1
+   },
+   {
+    "component": "Aerometer",
+    "amount": 1
+   },
+   {
+    "component": "Atmometer",
+    "amount": 1
+   }
+  ],
+  "dependencies": [],
+  "title": "Lost In The Snow",
+  "obj": "Find lost package in the snowy mountains.",
+  "desc": "Another supply package never reached its destination after The Event disrupted transport systems and caused the cargo to crash somewhere in the snow-covered mountains.\nThe shipment is lost, but still recoverable. Your mission is to locate the crash site, retrieve the package, and bring it back safely.\nTrust us — you won’t be disappointed by what’s inside.",
+  "hints": "Required Small Gate.\nMount all available batteries."
+ },
+ {
+  "id": 1002002,
+  "key": "Package_Earth_DrumKit",
+  "type": "Package",
+  "hidden": true,
+  "start": "Planet_Earth",
+  "end": "Invalid",
+  "requires_components": [],
+  "reward": [
+   {
+    "component": "DrumKit",
+    "amount": 1
+   }
+  ],
+  "dependencies": [],
+  "title": "Drumkit",
+  "obj": "Get the drum kit from the top of Headquarters.",
+  "desc": "Who the hell put a drum kit on top of Headquarters?! I guess we’ll never know, but now it’s yours. Space is silent. Your spaceship doesn’t have to be.",
+  "hints": ""
+ },
+ {
+  "id": 1003000,
+  "key": "Package_Moon_ChasingFire",
+  "type": "Package",
+  "hidden": false,
+  "start": "Planet_Moon",
+  "end": "Invalid",
+  "requires_components": [],
+  "reward": [
+   {
+    "component": "FrameA",
+    "amount": 300
+   },
+   {
+    "component": "GlassA",
+    "amount": 30
+   },
+   {
+    "component": "ZoomCamera",
+    "amount": 2
+   },
+   {
+    "component": "MediumRechargeableBattery",
+    "amount": 2
+   },
+   {
+    "component": "LogicValue",
+    "amount": 30
+   },
+   {
+    "component": "DynamoBox",
+    "amount": 1
+   }
+  ],
+  "dependencies": [],
+  "title": "The Moon Shipment",
+  "obj": "Find lost package and retrieve it back to Moonstep.",
+  "desc": "A pretty big package of supplies got lost somewhere on the Moon - can you find it?",
+  "hints": "Required Medium Gate."
+ },
+ {
+  "id": 1003001,
+  "key": "Package_Moon_OperationGhostwire",
+  "type": "Package",
+  "hidden": false,
+  "start": "Planet_Moon",
+  "end": "Invalid",
+  "requires_components": [],
+  "reward": [
+   {
+    "component": "WirelessTransmitter",
+    "amount": 30
+   },
+   {
+    "component": "LabelSmall",
+    "amount": 10
+   },
+   {
+    "component": "VelocityMeter",
+    "amount": 3
+   },
+   {
+    "component": "Massmeter",
+    "amount": 3
+   },
+   {
+    "component": "LargeDatameter",
+    "amount": 5
+   },
+   {
+    "component": "LargePowerRouter",
+    "amount": 5
+   },
+   {
+    "component": "DataCable",
+    "amount": 250
+   },
+   {
+    "component": "PowerCable",
+    "amount": 250
+   }
+  ],
+  "dependencies": [],
+  "title": "Operation Ghostwire",
+  "obj": "Find the lost package and bring it back to Moonstep. It shouldn’t be too far from the planet station.",
+  "desc": "A package containing multiple wireless transmitters has gone missing on the Moon’s surface. Your mission is to locate it and return it safely.",
+  "hints": "Required Small Gate."
+ },
+ {
+  "id": 1003002,
+  "key": "Package_Moon_LargeBattery",
+  "type": "Package",
+  "hidden": false,
+  "start": "Planet_Moon",
+  "end": "Invalid",
+  "requires_components": [],
+  "reward": [
+   {
+    "component": "LargeDisposableBattery",
+    "amount": 1
+   }
+  ],
+  "dependencies": [],
+  "title": "The Big Battery Problem",
+  "obj": "Find and retrieve the lost Large Disposable Battery from the dark side of the planet.",
+  "desc": "We’ve managed to lose one of our Large Disposable Batteries. The good news? We know approximately where it is. The bad news? It’s on the dark side of the planet.\n\nWe recommend coming back once you have Floodlights or Night Vision. But if stumbling around in complete darkness sounds like your kind of mission... nothing is stopping you.",
+  "hints": "Required Small Gate\nFloodlights or Night Vision will make finding the battery much easier. They’re recommended, not required."
+ },
+ {
+  "id": 1004000,
+  "key": "Package_Baobara_BlueTanks",
+  "type": "Package",
+  "hidden": false,
+  "start": "Planet_Baobara",
+  "end": "Invalid",
+  "requires_components": [],
+  "reward": [
+   {
+    "component": "BlueTank",
+    "amount": 2
+   }
+  ],
+  "dependencies": [],
+  "title": "Blue Tanks",
+  "obj": "Retrieve the huge package containing your first fuel tanks!",
+  "desc": "Are you ready for your first fuel? But hold on! Make sure you have the Large Gate before you try this mission, because the package is, as you might expect... huge.",
+  "hints": "Required Large Gate."
+ },
+ {
+  "id": 1004001,
+  "key": "Package_Baobara_FirstPipes",
+  "type": "Package",
+  "hidden": false,
+  "start": "Planet_Baobara",
+  "end": "Invalid",
+  "requires_components": [],
+  "reward": [
+   {
+    "component": "PipeQuarter",
+    "amount": 100
+   },
+   {
+    "component": "PipeMeter",
+    "amount": 10
+   },
+   {
+    "component": "PipeManualValve",
+    "amount": 5
+   },
+   {
+    "component": "PipeElectricValve",
+    "amount": 5
+   },
+   {
+    "component": "FuelAnalyzer",
+    "amount": 1
+   }
+  ],
+  "dependencies": [],
+  "title": "First Pipes",
+  "obj": "Retrieve the package containing Fuel Pipes for your first fuel-powered spaceship!",
+  "desc": "Yet another package to help you build your first fuel-powered spaceship — this time containing fuel pipes! Go get it and bring yourself one step closer to the wonderful world of fuel!",
+  "hints": "Required Small Gate."
+ },
+ {
+  "id": 1004002,
+  "key": "Package_Baobara_Ignite",
+  "type": "Package",
+  "hidden": false,
+  "start": "Planet_Baobara",
+  "end": "Invalid",
+  "requires_components": [],
+  "reward": [
+   {
+    "component": "SmallFuelThruster",
+    "amount": 4
+   }
+  ],
+  "dependencies": [],
+  "title": "Ignite!",
+  "obj": "Find and retrieve the four lost Small Fuel Thrusters!",
+  "desc": "Four lost Small Fuel Thrusters are waiting for you! Go find them and bring them back!",
+  "hints": "Required Medium Gate."
+ },
+ {
+  "id": 1004003,
+  "key": "Package_Baobara_BaobabPackage",
+  "type": "Package",
+  "hidden": false,
+  "start": "Planet_Baobara",
+  "end": "Invalid",
+  "requires_components": [],
+  "reward": [
+   {
+    "component": "Thermometer",
+    "amount": 1
+   },
+   {
+    "component": "LogicValue",
+    "amount": 40
+   },
+   {
+    "component": "DataCable",
+    "amount": 250
+   },
+   {
+    "component": "PowerCable",
+    "amount": 250
+   },
+   {
+    "component": "WirelessTransmitter",
+    "amount": 20
+   },
+   {
+    "component": "LeverVertical",
+    "amount": 6
+   },
+   {
+    "component": "PowerRouter",
+    "amount": 10
+   },
+   {
+    "component": "PowerBlocker",
+    "amount": 6
+   },
+   {
+    "component": "Inclinometer",
+    "amount": 2
+   },
+   {
+    "component": "MonitorSmallLCD",
+    "amount": 1
+   },
+   {
+    "component": "FrameA",
+    "amount": 300
+   },
+   {
+    "component": "GlassA",
+    "amount": 25
+   }
+  ],
+  "dependencies": [],
+  "title": "The Parachute Incident",
+  "obj": "Retrieve the package stuck in a tree near the base.",
+  "desc": "This time, the package almost made it here. Almost... Just look around and you should be able to spot it from the base, hanging from a tree with its parachute hopelessly stuck in the branches. Find some way to get up there and bring it back.",
+  "hints": "Required Small Gate."
+ },
+ {
+  "id": 1005000,
+  "key": "Package_Helirion_LostPackage0",
+  "type": "Package",
+  "hidden": true,
+  "start": "Planet_Helirion",
+  "end": "Invalid",
+  "requires_components": [],
+  "reward": [
+   {
+    "component": "PipeQuarter",
+    "amount": 100
+   },
+   {
+    "component": "PipeMeter",
+    "amount": 3
+   },
+   {
+    "component": "PipeManualValve",
+    "amount": 3
+   },
+   {
+    "component": "PipeElectricValve",
+    "amount": 3
+   }
+  ],
+  "dependencies": [],
+  "title": "",
+  "obj": "",
+  "desc": "",
+  "hints": ""
+ },
+ {
+  "id": 1005001,
+  "key": "Package_Helirion_LostPackage1",
+  "type": "Package",
+  "hidden": true,
+  "start": "Planet_Helirion",
+  "end": "Invalid",
+  "requires_components": [],
+  "reward": [
+   {
+    "component": "MediumFuelThruster",
+    "amount": 1
+   }
+  ],
+  "dependencies": [],
+  "title": "",
+  "obj": "",
+  "desc": "",
+  "hints": ""
+ },
+ {
+  "id": 1005002,
+  "key": "Package_Helirion_LostPackage2",
+  "type": "Package",
+  "hidden": true,
+  "start": "Planet_Helirion",
+  "end": "Invalid",
+  "requires_components": [],
+  "reward": [
+   {
+    "component": "FuseBox",
+    "amount": 3
+   },
+   {
+    "component": "PowerNanocable",
+    "amount": 200
+   },
+   {
+    "component": "AutohemisphereSolarPanel",
+    "amount": 4
+   },
+   {
+    "component": "NightVisionCamera",
+    "amount": 1
+   }
+  ],
+  "dependencies": [],
+  "title": "",
+  "obj": "",
+  "desc": "",
+  "hints": ""
+ },
+ {
+  "id": 1006000,
+  "key": "Package_Aundara_HueDoneIt",
+  "type": "Package",
+  "hidden": false,
+  "start": "Planet_Aundara",
+  "end": "Invalid",
+  "requires_components": [],
+  "reward": [
+   {
+    "component": "InventoryTool_PainterWhite",
+    "amount": 1000000
+   },
+   {
+    "component": "InventoryTool_PainterOrange",
+    "amount": 1000000
+   },
+   {
+    "component": "InventoryTool_PainterTeal",
+    "amount": 1000000
+   },
+   {
+    "component": "InventoryTool_PainterBlue",
+    "amount": 1000000
+   },
+   {
+    "component": "InventoryTool_PainterBrown",
+    "amount": 1000000
+   },
+   {
+    "component": "InventoryTool_PainterYellow",
+    "amount": 1000000
+   }
+  ],
+  "dependencies": [],
+  "title": "Hue Done It?",
+  "obj": "Recover the missing paint barrels.",
+  "desc": "Breaking News: A shipment of colorful paint barrels has gone missing on a mostly-ocean planet. Officials insist it’s not underwater - confidence levels suspiciously high. Search the surface, recover the color barrels, and save your ship from eternal dullness.",
+  "hints": "Required Small Gate."
+ },
+ {
+  "id": 1006001,
+  "key": "Package_Aundara_OneIsNeverEnough",
+  "type": "Package",
+  "hidden": false,
+  "start": "Planet_Aundara",
+  "end": "Invalid",
+  "requires_components": [],
+  "reward": [
+   {
+    "component": "MediumElectricThruster",
+    "amount": 1
+   },
+   {
+    "component": "MediumDisposableBattery",
+    "amount": 2
+   }
+  ],
+  "dependencies": [],
+  "title": "One Is Never Enough",
+  "obj": "Find the lost Medium Electric Thruster and return it to the planet station.",
+  "desc": "Another shipment has gone missing, containing mostly Medium Electric Thrusters that could be extremely valuable to you. Locate it and bring it back.",
+  "hints": "Required Medium Gate."
+ },
+ {
+  "id": 1006002,
+  "key": "Package_Aundara_Plasma",
+  "type": "Package",
+  "hidden": false,
+  "start": "Planet_Aundara",
+  "end": "Invalid",
+  "requires_components": [],
+  "reward": [
+   {
+    "component": "SmallPlasmaGenerator",
+    "amount": 1
+   },
+   {
+    "component": "PlasmaCable",
+    "amount": 200
+   }
+  ],
+  "dependencies": [],
+  "title": "The Very Wet Package",
+  "obj": "Retrieve the Plasma Generator from the bottom of the ocean.",
+  "desc": "Our Plasma Generator package went missing and, just as you’d expect... yes, it’s now sitting at the bottom of the ocean. Build something capable of reaching it, bring it back to the surface, and try not to turn your spaceship into a submarine permanently.",
+  "hints": "Required Small Gate.\nUse Atmospheric Fans, Atmospheric Flat Fan, and any type of RCS or Maneuvering Thrusters to navigate underwater — they all work perfectly fine down to 5 000 meters... But we really hope you won’t need to go that deep."
+ },
+ {
+  "id": 1007000,
+  "key": "Package_CoronaSilva_DuctedFans",
+  "type": "Package",
+  "hidden": false,
+  "start": "Planet_CoronaSilva",
+  "end": "Invalid",
+  "requires_components": [],
+  "reward": [
+   {
+    "component": "DuctedFan",
+    "amount": 2
+   }
+  ],
+  "dependencies": [],
+  "title": "Ducted Fans",
+  "obj": "Find and retrieve the experimental Ducted Fans lost somewhere in the jungle.",
+  "desc": "Some experimental Huge Ducted Fans are also lost somewhere in the jungle. If you can find them, they’re yours! They can be extremely useful for intraplanetary flights — or even underwater, if you decide your spaceship should become a submarine again...",
+  "hints": "Required Large Gate."
+ },
+ {
+  "id": 1007001,
+  "key": "Package_CoronaSilva_HugeElectro",
+  "type": "Package",
+  "hidden": false,
+  "start": "Planet_CoronaSilva",
+  "end": "Invalid",
+  "requires_components": [],
+  "reward": [
+   {
+    "component": "DataCable",
+    "amount": 500
+   },
+   {
+    "component": "PowerCable",
+    "amount": 500
+   },
+   {
+    "component": "LogicValue",
+    "amount": 120
+   },
+   {
+    "component": "WirelessTransmitter",
+    "amount": 15
+   },
+   {
+    "component": "CameraOverlay",
+    "amount": 4
+   },
+   {
+    "component": "LeverVertical",
+    "amount": 10
+   },
+   {
+    "component": "PowerRouter",
+    "amount": 10
+   },
+   {
+    "component": "LargePowerRouter",
+    "amount": 5
+   },
+   {
+    "component": "LabelSmall",
+    "amount": 20
+   },
+   {
+    "component": "Beeper",
+    "amount": 4
+   },
+   {
+    "component": "RedAlertLight",
+    "amount": 3
+   },
+   {
+    "component": "PowerUsageMeter",
+    "amount": 3
+   },
+   {
+    "component": "PowerGenerationMeter",
+    "amount": 3
+   },
+   {
+    "component": "LargeDatameter",
+    "amount": 12
+   }
+  ],
+  "dependencies": [],
+  "title": "Jungle Electronics",
+  "obj": "Find and retrieve the lost electronics from the jungle.",
+  "desc": "A whole lot of electronics got lost somewhere in the jungle. We believe they’ll be very useful for building and improving your spaceship systems! Find the package, bring it back, and try not to get lost yourself.",
+  "hints": "Required Small Gate."
+ },
+ {
+  "id": 1007002,
+  "key": "Package_CoronaSilva_MoreBlueFuel",
+  "type": "Package",
+  "hidden": false,
+  "start": "Planet_CoronaSilva",
+  "end": "Invalid",
+  "requires_components": [],
+  "reward": [
+   {
+    "component": "BlueTank",
+    "amount": 2
+   },
+   {
+    "component": "PipeQuarter",
+    "amount": 120
+   },
+   {
+    "component": "PipeMeter",
+    "amount": 4
+   },
+   {
+    "component": "PipeManualValve",
+    "amount": 6
+   },
+   {
+    "component": "PipeElectricValve",
+    "amount": 4
+   },
+   {
+    "component": "FuelAnalyzer",
+    "amount": 2
+   }
+  ],
+  "dependencies": [],
+  "title": "More Fuel",
+  "obj": "Find and retrieve the package containing two additional fuel tanks.",
+  "desc": "A package that was originally meant for Baobara somehow ended up here. I guess the guys at Headquarters miscalculated the trajectory... again.\n\nHowever, it contains two additional fuel tanks that you’ll most likely appreciate. Go find the package and get them!",
+  "hints": "Required Large Gate."
+ },
+ {
+  "id": 1008000,
+  "key": "Package_Basalt_CandyflowerA",
+  "type": "Package",
+  "hidden": false,
+  "start": "Planet_Basalt",
+  "end": "Invalid",
+  "requires_components": [],
+  "reward": [],
+  "dependencies": [
+   "PlanetStation_Basalt_CandyVein"
+  ],
+  "title": "Green Candyflower",
+  "obj": "Find the Green Candyflower and bring it back to the **Candy Vein** base.",
+  "desc": "Deep at the bottom of the Basalt canyons, there’s actually living flora — including three mysterious flowers that we need!\n\nThe bad news is that these flowers can only survive at lower altitudes. Our measurements show they can survive up to 32,000 meters, but anything above that will kill them. An Altimeter is basically a must-have for this mission.\n\nFind all three flowers and transport them safely to the Candy Vein base without exceeding their altitude limit.",
+  "hints": "Required Small Gate.\nUse the Radar to locate the Green Candyflower."
+ },
+ {
+  "id": 1008001,
+  "key": "Package_Basalt_CandyflowerB",
+  "type": "Package",
+  "hidden": false,
+  "start": "Planet_Basalt",
+  "end": "Invalid",
+  "requires_components": [],
+  "reward": [],
+  "dependencies": [
+   "PlanetStation_Basalt_CandyVein"
+  ],
+  "title": "Yellow Candyflower",
+  "obj": "Find the Yellow Candyflower and bring it back to the **Candy Vein** base.",
+  "desc": "Deep at the bottom of the Basalt canyons, there’s actually living flora — including three mysterious flowers that we need!\n\nThe bad news is that these flowers can only survive at lower altitudes. Our measurements show they can survive up to 32,000 meters, but anything above that will kill them. An Altimeter is basically a must-have for this mission.\n\nFind all three flowers and transport them safely to the Candy Vein base without exceeding their altitude limit.",
+  "hints": "Required Small Gate.\nUse the Radar to locate the Yellow Candyflower."
+ },
+ {
+  "id": 1008002,
+  "key": "Package_Basalt_CandyflowerC",
+  "type": "Package",
+  "hidden": false,
+  "start": "Planet_Basalt",
+  "end": "Invalid",
+  "requires_components": [],
+  "reward": [],
+  "dependencies": [
+   "PlanetStation_Basalt_CandyVein"
+  ],
+  "title": "Blue Candyflower",
+  "obj": "Find the Blue Candyflower and bring it back to the **Candy Vein** base.",
+  "desc": "Deep at the bottom of the Basalt canyons, there’s actually living flora — including three mysterious flowers that we need!\n\nThe bad news is that these flowers can only survive at lower altitudes. Our measurements show they can survive up to 32,000 meters, but anything above that will kill them. An Altimeter is basically a must-have for this mission.\n\nFind all three flowers and transport them safely to the Candy Vein base without exceeding their altitude limit.",
+  "hints": "Required Small Gate.\nUse the Radar to locate the Blue Candyflower."
+ },
+ {
+  "id": 1010000,
+  "key": "Package_Rimshell_RimshellSupport",
+  "type": "Package",
+  "hidden": false,
+  "start": "Planet_Rimshell",
+  "end": "Invalid",
+  "requires_components": [],
+  "reward": [
+   {
+    "component": "FrameA",
+    "amount": 400
+   },
+   {
+    "component": "LogicValue",
+    "amount": 70
+   },
+   {
+    "component": "DataCable",
+    "amount": 350
+   },
+   {
+    "component": "WirelessTransmitter",
+    "amount": 30
+   },
+   {
+    "component": "PowerBlocker",
+    "amount": 5
+   },
+   {
+    "component": "Seat",
+    "amount": 4
+   }
+  ],
+  "dependencies": [],
+  "title": "Rimshell Support",
+  "obj": "Retrieve the lost support package from above the exposed Rimcore and bring it back safely.",
+  "desc": "As you might have noticed, half of the planet is... kind of missing. That happened during The Event, as you call it. Luckily, this base somehow survived right on the edge.\n\nUnfortunately, our support package ended up in probably the worst place possible — right above the exposed Rimcore, the planet’s extremely hot core now torn open to the surface. The entire area is dangerously hot, so approach with caution!\n\nAfter sitting there for so long, the package is most likely radioactive as well. Retrieve it carefully and keep it away from anything important inside your spaceship.",
+  "hints": "Required Large Gate.\nPrepare for possible radiation exposure.\nThe Rimcore is the red-colored biome located on the side of the planet with the red atmosphere."
+ },
+ {
+  "id": 1011000,
+  "key": "Package_Outcast_LargeDampers",
+  "type": "Package",
+  "hidden": false,
+  "start": "Planet_Outcast",
+  "end": "Invalid",
+  "requires_components": [],
+  "reward": [
+   {
+    "component": "LargeDamper",
+    "amount": 4
+   },
+   {
+    "component": "SolarPanel",
+    "amount": 4
+   },
+   {
+    "component": "FrameA",
+    "amount": 370
+   },
+   {
+    "component": "GlassA",
+    "amount": 70
+   }
+  ],
+  "dependencies": [],
+  "title": "Operation No More Shaking",
+  "obj": "Find and retrieve the missing package containing Large Dampers and other useful components.",
+  "desc": "By now, you probably want even larger Dampers, right? Good news — we have some! Well... almost. They’re of course lost somewhere together with a few other useful components.\n\nGo find the package and bring it back. At this point, you should probably be used to this.",
+  "hints": "Required Large Gate."
+ },
+ {
+  "id": 1011001,
+  "key": "Package_Outcast_ALotOfFrame",
+  "type": "Package",
+  "hidden": false,
+  "start": "Planet_Outcast",
+  "end": "Invalid",
+  "requires_components": [],
+  "reward": [
+   {
+    "component": "FrameA",
+    "amount": 500
+   },
+   {
+    "component": "GlassA",
+    "amount": 60
+   },
+   {
+    "component": "SmallGate",
+    "amount": 2
+   },
+   {
+    "component": "MediumGate",
+    "amount": 1
+   }
+  ],
+  "dependencies": [],
+  "title": "A Lot Of Frame",
+  "obj": "Find and retrieve the missing package full of Frames, Gates and Glass.",
+  "desc": "A package full of Frames and other useful parts for expanding your spaceship is, once again... missing. Go find it and bring it back before the wind sends it somewhere even worse.",
+  "hints": "Required Medium Gate."
+ },
+ {
+  "id": 1012000,
+  "key": "Package_Kovo_KovoManeuvers",
+  "type": "Package",
+  "hidden": false,
+  "start": "Planet_Kovo",
+  "end": "Invalid",
+  "requires_components": [],
+  "reward": [
+   {
+    "component": "MediumManeuveringThruster",
+    "amount": 6
+   },
+   {
+    "component": "MediumDisposableBattery",
+    "amount": 2
+   },
+   {
+    "component": "LargeDisposableBattery",
+    "amount": 1
+   },
+   {
+    "component": "FrameA",
+    "amount": 300
+   },
+   {
+    "component": "PipeQuarter",
+    "amount": 40
+   },
+   {
+    "component": "LeverVertical",
+    "amount": 8
+   }
+  ],
+  "dependencies": [],
+  "title": "Maneuvering Upgrade",
+  "obj": "Fly to Kovo, retrieve the lost package, and bring it back.",
+  "desc": "We’ve lost a very important package containing Medium Maneuvering Thrusters and a few other useful components! We think they’ll come in handy, especially since your spaceships seem to be getting bigger and bigger... and apparently harder and harder to control.\n\nFly to Kovo, find the package, and bring it back!",
+  "hints": "Required Large Gate.\nStart at Basalt, fly to Kovo to retrieve the package, then return to Basalt."
+ },
+ {
+  "id": 1012001,
+  "key": "Package_Kovo_KovoColors",
+  "type": "Package",
+  "hidden": false,
+  "start": "Planet_Kovo",
+  "end": "Invalid",
+  "requires_components": [],
+  "reward": [
+   {
+    "component": "InventoryTool_PainterBlack",
+    "amount": 1000000
+   },
+   {
+    "component": "InventoryTool_PainterGray",
+    "amount": 1000000
+   },
+   {
+    "component": "InventoryTool_PainterPurple",
+    "amount": 1000000
+   },
+   {
+    "component": "InventoryTool_PainterPink",
+    "amount": 1000000
+   },
+   {
+    "component": "InventoryTool_PainterGreen",
+    "amount": 1000000
+   },
+   {
+    "component": "InventoryTool_PainterCyan",
+    "amount": 1000000
+   }
+  ],
+  "dependencies": [],
+  "title": "Dark Side Of The Paint",
+  "obj": "Retrieve the color barrels from Kovo’s dark side.",
+  "desc": "No one knows how a pile of color barrels ended up on Kovo’s dark side. Go retrieve them before someone starts asking even more questions.",
+  "hints": "Required Small Gate."
+ },
+ {
+  "id": 1100000,
+  "key": "Package_Ashbelt_ColorBarrels",
+  "type": "Package",
+  "hidden": false,
+  "start": "Planet_Ashbelt",
+  "end": "Invalid",
+  "requires_components": [],
+  "reward": [
+   {
+    "component": "InventoryTool_PainterBurgundy",
+    "amount": 1000000
+   },
+   {
+    "component": "InventoryTool_PainterCeladon",
+    "amount": 1000000
+   },
+   {
+    "component": "InventoryTool_PainterPeriwinkle",
+    "amount": 1000000
+   },
+   {
+    "component": "InventoryTool_PainterPetrol",
+    "amount": 1000000
+   },
+   {
+    "component": "InventoryTool_PainterTerracotta",
+    "amount": 1000000
+   },
+   {
+    "component": "InventoryTool_PainterViolet",
+    "amount": 1000000
+   }
+  ],
+  "dependencies": [],
+  "title": "Color Barrels",
+  "obj": "Find and retrieve the package containing the new Color Barrels from the lava river near the equator.",
+  "desc": "Hot news! Literally.\n\nWe’ve lost a package containing fresh new Color Barrels, and according to our radar, it’s sitting somewhere in the lava river around the equator. Hopefully, it hasn’t burned up completely — but since the tracking probe is still transmitting, we believe the package is somehow still there.\n\nGo find it, retrieve it, and try not to become part of the lava river yourself.",
+  "hints": "Required Small Gate."
+ },
+ {
+  "id": 1100001,
+  "key": "Package_Ashbelt_Bidirectionals",
+  "type": "Package",
+  "hidden": false,
+  "start": "Planet_Ashbelt",
+  "end": "Invalid",
+  "requires_components": [],
+  "reward": [
+   {
+    "component": "BidirectionalElectricManeuveringThruster",
+    "amount": 6
+   },
+   {
+    "component": "LargeDisposableBattery",
+    "amount": 1
+   },
+   {
+    "component": "NanoframeA",
+    "amount": 500
+   },
+   {
+    "component": "LeverVertical",
+    "amount": 5
+   },
+   {
+    "component": "LargeDatameter",
+    "amount": 6
+   },
+   {
+    "component": "PowerRouter",
+    "amount": 12
+   },
+   {
+    "component": "LargePowerRouter",
+    "amount": 8
+   }
+  ],
+  "dependencies": [],
+  "title": "Bidirectional Thrusters",
+  "obj": "Find and retrieve the missing package containing a new type of maneuvering thrusters.",
+  "desc": "Another package containing a new type of maneuvering thrusters is missing.\n\nGo. Get it. That’s all.\n\nWe mean... if you want to.",
+  "hints": "Required Large Gate."
+ },
+ {
+  "id": 1100002,
+  "key": "Package_Ashbelt_DamagedThruster",
+  "type": "Package",
+  "hidden": false,
+  "start": "Planet_Ashbelt",
+  "end": "Invalid",
+  "requires_components": [],
+  "reward": [],
+  "dependencies": [],
+  "title": "",
+  "obj": "",
+  "desc": "",
+  "hints": ""
+ },
+ {
+  "id": 1101000,
+  "key": "Package_Ascensia_BrachiosaurusEgg",
+  "type": "Package",
+  "hidden": false,
+  "start": "Planet_Ascensia",
+  "end": "Invalid",
+  "requires_components": [],
+  "reward": [
+   {
+    "component": "LargeDisposableBattery",
+    "amount": 2
+   },
+   {
+    "component": "LargeRechargeableBattery",
+    "amount": 2
+   }
+  ],
+  "dependencies": [],
+  "title": "Brachiosaurus Egg",
+  "obj": "Find the Brachiosaurus nest and bring the egg back to Jura Ascenda.",
+  "desc": "Welcome to Jura Ascenda! We’re conducting some very important dinosaur research here, and we’ve located a Brachiosaurus nest that reportedly contains an egg.\n\nIf you can retrieve that egg and bring it back to us, we’ll make sure you’re properly rewarded.\n\nAnd please... don’t ask why we need it.",
+  "hints": "Required Small Gate."
+ },
+ {
+  "id": 1101001,
+  "key": "Package_Ascensia_NanopowerCables",
+  "type": "Package",
+  "hidden": false,
+  "start": "Planet_Ascensia",
+  "end": "Invalid",
+  "requires_components": [],
+  "reward": [
+   {
+    "component": "PowerNanocable",
+    "amount": 1200
+   },
+   {
+    "component": "PowerRouter",
+    "amount": 8
+   },
+   {
+    "component": "LargePowerRouter",
+    "amount": 4
+   },
+   {
+    "component": "FuseBox",
+    "amount": 5
+   },
+   {
+    "component": "LeverVertical",
+    "amount": 6
+   }
+  ],
+  "dependencies": [],
+  "title": "The Dino Cable Problem",
+  "obj": "Locate and retrieve the missing valuable supplies.",
+  "desc": "One of our very valuable supply packages is somewhere out there... where exactly? Who knows. Locate it and bring it back before one of the living fossils decides it looks like a new toy.",
+  "hints": "Required Small Gate."
+ },
+ {
+  "id": 1102000,
+  "key": "Package_Goldtwin_GlassSupply",
+  "type": "Package",
+  "hidden": false,
+  "start": "Planet_Goldtwin",
+  "end": "Invalid",
+  "requires_components": [],
+  "reward": [
+   {
+    "component": "GlassA",
+    "amount": 240
+   },
+   {
+    "component": "ColoredLight",
+    "amount": 10
+   },
+   {
+    "component": "ColoredLightController",
+    "amount": 4
+   }
+  ],
+  "dependencies": [],
+  "title": "Glass Supply",
+  "obj": "Find and retrieve the missing package containing a large amount of glass and other things.",
+  "desc": "A package full of glass supplies is missing somewhere on the planet. It should also contain a few other interesting components you might find useful.\n\nGo find it and bring it back.",
+  "hints": "Required Medium Gate."
+ },
+ {
+  "id": 1103000,
+  "key": "Package_Pinktwin_ReindeerAntlers",
+  "type": "Package",
+  "hidden": false,
+  "start": "Planet_Pinktwin",
+  "end": "Invalid",
+  "requires_components": [],
+  "reward": [
+   {
+    "component": "DataCable",
+    "amount": 1000
+   },
+   {
+    "component": "LogicValue",
+    "amount": 100
+   },
+   {
+    "component": "WirelessTransmitter",
+    "amount": 20
+   },
+   {
+    "component": "CameraOverlay",
+    "amount": 5
+   },
+   {
+    "component": "LeverVertical",
+    "amount": 10
+   },
+   {
+    "component": "LargeDatameter",
+    "amount": 10
+   },
+   {
+    "component": "ZoomCamera",
+    "amount": 2
+   }
+  ],
+  "dependencies": [
+   "ReturnOfTheHerd"
+  ],
+  "title": "Reindeer Antlers",
+  "obj": "Locate the fallen Reindeer Antlers and bring them back safely.",
+  "desc": "Reportedly, we’ve discovered some extremely rare fallen Reindeer Antlers! We believe they could be an excellent material for all kinds of advanced electrical equipment.\n\nThe ones we’ve located should already be visible on your Radar, so find them and bring them back.\n\nOne more thing: we’ve discovered that it’s not actually the Reindeers themselves disrupting nearby electronics — it’s their antlers. So be careful while transporting them, unless you enjoy unexpected power outages.",
+  "hints": "Required Small Gate.\nExpect possible power failures."
+ },
+ {
+  "id": 1103001,
+  "key": "Package_Pinktwin_SpikeTrees",
+  "type": "Package",
+  "hidden": false,
+  "start": "Planet_Pinktwin",
+  "end": "Invalid",
+  "requires_components": [],
+  "reward": [
+   {
+    "component": "NanopipeQuarter",
+    "amount": 400
+   },
+   {
+    "component": "NanopipeMeter",
+    "amount": 20
+   },
+   {
+    "component": "NanopipeManualValve",
+    "amount": 15
+   },
+   {
+    "component": "NanopipeElectricValve",
+    "amount": 15
+   },
+   {
+    "component": "FuelAnalyzer",
+    "amount": 1
+   }
+  ],
+  "dependencies": [],
+  "title": "The Giant Toothpicks",
+  "obj": "Retrieve the cut spike trees and bring them back to the base.",
+  "desc": "We’ve cut down some of these spike trees, and now we just need to get them back here. They look like the perfect material for making more advanced fuel pipes!\n\nWe bet you’d want those, so go pick up the trees and bring them back.",
+  "hints": "Required Large Gate."
+ },
+ {
+  "id": 2000001,
+  "key": "ToTheMoon",
+  "type": "Delivery",
+  "hidden": false,
+  "start": "PlanetStation_Earth_Headquarters",
+  "end": "PlanetStation_Moon_Moonstep",
+  "requires_components": [
+   {
+    "component": "IceCreamFreezer",
+    "amount": 1
+   }
+  ],
+  "reward": [
+   {
+    "component": "MonitorSmallLCD",
+    "amount": 2
+   },
+   {
+    "component": "SmallElectricThruster",
+    "amount": 1
+   },
+   {
+    "component": "Accelerometer",
+    "amount": 1
+   },
+   {
+    "component": "BrakingPointSystem",
+    "amount": 1
+   },
+   {
+    "component": "LongRangeDistanceMeter",
+    "amount": 2
+   }
+  ],
+  "dependencies": [],
+  "title": "To The Moon",
+  "obj": "Deliver the Ice Cream Freezer to Moonstep while keeping it powered and frozen.",
+  "desc": "Following recent events, Moonstation has requested an Ice Cream Freezer to help boost crew morale.\n\nPick it up from Headquarters and deliver it safely to Moonstep. It must stay powered throughout the journey to keep the ice cream frozen. If it warms up, the mission melts down. Keep it plugged in and keep it cool. Literally.",
+  "hints": "Use a power supply to power the freezer. **There’s an atmosphere on the Moon! You can freely use your atmospheric thrusters once you enter it.** Aim directly at the Moon and keep moving forward. **All planets are stationary**, so you don’t need to worry about orbital mechanics or anything similar. Once you’re approximately halfway there, **start slowing down**. The **Velocity Meter** can help you keep track of your speed!"
+ },
+ {
+  "id": 2000002,
+  "key": "DropTheDepthDiver",
+  "type": "Delivery",
+  "hidden": false,
+  "start": "PlanetStation_Earth_Headquarters",
+  "end": "PlanetStation_Aundara_UndaPrime",
+  "requires_components": [
+   {
+    "component": "Submarine",
+    "amount": 1
+   }
+  ],
+  "reward": [
+   {
+    "component": "Floodlight",
+    "amount": 4
+   },
+   {
+    "component": "Ballast",
+    "amount": 6
+   },
+   {
+    "component": "SmallElectricThruster",
+    "amount": 1
+   },
+   {
+    "component": "MediumDamper",
+    "amount": 4
+   }
+  ],
+  "dependencies": [],
+  "title": "Drop The Depth Diver",
+  "obj": "Transport Submarine from Headquarters to **Unda Prime** base on planet Aundara.",
+  "desc": "Aundara's endless oceans conceal mysteries far beyond the reach of standard probes.\nThe Oceanographic Guild has commissioned a specialized submersible, assembled exclusively on Earth, built to withstand the crushing pressure of Aundara’s deep trenches and navigate its massive underwater flora.\nYour mission is to transport the submarine from Earth Headquarters to the oceanic research station Unda Prime.",
+  "hints": "Make sure you have at least **one or two Medium Electric Thrusters** before attempting this objective — it’ll save you some time. The Submarine is pretty heavy, so you’ll need plenty of thrust.\nAundara should be clearly visible once you leave Earth’s atmosphere. But be careful — **it’s not that huge planet with the rings around it!** That’s Baobara!\nThere are **two bases** on Aundara, so make sure you’re heading to the right one! **The correct base should appear as a blinking circle on your Radar!**"
+ },
+ {
+  "id": 2000003,
+  "key": "UnstableDelivery",
+  "type": "Delivery",
+  "hidden": false,
+  "start": "PlanetStation_Moon_Moonstep",
+  "end": "PlanetStation_Earth_Headquarters",
+  "requires_components": [
+   {
+    "component": "UnstableLightingCell",
+    "amount": 1
+   }
+  ],
+  "reward": [
+   {
+    "component": "SmallRechargeableBattery",
+    "amount": 3
+   },
+   {
+    "component": "SolarPanel",
+    "amount": 4
+   },
+   {
+    "component": "ElectricLiftThruster",
+    "amount": 3
+   },
+   {
+    "component": "DistanceMeter",
+    "amount": 4
+   },
+   {
+    "component": "Beeper",
+    "amount": 2
+   },
+   {
+    "component": "MediumGate",
+    "amount": 1
+   },
+   {
+    "component": "DataCable",
+    "amount": 300
+   },
+   {
+    "component": "PowerCable",
+    "amount": 300
+   }
+  ],
+  "dependencies": [],
+  "title": "Unstable Delivery",
+  "obj": "Transport the unstable Lighting Cell from Moonstep to Earth HQ, managing occasional electric discharges that disrupt systems.",
+  "desc": "Take the Unstable Lighting Cell from Moonstep and deliver it to Earth Headquarters for further analysis. This cell is a potential breakthrough in energy technology, but it's highly unstable - it emits unpredictable electric discharges that can disable nearby electronic systems for several seconds. Expect temporary system outages during transport and proceed with caution.",
+  "hints": "Expect temporary system failures."
+ },
+ {
+  "id": 2000004,
+  "key": "OverloadingCrystal",
+  "type": "Delivery",
+  "hidden": false,
+  "start": "PlanetStation_Outcast_IcevineValley",
+  "end": "PlanetStation_Outcast_Crownleaf",
+  "requires_components": [
+   {
+    "component": "OverloadingCrystal",
+    "amount": 1
+   }
+  ],
+  "reward": [
+   {
+    "component": "MediumRechargeableBattery",
+    "amount": 5
+   }
+  ],
+  "dependencies": [],
+  "title": "Overloading Crystal",
+  "obj": "Deliver the Overloading Crystal from **Icevine Valley** to **Crownleaf** before it overloads.",
+  "desc": "Crownleaf is dangerously low on energy. Your mission is to transport an Overloading Crystal – a powerful energy source harvested from the ice valleys – to the station and help restore its power supply. The crystal produces an immense and constant flow of energy. However, if that energy isn’t discharged in time, it builds up to unstable levels. Since your ship can’t consume the excess output, you must manually discharge the crystal every 108 seconds. The timer turns red 10 seconds before the limit – press the discharge button before time runs out or risk a critical failure. Stay alert. Keep the crystal stable.",
+  "hints": "Discharge the crystal every 108 seconds to prevent overload."
+ },
+ {
+  "id": 2000005,
+  "key": "TrialByThrust",
+  "type": "Delivery",
+  "hidden": false,
+  "start": "PlanetStation_Moon_Moonstep",
+  "end": "PlanetStation_Aundara_UndaPrime",
+  "requires_components": [
+   {
+    "component": "MediumElectricThruster",
+    "amount": 1
+   }
+  ],
+  "reward": [
+   {
+    "component": "MediumElectricThruster",
+    "amount": 1
+   }
+  ],
+  "dependencies": [],
+  "title": "Trial By Thrust",
+  "obj": "Take the new thruster for a long trip from Moonstep to **Unda Prime** base on planet Aundara. If it works well, you get to keep it.",
+  "desc": "The station’s engineers have built a new electric thruster - clean, efficient, and faster than anything you’ve flown before. Your mission is to take it for a long-distance run to Unda Prime base on planet Aundara. If the thruster performs well during the trip, it’s yours to keep. This is your chance to test the future of space travel.",
+  "hints": "Aundara should be clearly visible once you leave Earth’s atmosphere. But be careful — **it’s not that huge planet with the rings around it!** That’s Baobara!\nThere are **two bases** on Aundara, so make sure you’re heading to the right one! **The correct base should appear as a blinking circle on your Radar!**"
+ },
+ {
+  "id": 2000006,
+  "key": "KnockKnock",
+  "type": "Delivery",
+  "hidden": false,
+  "start": "PlanetStation_Aundara_UndaPrime",
+  "end": "PlanetStation_Aundara_TealHorizon",
+  "requires_components": [
+   {
+    "component": "AngryBox",
+    "amount": 1
+   }
+  ],
+  "reward": [
+   {
+    "component": "RedAlertLight",
+    "amount": 1
+   },
+   {
+    "component": "DataCable",
+    "amount": 300
+   },
+   {
+    "component": "PowerCable",
+    "amount": 300
+   },
+   {
+    "component": "LargePowerRouter",
+    "amount": 6
+   },
+   {
+    "component": "PowerUsageMeter",
+    "amount": 2
+   },
+   {
+    "component": "PowerGenerationMeter",
+    "amount": 2
+   },
+   {
+    "component": "Whiteboard",
+    "amount": 2
+   }
+  ],
+  "dependencies": [],
+  "title": "Knock Knock",
+  "obj": "Transport the Angry Box from **Unda Prime** to Teal Horizon for further research.",
+  "desc": "We’ve found something very strange in Aundara’s ocean, and it needs to be transported to the Teal Horizon for further research. Please don’t ask what’s inside the box - trust us, it’s better that way. Just a heads-up... It can get a little... grumpy during the trip. If that happens, give the box a few friendly bangs to help it calm down. Totally normal. Probably.",
+  "hints": "Click the box repeatedly to calm it down."
+ },
+ {
+  "id": 2000007,
+  "key": "TripleheadSunflower",
+  "type": "Special",
+  "hidden": false,
+  "start": "Planet_Helirion",
+  "end": "Invalid",
+  "requires_components": [],
+  "reward": [
+   {
+    "component": "SunflowerPot",
+    "amount": 1
+   },
+   {
+    "component": "MonitorLargeLCD",
+    "amount": 1
+   },
+   {
+    "component": "MonitorSmallLCD",
+    "amount": 2
+   },
+   {
+    "component": "SolarPanel",
+    "amount": 6
+   }
+  ],
+  "dependencies": [],
+  "title": "Triplehead Sunflower",
+  "obj": "Find Triplehead Sunflower on Helirion.",
+  "desc": "There are still mysteries surrounding the triple-headed sunflower. Sure, everyone has seen sunflowers with one or even two heads - but a triple-headed sunflower? No one has ever seen one! If such a thing exists, I bet it would be the closest sunflower to the Sun!",
+  "hints": "Follow the direction the sunflower heads are facing. They should all point toward the legendary triple-headed sunflower!"
+ },
+ {
+  "id": 2000008,
+  "key": "WindTest",
+  "type": "Delivery",
+  "hidden": false,
+  "start": "PlanetStation_Earth_Headquarters",
+  "end": "PlanetStation_Baobara_GoldenGrass",
+  "requires_components": [
+   {
+    "component": "WindShieldGenerator",
+    "amount": 1
+   }
+  ],
+  "reward": [
+   {
+    "component": "WindShieldGenerator",
+    "amount": 1
+   },
+   {
+    "component": "PlasmaCable",
+    "amount": 80
+   },
+   {
+    "component": "Windmeter",
+    "amount": 1
+   }
+  ],
+  "dependencies": [
+   "Package_Aundara_Plasma"
+  ],
+  "title": "Wind Test",
+  "obj": "Transport the Wind Shield from Headquarters to **Golden Grass** on Baobara and use it to withstand the planet’s extreme winds.",
+  "desc": "Since you successfully retrieved the Plasma Generator and Plasma Cables from the oceans of Aundara, it’s time for something new! Look up and find that huge planet with rings around it — yep, that’s Baobara! We’ve heard the winds there can get pretty extreme, so we’re giving you this Wind Shield. It should help you withstand Baobara’s powerful winds... hopefully.",
+  "hints": "Use the Wind Shield together with Plasma Generator to create a protective shield around your spaceship that absorbs wind forces.\nUse the Windmeter to keep an eye on the current wind strength."
+ },
+ {
+  "id": 2000009,
+  "key": "NightVision",
+  "type": "Delivery",
+  "hidden": false,
+  "start": "PlanetStation_Baobara_GoldenGrass",
+  "end": "PlanetStation_Baobara_VoidWatcher",
+  "requires_components": [
+   {
+    "component": "NightVisionCamera",
+    "amount": 1
+   }
+  ],
+  "reward": [
+   {
+    "component": "NightVisionCamera",
+    "amount": 1
+   },
+   {
+    "component": "MonitorMediumLCD",
+    "amount": 2
+   }
+  ],
+  "dependencies": [],
+  "title": "Night Vision Test",
+  "obj": "Reach the **Void Watcher** base on the dark side of the planet using the Night Vision Camera from the **Golden Grass** base.",
+  "desc": "We have a brand-new Night Vision Camera for you! What better place to test it than the dark side of the planet? Make your way to the Void Watcher base and enjoy finally being able to see in the dark. Have fun with it!",
+  "hints": "Use the Night Vision Camera to see in the dark."
+ },
+ {
+  "id": 2000010,
+  "key": "BaobaraInterference",
+  "type": "Special",
+  "hidden": false,
+  "start": "PlanetStation_Baobara_VoidWatcher",
+  "end": "Invalid",
+  "requires_components": [
+   {
+    "component": "BaobaraInterferencemeter",
+    "amount": 1
+   }
+  ],
+  "reward": [],
+  "dependencies": [],
+  "title": "Baobara Interference",
+  "obj": "Use the Baobara Interferencemeter from **Void Watcher** to locate the source of the interference disrupting the Void Watcher’s signals.",
+  "desc": "Welcome to the Void Watcher! You might be wondering why we built this base in complete darkness. Well, this place has unique properties that allow us to receive and study unknown signals coming from deep space.\n\nUnfortunately, since the recent events, something on this planet has been interfering with our signals. You may have already noticed it on your radar. We need you to find out what’s causing it.\n\nWe’ve built a simple device called the Baobara Interferencemeter to help you track down the source. Mount it inside your spaceship and watch the display — it will show you the distance to the source of the interference. Follow the readings and get as close to the source as you can.\n\nFind whatever is causing this annoying interference!",
+  "hints": "Mount the Baobara Interferencemeter inside your spaceship and watch its display. It will show the distance to the source of the interference. Follow the readings and get as close to the source as you can."
+ },
+ {
+  "id": 2000011,
+  "key": "TreeLid",
+  "type": "Special",
+  "hidden": false,
+  "start": "PlanetStation_Baobara_VoidWatcher",
+  "end": "Invalid",
+  "requires_components": [
+   {
+    "component": "BaobaraInterferencemeter",
+    "amount": 1
+   },
+   {
+    "component": "LargeGate",
+    "amount": 1
+   }
+  ],
+  "reward": [
+   {
+    "component": "LargeGate",
+    "amount": 1
+   },
+   {
+    "component": "SpaceScanner",
+    "amount": 1
+   },
+   {
+    "component": "SpaceGPS",
+    "amount": 1
+   },
+   {
+    "component": "Magnetometer",
+    "amount": 1
+   },
+   {
+    "component": "MediumDamper",
+    "amount": 4
+   },
+   {
+    "component": "DataCable",
+    "amount": 300
+   },
+   {
+    "component": "PowerCable",
+    "amount": 200
+   },
+   {
+    "component": "PlasmaCable",
+    "amount": 30
+   }
+  ],
+  "dependencies": [
+   "BaobaraInterference"
+  ],
+  "title": "Tree Lid",
+  "obj": "Transport the Baobab Lid from **Void Watcher** to the damaged baobab and use it to cover the exposed core.",
+  "desc": "You’re saying the interference is coming from a baobab that was cut in half?! That sounds ridiculous... but it actually makes perfect sense!\n\nWe believe these baobabs have cores made from an extremely strong metal, allowing them to withstand Baobara’s extreme winds. Together, they may even work as one massive network spread across the entire planet, amplifying signals coming from the void!\n\nWell done finding the problem — but that exposed core is still causing us a lot of trouble. We’ve made this huge Lid to cover it up. Load it onto your ship, bring it to the damaged baobab, and cover the exposed core. Hopefully, that will finally stop the interference.",
+  "hints": "Required Large Gate."
+ },
+ {
+  "id": 2000012,
+  "key": "ClimaBomb",
+  "type": "Special",
+  "hidden": false,
+  "start": "PlanetStation_Moon_Moonstep",
+  "end": "Invalid",
+  "requires_components": [
+   {
+    "component": "ClimaBomb",
+    "amount": 1
+   }
+  ],
+  "reward": [
+   {
+    "component": "Gravitymeter",
+    "amount": 1
+   },
+   {
+    "component": "CameraOverlay",
+    "amount": 2
+   },
+   {
+    "component": "SmallManeuveringThruster",
+    "amount": 6
+   },
+   {
+    "component": "ElectricLiftThruster",
+    "amount": 3
+   }
+  ],
+  "dependencies": [],
+  "title": "Clima Bomb",
+  "obj": "Release the Clima Bomb and make sure it detonates between 1500 and 1600 meters to restore the Moon’s climate.",
+  "desc": "We have some bad news. Not only did The Event knock out all our transportation systems, but it also affected the Moon’s climate. The atmosphere has become much weaker, the snow has stopped falling, and the ice is slowly melting, creating lakes all across the surface.\n\nBut we also have some good news! We’ve successfully developed a special Climate Bomb — a powerful chemical bomb that should restore the Moon’s climate to its original state!\n\nThere’s just one important detail: the bomb must detonate at an altitude between **1500 and 1600 meters**. Use the **Altimeter** to keep an eye on your altitude. Once you release the bomb from your spaceship, a **5-second detonation timer** will begin, so time your release carefully!\n\nIf everything goes according to plan, you should see the effects immediately. If not... well, we only made one.",
+  "hints": "Mount the Climate Bomb outside your spaceship. Once it receives an input signal, it will decouple and explode 5 seconds later. Make sure it detonates at an altitude between 1500 and 1600 meters."
+ },
+ {
+  "id": 2000013,
+  "key": "CandyBouquet",
+  "type": "Delivery",
+  "hidden": false,
+  "start": "PlanetStation_Basalt_CandyVein",
+  "end": "PlanetStation_CoronaSilva_Mudpit",
+  "requires_components": [
+   {
+    "component": "CandyBouquet",
+    "amount": 1
+   }
+  ],
+  "reward": [
+   {
+    "component": "LargeDisposableBattery",
+    "amount": 1
+   },
+   {
+    "component": "LargeRechargeableBattery",
+    "amount": 1
+   }
+  ],
+  "dependencies": [
+   "Package_Basalt_CandyflowerA",
+   "Package_Basalt_CandyflowerB",
+   "Package_Basalt_CandyflowerC"
+  ],
+  "title": "Candy Bouquet",
+  "obj": "Deliver the Candy Bouquet from **Candy Vein** base to the Mudpit base on Corona Silva before it dies.",
+  "desc": "Well done! Now we need to get these flowers to Corona Silva. There’s a base called Mudpit dedicated to plant research, and they should know exactly what to do with them!\n\nUnfortunately, the flowers can’t survive outside the atmosphere of Basalt’s canyons. We’ve managed to build a temporary conservatory that can keep the Candy Bouquet alive for about 30 minutes.\n\nYou’ll have to be fast. Get the Candy Bouquet to Mudpit before time runs out — dead flowers probably won’t be nearly as useful.",
+  "hints": "Build a really fast spaceship — you’re going to need it."
+ },
+ {
+  "id": 2000014,
+  "key": "RockObsession",
+  "type": "Special",
+  "hidden": false,
+  "start": "PlanetStation_Basalt_B02",
+  "end": "Invalid",
+  "requires_components": [
+   {
+    "component": "BombC4",
+    "amount": 1
+   },
+   {
+    "component": "DecouplerQuarter",
+    "amount": 1
+   }
+  ],
+  "reward": [
+   {
+    "component": "DecouplerQuarter",
+    "amount": 15
+   },
+   {
+    "component": "MediumFuelThruster",
+    "amount": 1
+   },
+   {
+    "component": "SmallSolidFuelThruster",
+    "amount": 2
+   },
+   {
+    "component": "OutcastPolarAnchor",
+    "amount": 2
+   }
+  ],
+  "dependencies": [],
+  "title": "Rock Obsession",
+  "obj": "Use the C4 Bomb available at **B02** base to blow up the cracked Kovo rock, then bring all three pieces back to B02.",
+  "desc": "Kovo rocks may look boring at first, but inside they’re full of extremely rare materials! The bad news is that they’re also incredibly dense, making them almost impossible to crack and even worse to transport.\n\nLast time we tried blowing one up, things didn’t go exactly as planned. That damn rock cracked, but refused to split completely. Now it’s your turn!\n\nWe’ve prepared some C4 with decouplers for you. Place the explosives close enough to the cracked rock and blow it up. It should split into three pieces. Bring all three back to B02 — not one, not two, all three!\n\nYou can either build one giant spaceship capable of carrying everything at once, or bring the pieces back one by one. Your ship, your problem.",
+  "hints": "You must retrieve all three rock pieces without **exiting Fly Mode**!"
+ },
+ {
+  "id": 2000015,
+  "key": "GlowPlants",
+  "type": "Special",
+  "hidden": false,
+  "start": "Planet_CoronaSilva",
+  "end": "Invalid",
+  "requires_components": [],
+  "reward": [
+   {
+    "component": "ColoredLight",
+    "amount": 12
+   },
+   {
+    "component": "ColoredLightController",
+    "amount": 5
+   }
+  ],
+  "dependencies": [],
+  "title": "Operation Glowgarden",
+  "obj": "Find the rare underwater biome located at a depth of 300 meters or lower.",
+  "desc": "Our research indicates that somewhere deep underwater, at depths of 300 meters or more, there are rare biomes filled with glowing plants! If you can find one, we might finally get a chance to study them and, hopefully, figure out something useful to do with them.",
+  "hints": "The largest lakes are probably the deepest, so if you’re looking for the underwater biome, they’re definitely the best place to start!"
+ },
+ {
+  "id": 2000016,
+  "key": "GreenTrench",
+  "type": "Delivery",
+  "hidden": false,
+  "start": "PlanetStation_CoronaSilva_Mudpit",
+  "end": "PlanetStation_CoronaSilva_Mudpit",
+  "requires_components": [
+   {
+    "component": "GreenTrenchPump",
+    "amount": 3
+   }
+  ],
+  "reward": [
+   {
+    "component": "GreenTank",
+    "amount": 3
+   }
+  ],
+  "dependencies": [],
+  "title": "The Green Trench",
+  "obj": "Reach the bottom of The Green Trench and fill all three Green Trench Pumps with the rare green gas.",
+  "desc": "We’ve located an extremely rare place on this planet that we call The Green Trench! Our data indicates that somewhere at the bottom is a gas that could be used to create an entirely new type of fuel for you.\n\nBut be careful — there appears to be a massive downward current that could drag you toward the bottom very quickly. We don’t know exactly how deep the trench goes, and most thrusters that work underwater stop functioning below 5,000 meters. If the trench is deeper than that... you might have a problem.\n\nLuckily, those Ballasts you got on Aundara should help you return to the surface if everything else stops working. Mount all three Green Trench Pumps to your spaceship, reach the bottom of the trench, and fill them up!",
+  "hints": "Use your Radar to locate the Green Trench. Once you reach the bottom, fill all three Green Trench Pumps and use the Ballasts to return to the surface!"
+ },
+ {
+  "id": 2000017,
+  "key": "OutcastWind",
+  "type": "Special",
+  "hidden": false,
+  "start": "Planet_Outcast",
+  "end": "Invalid",
+  "requires_components": [],
+  "reward": [
+   {
+    "component": "OutcastPolarAnchor",
+    "amount": -2
+   }
+  ],
+  "dependencies": [],
+  "title": "Outcast Wind",
+  "obj": "Place one Outcast Polar Anchor at each pole and activate them before the first anchor runs out of power.",
+  "desc": "It looks like these two Outcast Polar Anchors should be able to stabilize the planet’s ionosphere and finally stop the extreme winds around the equator.\n\nFirst, use the Magnetometer to locate the north and south poles as precisely as possible. You may remember using it before to predict solar storms. There should be no wind near the poles, so at least that part should be easy.\n\nCharge both Polar Anchors during your flight and make sure they have enough operating time. Once you activate the first anchor, the clock starts ticking — you’ll need to reach the opposite pole and activate the second one before the first shuts down. Watch the display and plan your route carefully.\n\nOne more thing: once activated, the anchors will burn any cables within a fairly large radius. Drop the anchor using decouplers, move your spaceship to a safe distance, and only then activate it.\n\nMake sure you have enough time. Flying halfway around a planet just to watch the first anchor die would be... unfortunate.",
+  "hints": "Use the Magnetometer to locate both poles as precisely as possible.\nMake sure the first Polar Anchor has enough charge before dropping and activating it — once left behind, you won’t be able to charge it anymore.\nYou can continue charging the second Polar Anchor while flying to the opposite pole.\nActivate the second anchor before the first one runs out of power.\nKeep your spaceship at a safe distance when activating an anchor — it will burn nearby cables."
+ },
+ {
+  "id": 2000018,
+  "key": "FindOutcast",
+  "type": "Special",
+  "hidden": false,
+  "start": "Planet_Basalt",
+  "end": "Invalid",
+  "requires_components": [],
+  "reward": [],
+  "dependencies": [
+   "RockObsession"
+  ],
+  "title": "Find Outcast",
+  "obj": "Locate Outcast and find out what happened there after The Event.",
+  "desc": "The last message we received from our bases on Outcast mentioned extreme winds caused by the destabilization of the ionosphere. It happened right after The Event, so it’s safe to assume something went horribly wrong. Again.\n\nLuckily, that rock from Kovo might be exactly what we need to fix the problem — a little miracle from the heavens! Now we just need to figure out where Outcast actually is...",
+  "hints": "First, you need to find Outcast."
+ },
+ {
+  "id": 2000019,
+  "key": "HazardBarrel",
+  "type": "Special",
+  "hidden": false,
+  "start": "PlanetStation_Rimshell_Altimirror",
+  "end": "Invalid",
+  "requires_components": [],
+  "reward": [
+   {
+    "component": "SolarShieldGenerator",
+    "amount": 1
+   },
+   {
+    "component": "SmallPlasmaGenerator",
+    "amount": 1
+   },
+   {
+    "component": "PlasmaCable",
+    "amount": 100
+   },
+   {
+    "component": "MediumRechargeableBattery",
+    "amount": 2
+   }
+  ],
+  "dependencies": [],
+  "title": "Hazard Barrel",
+  "obj": "Transport the Hazard Barrel to the **Crownleaf** base on Outcast.",
+  "desc": "At least we managed to collect some samples of the Rimcore! Now they need to be transported to Crownleaf, a base on Outcast focused on researching radioactivity.\n\nBut be careful — that barrel is highly radioactive, so don’t keep it close to anything inside your spaceship for too long. How you transport it is entirely up to you. Just... keep your distance and try not to irradiate half your ship along the way.",
+  "hints": "Be careful with the **extreme winds previously reported on Outcast**. You might want to deal with that problem first..."
+ },
+ {
+  "id": 2000020,
+  "key": "Outflowermeter",
+  "type": "Special",
+  "hidden": false,
+  "start": "PlanetStation_Outcast_Crownleaf",
+  "end": "Invalid",
+  "requires_components": [],
+  "reward": [
+   {
+    "component": "PowerNanocable",
+    "amount": 400
+   },
+   {
+    "component": "PowerCable",
+    "amount": 200
+   },
+   {
+    "component": "DataCable",
+    "amount": 150
+   }
+  ],
+  "dependencies": [],
+  "title": "The Living Radiation",
+  "obj": "Take the Radiometer from **Crownleaf** base, find and identify a sufficiently radioactive flower, then return to the base.",
+  "desc": "Since The Event, we’ve discovered some radioactive flowers growing on the planet! They’re a little tricky to find, though—they only grow in places illuminated by red light while avoiding direct sunlight. That means you’re looking for a small area where only the red light reaches.\n\nBut not every flower is useful. We need one that emits a high enough level of radiation.\n\nTake the Radiometer from beside the building area at Crownleaf and use it to inspect the flowers. Hold it close to a flower and watch the indicator—green means you’ve found the right one, while red means keep looking.\n\nOnce you identify a suitable flower, return to Crownleaf base with the Radiometer.\n\nGood luck, and be careful! These flowers glow like crazy, so at least they shouldn’t be too hard to spot.",
+  "hints": "Move the Radiometer close to the flowers and keep searching until you find one that makes the indicator turn green.\nBe careful not to land on any radioactive flowers!"
+ },
+ {
+  "id": 2000021,
+  "key": "RimcoreCryogen",
+  "type": "Delivery",
+  "hidden": false,
+  "start": "PlanetStation_Rimshell_Altimirror",
+  "end": "PlanetStation_Rimshell_Altimirror",
+  "requires_components": [
+   {
+    "component": "RimcoreTurbo",
+    "amount": 2
+   }
+  ],
+  "reward": [
+   {
+    "component": "RedTank",
+    "amount": 2
+   }
+  ],
+  "dependencies": [],
+  "title": "Rimcore",
+  "obj": "Fill both Rimcore Turbopumps with gases from the exposed Rimcore.",
+  "desc": "Luckily, the exposed Rimcore seems to be a suitable source for a new type of fuel! Here, take these two Rimcore Turbopumps and mount them outside your spaceship.\n\nCarefully fly over the exposed Rimcore and, once you’re close enough, turn on the pumps to collect the gases. But don’t get too close — unless melting your entire spaceship is part of the plan.",
+  "hints": "The Rimcore is the red-colored biome located on the side of the planet with the red atmosphere.\nOnce you’re close enough to the Rimcore, you should be able to see particles coming out of it. That means you’re close enough to start collecting the gases."
+ },
+ {
+  "id": 2000022,
+  "key": "WhatHappenedToBaobab",
+  "type": "Special",
+  "hidden": false,
+  "start": "Planet_Baobara",
+  "end": "Invalid",
+  "requires_components": [],
+  "reward": [
+   {
+    "component": "NanoframeA",
+    "amount": 1000
+   },
+   {
+    "component": "SmallNanogate",
+    "amount": 2
+   },
+   {
+    "component": "MediumNanogate",
+    "amount": 1
+   },
+   {
+    "component": "LargeNanogate",
+    "amount": 1
+   }
+  ],
+  "dependencies": [
+   "TreeLid"
+  ],
+  "title": "What Happened To Baobab",
+  "obj": "Find out what happened to the huge baobab that was cut in half.",
+  "desc": "In the meantime, the **Space Scanner** should help you locate planets at extreme distances, even those too far away to be visible.\n\nFor now, it’s up to you to continue your journey, **explore the next planets**, and see what you can discover along the way. We recommend heading from the Moon toward the planets at the bottom of the map. Some reports mention a huge, dark-colored planet surrounded by a ring called **Basalt**, which could be a good place to continue.\n\n**Be careful of solar storms and avoid routes close to the Sun!** The closer you get to the Sun, the stronger and more frequent solar storms become. Use the **Space GPS** to stay out of the deadly solar storm zone. Check the **Manual** for more details!",
+  "hints": "Continue your journey, and you’ll uncover what happened along the way.\nUse the Space Scanner to locate distant planets that may not be visible from your current position."
+ },
+ {
+  "id": 2000023,
+  "key": "HelirionLostPackages",
+  "type": "Special",
+  "hidden": false,
+  "start": "Planet_Helirion",
+  "end": "Invalid",
+  "requires_components": [],
+  "reward": [],
+  "dependencies": [],
+  "title": "Mushroom Woods",
+  "obj": "Find and retrieve all three pieces of the damaged package on Helirion.",
+  "desc": "The package heading to Helirion ran into some difficulties during transport. We’re not entirely sure it arrived in one piece... the last data from the transport unit suggested it may have split into three.\n\nHopefully, the pieces didn’t land too far apart. Find all three and bring them back.",
+  "hints": "The package pieces shouldn’t be too far from the landing pad, so start your search nearby."
+ },
+ {
+  "id": 2000024,
+  "key": "CrystalTwins",
+  "type": "Special",
+  "hidden": false,
+  "start": "PlanetStation_Rimshell_Altimirror",
+  "end": "Invalid",
+  "requires_components": [
+   {
+    "component": "Thermoscan",
+    "amount": 1
+   }
+  ],
+  "reward": [
+   {
+    "component": "SmallSolidFuelThruster",
+    "amount": 4
+   },
+   {
+    "component": "Thermoscan",
+    "amount": 1
+   }
+  ],
+  "dependencies": [
+   "PlanetStation_Rimshell_Altimirror"
+  ],
+  "title": "Crystal Twins",
+  "obj": "Locate the Twin Crystal and heat it to at least 750,000°C using your spaceship’s thrusters.",
+  "desc": "Welcome to Altimirror! This base was built right next to the Hexagon Crystal — one of the most powerful crystals known on this planet. Before The Event, we were studying their potential for some slightly ambitious projects... like time travel and travelling to other universes.\n\nThere used to be more of these crystals, but after The Event, only two remained. We call them the Crystal Twins. Unfortunately, both were completely discharged.\n\nWe can restore the crystal here at Altimirror, but its twin lies on the opposite side of the planet — and restoring that one requires an extreme amount of heat. You’ll need to heat it to at least 750,000°C for around 20 seconds.\n\nHow? Pretty straightforward: thrusters.\n\nOur calculations suggest that approximately 10 units of thrust generate 1°C of heat. Yes, you calculated that correctly — you’ll need at least **7 500 000 units of thrust pointed at the crystal**. How you achieve that is entirely up to you.\n\nUse your Radar to locate the Crystal Twin and the **Thermoscan** to measure its temperature. Point the Thermoscan directly at the crystal to get a reading, then start heating. Once you restore your crystal, we’ll take care of the one here.\n\nGood luck figuring out how to casually produce seven and a half million units of thrust.",
+  "hints": "Use your Radar to locate the Twin Crystal on the opposite side of the planet.\nPoint the Thermoscan directly at the crystal to measure its current temperature.\nHeat the crystal to at least 750,000°C using your thrusters. Approximately 7,500,000 units of thrust pointed directly at the crystal for around 20 seconds should be enough."
+ },
+ {
+  "id": 2000025,
+  "key": "BlackHoleTunnel",
+  "type": "Special",
+  "hidden": false,
+  "start": "PlanetStation_Rimshell_Altimirror",
+  "end": "Invalid",
+  "requires_components": [],
+  "reward": [],
+  "dependencies": [
+   "CrystalTwins"
+  ],
+  "title": "Project Altimirror",
+  "obj": "Travel through the wormhole, find Lucas and his crew, and deliver the corrected formula before they attempt another jump.",
+  "desc": "Congratulations on restoring the second Twin Crystal! It worked perfectly, and the wormhole is finally open again — this time, stable.\n\nYou may be wondering why we keep saying finally and this time. Well... you know The Event?...\n\nBefore everything went wrong, Headquarters was running a top-secret project called Project Altimirror. Research from the Void Watcher suggested the existence of another universe, and the crystals here seemed to be the perfect way to open a wormhole to it.\n\nUnfortunately, our calculations were slightly off. Nothing ever goes exactly as planned, right? The experiment caused The Event, shutting down electronics and communications across the entire system and leaving that black hole behind as a... small... side effect.\n\nWe never found out whether Lucas and his crew made it through. But now the wormhole is open again, and we need you to go after them.\n\nFind Lucas and deliver the corrected formula. If they try to return — or travel even further — using the original calculations, another Event could happen. We were lucky the first time.\n\nWe might not be lucky twice.",
+  "hints": "Travel through the tunnel inside the black hole and look for any base that might be on the other side... if there is one."
+ },
+ {
+  "id": 2000026,
+  "key": "LavaSucking",
+  "type": "Delivery",
+  "hidden": false,
+  "start": "PlanetStation_Ashbelt_Emberline",
+  "end": "PlanetStation_Ashbelt_Emberline",
+  "requires_components": [
+   {
+    "component": "LavaSucker",
+    "amount": 2
+   }
+  ],
+  "reward": [
+   {
+    "component": "BlueTank",
+    "amount": 2
+   },
+   {
+    "component": "GreenTank",
+    "amount": 2
+   },
+   {
+    "component": "RedTank",
+    "amount": 2
+   }
+  ],
+  "dependencies": [],
+  "title": "Liquid Fire",
+  "obj": "Fill two Lava Pumping Tanks with lava and bring them back.",
+  "desc": "The lava river may look extremely dangerous — and yes, it absolutely is — but that lava can also be used to produce more of the fuel you already have!\n\nMount both Lava Pumping Tanks outside your spaceship. Each one has an extendable pipe that can reach up to 6 meters, so you’ll need to hover close above the lava, lower the pipes into it, and fill both tanks.\n\nOnce they’re full, bring them back and we’ll turn all that molten rock into something much more useful: more fuel.",
+  "hints": "Don’t get burned."
+ },
+ {
+  "id": 2000027,
+  "key": "DamagedThruster",
+  "type": "Delivery",
+  "hidden": false,
+  "start": "PlanetStation_Ashbelt_Emberline",
+  "end": "PlanetStation_Ascensia_JuraAscenda",
+  "requires_components": [
+   {
+    "component": "DamagedLargeFuelThruster",
+    "amount": 1
+   }
+  ],
+  "reward": [
+   {
+    "component": "LargeFuelThruster",
+    "amount": 2
+   }
+  ],
+  "dependencies": [
+   "Package_Ashbelt_DamagedThruster"
+  ],
+  "title": "",
+  "obj": "",
+  "desc": "",
+  "hints": ""
+ },
+ {
+  "id": 2000028,
+  "key": "TriceratopsTransport",
+  "type": "Special",
+  "hidden": false,
+  "start": "PlanetStation_Ascensia_JuraAscenda",
+  "end": "Invalid",
+  "requires_components": [],
+  "reward": [
+   {
+    "component": "LargeElectricThruster",
+    "amount": 2
+   }
+  ],
+  "dependencies": [
+   "Package_Ascensia_BrachiosaurusEgg"
+  ],
+  "title": "Triceratops Transport",
+  "obj": "Find a Triceratops in the brown biomes and bring it to Jura Ascenda.",
+  "desc": "The Brachiosaurus egg was one thing, but... do you think you could bring us something a little bigger? Like, ehm... a whole dinosaur?\n\nA Triceratops, specifically! We’ve heard they can only be found in the brown biomes. If you somehow manage to bring one all the way back here, that would be absolutely... FANTASTIC!!!\n\nHow you transport an entire Triceratops is entirely your problem.",
+  "hints": "**To make an animal follow you, stand in front of it and toggle your chest light a few times to get its attention.**\nRequired Medium Gate."
+ },
+ {
+  "id": 2000029,
+  "key": "TungstenNanocube",
+  "type": "Delivery",
+  "hidden": false,
+  "start": "PlanetStation_Goldtwin_Triplepine",
+  "end": "PlanetStation_Pinktwin_Palehorn",
+  "requires_components": [
+   {
+    "component": "TungstenNanocube",
+    "amount": 1
+   }
+  ],
+  "reward": [
+   {
+    "component": "NanoframeA",
+    "amount": 1500
+   },
+   {
+    "component": "SmallNanogate",
+    "amount": 2
+   },
+   {
+    "component": "MediumNanogate",
+    "amount": 2
+   },
+   {
+    "component": "LargeNanogate",
+    "amount": 2
+   },
+   {
+    "component": "DuctedFan",
+    "amount": 2
+   }
+  ],
+  "dependencies": [],
+  "title": "Nanotungsten Cube",
+  "obj": "Transport the Nanotungsten cube to the Palehorn base.",
+  "desc": "We’ve managed to create this Nanotungsten Cube here! You may be wondering what exactly it is. Well, it’s extremely dense — and when we say extremely, we really mean extremely.\n\nWe made it here somehow... don’t ask how. Unfortunately, we can’t process it with our equipment. The guys at Palehorn should have everything needed to turn it into some seriously strong components.\n\nJust be careful when transporting it. This thing is heavy enough to become another “your mama” joke.\n\nHehe. We’re just kidding.\n\nFly safe.",
+  "hints": "You’ll need a very large amount of thrust to move this thing."
+ },
+ {
+  "id": 2000030,
+  "key": "ReturnOfTheHerd",
+  "type": "Special",
+  "hidden": false,
+  "start": "PlanetStation_Pinktwin_Palehorn",
+  "end": "Invalid",
+  "requires_components": [],
+  "reward": [],
+  "dependencies": [],
+  "title": "Return Of The Herd",
+  "obj": "Find three Pink Reindeers in the pink biomes and bring them together.",
+  "desc": "A long time ago, this planet was apparently full of beautiful creatures — including Pink Reindeers! Now it seems mostly empty, but luckily, a few of them are still around.\n\nThey’re extremely rare and appear to live only in the pink biomes. If you can find three and bring them together, there’s a chance their population might finally start recovering.\n\nJust be careful. The Reindeers seem to emit some kind of electrical disruption that shuts down nearby electronics. We don’t really understand how it works — we just know everything electrical stops working when you get too close.\n\nThat might be a problem.\n\nBut you’re the smart one here. Figure something out.",
+  "hints": "Expect electrical outages when you get close to the Pink Reindeers.\nThey can only be found in the pink biomes."
+ },
+ {
+  "id": 2000031,
+  "key": "TwinsTunnelGold",
+  "type": "Special",
+  "hidden": false,
+  "start": "Planet_Goldtwin",
+  "end": "Invalid",
+  "requires_components": [],
+  "reward": [
+   {
+    "component": "LargeManeuveringThruster",
+    "amount": 3
+   }
+  ],
+  "dependencies": [
+   "TungstenNanocube"
+  ],
+  "title": "Saving Gold Twin",
+  "obj": "Charge Yellow Radiation Cell using the radioactive yellow pandas on the Goldtwin, then install it to the Goldtwin Structure.",
+  "desc": "You may be wondering how these two planets are still here without crashing into each other. Honestly, that’s a very good question.\n\nIn the past, Goldtwin and Pinktwin were already dangerously close, but still just within a safe distance. After we opened the wormhole, however, a gravitational anomaly pushed them even closer. Now they’re slowly drifting toward each other, and it looks like a collision is only a matter of time.\n\nLuckily, we may have found a way to save both worlds! Using the extreme density of the Nanotungsten you brought to Palehorn, together with some other technologies developed here, we created two Tungsten Repulsors that work a bit like enormous magnets repelling each other.\n\nThe repulsors are already built — one on Goldtwin and one on Pinktwin. Now they just need power.\n\nThat’s where these two Radiation Cells, placed beside the building area at the Triplepine base, come in. You’ve probably already noticed those cute Yellow Pandas wandering around the forests. They’re adorable, slightly annoying, and for some completely unknown reason... radioactive. Place the Radiation Cells close enough to them and let the pandas charge them up.\n\nOnce both cells are fully charged, deliver them to the repulsors marked on your Radar and place them into the correct slots.\n\nBe careful: Yellow goes to Goldtwin, and Pink goes to Pinktwin. Mixing them up while two planets are about to collide would be slightly embarrassing.",
+  "hints": ""
+ },
+ {
+  "id": 2000032,
+  "key": "TwinsTunnelPink",
+  "type": "Special",
+  "hidden": false,
+  "start": "Planet_Goldtwin",
+  "end": "Invalid",
+  "requires_components": [],
+  "reward": [
+   {
+    "component": "LargeManeuveringThruster",
+    "amount": 3
+   }
+  ],
+  "dependencies": [
+   "TungstenNanocube"
+  ],
+  "title": "Saving Pink Twin",
+  "obj": "Charge Pink Radiation Cell using the radioactive yellow pandas on the Goldtwin, then install it to the Pinktwin Structure.",
+  "desc": "",
+  "hints": ""
+ },
+ {
+  "id": 2000033,
+  "key": "ReturnHome",
+  "type": "Special",
+  "hidden": false,
+  "start": "Planet_Pinktwin",
+  "end": "Invalid",
+  "requires_components": [],
+  "reward": [],
+  "dependencies": [
+   "TwinsTunnelGold",
+   "TwinsTunnelPink"
+  ],
+  "title": "The Long Way Home",
+  "obj": "Bring Lucas back to Headquarters through the mini wormhole.",
+  "desc": "Hey! My name is Lucas, and I’m in charge of all these people. Thanks for helping us save the twin planets! I don’t even want to imagine what would have happened if we hadn’t stopped them from colliding.\n\nLooks like nanotungsten combined with radiation as a power source was the right choice. Hopefully, the Tungsten Repulsors can keep the planets apart for a long, long time — at least until we figure out something better.\n\nAnd there’s more. The gravitational phenomenon created by the Repulsors may have solved the final piece of the puzzle behind intergalactic travel.\n\nAfter everything that happened, I’m just glad you were here to help clean up the mess.\n\nNow look at the sky. We finally have a way home!\n\nWell... hopefully home. Assuming nothing else goes wrong.\n\nI need to return to Headquarters with everything we’ve discovered here. I’ll gather the notes and pack the important equipment. Your job is to build us a spaceship capable of bringing both of us safely back to Headquarters.",
+  "hints": "Use the wormhole created between the twin planets to return to Headquarters.\nPing Lucas with an arrow to make him follow you.\nLucas’ jetpack is broken, so you may need to help him get to your spaceship."
+ },
+ {
+  "id": 2000034,
+  "key": "MastodonTransport",
+  "type": "Special",
+  "hidden": false,
+  "start": "PlanetStation_Moon_Moonstep",
+  "end": "Invalid",
+  "requires_components": [],
+  "reward": [
+   {
+    "component": "RotationalTelescope",
+    "amount": 1
+   },
+   {
+    "component": "MediumRechargeableBattery",
+    "amount": 4
+   },
+   {
+    "component": "FuseBox",
+    "amount": 3
+   },
+   {
+    "component": "PowerCable",
+    "amount": 200
+   },
+   {
+    "component": "AutohemisphereSolarPanel",
+    "amount": 4
+   }
+  ],
+  "dependencies": [
+   "ClimaBomb"
+  ],
+  "title": "Mammoth Express",
+  "obj": "Find a Mastodon and bring it to the Moonstep base.",
+  "desc": "Congratulations on restoring the Moon’s climate! We’re very happy to see everything returning to the way it was before.\n\nAnd we have even better news — according to recent reports, the Mastodons have returned too!\n\nTo make sure, we have a slightly unusual request for you. They seem to avoid the area around Moonstep, so you’ll need to travel a bit farther from the base to find one. If you manage to spot a Mastodon, somehow bring it back to Moonstep.\n\nWe’d like to see one with our own eyes and make sure everything is really back to normal.",
+  "hints": "**To make an animal follow you, stand in front of it and toggle your chest light a few times to get its attention.**\nRequired Medium Gate.\nIn case you’re not sure what a Mastodon looks like — think of a Mammoth. Big, furry, and very hard to miss."
+ }
+]

@@ -1,0 +1,112 @@
+[
+ {
+  "id": "error-sign",
+  "needs": {
+   "DataCable": 16,
+   "MathBlock": 4
+  },
+  "newGame": true,
+  "spoiler": "none",
+  "stats": {
+   "cableCells": {
+    "data": 16,
+    "nano": 0,
+    "plasma": 0,
+    "power": 0
+   },
+   "mass": 28,
+   "parts": {
+    "LogicGateNot": 1,
+    "LogicValue": 2,
+    "Router2": 1
+   },
+   "pools": {
+    "DataCable": 16,
+    "MathBlock": 4
+   },
+   "power": 0
+  },
+  "summary": "Two logic lines from one signal: one high when it is positive, one when it is negative.",
+  "title": "Sign of an error",
+  "updated": "2026-09-07"
+ },
+ {
+  "id": "vertical-speed-hold",
+  "needs": {
+   "DataCable": 51,
+   "DigitalOrAnalogMeter": 1,
+   "MathBlock": 5,
+   "WirelessTransmitter": 2
+  },
+  "newGame": false,
+  "spoiler": "components",
+  "stats": {
+   "cableCells": {
+    "data": 51,
+    "nano": 0,
+    "plasma": 0,
+    "power": 0
+   },
+   "mass": 70.5,
+   "parts": {
+    "Adder": 1,
+    "Constant": 1,
+    "Datameter": 1,
+    "Differentiator": 1,
+    "LogicValue": 1,
+    "Remapper": 1,
+    "WirelessTransmitter": 2
+   },
+   "pools": {
+    "DataCable": 51,
+    "DigitalOrAnalogMeter": 1,
+    "MathBlock": 5,
+    "WirelessTransmitter": 2
+   },
+   "power": 0
+  },
+  "summary": "Hold a climb rate: the setpoint against the altimeter's rate of change, sent back by wireless.",
+  "title": "Vertical speed hold",
+  "updated": "2026-09-07"
+ },
+ {
+  "id": "anti-windup",
+  "needs": {
+   "DataCable": 206,
+   "MathBlock": 17,
+   "WirelessTransmitter": 3
+  },
+  "newGame": false,
+  "spoiler": "components",
+  "stats": {
+   "cableCells": {
+    "data": 206,
+    "nano": 0,
+    "plasma": 0,
+    "power": 0
+   },
+   "mass": 206,
+   "parts": {
+    "Accumulator": 1,
+    "Adder": 1,
+    "Constant": 1,
+    "LogicGateAnd": 2,
+    "LogicGateNot": 3,
+    "LogicValue": 1,
+    "Multiplier": 2,
+    "Router2": 4,
+    "SimpleThreshold": 2,
+    "WirelessTransmitter": 3
+   },
+   "pools": {
+    "DataCable": 206,
+    "MathBlock": 17,
+    "WirelessTransmitter": 3
+   },
+   "power": 0
+  },
+  "summary": "An I term that stops accumulating once it is past a limit and the error still points the same way.",
+  "title": "Integrator with anti-windup",
+  "updated": "2026-09-07"
+ }
+]

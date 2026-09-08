@@ -1,0 +1,8 @@
+{
+  "origin": "https://aup-fan-wiki.org",
+  "name": "Approximately Up — Unofficial Fan Wiki",
+  "shortName": "AUp Wiki",
+  "locale": "en_US",
+  "description": "Components, planets, stations and missions for the spaceship-building game Approximately Up. Stats pulled straight from the game files; drop in your own save to see what you can build.",
+  "card": "/og-card.png"
+}

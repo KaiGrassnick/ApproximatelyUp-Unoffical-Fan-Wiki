@@ -1,0 +1,183 @@
+/*
+ * The two-pane section: an index on the left, a reading pane on the right.
+ * Guides and circuits are laid out the same way, and the classes below are
+ * global so the layout is written once and neither page pays for it in its
+ * own stylesheet (the per-component budget is 4 kB). A page opts in with
+ * `two-pane` on its root and `list` / `reader` on the two columns.
+ */
+@use 'hud' as *;
+@use 'prose' as *;
+
+.two-pane {
+  display: grid;
+  grid-template-columns: 18rem 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* One column once the list and a readable measure stop fitting side by side.
+   The list goes first, because on a narrow screen it is the index and the
+   reader arrives at it before choosing. */
+@media (max-width: 56rem) {
+  .two-pane {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+.list {
+  position: sticky;
+  // Below the sticky header, whose height app.ts publishes as --header-h
+  // because it changes when the header wraps. The fallback is the unwrapped
+  // height, so the list is right even in the frame before the first measure.
+  top: calc(var(--header-h, 3.75rem) + 1rem);
+  // A long list must not run off the bottom of a viewport it cannot scroll.
+  max-height: calc(100vh - var(--header-h, 3.75rem) - 2rem);
+  overflow-y: auto;
+
+  @media (max-width: 56rem) {
+    position: static;
+    max-height: none;
+    overflow-y: visible;
+  }
+
+  .head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  h1 {
+    @include label;
+    font-size: 0.8rem;
+    margin: 0;
+  }
+
+  /* Quieter than a guide in the list below it: this is the way out of the
+     section, not another thing to read. */
+  .add {
+    @include label;
+    flex: none;
+    font-size: 0.62rem;
+    text-decoration: none;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 0.25rem 0.5rem;
+
+    &:hover {
+      border-color: var(--line-hi);
+      color: var(--accent);
+    }
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li + li {
+    margin-top: 0.4rem;
+  }
+
+  a {
+    display: block;
+    padding: 0.6rem 0.7rem;
+    border: 1px solid var(--line);
+    border-left-width: 2px;
+    border-radius: var(--radius);
+    text-decoration: none;
+
+    &:hover {
+      border-color: var(--line-hi);
+      background: var(--panel-hi);
+    }
+
+    /* The selected guide, marked on the edge nearest its content. */
+    &.on {
+      border-left-color: var(--accent);
+      background: var(--panel-hi);
+    }
+  }
+
+  .t {
+    display: block;
+    font-family: var(--font-head);
+    font-size: 0.92rem;
+    color: var(--text);
+  }
+
+  a:hover .t,
+  a.on .t {
+    color: var(--accent);
+  }
+
+  .s {
+    display: block;
+    margin-top: 0.15rem;
+    font-size: 0.76rem;
+    line-height: 1.4;
+    color: var(--text-faint);
+  }
+
+  .gated {
+    @include label;
+    display: inline-block;
+    margin-top: 0.35rem;
+    font-size: 0.62rem;
+    color: var(--warn);
+  }
+}
+
+.reader {
+  @include panel;
+  padding: 1.75rem 2rem;
+  min-height: 24rem;
+}
+
+.reader header h2 {
+  margin: 0;
+}
+
+.reader .updated {
+  @include label;
+  margin: 0.35rem 0 1.5rem;
+}
+
+/* What the guide gives away, for a reader who arrived by link rather than
+   through the list. Warn-coloured and quiet: it is a heads-up, not a barrier —
+   nothing here is withheld. */
+.reader .gives {
+  @include label;
+  margin: -1.15rem 0 1.5rem;
+  color: var(--warn);
+}
+
+.empty {
+  max-width: 34rem;
+
+  h2 {
+    margin: 0 0 0.75rem;
+  }
+
+  p {
+    color: var(--text-dim);
+    line-height: 1.65;
+    margin: 0 0 0.75rem;
+  }
+}
+
+.muted {
+  color: var(--text-faint);
+}
+
+/* Markdown someone wrote, compiled by scripts/lib/markdown.mjs, bound with
+   [innerHTML]. Global on purpose: a component's emulated styles are stamped
+   onto the elements its own template creates, and innerHTML creates none of
+   them, so the prose rules have to live outside any component to reach it.
+   See styles/_prose.scss for the rules themselves. */
+.prose {
+  @include prose;
+}

@@ -1,0 +1,97 @@
+<header class="bar">
+  <h2>Galaxy</h2>
+  <p class="how">drag to orbit · ctrl + scroll to zoom</p>
+  @if (worlds().length > 1) {
+    <div class="worlds" role="group" aria-label="Galaxy">
+      @for (w of worlds(); track w) {
+        <button
+          type="button"
+          [class.on]="activeWorld() === w"
+          [attr.aria-pressed]="activeWorld() === w"
+          (click)="showWorld(w)"
+        >
+          {{ worldName(w) }}
+        </button>
+      }
+    </div>
+  }
+  <div class="zoom">
+    <button
+      type="button"
+      (click)="dollyBy(-1)"
+      [disabled]="zoom() <= minZoom"
+      aria-label="Zoom out"
+    >
+      −
+    </button>
+    <span class="num">{{ zoom() }}×</span>
+    <button type="button" (click)="dollyBy(1)" [disabled]="zoom() >= maxZoom" aria-label="Zoom in">
+      +
+    </button>
+    <button type="button" class="reset" (click)="reset()" [disabled]="atRest()">reset</button>
+  </div>
+</header>
+
+<div
+  class="galaxy"
+  #stage
+  [class.pressed]="pressed()"
+  [class.dragging]="dragging()"
+  tabindex="0"
+  role="group"
+  aria-label="Galaxy map. Arrow keys orbit, plus and minus zoom, 0 resets."
+  (pointerdown)="onPointerDown($event)"
+  (pointermove)="onPointerMove($event)"
+  (pointerup)="onPointerUp($event)"
+  (pointercancel)="onPointerUp($event)"
+  (wheel)="onWheel($event)"
+  (keydown)="onKeydown($event)"
+>
+  <!-- The spheres. Everything you can point at is in the overlay below. -->
+  <canvas #canvas class="gl"></canvas>
+
+  @for (m of markers(); track m.id) {
+    <!-- routerLink takes null for an undiscovered body, which leaves the
+         anchor with no href: it is then not a link at all, so it cannot be
+         clicked, tabbed into, or opened in a new tab.
+
+         The `hole` class waits on m.known for the same reason the label
+         does: a black sphere inside an orange ring is recognisable on
+         sight, so ringing an undiscovered body would give away the one
+         thing the "?" is there to withhold. -->
+    <a
+      class="body"
+      [class.star]="m.isStar"
+      [class.hole]="m.isBlackHole && m.known"
+      [class.unknown]="!m.known"
+      [routerLink]="m.known ? ['/planets', m.id] : null"
+      [style.left.px]="m.x"
+      [style.top.px]="m.y"
+      [style.width.px]="m.size"
+      [style.height.px]="m.size"
+      [style.margin.px]="-m.size / 2"
+      [style.z-index]="m.order"
+      (mouseenter)="hovered.set(m.id)"
+      (mouseleave)="hovered.set('')"
+    >
+      <!-- A body the loaded save has never been to is left unnamed: the map
+           says something is there, not what. -->
+      @if (m.known) {
+        <span class="lbl">{{ m.id }}</span>
+      } @else {
+        <span class="qm" [style.font-size.px]="glyphPx(m.size)">?</span>
+      }
+    </a>
+  }
+
+  @if (hoveredBody(); as h) {
+    <aside class="readout">
+      <strong>{{ hoveredName() }}</strong>
+      <span class="num">Radius {{ hoveredKnown() ? h.radius + ' m' : '?' }}</span>
+      <span class="num">Gravity {{ hoveredKnown() ? h.gravity : '?' }}</span>
+      @if (world.hasWorld() && world.tracksVisit(h.id)) {
+        <span class="num">{{ world.isVisited(h.object_id) ? 'visited' : 'not visited' }}</span>
+      }
+    </aside>
+  }
+</div>

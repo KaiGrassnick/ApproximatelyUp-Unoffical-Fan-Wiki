@@ -1,0 +1,97 @@
+{
+ "_absorption": {
+  "key": "InvSCImpAbsorp",
+  "label": "Impact absorption",
+  "suffix": ""
+ },
+ "_availablePower": {
+  "key": "InvSCPwrCap",
+  "label": "Power capacity",
+  "suffix": "P"
+ },
+ "_batteryCapacity": {
+  "key": "InvSCPwrCap",
+  "label": "Power capacity",
+  "suffix": "P"
+ },
+ "_chargeablePower": {
+  "key": "InvSCPwrCapRechargeable",
+  "label": "Power capacity",
+  "suffix": "P (rechargeable)"
+ },
+ "_consumptionPerSec": {
+  "key": "InvSCPwrConsum",
+  "label": "Power consumption",
+  "suffix": "P/s"
+ },
+ "_fuelCapacity": {
+  "key": "InvSCFuelCap",
+  "label": "Fuel capacity",
+  "suffix": ""
+ },
+ "_idlePowerConsumptionPerSec": {
+  "key": "InvSCPwrConsumIdle",
+  "label": "Power consumption",
+  "suffix": "P/s when idle"
+ },
+ "_mass": {
+  "key": "InvSCMass",
+  "label": "Mass",
+  "suffix": ""
+ },
+ "_maxForce": {
+  "key": "InvSCMaxForceM",
+  "label": "Max force",
+  "suffix": ""
+ },
+ "_maxFuel": {
+  "key": "InvSCFuelCap",
+  "label": "Fuel capacity",
+  "suffix": ""
+ },
+ "_maxFuelConsumptionPerSecond": {
+  "key": "InvSCFuelConsum",
+  "label": "Fuel consumption",
+  "suffix": "/s"
+ },
+ "_maxGenerationPerSecond": {
+  "key": "InvSCPwrGen",
+  "label": "Power generation",
+  "suffix": "P/s"
+ },
+ "_maxPlasma": {
+  "key": "InvSCMaxPlasma",
+  "label": "Max plasma",
+  "suffix": ""
+ },
+ "_maxPower": {
+  "key": "InvSCMaxPwr",
+  "label": "Max power",
+  "suffix": "P/s"
+ },
+ "_maxPowerConsumption": {
+  "key": "InvSCPwrConsumMax",
+  "label": "Max power consumption",
+  "suffix": "P/s"
+ },
+ "_maxPowerGenerationPerSec": {
+  "key": "InvSCPwrGen",
+  "label": "Power generation",
+  "suffix": "P/s"
+ },
+ "_maxTimeWithoutPower": {
+  "key": "InvSCMaxTimeWoPwr",
+  "label": "Max time without power",
+  "suffix": "s"
+ },
+ "_powerConsumptionPerSec": {
+  "key": "InvSCPwrConsum",
+  "label": "Power consumption",
+  "suffix": "P/s"
+ },
+ "_solidFuelRequiredIgnitionPower": {
+  "key": "InvSCReqIgnPwr",
+  "label": "Required ignition power",
+  "suffix": "P/s"
+ }
+}

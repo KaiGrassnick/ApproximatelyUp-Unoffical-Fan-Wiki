@@ -1,0 +1,37 @@
+@if (open()) {
+  <div class="panel" id="feedback-panel" role="group" aria-label="Contribute to the wiki">
+    <p class="intro">Everything here is community-run. If something is wrong, say so.</p>
+
+    @for (a of actions; track a.key) {
+      <a class="act" [href]="href(a)" target="_blank" rel="noopener noreferrer" (click)="close()">
+        <span class="lbl">{{ a.label }}</span>
+        <span class="hint">{{ a.hint }}</span>
+      </a>
+    }
+
+    <p class="note">Opens a GitHub issue. The page you are on is filled in for you.</p>
+  </div>
+}
+
+<button
+  type="button"
+  class="trigger"
+  [class.open]="open()"
+  [attr.aria-expanded]="open()"
+  aria-controls="feedback-panel"
+  aria-label="Report an issue, request a feature, or suggest content"
+  (click)="toggle()"
+>
+  <!-- Decorative: the button's accessible name is on the element itself, and a
+       screen reader announcing "speech bubble" on top of it adds nothing. -->
+  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+    <path
+      d="M4 4h16v12H8l-4 4V4z"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1.6"
+      stroke-linejoin="round"
+    />
+  </svg>
+  <span class="text">Feedback</span>
+</button>

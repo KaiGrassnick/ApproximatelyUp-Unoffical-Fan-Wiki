@@ -1,0 +1,31 @@
+{
+  "title": "Sign of an error",
+  "summary": "Two logic lines from one signal: one high when it is positive, one when it is negative.",
+  "spoiler": "none",
+  "updated": "2026-09-07",
+  "order": 10,
+  "view": "top",
+  "parts": [
+    { "id": "err", "type": "LogicValue", "label": "Error term" },
+    { "id": "split", "type": "Router2" },
+    { "id": "pos", "type": "LogicValue", "label": "ERR > 0" },
+    { "id": "neg", "type": "LogicGateNot", "label": "ERR < 0" }
+  ],
+  "wires": [
+    { "from": "err:out", "to": "split:in" },
+    { "from": "split:out1", "to": "pos:in" },
+    { "from": "split:out2", "to": "neg:in" }
+  ],
+  "notes": [
+    {
+      "kind": "group",
+      "parts": ["split", "pos", "neg"],
+      "text": "Error sign (+/-)",
+      "color": "green"
+    },
+    {
+      "kind": "md",
+      "body": "A [[part:LogicValue]] outputs 1 when its input is 0.5 or more and 0 below, so a raw error term through one is already \"is the error positive\". The [[part:LogicGateNot]] on the second branch of the [[part:Router2]] gives the other half. Feed both into the anti-windup circuit."
+    }
+  ]
+}

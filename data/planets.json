@@ -1,0 +1,1024 @@
+[
+ {
+  "id": "BlackHole",
+  "object_id": 999,
+  "full_id": "BlackHole",
+  "type": "blackhole",
+  "parent": null,
+  "radius": 600000.0,
+  "gravity": 1000.0,
+  "wormhole": null,
+  "position": {
+   "x": 330560964.1988245,
+   "y": 35963338.1230306,
+   "z": -54971750.53357585
+  }
+ },
+ {
+  "id": "Ascensia",
+  "object_id": 101,
+  "full_id": "Planet_Ascensia",
+  "type": "planet",
+  "parent": null,
+  "radius": 433300.0,
+  "gravity": 9.399999618530273,
+  "wormhole": "1",
+  "position": {
+   "x": 231252465.622181,
+   "y": 50381024.87780659,
+   "z": -120543012.52109121
+  },
+  "air": {
+   "amount": 0.6200000047683716,
+   "radius_min": 1.003000020980835,
+   "radius_max": 1.019700050354004
+  },
+  "wind": {
+   "speed": 36.0,
+   "max_force": 1.7000000476837158,
+   "always_force": 0.0,
+   "fixed_rotation": false
+  },
+  "ocean": null,
+  "biomes": [
+   {
+    "index": 0,
+    "color": "#4e573b"
+   },
+   {
+    "index": 1,
+    "color": "#563a2a"
+   }
+  ],
+  "stations": [
+   "JuraAscenda"
+  ]
+ },
+ {
+  "id": "Ashbelt",
+  "object_id": 100,
+  "full_id": "Planet_Ashbelt",
+  "type": "planet",
+  "parent": null,
+  "radius": 191000.0,
+  "gravity": 7.300000190734863,
+  "wormhole": "1",
+  "position": {
+   "x": 349152800.0921869,
+   "y": 33615295.33157351,
+   "z": -55347863.82442012
+  },
+  "air": {
+   "amount": 0.38999998569488525,
+   "radius_min": 1.0,
+   "radius_max": 1.0110000371932983
+  },
+  "wind": {
+   "speed": 23.0,
+   "max_force": 1.100000023841858,
+   "always_force": 0.0,
+   "fixed_rotation": false
+  },
+  "ocean": {
+   "enabled": true,
+   "include_in_miniature": true,
+   "deep": "#fbc436",
+   "shallow": "#907725"
+  },
+  "biomes": [
+   {
+    "index": 0,
+    "color": "#292422"
+   },
+   {
+    "index": 1,
+    "color": "#31221c"
+   }
+  ],
+  "stations": [
+   "Emberline"
+  ]
+ },
+ {
+  "id": "Aundara",
+  "object_id": 6,
+  "full_id": "Planet_Aundara",
+  "type": "planet",
+  "parent": null,
+  "radius": 476000.0,
+  "gravity": 7.800000190734863,
+  "wormhole": "0",
+  "position": {
+   "x": -448458851.0990548,
+   "y": -29733355.45864992,
+   "z": -2702177.5445722947
+  },
+  "air": {
+   "amount": 0.4399999976158142,
+   "radius_min": 1.0,
+   "radius_max": 1.0061999559402466
+  },
+  "wind": {
+   "speed": 38.0,
+   "max_force": 1.899999976158142,
+   "always_force": 0.0,
+   "fixed_rotation": false
+  },
+  "ocean": {
+   "enabled": true,
+   "include_in_miniature": true,
+   "deep": "#131c1b",
+   "shallow": "#3c5755"
+  },
+  "biomes": [
+   {
+    "index": 0,
+    "color": "#7f7984"
+   },
+   {
+    "index": 1,
+    "color": "#254746"
+   }
+  ],
+  "stations": [
+   "TealHorizon",
+   "UndaPrime"
+  ]
+ },
+ {
+  "id": "Baobara",
+  "object_id": 4,
+  "full_id": "Planet_Baobara",
+  "type": "planet",
+  "parent": null,
+  "radius": 1120000.0,
+  "gravity": 11.399999618530273,
+  "wormhole": "0",
+  "position": {
+   "x": -166841423.23656043,
+   "y": 41033780.213921376,
+   "z": -159784562.45254377
+  },
+  "air": {
+   "amount": 0.75,
+   "radius_min": 0.996999979019165,
+   "radius_max": 1.024999976158142
+  },
+  "wind": {
+   "speed": 270.0,
+   "max_force": 8.5,
+   "always_force": 4.5,
+   "fixed_rotation": false
+  },
+  "ocean": null,
+  "biomes": [
+   {
+    "index": 0,
+    "color": "#765f3c"
+   },
+   {
+    "index": 1,
+    "color": "#2d231b"
+   }
+  ],
+  "stations": [
+   "GoldenGrass",
+   "VoidWatcher"
+  ]
+ },
+ {
+  "id": "Basalt",
+  "object_id": 8,
+  "full_id": "Planet_Basalt",
+  "type": "planet",
+  "parent": null,
+  "radius": 715000.0,
+  "gravity": 18.399999618530273,
+  "wormhole": "0",
+  "position": {
+   "x": -15652067.340804355,
+   "y": 7051474.8372423705,
+   "z": 223834991.26842356
+  },
+  "air": {
+   "amount": 0.6700000166893005,
+   "radius_min": 1.003999948501587,
+   "radius_max": 1.0219999551773071
+  },
+  "wind": {
+   "speed": 11.0,
+   "max_force": 0.550000011920929,
+   "always_force": 0.0,
+   "fixed_rotation": false
+  },
+  "ocean": null,
+  "biomes": [
+   {
+    "index": 0,
+    "color": "#4d1617"
+   },
+   {
+    "index": 1,
+    "color": "#272626"
+   },
+   {
+    "index": 2,
+    "color": "#5c191a"
+   }
+  ],
+  "stations": [
+   "B02",
+   "CandyVein"
+  ]
+ },
+ {
+  "id": "CoronaSilva",
+  "object_id": 7,
+  "full_id": "Planet_CoronaSilva",
+  "type": "planet",
+  "parent": null,
+  "radius": 329000.0,
+  "gravity": 10.699999809265137,
+  "wormhole": "0",
+  "position": {
+   "x": 149931135.8607813,
+   "y": 91930190.89470409,
+   "z": 239939973.69635326
+  },
+  "air": {
+   "amount": 0.8299999833106995,
+   "radius_min": 1.0,
+   "radius_max": 1.0369999408721924
+  },
+  "wind": {
+   "speed": 21.0,
+   "max_force": 1.0499999523162842,
+   "always_force": 0.0,
+   "fixed_rotation": false
+  },
+  "ocean": {
+   "enabled": true,
+   "include_in_miniature": true,
+   "deep": "#041311",
+   "shallow": "#1e7066"
+  },
+  "biomes": [
+   {
+    "index": 0,
+    "color": "#1b3426"
+   },
+   {
+    "index": 1,
+    "color": "#192b25"
+   },
+   {
+    "index": 2,
+    "color": "#2a2a2a"
+   }
+  ],
+  "stations": [
+   "Mudpit"
+  ]
+ },
+ {
+  "id": "Earth",
+  "object_id": 2,
+  "full_id": "Planet_Earth",
+  "type": "planet",
+  "parent": null,
+  "radius": 550000.0,
+  "gravity": 10.0,
+  "wormhole": "0",
+  "position": {
+   "x": -386424958.9493905,
+   "y": 19352932.239120007,
+   "z": -56486945.309224084
+  },
+  "air": {
+   "amount": 0.699999988079071,
+   "radius_min": 1.0,
+   "radius_max": 1.031999945640564
+  },
+  "wind": {
+   "speed": 30.0,
+   "max_force": 1.5,
+   "always_force": 0.0,
+   "fixed_rotation": false
+  },
+  "ocean": {
+   "enabled": true,
+   "include_in_miniature": true,
+   "deep": "#15171e",
+   "shallow": "#4f4f6e"
+  },
+  "biomes": [
+   {
+    "index": 0,
+    "color": "#2d4525"
+   },
+   {
+    "index": 1,
+    "color": "#74562d"
+   },
+   {
+    "index": 2,
+    "color": "#adadad"
+   },
+   {
+    "index": 3,
+    "color": "#334231"
+   }
+  ],
+  "stations": [
+   "Headquarters",
+   "Tutorial"
+  ]
+ },
+ {
+  "id": "Goldtwin",
+  "object_id": 102,
+  "full_id": "Planet_Goldtwin",
+  "type": "planet",
+  "parent": null,
+  "radius": 304000.0,
+  "gravity": 9.0,
+  "wormhole": "1",
+  "position": {
+   "x": 474768114.9320065,
+   "y": 50793673.51894669,
+   "z": -159913023.18854916
+  },
+  "air": {
+   "amount": 0.49000000953674316,
+   "radius_min": 0.9990000128746033,
+   "radius_max": 1.027999997138977
+  },
+  "wind": {
+   "speed": 18.0,
+   "max_force": 0.8999999761581421,
+   "always_force": 0.0,
+   "fixed_rotation": false
+  },
+  "ocean": null,
+  "biomes": [
+   {
+    "index": 0,
+    "color": "#763b32"
+   },
+   {
+    "index": 1,
+    "color": "#706f20"
+   }
+  ],
+  "stations": [
+   "Triplepine"
+  ]
+ },
+ {
+  "id": "Helirion",
+  "object_id": 5,
+  "full_id": "Planet_Helirion",
+  "type": "planet",
+  "parent": null,
+  "radius": 36220.0,
+  "gravity": 3.9000000953674316,
+  "wormhole": "0",
+  "position": {
+   "x": 118745253.72421093,
+   "y": -68805255.66167682,
+   "z": -40779314.65974473
+  },
+  "air": {
+   "amount": 0.7200000286102295,
+   "radius_min": 1.0,
+   "radius_max": 1.0729999542236328
+  },
+  "wind": {
+   "speed": 20.0,
+   "max_force": 1.0,
+   "always_force": 0.0,
+   "fixed_rotation": false
+  },
+  "ocean": null,
+  "biomes": [
+   {
+    "index": 0,
+    "color": "#756933"
+   },
+   {
+    "index": 1,
+    "color": "#274127"
+   }
+  ],
+  "stations": [
+   "Bloomreach"
+  ]
+ },
+ {
+  "id": "Kovo",
+  "object_id": 12,
+  "full_id": "Planet_Kovo",
+  "type": "planet",
+  "parent": null,
+  "radius": 57000.0,
+  "gravity": 4.900000095367432,
+  "wormhole": "0",
+  "position": {
+   "x": -13936346.766942933,
+   "y": 5864051.259035004,
+   "z": 223106715.09767056
+  },
+  "air": {
+   "amount": 0.05999999865889549,
+   "radius_min": 0.9810000061988831,
+   "radius_max": 1.0169999599456787
+  },
+  "wind": {
+   "speed": 0.0,
+   "max_force": 0.0,
+   "always_force": 0.0,
+   "fixed_rotation": false
+  },
+  "ocean": null,
+  "biomes": [
+   {
+    "index": 0,
+    "color": "#272626"
+   }
+  ],
+  "stations": []
+ },
+ {
+  "id": "Moon",
+  "object_id": 3,
+  "full_id": "Planet_Moon",
+  "type": "planet",
+  "parent": null,
+  "radius": 97000.0,
+  "gravity": 4.099999904632568,
+  "wormhole": "0",
+  "position": {
+   "x": -386172074.2494753,
+   "y": 21028831.044647824,
+   "z": -53973978.33847979
+  },
+  "air": {
+   "amount": 0.5,
+   "radius_min": 0.9919999837875366,
+   "radius_max": 1.0219999551773071
+  },
+  "wind": {
+   "speed": 8.0,
+   "max_force": 0.4000000059604645,
+   "always_force": 0.0,
+   "fixed_rotation": false
+  },
+  "ocean": {
+   "enabled": true,
+   "include_in_miniature": false,
+   "deep": "#8b8b8b",
+   "shallow": "#c2c2c2"
+  },
+  "biomes": [
+   {
+    "index": 0,
+    "color": "#a5a5a5"
+   },
+   {
+    "index": 1,
+    "color": "#454545"
+   }
+  ],
+  "stations": [
+   "Moonstep"
+  ]
+ },
+ {
+  "id": "Outcast",
+  "object_id": 11,
+  "full_id": "Planet_Outcast",
+  "type": "planet",
+  "parent": null,
+  "radius": 573000.0,
+  "gravity": 8.5,
+  "wormhole": "0",
+  "position": {
+   "x": 442638288.8483895,
+   "y": 104931365.59311171,
+   "z": -211937718.5361002
+  },
+  "air": {
+   "amount": 0.5799999833106995,
+   "radius_min": 1.000100016593933,
+   "radius_max": 1.0110000371932983
+  },
+  "wind": {
+   "speed": 165.0,
+   "max_force": 8.0,
+   "always_force": 0.0,
+   "fixed_rotation": true
+  },
+  "ocean": null,
+  "biomes": [
+   {
+    "index": 0,
+    "color": "#664c26"
+   },
+   {
+    "index": 1,
+    "color": "#558987"
+   },
+   {
+    "index": 2,
+    "color": "#4b2812"
+   }
+  ],
+  "stations": [
+   "Crownleaf",
+   "IcevineValley"
+  ]
+ },
+ {
+  "id": "Pinktwin",
+  "object_id": 103,
+  "full_id": "Planet_Pinktwin",
+  "type": "planet",
+  "parent": null,
+  "radius": 256000.0,
+  "gravity": 10.600000381469727,
+  "wormhole": "1",
+  "position": {
+   "x": 475186771.54868233,
+   "y": 50884409.04929805,
+   "z": -159377164.24454194
+  },
+  "air": {
+   "amount": 0.5,
+   "radius_min": 0.9919999837875366,
+   "radius_max": 1.0219999551773071
+  },
+  "wind": {
+   "speed": 10.0,
+   "max_force": 0.550000011920929,
+   "always_force": 0.0,
+   "fixed_rotation": false
+  },
+  "ocean": null,
+  "biomes": [
+   {
+    "index": 0,
+    "color": "#305150"
+   },
+   {
+    "index": 1,
+    "color": "#885570"
+   }
+  ],
+  "stations": [
+   "Palehorn"
+  ]
+ },
+ {
+  "id": "Rimshell",
+  "object_id": 10,
+  "full_id": "Planet_Rimshell",
+  "type": "planet",
+  "parent": null,
+  "radius": 223000.0,
+  "gravity": 6.800000190734863,
+  "wormhole": "0",
+  "position": {
+   "x": 319276889.7455026,
+   "y": 64540422.9348623,
+   "z": -48856228.44828351
+  },
+  "air": {
+   "amount": 0.20999999344348907,
+   "radius_min": 0.9850000143051147,
+   "radius_max": 1.065000057220459
+  },
+  "wind": {
+   "speed": 5.0,
+   "max_force": 0.25,
+   "always_force": 0.0,
+   "fixed_rotation": false
+  },
+  "ocean": null,
+  "biomes": [
+   {
+    "index": 0,
+    "color": "#816956"
+   },
+   {
+    "index": 1,
+    "color": "#241914"
+   },
+   {
+    "index": 2,
+    "color": "#3e0e08"
+   }
+  ],
+  "stations": [
+   "Altimirror"
+  ]
+ },
+ {
+  "id": "Tenebra",
+  "object_id": 104,
+  "full_id": "Planet_Tenebra",
+  "type": "planet",
+  "parent": null,
+  "radius": 103000.0,
+  "gravity": 6.5,
+  "wormhole": "1",
+  "position": {
+   "x": -262460917.47728506,
+   "y": -13965398.469279854,
+   "z": -394370909.41396487
+  },
+  "air": {
+   "amount": 0.6200000047683716,
+   "radius_min": 0.9627000093460083,
+   "radius_max": 0.9769999980926514
+  },
+  "wind": {
+   "speed": 180.0,
+   "max_force": 10.0,
+   "always_force": 0.0,
+   "fixed_rotation": false
+  },
+  "ocean": {
+   "enabled": true,
+   "include_in_miniature": true,
+   "deep": "#f45b21",
+   "shallow": "#8b492b"
+  },
+  "biomes": [
+   {
+    "index": 0,
+    "color": "#6d4637"
+   },
+   {
+    "index": 1,
+    "color": "#765041"
+   }
+  ],
+  "stations": []
+ },
+ {
+  "id": "RedDwarf",
+  "object_id": 9,
+  "full_id": "Star_RedDwarf",
+  "type": "star",
+  "parent": null,
+  "radius": 417000.0,
+  "gravity": 340.0,
+  "wormhole": "0",
+  "position": {
+   "x": 383638537.01716214,
+   "y": 109319946.16456656,
+   "z": -100975315.81706965
+  },
+  "air": {
+   "amount": 0.0,
+   "radius_min": 0.0,
+   "radius_max": 0.0
+  },
+  "wind": {
+   "speed": 0.0,
+   "max_force": 0.0,
+   "always_force": 0.0,
+   "fixed_rotation": false
+  },
+  "ocean": null,
+  "biomes": [],
+  "stations": [],
+  "star": {
+   "col_a": [
+    0.23137255012989044,
+    0.03921568766236305,
+    0.08398764580488205
+   ],
+   "col_b": [
+    18.164819717407227,
+    1.3366544246673584,
+    1.4327614307403564
+   ],
+   "noise": "Noise_047",
+   "temperature": 6500.0
+  }
+ },
+ {
+  "id": "Sun",
+  "object_id": 1,
+  "full_id": "Star_Sun",
+  "type": "star",
+  "parent": null,
+  "radius": 2800000.0,
+  "gravity": 260.0,
+  "wormhole": "0",
+  "position": {
+   "x": 0.0,
+   "y": 0.0,
+   "z": 0.0
+  },
+  "air": {
+   "amount": 0.0,
+   "radius_min": 0.0,
+   "radius_max": 0.0
+  },
+  "wind": {
+   "speed": 0.0,
+   "max_force": 0.0,
+   "always_force": 0.0,
+   "fixed_rotation": false
+  },
+  "ocean": null,
+  "biomes": [],
+  "stations": [],
+  "star": {
+   "col_a": [
+    0.5328900814056396,
+    0.14322145283222198,
+    0.1397579312324524
+   ],
+   "col_b": [
+    38.93714904785156,
+    32.70720291137695,
+    8.566171646118164
+   ],
+   "noise": "Noise_048",
+   "temperature": 3200.0
+  }
+ },
+ {
+  "id": "Altimirror",
+  "object_id": 10000,
+  "full_id": "PlanetStation_Rimshell_Altimirror",
+  "type": "station",
+  "parent": "Rimshell",
+  "radius": 0.0,
+  "gravity": 0.0,
+  "wormhole": "0",
+  "position": {
+   "x": 0.0,
+   "y": 0.0,
+   "z": 0.0
+  }
+ },
+ {
+  "id": "B02",
+  "object_id": 8000,
+  "full_id": "PlanetStation_Basalt_B02",
+  "type": "station",
+  "parent": "Basalt",
+  "radius": 0.0,
+  "gravity": 0.0,
+  "wormhole": "0",
+  "position": {
+   "x": 0.0,
+   "y": 0.0,
+   "z": 0.0
+  }
+ },
+ {
+  "id": "Bloomreach",
+  "object_id": 5000,
+  "full_id": "PlanetStation_Helirion_Bloomreach",
+  "type": "station",
+  "parent": "Helirion",
+  "radius": 0.0,
+  "gravity": 0.0,
+  "wormhole": "0",
+  "position": {
+   "x": 0.0,
+   "y": 0.0,
+   "z": 0.0
+  }
+ },
+ {
+  "id": "CandyVein",
+  "object_id": 8001,
+  "full_id": "PlanetStation_Basalt_CandyVein",
+  "type": "station",
+  "parent": "Basalt",
+  "radius": 0.0,
+  "gravity": 0.0,
+  "wormhole": "0",
+  "position": {
+   "x": 0.0,
+   "y": 0.0,
+   "z": 0.0
+  }
+ },
+ {
+  "id": "Crownleaf",
+  "object_id": 11000,
+  "full_id": "PlanetStation_Outcast_Crownleaf",
+  "type": "station",
+  "parent": "Outcast",
+  "radius": 0.0,
+  "gravity": 0.0,
+  "wormhole": "0",
+  "position": {
+   "x": 0.0,
+   "y": 0.0,
+   "z": 0.0
+  }
+ },
+ {
+  "id": "Emberline",
+  "object_id": 100000,
+  "full_id": "PlanetStation_Ashbelt_Emberline",
+  "type": "station",
+  "parent": "Ashbelt",
+  "radius": 0.0,
+  "gravity": 0.0,
+  "wormhole": "0",
+  "position": {
+   "x": 0.0,
+   "y": 0.0,
+   "z": 0.0
+  }
+ },
+ {
+  "id": "GoldenGrass",
+  "object_id": 4000,
+  "full_id": "PlanetStation_Baobara_GoldenGrass",
+  "type": "station",
+  "parent": "Baobara",
+  "radius": 0.0,
+  "gravity": 0.0,
+  "wormhole": "0",
+  "position": {
+   "x": 0.0,
+   "y": 0.0,
+   "z": 0.0
+  }
+ },
+ {
+  "id": "Headquarters",
+  "object_id": 2000,
+  "full_id": "PlanetStation_Earth_Headquarters",
+  "type": "station",
+  "parent": "Earth",
+  "radius": 0.0,
+  "gravity": 0.0,
+  "wormhole": "0",
+  "position": {
+   "x": 0.0,
+   "y": 0.0,
+   "z": 0.0
+  }
+ },
+ {
+  "id": "IcevineValley",
+  "object_id": 11001,
+  "full_id": "PlanetStation_Outcast_IcevineValley",
+  "type": "station",
+  "parent": "Outcast",
+  "radius": 0.0,
+  "gravity": 0.0,
+  "wormhole": "0",
+  "position": {
+   "x": 0.0,
+   "y": 0.0,
+   "z": 0.0
+  }
+ },
+ {
+  "id": "JuraAscenda",
+  "object_id": 101000,
+  "full_id": "PlanetStation_Ascensia_JuraAscenda",
+  "type": "station",
+  "parent": "Ascensia",
+  "radius": 0.0,
+  "gravity": 0.0,
+  "wormhole": "0",
+  "position": {
+   "x": 0.0,
+   "y": 0.0,
+   "z": 0.0
+  }
+ },
+ {
+  "id": "Moonstep",
+  "object_id": 3000,
+  "full_id": "PlanetStation_Moon_Moonstep",
+  "type": "station",
+  "parent": "Moon",
+  "radius": 0.0,
+  "gravity": 0.0,
+  "wormhole": "0",
+  "position": {
+   "x": 0.0,
+   "y": 0.0,
+   "z": 0.0
+  }
+ },
+ {
+  "id": "Mudpit",
+  "object_id": 7000,
+  "full_id": "PlanetStation_CoronaSilva_Mudpit",
+  "type": "station",
+  "parent": "CoronaSilva",
+  "radius": 0.0,
+  "gravity": 0.0,
+  "wormhole": "0",
+  "position": {
+   "x": 0.0,
+   "y": 0.0,
+   "z": 0.0
+  }
+ },
+ {
+  "id": "Palehorn",
+  "object_id": 103000,
+  "full_id": "PlanetStation_Pinktwin_Palehorn",
+  "type": "station",
+  "parent": "Pinktwin",
+  "radius": 0.0,
+  "gravity": 0.0,
+  "wormhole": "0",
+  "position": {
+   "x": 0.0,
+   "y": 0.0,
+   "z": 0.0
+  }
+ },
+ {
+  "id": "TealHorizon",
+  "object_id": 6001,
+  "full_id": "PlanetStation_Aundara_TealHorizon",
+  "type": "station",
+  "parent": "Aundara",
+  "radius": 0.0,
+  "gravity": 0.0,
+  "wormhole": "0",
+  "position": {
+   "x": 0.0,
+   "y": 0.0,
+   "z": 0.0
+  }
+ },
+ {
+  "id": "Triplepine",
+  "object_id": 102000,
+  "full_id": "PlanetStation_Goldtwin_Triplepine",
+  "type": "station",
+  "parent": "Goldtwin",
+  "radius": 0.0,
+  "gravity": 0.0,
+  "wormhole": "0",
+  "position": {
+   "x": 0.0,
+   "y": 0.0,
+   "z": 0.0
+  }
+ },
+ {
+  "id": "Tutorial",
+  "object_id": 2999,
+  "full_id": "PlanetStation_Earth_Tutorial",
+  "type": "station",
+  "parent": "Earth",
+  "radius": 0.0,
+  "gravity": 0.0,
+  "wormhole": "0",
+  "position": {
+   "x": 0.0,
+   "y": 0.0,
+   "z": 0.0
+  }
+ },
+ {
+  "id": "UndaPrime",
+  "object_id": 6000,
+  "full_id": "PlanetStation_Aundara_UndaPrime",
+  "type": "station",
+  "parent": "Aundara",
+  "radius": 0.0,
+  "gravity": 0.0,
+  "wormhole": "0",
+  "position": {
+   "x": 0.0,
+   "y": 0.0,
+   "z": 0.0
+  }
+ },
+ {
+  "id": "VoidWatcher",
+  "object_id": 4001,
+  "full_id": "PlanetStation_Baobara_VoidWatcher",
+  "type": "station",
+  "parent": "Baobara",
+  "radius": 0.0,
+  "gravity": 0.0,
+  "wormhole": "0",
+  "position": {
+   "x": 0.0,
+   "y": 0.0,
+   "z": 0.0
+  }
+ }
+]

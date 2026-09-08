@@ -1,0 +1,110 @@
+@use 'styles/hud' as *;
+
+:host {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.6rem;
+}
+
+.trigger {
+  @include panel;
+  @include glow-hover;
+  @include label;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 0.9rem;
+  color: var(--text-dim);
+  cursor: pointer;
+  /* The panel is a floating surface over the page, not part of it. */
+  box-shadow: 0 8px 32px -16px #000;
+
+  svg {
+    width: 1.05rem;
+    height: 1.05rem;
+    flex: none;
+  }
+
+  &:hover,
+  &.open {
+    color: var(--accent);
+    border-color: var(--line-hi);
+  }
+}
+
+.panel {
+  @include panel;
+  width: min(19rem, calc(100vw - 3rem));
+  padding: 0.9rem;
+  box-shadow: 0 12px 48px -20px #000;
+}
+
+.intro {
+  margin: 0 0 0.75rem;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--text-dim);
+}
+
+.act {
+  display: block;
+  padding: 0.55rem 0.65rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  text-decoration: none;
+  margin-bottom: 0.4rem;
+
+  &:hover,
+  &:focus-visible {
+    border-color: var(--line-hi);
+    background: var(--panel-hi);
+  }
+}
+
+.lbl {
+  display: block;
+  font-family: var(--font-head);
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+.act:hover .lbl,
+.act:focus-visible .lbl {
+  color: var(--accent);
+}
+
+.hint {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-faint);
+  margin-top: 0.1rem;
+}
+
+.note {
+  margin: 0.75rem 0 0;
+  font-size: 0.72rem;
+  line-height: 1.45;
+  color: var(--text-faint);
+}
+
+/* Narrow screens: the label would eat a third of the width for a word the
+   icon already carries, and the bubble has to stay clear of the thumb rail. */
+@media (max-width: 34rem) {
+  :host {
+    right: 1rem;
+    bottom: 1rem;
+  }
+
+  .trigger .text {
+    @include visually-hidden;
+  }
+
+  .trigger {
+    padding: 0.7rem;
+  }
+}

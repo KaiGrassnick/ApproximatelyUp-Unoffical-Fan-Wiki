@@ -1,0 +1,53 @@
+# Derived from the game install, stale after every update.
+tools/extracted/
+
+# Downloaded third-party binaries (the IL2CPP dumper).
+tools/.cache/
+
+# Python
+.venv/
+venv/
+*.egg-info/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+
+# Machine-specific paths (see tools/.env.template)
+tools/.env
+
+# Compiled from content/guides/*.md by scripts/gen-guides.mjs. The Markdown is
+# the source and is committed; committing the HTML too would put the same prose
+# in the tree twice and make every wording change a two-file diff.
+data/guides/
+data/guides.json
+
+# Angular. The workspace is the repo root, so these are the paths ng writes.
+node_modules/
+dist/
+.angular/
+/tmp
+/out-tsc
+/coverage
+__screenshots__/
+
+# Editors and OS.
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/mcp.json
+.history/*
+.sass-cache/
+*.log
+.DS_Store
+Thumbs.db
+
+# SDD scratch for plan execution (ledger, briefs, review packages), and
+# the plans and specs themselves. They are working notes for building the
+# wiki, not documentation of it -- the READMEs carry that.
+.superpowers/
+docs/
+
+.serena/

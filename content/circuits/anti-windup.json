@@ -1,0 +1,236 @@
+{
+  "title": "Integrator with anti-windup",
+  "summary": "An I term that stops accumulating once it is past a limit and the error still points the same way.",
+  "spoiler": "components",
+  "updated": "2026-09-07",
+  "order": 30,
+  "view": "top",
+  "parts": [
+    {
+      "id": "err",
+      "type": "WirelessTransmitter",
+      "value": "12",
+      "label": "Error_Term",
+      "at": [0, 0]
+    },
+    {
+      "id": "esplit",
+      "type": "Router2",
+      "at": [0, 4]
+    },
+    {
+      "id": "sign",
+      "type": "Router2",
+      "at": [0, 8]
+    },
+    {
+      "id": "pos",
+      "type": "LogicValue",
+      "at": [0, 12]
+    },
+    {
+      "id": "neg",
+      "type": "LogicGateNot",
+      "at": [4, 12]
+    },
+    {
+      "id": "isplit",
+      "type": "Router2",
+      "at": [17, 20]
+    },
+    {
+      "id": "gain",
+      "type": "Constant",
+      "value": "1.200",
+      "label": "I constant",
+      "at": [20, 0]
+    },
+    {
+      "id": "mul",
+      "type": "Multiplier",
+      "at": [17, 4]
+    },
+    {
+      "id": "acc",
+      "type": "Accumulator",
+      "mode": "Pulse",
+      "at": [17, 12]
+    },
+    {
+      "id": "clock",
+      "type": "WirelessTransmitter",
+      "value": "19",
+      "label": "Reset_Clock",
+      "at": [21, 8]
+    },
+    {
+      "id": "iout",
+      "type": "Router2",
+      "at": [17, 16]
+    },
+    {
+      "id": "tx",
+      "type": "WirelessTransmitter",
+      "value": "21",
+      "label": "I_Term",
+      "at": [20, 18]
+    },
+    {
+      "id": "min",
+      "type": "SimpleThreshold",
+      "value": "-1.50",
+      "label": "I < MIN",
+      "at": [10, 25]
+    },
+    {
+      "id": "max",
+      "type": "SimpleThreshold",
+      "value": "100.0",
+      "label": "I > MAX",
+      "at": [14, 25]
+    },
+    {
+      "id": "notmin",
+      "type": "LogicGateNot",
+      "at": [10, 29]
+    },
+    {
+      "id": "andlo",
+      "type": "LogicGateAnd",
+      "at": [10, 33]
+    },
+    {
+      "id": "andhi",
+      "type": "LogicGateAnd",
+      "at": [14, 33]
+    },
+    {
+      "id": "either",
+      "type": "Adder",
+      "at": [12, 37]
+    },
+    {
+      "id": "scale",
+      "type": "LogicGateNot",
+      "label": "SCALE (0/1)",
+      "at": [12, 41]
+    },
+    {
+      "id": "gate",
+      "type": "Multiplier",
+      "at": [17, 8]
+    }
+  ],
+  "wires": [
+    {
+      "from": "err:io",
+      "to": "esplit:in"
+    },
+    {
+      "from": "esplit:out1",
+      "to": "sign:in"
+    },
+    {
+      "from": "sign:out1",
+      "to": "pos:in"
+    },
+    {
+      "from": "sign:out2",
+      "to": "neg:in"
+    },
+    {
+      "from": "gain:out",
+      "to": "mul:in2"
+    },
+    {
+      "from": "mul:out",
+      "to": "gate:in1"
+    },
+    {
+      "from": "gate:out",
+      "to": "acc:in1"
+    },
+    {
+      "from": "clock:io",
+      "to": "acc:in2"
+    },
+    {
+      "from": "acc:out",
+      "to": "iout:in"
+    },
+    {
+      "from": "iout:out1",
+      "to": "isplit:in"
+    },
+    {
+      "from": "iout:out2",
+      "to": "tx:io"
+    },
+    {
+      "from": "isplit:out1",
+      "to": "min:in"
+    },
+    {
+      "from": "isplit:out2",
+      "to": "max:in"
+    },
+    {
+      "from": "min:out",
+      "to": "notmin:in"
+    },
+    {
+      "from": "notmin:out",
+      "to": "andlo:in2"
+    },
+    {
+      "from": "andlo:out",
+      "to": "either:in1"
+    },
+    {
+      "from": "andhi:out",
+      "to": "either:in2"
+    },
+    {
+      "from": "either:out",
+      "to": "scale:in"
+    },
+    {
+      "from": "neg:out",
+      "to": "andlo:in1"
+    },
+    {
+      "from": "pos:out",
+      "to": "andhi:in1"
+    },
+    {
+      "from": "max:out",
+      "to": "andhi:in2"
+    },
+    {
+      "from": "esplit:out2",
+      "to": "mul:in1"
+    },
+    {
+      "from": "scale:out",
+      "to": "gate:in2"
+    }
+  ],
+  "notes": [
+    {
+      "kind": "group",
+      "parts": ["sign", "pos", "neg"],
+      "text": "Error sign (+/-)",
+      "color": "green"
+    },
+    {
+      "kind": "group",
+      "parts": ["min", "max", "notmin", "andlo", "andhi", "either", "scale"],
+      "text": "Anti windup",
+      "color": "magenta"
+    },
+    {
+      "kind": "md",
+      "body": "**Working principle.** SCALE starts at 1. If the integral is below MIN and the error is still negative, or above MAX and the error is still positive, SCALE drops to 0 and the [[part:Accumulator]] stops taking input. MIN and MAX are not hard limits -- the integral can drift a little past them -- but this is good enough for most ships.\n\nThe [[part:Accumulator]] must be in **Pulse** mode, clocked by the Reset_Clock channel, or it races.\n\nTune the two thresholds and the I constant for your ship."
+    }
+  ]
+}

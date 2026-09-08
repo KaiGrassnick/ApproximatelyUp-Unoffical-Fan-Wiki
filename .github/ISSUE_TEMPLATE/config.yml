@@ -1,0 +1,11 @@
+# A blank issue stays available: three templates cannot anticipate everything,
+# and turning someone away for not fitting one of them costs more than the
+# occasional unstructured report.
+blank_issues_enabled: true
+contact_links:
+  - name: Questions about the game itself
+    url: https://discord.gg/vHFa4h56V5
+    about: This wiki is a fan project and cannot help with the game. The developers' own Discord can.
+  - name: How to contribute
+    url: https://github.com/KaiGrassnick/ApproximatelyUp-Unoffical-Wiki/blob/master/CONTRIBUTING.md
+    about: Setting up the dev environment, house style, and how to open a good pull request.

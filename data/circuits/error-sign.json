@@ -1,0 +1,296 @@
+{
+ "bom": [
+  {
+   "count": 1,
+   "id": "LogicGateNot"
+  },
+  {
+   "count": 2,
+   "id": "LogicValue"
+  },
+  {
+   "count": 1,
+   "id": "Router2"
+  }
+ ],
+ "findings": [
+  {
+   "level": "warn",
+   "message": "not connected",
+   "where": "err:in"
+  }
+ ],
+ "id": "error-sign",
+ "needs": {
+  "DataCable": 16,
+  "MathBlock": 4
+ },
+ "newGame": true,
+ "notesHtml": "<p>A <a class=\"part\" href=\"/components/LogicValue\"><img src=\"data/icons/64/LogicValue.webp?v=5455a441\" alt=\"\" width=\"20\" height=\"20\" loading=\"lazy\" /><span>Logic Value</span></a> outputs 1 when its input is 0.5 or more and 0 below, so a raw error term through one is already &quot;is the error positive&quot;. The <a class=\"part\" href=\"/components/LogicGateNot\"><img src=\"data/icons/64/LogicGateNot.webp?v=76baa871\" alt=\"\" width=\"20\" height=\"20\" loading=\"lazy\" /><span>Logic Gate NOT</span></a> on the second branch of the <a class=\"part\" href=\"/components/Router2\"><img src=\"data/icons/64/Router2.webp?v=149dcc6b\" alt=\"\" width=\"20\" height=\"20\" loading=\"lazy\" /><span>Data Router 2</span></a> gives the other half. Feed both into the anti-windup circuit.</p>\n\n",
+ "placed": {
+  "cables": [
+   {
+    "cells": [
+     {
+      "x": 2,
+      "y": 0,
+      "z": 2
+     },
+     {
+      "x": 2,
+      "y": 0,
+      "z": 3
+     },
+     {
+      "x": 2,
+      "y": 0,
+      "z": 4
+     },
+     {
+      "x": 2,
+      "y": 0,
+      "z": 5
+     }
+    ],
+    "from": {
+     "part": "err",
+     "port": "out"
+    },
+    "kind": "data",
+    "to": {
+     "part": "split",
+     "port": "in"
+    }
+   },
+   {
+    "cells": [
+     {
+      "x": 2,
+      "y": 0,
+      "z": 8
+     },
+     {
+      "x": 2,
+      "y": 0,
+      "z": 9
+     },
+     {
+      "x": 2,
+      "y": 0,
+      "z": 10
+     },
+     {
+      "x": 2,
+      "y": 0,
+      "z": 11
+     },
+     {
+      "x": 1,
+      "y": 0,
+      "z": 11
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "z": 11
+     }
+    ],
+    "from": {
+     "part": "split",
+     "port": "out1"
+    },
+    "kind": "data",
+    "to": {
+     "part": "pos",
+     "port": "in"
+    }
+   },
+   {
+    "cells": [
+     {
+      "x": 3,
+      "y": 0,
+      "z": 8
+     },
+     {
+      "x": 3,
+      "y": 0,
+      "z": 9
+     },
+     {
+      "x": 3,
+      "y": 0,
+      "z": 10
+     },
+     {
+      "x": 3,
+      "y": 0,
+      "z": 11
+     },
+     {
+      "x": 4,
+      "y": 0,
+      "z": 11
+     },
+     {
+      "x": 5,
+      "y": 0,
+      "z": 11
+     }
+    ],
+    "from": {
+     "part": "split",
+     "port": "out2"
+    },
+    "kind": "data",
+    "to": {
+     "part": "neg",
+     "port": "in"
+    }
+   }
+  ],
+  "parts": [
+   {
+    "at": {
+     "x": 2,
+     "y": 0,
+     "z": 0
+    },
+    "id": "err",
+    "label": "Error term",
+    "rot": 0,
+    "size": {
+     "x": 2,
+     "y": 1,
+     "z": 2
+    },
+    "type": "LogicValue"
+   },
+   {
+    "at": {
+     "x": 2,
+     "y": 0,
+     "z": 6
+    },
+    "id": "split",
+    "rot": 0,
+    "size": {
+     "x": 2,
+     "y": 1,
+     "z": 2
+    },
+    "type": "Router2"
+   },
+   {
+    "at": {
+     "x": 0,
+     "y": 0,
+     "z": 12
+    },
+    "id": "pos",
+    "label": "ERR > 0",
+    "rot": 0,
+    "size": {
+     "x": 2,
+     "y": 1,
+     "z": 2
+    },
+    "type": "LogicValue"
+   },
+   {
+    "at": {
+     "x": 5,
+     "y": 0,
+     "z": 12
+    },
+    "id": "neg",
+    "label": "ERR < 0",
+    "rot": 0,
+    "size": {
+     "x": 2,
+     "y": 1,
+     "z": 2
+    },
+    "type": "LogicGateNot"
+   }
+  ]
+ },
+ "source": {
+  "notes": [
+   {
+    "color": "green",
+    "kind": "group",
+    "parts": [
+     "split",
+     "pos",
+     "neg"
+    ],
+    "text": "Error sign (+/-)"
+   },
+   {
+    "body": "A [[part:LogicValue]] outputs 1 when its input is 0.5 or more and 0 below, so a raw error term through one is already \"is the error positive\". The [[part:LogicGateNot]] on the second branch of the [[part:Router2]] gives the other half. Feed both into the anti-windup circuit.",
+    "kind": "md"
+   }
+  ],
+  "order": 10,
+  "parts": [
+   {
+    "id": "err",
+    "label": "Error term",
+    "type": "LogicValue"
+   },
+   {
+    "id": "split",
+    "type": "Router2"
+   },
+   {
+    "id": "pos",
+    "label": "ERR > 0",
+    "type": "LogicValue"
+   },
+   {
+    "id": "neg",
+    "label": "ERR < 0",
+    "type": "LogicGateNot"
+   }
+  ],
+  "spoiler": "none",
+  "summary": "Two logic lines from one signal: one high when it is positive, one when it is negative.",
+  "title": "Sign of an error",
+  "updated": "2026-09-07",
+  "view": "top",
+  "wires": [
+   {
+    "from": "err:out",
+    "to": "split:in"
+   },
+   {
+    "from": "split:out1",
+    "to": "pos:in"
+   },
+   {
+    "from": "split:out2",
+    "to": "neg:in"
+   }
+  ]
+ },
+ "stats": {
+  "cableCells": {
+   "data": 16,
+   "nano": 0,
+   "plasma": 0,
+   "power": 0
+  },
+  "mass": 28,
+  "parts": {
+   "LogicGateNot": 1,
+   "LogicValue": 2,
+   "Router2": 1
+  },
+  "pools": {
+   "DataCable": 16,
+   "MathBlock": 4
+  },
+  "power": 0
+ }
+}

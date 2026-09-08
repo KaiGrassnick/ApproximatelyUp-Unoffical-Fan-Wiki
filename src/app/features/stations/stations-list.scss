@@ -1,0 +1,44 @@
+@use 'styles/hud' as *;
+
+.lede {
+  color: var(--text-dim);
+  max-width: 70ch;
+}
+
+.grp {
+  margin-top: 2rem;
+}
+.grp h2 {
+  @include label;
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  margin: 0 0 0.75rem;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 0.4rem;
+  .num {
+    color: var(--accent);
+    margin-left: 0.4rem;
+  }
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+}
+.list a {
+  @include panel;
+  @include glow-hover;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.7rem 1rem;
+  color: var(--text);
+}
+.list .name {
+  font-family: var(--font-head);
+}

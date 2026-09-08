@@ -1,0 +1,56 @@
+<button
+  type="button"
+  class="trigger"
+  [class.on]="reveal.any()"
+  [class.open]="open()"
+  [class.hint]="hint()"
+  [attr.aria-expanded]="open()"
+  aria-controls="reveal-panel"
+  (click)="toggle()"
+>
+  <!-- Decorative: the button's own text names it, and a screen reader
+       announcing "eye" on top of that adds nothing. -->
+  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+    <path
+      d="M2 12s3.6-6 10-6 10 6 10 6-3.6 6-10 6-10-6-10-6z"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1.6"
+      stroke-linejoin="round"
+    />
+    <circle cx="12" cy="12" r="2.6" fill="none" stroke="currentColor" stroke-width="1.6" />
+  </svg>
+  <span class="text">Spoilers</span>
+  @if (onCount()) {
+    <span class="count num">{{ onCount() }}</span>
+  }
+</button>
+
+@if (open()) {
+  <div class="panel" id="reveal-panel" role="group" aria-label="Reveal hidden content">
+    <p class="intro">
+      The wiki shows what a new game would, until you drop a save in. Turn these on to see the rest.
+    </p>
+
+    @for (row of rows; track row.kind) {
+      <label class="row" [class.total]="row.kind === 'all'">
+        <input type="checkbox" [checked]="isOn(row)" (change)="onToggle(row)" />
+        <span class="lbl">{{ row.label }}</span>
+      </label>
+    }
+
+    @if (pending(); as row) {
+      <div class="warn" role="alertdialog" aria-label="Spoiler warning">
+        <p class="head">This will spoil the game</p>
+        <p>
+          <strong>{{ row.label }}</strong> names planets, missions and parts you have not reached
+          yet. There is no unseeing them.
+        </p>
+        <div class="acts">
+          <button type="button" class="go" (click)="confirm()">Reveal anyway</button>
+          <button type="button" (click)="cancel()">Cancel</button>
+        </div>
+      </div>
+    }
+  </div>
+}

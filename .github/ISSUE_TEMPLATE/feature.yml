@@ -1,0 +1,38 @@
+name: Request a feature
+description: Something the wiki should do that it does not do yet
+labels: ['enhancement']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Ideas are welcome, including half-formed ones. What helps most is knowing
+        what you were trying to do when the wiki did not help.
+
+  - type: textarea
+    id: what
+    attributes:
+      label: What you would like
+      placeholder: A way to compare two components side by side.
+    validations:
+      required: true
+
+  - type: textarea
+    id: why
+    attributes:
+      label: What it would let you do
+      description: The thing you were actually trying to work out. This is what decides the shape of the feature.
+      placeholder: I am picking between two thrusters and keep flipping between tabs to compare them.
+
+  - type: input
+    id: page
+    attributes:
+      label: Page
+      description: Where this occurred to you, if it was somewhere in particular.
+      placeholder: https://…/components
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before you send
+      options:
+        - label: I checked that this is not already an open issue.

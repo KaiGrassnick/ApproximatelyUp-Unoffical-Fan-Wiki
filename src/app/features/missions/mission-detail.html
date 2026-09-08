@@ -1,0 +1,98 @@
+@if (obj(); as o) {
+  <a class="back" routerLink="/missions">← Missions</a>
+  <header class="head">
+    <h1><objective-title [objective]="o" /></h1>
+    <p class="meta">
+      <span class="kind">{{ o.type }}</span>
+      @if (data.locationLabel(o.start); as from) {
+        <span class="where">from {{ from }}</span>
+      }
+      @if (data.locationLabel(o.end); as to) {
+        <span class="where">to {{ to }}</span>
+      }
+      @if (world.hasWorld()) {
+        <status-pill
+          [state]="world.isCompleted(o.id) ? 'have' : 'locked'"
+          [text]="world.isCompleted(o.id) ? 'completed' : 'open'"
+        />
+      }
+    </p>
+  </header>
+
+  @if (o.obj) {
+    <p class="objective" [innerHTML]="o.obj | richtext"></p>
+  }
+  @if (o.desc) {
+    <p class="desc" [innerHTML]="o.desc | richtext"></p>
+  }
+
+  <div class="cols">
+    @if (rewards().length) {
+      <hud-panel title="Rewards">
+        <ul class="links">
+          @for (r of rewards(); track r.component) {
+            <li>
+              <a [routerLink]="['/components', r.component]">{{ r.name }}</a>
+              <span class="num">×{{ r.amount | amount }}</span>
+            </li>
+          }
+        </ul>
+      </hud-panel>
+    }
+
+    @if (requires().length) {
+      <hud-panel title="Requires">
+        <ul class="links">
+          @for (r of requires(); track r.component) {
+            <li>
+              <a [routerLink]="['/components', r.component]">{{ r.name }}</a>
+              <span class="num">×{{ r.amount | amount }}</span>
+            </li>
+          }
+        </ul>
+      </hud-panel>
+    }
+
+    @if (deps().length) {
+      <hud-panel title="After">
+        <ul class="links">
+          @for (d of deps(); track $index) {
+            <li>
+              @if (d.kind === 'objective') {
+                <a [routerLink]="['/missions', d.obj.id]"
+                  ><objective-title [objective]="d.obj"
+                /></a>
+              } @else {
+                <a [routerLink]="['/planets', d.id]">{{ d.id }}</a>
+              }
+            </li>
+          }
+        </ul>
+      </hud-panel>
+    }
+
+    @if (unlocks().length) {
+      <hud-panel title="Leads to">
+        <ul class="links">
+          @for (u of unlocks(); track u.objective.id) {
+            <li>
+              @if (u.known) {
+                <a [routerLink]="['/missions', u.objective.id]"
+                  ><objective-title [objective]="u.objective"
+                /></a>
+              } @else {
+                <!-- A mission the reader has not found: that something
+                     follows is fair to say, what it is called is not. -->
+                <span class="unknown">?</span>
+              }
+            </li>
+          }
+        </ul>
+      </hud-panel>
+    }
+  </div>
+} @else if (!data.loading() && !data.failed()) {
+  <hud-panel title="Not found">
+    <p>No objective with id "{{ id() }}". <a routerLink="/missions">Back to the list</a>.</p>
+  </hud-panel>
+}

@@ -1,0 +1,95 @@
+<div
+  class="stage"
+  #stage
+  [class.pressed]="pressed()"
+  [class.dragging]="dragging()"
+  [class.full]="fullscreen()"
+  tabindex="0"
+  role="group"
+  [attr.aria-label]="
+    title() + ', 3D. Arrow keys orbit, W A S D pan, plus and minus zoom, 0 resets.'
+  "
+  (pointerdown)="onPointerDown($event)"
+  (contextmenu)="onContextMenu($event)"
+  (pointermove)="onPointerMove($event)"
+  (pointerup)="onPointerUp($event)"
+  (pointercancel)="onPointerUp($event)"
+  (wheel)="onWheel($event)"
+  (keydown)="onKeydown($event)"
+>
+  <!-- The blocks. Everything you can point at is in the overlay below. -->
+  <canvas #canvas class="gl"></canvas>
+
+  @for (m of showLabels() ? markers() : []; track m.id) {
+    <!-- routerLink takes null for a part the reader may not see, which leaves
+         the anchor with no href: it is then not a link at all, so it cannot
+         be clicked, tabbed into, or opened in a new tab. -->
+    <a
+      class="part"
+      [class.far]="m.far"
+      [routerLink]="m.listed ? ['/components', m.type] : null"
+      [style.left.px]="m.x"
+      [style.top.px]="m.y"
+      [style.z-index]="m.order"
+    >
+      <span class="lbl">{{ m.label }}</span>
+      <!-- The readout under the name, then the author's note and mode, all
+           centred: a pill reads top to bottom like the block it names. -->
+      @if (m.value) {
+        <span class="val">{{ m.value }}</span>
+      }
+      @if (m.tag) {
+        <span class="tag">{{ m.tag }}</span>
+      }
+      @if (m.mode) {
+        <span class="mode">{{ m.mode }}</span>
+      }
+    </a>
+  }
+
+  @if (noGl()) {
+    <p class="nogl">3D needs WebGL; the labels still work.</p>
+  }
+
+  <div class="tools">
+    <button
+      type="button"
+      class="labels"
+      [attr.aria-pressed]="showLabels()"
+      (click)="showLabels.set(!showLabels())"
+    >
+      labels
+    </button>
+    <!-- Lays the stage over the window; Escape or the button again restores it. -->
+    <button
+      type="button"
+      class="full"
+      [attr.aria-pressed]="fullscreen()"
+      [attr.aria-label]="fullscreen() ? 'Leave fullscreen (Escape)' : 'Fullscreen'"
+      (click)="toggleFullscreen()"
+    >
+      <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false">
+        <path
+          d="M2 6V2h4M10 2h4v4M14 10v4h-4M6 14H2v-4"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </button>
+  </div>
+
+  <!-- The pan is the one control a reader would not guess: the galaxy has
+       nothing to pan to, this view does. -->
+  <p class="how">
+    drag to orbit · right-drag or shift-drag to pan ·
+    {{ fullscreen() ? 'scroll to zoom' : 'ctrl + scroll to zoom' }}
+  </p>
+  <div class="zoom">
+    <button type="button" (click)="dollyBy(-1)" aria-label="Zoom out">−</button>
+    <button type="button" (click)="dollyBy(1)" aria-label="Zoom in">+</button>
+    <button type="button" class="reset" (click)="reset()">reset</button>
+  </div>
+</div>

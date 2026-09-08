@@ -1,0 +1,82 @@
+@mixin panel {
+  background: linear-gradient(160deg, var(--panel), var(--bg-raise));
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  clip-path: polygon(
+    var(--clip) 0,
+    100% 0,
+    100% calc(100% - var(--clip)),
+    calc(100% - var(--clip)) 100%,
+    0 100%,
+    0 var(--clip)
+  );
+  box-shadow: inset 0 1px 0 rgba(120, 200, 255, 0.06);
+}
+
+@mixin glow-hover {
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease,
+    transform 0.15s ease;
+  &:hover {
+    border-color: var(--line-hi);
+    box-shadow:
+      0 0 0 1px var(--accent-dim),
+      0 6px 24px -12px var(--accent);
+    transform: translateY(-1px);
+  }
+}
+
+@mixin label {
+  font-family: var(--font-head);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+/* Hidden from the page, still read aloud. For a label the layout drops but a
+   screen reader still needs — `display: none` would take it from both. */
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* "You have not tried this yet." A slow warm pulse on a control the reader is
+   being pointed at, and nothing at all once they have used it — see
+   SpoilerService.seen and WorldService.hasWorld.
+
+   Warm rather than accent-coloured: this is the same signal the wiki uses to
+   say a spoiler is in play, and both are about what the reader is choosing to
+   see. Slow rather than urgent: nothing here is wrong, and a control that
+   flashes at you reads as an error. */
+@keyframes attention-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 180, 84, 0);
+    border-color: var(--line);
+  }
+  50% {
+    box-shadow: 0 0 0 3px rgba(255, 180, 84, 0.14);
+    border-color: rgba(255, 180, 84, 0.55);
+  }
+}
+
+@mixin attention {
+  animation: attention-pulse 2.6s ease-in-out infinite;
+
+  /* Motion is the wrong way to point at something for a reader who has asked
+     for less of it, so they get the same emphasis held still. */
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+    border-color: rgba(255, 180, 84, 0.55);
+    box-shadow: 0 0 0 3px rgba(255, 180, 84, 0.14);
+  }
+}

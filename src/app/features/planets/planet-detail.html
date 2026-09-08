@@ -1,0 +1,103 @@
+@if (planet(); as p) {
+  <a class="back" routerLink="/planets">← Planets</a>
+  <header class="head">
+    @if (p.type === 'blackhole') {
+      <!-- No globe is rendered for it, and none should be: it is a black
+           sphere, the same one its card on the planets page shows. -->
+      <span class="globe hole" aria-hidden="true"></span>
+    } @else if (p.type !== 'station') {
+      <img
+        [src]="data.globeUrl(p.id)"
+        [alt]="p.id + ', rendered from the game’s terrain data'"
+        width="140"
+        height="140"
+      />
+    }
+    <div>
+      <h1>{{ p.id }}</h1>
+      <p class="kind">
+        {{ p.type }}
+        @if (p.parent) {
+          · orbits {{ p.parent }}
+        }
+      </p>
+    </div>
+  </header>
+
+  <div class="cols">
+    <hud-panel title="Body">
+      <dl>
+        <dt>Radius</dt>
+        <dd class="num">{{ p.radius | number: '1.0-0' }} m</dd>
+        <dt>Gravity</dt>
+        <dd class="num">{{ p.gravity | number: '1.2-2' }} g</dd>
+        @if (p.wormhole) {
+          <dt>Wormhole</dt>
+          <dd class="num">{{ p.wormhole }}</dd>
+        }
+      </dl>
+    </hud-panel>
+
+    @if (p.air; as air) {
+      <hud-panel title="Atmosphere">
+        <dl>
+          <dt>Density</dt>
+          <dd class="num">{{ air.amount | number: '1.2-2' }}</dd>
+          <dt>Inner edge</dt>
+          <dd class="num">{{ air.radius_min | number: '1.3-3' }} R</dd>
+          <dt>Outer edge</dt>
+          <dd class="num">{{ air.radius_max | number: '1.3-3' }} R</dd>
+        </dl>
+      </hud-panel>
+    }
+
+    @if (p.wind; as wind) {
+      <hud-panel title="Wind">
+        <dl>
+          <dt>Speed</dt>
+          <dd class="num">{{ wind.speed | number: '1.0-1' }}</dd>
+          <dt>Max force</dt>
+          <dd class="num">{{ wind.max_force | number: '1.1-2' }}</dd>
+          <dt>Constant force</dt>
+          <dd class="num">{{ wind.always_force | number: '1.1-2' }}</dd>
+        </dl>
+      </hud-panel>
+    }
+
+    @if (stations().length) {
+      <hud-panel title="Stations">
+        <ul class="links">
+          <!-- Every station here is one the reader has docked at; the rest
+               are left out, the way /stations leaves them out. -->
+          @for (s of stations(); track s) {
+            <li>
+              <a [routerLink]="['/planets', s]">{{ s }}</a>
+            </li>
+          }
+        </ul>
+      </hud-panel>
+    }
+
+    @if (missions().length || toCome()) {
+      <hud-panel title="Missions here">
+        <ul class="links missions">
+          @for (m of missions(); track m.o.id) {
+            <!-- The station is outside the link: it says where to dock, not
+                 where the link goes. Absent for a mission at the body. -->
+            <li>
+              <a [routerLink]="['/missions', m.o.id]"><objective-title [objective]="m.o" /></a>
+              @if (m.at) {
+                <span class="at">{{ m.at }}</span>
+              }
+            </li>
+          }
+        </ul>
+        <to-come [count]="toCome()" />
+      </hud-panel>
+    }
+  </div>
+} @else if (!data.loading() && !data.failed()) {
+  <hud-panel title="Not found">
+    <p>No body with id "{{ id() }}". <a routerLink="/planets">Back to the list</a>.</p>
+  </hud-panel>
+}

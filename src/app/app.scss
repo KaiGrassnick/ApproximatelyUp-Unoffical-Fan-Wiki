@@ -1,0 +1,122 @@
+@use 'styles/hud' as *;
+
+:host {
+  position: relative;
+  z-index: 1;
+  display: block;
+}
+
+.shell-nav {
+  display: flex;
+  align-items: center;
+  // Wraps rather than crushing the world drop: the two links to the game cost
+  // width the header did not have to spare on a laptop.
+  flex-wrap: wrap;
+  gap: 0.75rem 2rem;
+  padding: 0.9rem 1.5rem;
+  border-bottom: 1px solid var(--line);
+  background: rgba(5, 7, 13, 0.8);
+  backdrop-filter: blur(8px);
+  position: sticky;
+  top: 0;
+  // Above the floating controls, which sit at z-index 40 (see reveal-menu and
+  // feedback-bubble), because the world drop's "where are my saves?" panel hangs out of this
+  // header and down into the corner the spoilers button floats in. Both of
+  // those open downwards and never reach up here, so nothing is lost by it.
+  z-index: 50;
+}
+
+.brand {
+  display: grid;
+  gap: 0.1rem;
+  line-height: 1.1;
+  .title {
+    font-family: var(--font-head);
+    letter-spacing: 0.22em;
+    font-weight: 600;
+  }
+  // Deliberately not the display face: italic body type reads as an aside
+  // about the wiki, which is what it is — this is a fan project, not the
+  // game's own site, and the header is where that has to be said.
+  .sub {
+    font-style: italic;
+    font-size: 0.68rem;
+    color: var(--text-faint);
+    letter-spacing: 0.04em;
+  }
+}
+
+nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+// The two links off this site and onto the game's own. Pushed to the right,
+// against the world drop, so they read as "the game" rather than as two more
+// wiki pages in the nav.
+.official {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+.official a {
+  @include label;
+  padding: 0.35rem 0.7rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  color: var(--text-dim);
+  white-space: nowrap;
+  &:hover {
+    border-color: var(--line-hi);
+    color: var(--accent);
+  }
+}
+.official .site {
+  color: var(--accent);
+  border-color: var(--line-hi);
+  background: var(--accent-dim);
+  &:hover {
+    color: var(--accent-hi);
+  }
+}
+nav a {
+  @include label;
+  color: var(--text-dim);
+}
+nav a.on {
+  color: var(--accent);
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  // Was 6rem, to keep the last panel off the bottom edge of the window. The
+  // footer now does that job, and the old value left an empty band above it.
+  padding: 2rem 1.5rem 3rem;
+}
+
+.data-error {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0.75rem 1.5rem;
+  border-bottom: 1px solid var(--line);
+  background: rgba(255, 180, 84, 0.08);
+  color: var(--warn);
+  font-size: 0.85rem;
+
+  strong {
+    display: inline-block;
+    margin-right: 0.4em;
+  }
+  code {
+    font-family: var(--font-mono);
+    background: rgba(255, 180, 84, 0.12);
+    padding: 0 0.3em;
+    border-radius: var(--radius);
+  }
+}
+
+.world {
+  margin-left: 0;
+}

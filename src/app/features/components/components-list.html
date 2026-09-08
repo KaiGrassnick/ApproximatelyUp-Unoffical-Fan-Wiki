@@ -1,0 +1,62 @@
+<h1>Components</h1>
+<!-- Amounts are what the save has been GIVEN. A .world file records
+     objectives and visited locations and nothing else, so what the player
+     has already welded onto a ship cannot be known here. -->
+<p class="stock-note">
+  Bracketed amounts are the stock this save has been <strong>granted</strong> — starting stock plus
+  every completed mission's reward, not what is left after building. Shapes made of one material
+  share a single pool and so all show the same figure; a part made of two materials shows the
+  second.
+</p>
+<div class="controls">
+  <input
+    class="search"
+    type="search"
+    [placeholder]="'Search ' + available().length + ' components…'"
+    aria-label="Search components"
+    [value]="query()"
+    (input)="query.set($any($event.target).value)"
+  />
+  <div class="groups">
+    @for (c of categories(); track c) {
+      <button
+        type="button"
+        [class.on]="activeCategory() === c"
+        [attr.aria-pressed]="activeCategory() === c"
+        (click)="category.set(c)"
+      >
+        {{ c }}
+      </button>
+    }
+  </div>
+  <span class="count num">{{ shown().length }} shown</span>
+</div>
+
+@for (g of groups(); track g.name) {
+  <section class="cat">
+    <h2>
+      {{ g.name }} <span class="num">{{ g.items.length }}</span>
+    </h2>
+    <div class="grid">
+      @for (c of g.items; track c.id) {
+        <a class="card" [routerLink]="['/components', c.id]">
+          <img
+            [src]="data.iconUrl(c.id)"
+            [srcset]="data.iconSrcset(c.id)"
+            [alt]="c.name"
+            width="64"
+            height="64"
+            loading="lazy"
+            decoding="async"
+          />
+          <span class="name">{{ c.name }}</span>
+          @if (stockLabel(c.id); as stock) {
+            <span class="stock num">{{ stock }}</span>
+          }
+        </a>
+      }
+    </div>
+  </section>
+} @empty {
+  <p class="empty">Nothing matches “{{ query() }}”.</p>
+}

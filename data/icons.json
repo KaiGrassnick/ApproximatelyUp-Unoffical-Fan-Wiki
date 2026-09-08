@@ -1,0 +1,1862 @@
+{
+ "Abs": {
+  "file": "icons/Abs.webp",
+  "file_1x": "icons/64/Abs.webp",
+  "size": "128x128",
+  "texture": "SC_Abs"
+ },
+ "Accelerometer": {
+  "file": "icons/Accelerometer.webp",
+  "file_1x": "icons/64/Accelerometer.webp",
+  "size": "128x128",
+  "texture": "SC_Accelerometer"
+ },
+ "Accumulator": {
+  "file": "icons/Accumulator.webp",
+  "file_1x": "icons/64/Accumulator.webp",
+  "size": "128x128",
+  "texture": "SC_Accumulator"
+ },
+ "Acos": {
+  "file": "icons/Acos.webp",
+  "file_1x": "icons/64/Acos.webp",
+  "size": "128x128",
+  "texture": "SC_Acos"
+ },
+ "Adder": {
+  "file": "icons/Adder.webp",
+  "file_1x": "icons/64/Adder.webp",
+  "size": "128x128",
+  "texture": "SC_Adder"
+ },
+ "AdditionArray": {
+  "file": "icons/AdditionArray.webp",
+  "file_1x": "icons/64/AdditionArray.webp",
+  "size": "128x128",
+  "texture": "SC_AdditionArray"
+ },
+ "Aerometer": {
+  "file": "icons/Aerometer.webp",
+  "file_1x": "icons/64/Aerometer.webp",
+  "size": "128x128",
+  "texture": "SC_Aerometer"
+ },
+ "Altimeter": {
+  "file": "icons/Altimeter.webp",
+  "file_1x": "icons/64/Altimeter.webp",
+  "size": "128x128",
+  "texture": "SC_Altimeter"
+ },
+ "AngryBox": {
+  "file": "icons/AngryBox.webp",
+  "file_1x": "icons/64/AngryBox.webp",
+  "size": "128x128",
+  "texture": "SC_AngryBox"
+ },
+ "Arc270Meter": {
+  "file": "icons/Arc270Meter.webp",
+  "file_1x": "icons/64/Arc270Meter.webp",
+  "size": "128x128",
+  "texture": "SC_Arc270Meter"
+ },
+ "Arc90Meter": {
+  "file": "icons/Arc90Meter.webp",
+  "file_1x": "icons/64/Arc90Meter.webp",
+  "size": "128x128",
+  "texture": "SC_Arc90Meter"
+ },
+ "Asin": {
+  "file": "icons/Asin.webp",
+  "file_1x": "icons/64/Asin.webp",
+  "size": "128x128",
+  "texture": "SC_Asin"
+ },
+ "Atan": {
+  "file": "icons/Atan.webp",
+  "file_1x": "icons/64/Atan.webp",
+  "size": "128x128",
+  "texture": "SC_Atan"
+ },
+ "Atan2": {
+  "file": "icons/Atan2.webp",
+  "file_1x": "icons/64/Atan2.webp",
+  "size": "128x128",
+  "texture": "SC_Atan2"
+ },
+ "Atmometer": {
+  "file": "icons/Atmometer.webp",
+  "file_1x": "icons/64/Atmometer.webp",
+  "size": "128x128",
+  "texture": "SC_Atmometer"
+ },
+ "AtmosphericFan": {
+  "file": "icons/AtmosphericFan.webp",
+  "file_1x": "icons/64/AtmosphericFan.webp",
+  "size": "128x128",
+  "texture": "SC_AtmosphericFan"
+ },
+ "AtmosphericLiftFan": {
+  "file": "icons/AtmosphericLiftFan.webp",
+  "file_1x": "icons/64/AtmosphericLiftFan.webp",
+  "size": "128x128",
+  "texture": "SC_AtmosphericLiftFan"
+ },
+ "AtmosphericThruster": {
+  "file": "icons/AtmosphericThruster.webp",
+  "file_1x": "icons/64/AtmosphericThruster.webp",
+  "size": "128x128",
+  "texture": "SC_AtmosphericThruster"
+ },
+ "AutohemisphereSolarPanel": {
+  "file": "icons/AutohemisphereSolarPanel.webp",
+  "file_1x": "icons/64/AutohemisphereSolarPanel.webp",
+  "size": "128x128",
+  "texture": "SC_AutohemisphereSolarPanel"
+ },
+ "AxisRotometer": {
+  "file": "icons/AxisRotometer.webp",
+  "file_1x": "icons/64/AxisRotometer.webp",
+  "size": "128x128",
+  "texture": "SC_AxisRotometer"
+ },
+ "Ballast": {
+  "file": "icons/Ballast.webp",
+  "file_1x": "icons/64/Ballast.webp",
+  "size": "128x128",
+  "texture": "SC_Ballast"
+ },
+ "BaobaraInterferencemeter": {
+  "file": "icons/BaobaraInterferencemeter.webp",
+  "file_1x": "icons/64/BaobaraInterferencemeter.webp",
+  "size": "128x128",
+  "texture": "SC_BaobaraInterferencemeter"
+ },
+ "Beeper": {
+  "file": "icons/Beeper.webp",
+  "file_1x": "icons/64/Beeper.webp",
+  "size": "128x128",
+  "texture": "SC_Beeper"
+ },
+ "BidirectionalElectricManeuveringThruster": {
+  "file": "icons/BidirectionalElectricManeuveringThruster.webp",
+  "file_1x": "icons/64/BidirectionalElectricManeuveringThruster.webp",
+  "size": "128x128",
+  "texture": "SC_BidirectionalElectricManeuveringThruster"
+ },
+ "BlueTank": {
+  "file": "icons/BlueTank.webp",
+  "file_1x": "icons/64/BlueTank.webp",
+  "size": "128x128",
+  "texture": "SC_BluebeamTank"
+ },
+ "BombC4": {
+  "file": "icons/BombC4.webp",
+  "file_1x": "icons/64/BombC4.webp",
+  "size": "128x128",
+  "texture": "SC_BombC4"
+ },
+ "BrakingPointSystem": {
+  "file": "icons/BrakingPointSystem.webp",
+  "file_1x": "icons/64/BrakingPointSystem.webp",
+  "size": "128x128",
+  "texture": "SC_BrakingPointSystem"
+ },
+ "Button": {
+  "file": "icons/Button.webp",
+  "file_1x": "icons/64/Button.webp",
+  "size": "128x128",
+  "texture": "SC_Button"
+ },
+ "Camera": {
+  "file": "icons/Camera.webp",
+  "file_1x": "icons/64/Camera.webp",
+  "size": "128x128",
+  "texture": "SC_Camera"
+ },
+ "CameraOverlay": {
+  "file": "icons/CameraOverlay.webp",
+  "file_1x": "icons/64/CameraOverlay.webp",
+  "size": "128x128",
+  "texture": "SC_CameraOverlay"
+ },
+ "CandyBouquet": {
+  "file": "icons/CandyBouquet.webp",
+  "file_1x": "icons/64/CandyBouquet.webp",
+  "size": "128x128",
+  "texture": "SC_CandyBouquet"
+ },
+ "ClimaBomb": {
+  "file": "icons/ClimaBomb.webp",
+  "file_1x": "icons/64/ClimaBomb.webp",
+  "size": "128x128",
+  "texture": "SC_ClimaBomb"
+ },
+ "ColoredLight": {
+  "file": "icons/ColoredLight.webp",
+  "file_1x": "icons/64/ColoredLight.webp",
+  "size": "128x128",
+  "texture": "SC_ColoredLight"
+ },
+ "ColoredLightController": {
+  "file": "icons/ColoredLightController.webp",
+  "file_1x": "icons/64/ColoredLightController.webp",
+  "size": "128x128",
+  "texture": "SC_ColoredLightController"
+ },
+ "Condition": {
+  "file": "icons/Condition.webp",
+  "file_1x": "icons/64/Condition.webp",
+  "size": "128x128",
+  "texture": "SC_Condition"
+ },
+ "Constant": {
+  "file": "icons/Constant.webp",
+  "file_1x": "icons/64/Constant.webp",
+  "size": "128x128",
+  "texture": "SC_Constant"
+ },
+ "Cos": {
+  "file": "icons/Cos.webp",
+  "file_1x": "icons/64/Cos.webp",
+  "size": "128x128",
+  "texture": "SC_Cos"
+ },
+ "DamagedLargeFuelThruster": {
+  "file": "icons/DamagedLargeFuelThruster.webp",
+  "file_1x": "icons/64/DamagedLargeFuelThruster.webp",
+  "size": "128x128",
+  "texture": "SC_DamagedLargeFuelThruster"
+ },
+ "DataCable": {
+  "file": "icons/DataCable.webp",
+  "file_1x": "icons/64/DataCable.webp",
+  "size": "128x128",
+  "texture": "SC_DataCable"
+ },
+ "DataHub": {
+  "file": "icons/DataHub.webp",
+  "file_1x": "icons/64/DataHub.webp",
+  "size": "128x128",
+  "texture": "SC_DataHub"
+ },
+ "Datameter": {
+  "file": "icons/Datameter.webp",
+  "file_1x": "icons/64/Datameter.webp",
+  "size": "128x128",
+  "texture": "SC_Datameter"
+ },
+ "DecouplerQuarter": {
+  "file": "icons/DecouplerQuarter.webp",
+  "file_1x": "icons/64/DecouplerQuarter.webp",
+  "size": "128x128",
+  "texture": "SC_DecouplerQuarter"
+ },
+ "Delay": {
+  "file": "icons/Delay.webp",
+  "file_1x": "icons/64/Delay.webp",
+  "size": "128x128",
+  "texture": "SC_Delay"
+ },
+ "Differentiator": {
+  "file": "icons/Differentiator.webp",
+  "file_1x": "icons/64/Differentiator.webp",
+  "size": "128x128",
+  "texture": "SC_Differentiator"
+ },
+ "DistanceMeter": {
+  "file": "icons/DistanceMeter.webp",
+  "file_1x": "icons/64/DistanceMeter.webp",
+  "size": "128x128",
+  "texture": "SC_DistanceMeter"
+ },
+ "Divider": {
+  "file": "icons/Divider.webp",
+  "file_1x": "icons/64/Divider.webp",
+  "size": "128x128",
+  "texture": "SC_Divider"
+ },
+ "DrumKit": {
+  "file": "icons/DrumKit.webp",
+  "file_1x": "icons/64/DrumKit.webp",
+  "size": "128x128",
+  "texture": "SC_DrumKit"
+ },
+ "DuctedFan": {
+  "file": "icons/DuctedFan.webp",
+  "file_1x": "icons/64/DuctedFan.webp",
+  "size": "128x128",
+  "texture": "SC_DuctedFan"
+ },
+ "DynamoBox": {
+  "file": "icons/DynamoBox.webp",
+  "file_1x": "icons/64/DynamoBox.webp",
+  "size": "128x128",
+  "texture": "SC_DynamoBox"
+ },
+ "ElectricLiftThruster": {
+  "file": "icons/ElectricLiftThruster.webp",
+  "file_1x": "icons/64/ElectricLiftThruster.webp",
+  "size": "128x128",
+  "texture": "SC_ElectricLiftThruster"
+ },
+ "Exp": {
+  "file": "icons/Exp.webp",
+  "file_1x": "icons/64/Exp.webp",
+  "size": "128x128",
+  "texture": "SC_Exp"
+ },
+ "Fader": {
+  "file": "icons/Fader.webp",
+  "file_1x": "icons/64/Fader.webp",
+  "size": "128x128",
+  "texture": "SC_Fader"
+ },
+ "Floodlight": {
+  "file": "icons/Floodlight.webp",
+  "file_1x": "icons/64/Floodlight.webp",
+  "size": "128x128",
+  "texture": "SC_Floodlight"
+ },
+ "FrameA": {
+  "file": "icons/FrameA.webp",
+  "file_1x": "icons/64/FrameA.webp",
+  "size": "128x128",
+  "texture": "SC_FrameA"
+ },
+ "FrameB": {
+  "file": "icons/FrameB.webp",
+  "file_1x": "icons/64/FrameB.webp",
+  "size": "128x128",
+  "texture": "SC_FrameB"
+ },
+ "FrameC": {
+  "file": "icons/FrameC.webp",
+  "file_1x": "icons/64/FrameC.webp",
+  "size": "128x128",
+  "texture": "SC_FrameC"
+ },
+ "FrameD": {
+  "file": "icons/FrameD.webp",
+  "file_1x": "icons/64/FrameD.webp",
+  "size": "128x128",
+  "texture": "SC_FrameD"
+ },
+ "FrameE": {
+  "file": "icons/FrameE.webp",
+  "file_1x": "icons/64/FrameE.webp",
+  "size": "128x128",
+  "texture": "SC_FrameE"
+ },
+ "FrameF": {
+  "file": "icons/FrameF.webp",
+  "file_1x": "icons/64/FrameF.webp",
+  "size": "128x128",
+  "texture": "SC_FrameF"
+ },
+ "FrameG": {
+  "file": "icons/FrameG.webp",
+  "file_1x": "icons/64/FrameG.webp",
+  "size": "128x128",
+  "texture": "SC_FrameG"
+ },
+ "FrameH": {
+  "file": "icons/FrameH.webp",
+  "file_1x": "icons/64/FrameH.webp",
+  "size": "128x128",
+  "texture": "SC_FrameH"
+ },
+ "FrameHalfA": {
+  "file": "icons/FrameHalfA.webp",
+  "file_1x": "icons/64/FrameHalfA.webp",
+  "size": "128x128",
+  "texture": "SC_FrameHalfA"
+ },
+ "FrameHalfB": {
+  "file": "icons/FrameHalfB.webp",
+  "file_1x": "icons/64/FrameHalfB.webp",
+  "size": "128x128",
+  "texture": "SC_FrameHalfB"
+ },
+ "FrameHalfC": {
+  "file": "icons/FrameHalfC.webp",
+  "file_1x": "icons/64/FrameHalfC.webp",
+  "size": "128x128",
+  "texture": "SC_FrameHalfC"
+ },
+ "FrameHalfD": {
+  "file": "icons/FrameHalfD.webp",
+  "file_1x": "icons/64/FrameHalfD.webp",
+  "size": "128x128",
+  "texture": "SC_FrameHalfD"
+ },
+ "FrameHalfE": {
+  "file": "icons/FrameHalfE.webp",
+  "file_1x": "icons/64/FrameHalfE.webp",
+  "size": "128x128",
+  "texture": "SC_FrameHalfE"
+ },
+ "FrameHalfF": {
+  "file": "icons/FrameHalfF.webp",
+  "file_1x": "icons/64/FrameHalfF.webp",
+  "size": "128x128",
+  "texture": "SC_FrameHalfF"
+ },
+ "FrameHalfG": {
+  "file": "icons/FrameHalfG.webp",
+  "file_1x": "icons/64/FrameHalfG.webp",
+  "size": "128x128",
+  "texture": "SC_FrameHalfG"
+ },
+ "FrameHalfH": {
+  "file": "icons/FrameHalfH.webp",
+  "file_1x": "icons/64/FrameHalfH.webp",
+  "size": "128x128",
+  "texture": "SC_FrameHalfH"
+ },
+ "FrameHalfI": {
+  "file": "icons/FrameHalfI.webp",
+  "file_1x": "icons/64/FrameHalfI.webp",
+  "size": "128x128",
+  "texture": "SC_FrameHalfI"
+ },
+ "FrameQuarterA": {
+  "file": "icons/FrameQuarterA.webp",
+  "file_1x": "icons/64/FrameQuarterA.webp",
+  "size": "128x128",
+  "texture": "SC_FrameQuarterA"
+ },
+ "FrameQuarterB": {
+  "file": "icons/FrameQuarterB.webp",
+  "file_1x": "icons/64/FrameQuarterB.webp",
+  "size": "128x128",
+  "texture": "SC_FrameQuarterB"
+ },
+ "FrameQuarterC": {
+  "file": "icons/FrameQuarterC.webp",
+  "file_1x": "icons/64/FrameQuarterC.webp",
+  "size": "128x128",
+  "texture": "SC_FrameQuarterC"
+ },
+ "FrameQuarterD": {
+  "file": "icons/FrameQuarterD.webp",
+  "file_1x": "icons/64/FrameQuarterD.webp",
+  "size": "128x128",
+  "texture": "SC_FrameQuarterD"
+ },
+ "FrameQuarterE": {
+  "file": "icons/FrameQuarterE.webp",
+  "file_1x": "icons/64/FrameQuarterE.webp",
+  "size": "128x128",
+  "texture": "SC_FrameQuarterE"
+ },
+ "FrameQuarterF": {
+  "file": "icons/FrameQuarterF.webp",
+  "file_1x": "icons/64/FrameQuarterF.webp",
+  "size": "128x128",
+  "texture": "SC_FrameQuarterF"
+ },
+ "FrameQuarterPipe": {
+  "file": "icons/FrameQuarterPipe.webp",
+  "file_1x": "icons/64/FrameQuarterPipe.webp",
+  "size": "128x128",
+  "texture": "SC_FrameQuarterPipe"
+ },
+ "FrameQuarterPorts": {
+  "file": "icons/FrameQuarterPorts.webp",
+  "file_1x": "icons/64/FrameQuarterPorts.webp",
+  "size": "128x128",
+  "texture": "SC_FrameQuarterPorts"
+ },
+ "FrameQuarterPortsCorner": {
+  "file": "icons/FrameQuarterPortsCorner.webp",
+  "file_1x": "icons/64/FrameQuarterPortsCorner.webp",
+  "size": "128x128",
+  "texture": "SC_FrameQuarterPortsCorner"
+ },
+ "FuelAnalyzer": {
+  "file": "icons/FuelAnalyzer.webp",
+  "file_1x": "icons/64/FuelAnalyzer.webp",
+  "size": "128x128",
+  "texture": "SC_FuelAnalyzer"
+ },
+ "FuseBox": {
+  "file": "icons/FuseBox.webp",
+  "file_1x": "icons/64/FuseBox.webp",
+  "size": "128x128",
+  "texture": "SC_FuseBox"
+ },
+ "GimbalController": {
+  "file": "icons/GimbalController.webp",
+  "file_1x": "icons/64/GimbalController.webp",
+  "size": "128x128",
+  "texture": "SC_GimbalController"
+ },
+ "GimbalThruster": {
+  "file": "icons/GimbalThruster.webp",
+  "file_1x": "icons/64/GimbalThruster.webp",
+  "size": "128x128",
+  "texture": "SC_GimbalThruster"
+ },
+ "GlassA": {
+  "file": "icons/GlassA.webp",
+  "file_1x": "icons/64/GlassA.webp",
+  "size": "128x128",
+  "texture": "SC_GlassA"
+ },
+ "GlassB": {
+  "file": "icons/GlassB.webp",
+  "file_1x": "icons/64/GlassB.webp",
+  "size": "128x128",
+  "texture": "SC_GlassB"
+ },
+ "GlassC": {
+  "file": "icons/GlassC.webp",
+  "file_1x": "icons/64/GlassC.webp",
+  "size": "128x128",
+  "texture": "SC_GlassC"
+ },
+ "GlassD": {
+  "file": "icons/GlassD.webp",
+  "file_1x": "icons/64/GlassD.webp",
+  "size": "128x128",
+  "texture": "SC_GlassD"
+ },
+ "GlassE": {
+  "file": "icons/GlassE.webp",
+  "file_1x": "icons/64/GlassE.webp",
+  "size": "128x128",
+  "texture": "SC_GlassE"
+ },
+ "GlassF": {
+  "file": "icons/GlassF.webp",
+  "file_1x": "icons/64/GlassF.webp",
+  "size": "128x128",
+  "texture": "SC_GlassF"
+ },
+ "GlassG": {
+  "file": "icons/GlassG.webp",
+  "file_1x": "icons/64/GlassG.webp",
+  "size": "128x128",
+  "texture": "SC_GlassG"
+ },
+ "GlassH": {
+  "file": "icons/GlassH.webp",
+  "file_1x": "icons/64/GlassH.webp",
+  "size": "128x128",
+  "texture": "SC_GlassH"
+ },
+ "GlassHalfA": {
+  "file": "icons/GlassHalfA.webp",
+  "file_1x": "icons/64/GlassHalfA.webp",
+  "size": "128x128",
+  "texture": "SC_GlassHalfA"
+ },
+ "GlassHalfB": {
+  "file": "icons/GlassHalfB.webp",
+  "file_1x": "icons/64/GlassHalfB.webp",
+  "size": "128x128",
+  "texture": "SC_GlassHalfB"
+ },
+ "GlassHalfC": {
+  "file": "icons/GlassHalfC.webp",
+  "file_1x": "icons/64/GlassHalfC.webp",
+  "size": "128x128",
+  "texture": "SC_GlassHalfC"
+ },
+ "GlassHalfD": {
+  "file": "icons/GlassHalfD.webp",
+  "file_1x": "icons/64/GlassHalfD.webp",
+  "size": "128x128",
+  "texture": "SC_GlassHalfD"
+ },
+ "GlassHalfE": {
+  "file": "icons/GlassHalfE.webp",
+  "file_1x": "icons/64/GlassHalfE.webp",
+  "size": "128x128",
+  "texture": "SC_GlassHalfE"
+ },
+ "GlassHalfF": {
+  "file": "icons/GlassHalfF.webp",
+  "file_1x": "icons/64/GlassHalfF.webp",
+  "size": "128x128",
+  "texture": "SC_GlassHalfF"
+ },
+ "GlassHalfG": {
+  "file": "icons/GlassHalfG.webp",
+  "file_1x": "icons/64/GlassHalfG.webp",
+  "size": "128x128",
+  "texture": "SC_GlassHalfG"
+ },
+ "GlassHalfH": {
+  "file": "icons/GlassHalfH.webp",
+  "file_1x": "icons/64/GlassHalfH.webp",
+  "size": "128x128",
+  "texture": "SC_GlassHalfH"
+ },
+ "GlassHalfI": {
+  "file": "icons/GlassHalfI.webp",
+  "file_1x": "icons/64/GlassHalfI.webp",
+  "size": "128x128",
+  "texture": "SC_GlassHalfI"
+ },
+ "GlassQuarterA": {
+  "file": "icons/GlassQuarterA.webp",
+  "file_1x": "icons/64/GlassQuarterA.webp",
+  "size": "128x128",
+  "texture": "SC_GlassQuarterA"
+ },
+ "GlassQuarterB": {
+  "file": "icons/GlassQuarterB.webp",
+  "file_1x": "icons/64/GlassQuarterB.webp",
+  "size": "128x128",
+  "texture": "SC_GlassQuarterB"
+ },
+ "GlassQuarterC": {
+  "file": "icons/GlassQuarterC.webp",
+  "file_1x": "icons/64/GlassQuarterC.webp",
+  "size": "128x128",
+  "texture": "SC_GlassQuarterC"
+ },
+ "GlassQuarterD": {
+  "file": "icons/GlassQuarterD.webp",
+  "file_1x": "icons/64/GlassQuarterD.webp",
+  "size": "128x128",
+  "texture": "SC_GlassQuarterD"
+ },
+ "GlassQuarterE": {
+  "file": "icons/GlassQuarterE.webp",
+  "file_1x": "icons/64/GlassQuarterE.webp",
+  "size": "128x128",
+  "texture": "SC_GlassQuarterE"
+ },
+ "GlassQuarterF": {
+  "file": "icons/GlassQuarterF.webp",
+  "file_1x": "icons/64/GlassQuarterF.webp",
+  "size": "128x128",
+  "texture": "SC_GlassQuarterF"
+ },
+ "Gravitymeter": {
+  "file": "icons/Gravitymeter.webp",
+  "file_1x": "icons/64/Gravitymeter.webp",
+  "size": "128x128",
+  "texture": "SC_Gravitymeter"
+ },
+ "GreenTank": {
+  "file": "icons/GreenTank.webp",
+  "file_1x": "icons/64/GreenTank.webp",
+  "size": "128x128",
+  "texture": "SC_PyrogelTank"
+ },
+ "GreenTrenchPump": {
+  "file": "icons/GreenTrenchPump.webp",
+  "file_1x": "icons/64/GreenTrenchPump.webp",
+  "size": "128x128",
+  "texture": "SC_GreenTrenchPump"
+ },
+ "GyroLine": {
+  "file": "icons/GyroLine.webp",
+  "file_1x": "icons/64/GyroLine.webp",
+  "size": "128x128",
+  "texture": "SC_GyroLine"
+ },
+ "HorizontalMeter": {
+  "file": "icons/HorizontalMeter.webp",
+  "file_1x": "icons/64/HorizontalMeter.webp",
+  "size": "128x128",
+  "texture": "SC_HorizontalMeter"
+ },
+ "IceCreamFreezer": {
+  "file": "icons/IceCreamFreezer.webp",
+  "file_1x": "icons/64/IceCreamFreezer.webp",
+  "size": "128x128",
+  "texture": "SC_IceCreamFreezer"
+ },
+ "Inclinometer": {
+  "file": "icons/Inclinometer.webp",
+  "file_1x": "icons/64/Inclinometer.webp",
+  "size": "128x128",
+  "texture": "SC_Inclinometer"
+ },
+ "InventoryTool_PainterBlack": {
+  "file": "icons/InventoryTool_PainterBlack.webp",
+  "file_1x": "icons/64/InventoryTool_PainterBlack.webp",
+  "size": "128x128",
+  "texture": "SC_InventoryTool_PainterBlack"
+ },
+ "InventoryTool_PainterBlue": {
+  "file": "icons/InventoryTool_PainterBlue.webp",
+  "file_1x": "icons/64/InventoryTool_PainterBlue.webp",
+  "size": "128x128",
+  "texture": "SC_InventoryTool_PainterBlue"
+ },
+ "InventoryTool_PainterBrown": {
+  "file": "icons/InventoryTool_PainterBrown.webp",
+  "file_1x": "icons/64/InventoryTool_PainterBrown.webp",
+  "size": "128x128",
+  "texture": "SC_InventoryTool_PainterBrown"
+ },
+ "InventoryTool_PainterBurgundy": {
+  "file": "icons/InventoryTool_PainterBurgundy.webp",
+  "file_1x": "icons/64/InventoryTool_PainterBurgundy.webp",
+  "size": "128x128",
+  "texture": "SC_InventoryTool_PainterBurgundy"
+ },
+ "InventoryTool_PainterCeladon": {
+  "file": "icons/InventoryTool_PainterCeladon.webp",
+  "file_1x": "icons/64/InventoryTool_PainterCeladon.webp",
+  "size": "128x128",
+  "texture": "SC_InventoryTool_PainterCeladon"
+ },
+ "InventoryTool_PainterCyan": {
+  "file": "icons/InventoryTool_PainterCyan.webp",
+  "file_1x": "icons/64/InventoryTool_PainterCyan.webp",
+  "size": "128x128",
+  "texture": "SC_InventoryTool_PainterCyan"
+ },
+ "InventoryTool_PainterDarkGray": {
+  "file": "icons/InventoryTool_PainterDarkGray.webp",
+  "file_1x": "icons/64/InventoryTool_PainterDarkGray.webp",
+  "size": "128x128",
+  "texture": "SC_InventoryTool_PainterDarkGray"
+ },
+ "InventoryTool_PainterGray": {
+  "file": "icons/InventoryTool_PainterGray.webp",
+  "file_1x": "icons/64/InventoryTool_PainterGray.webp",
+  "size": "128x128",
+  "texture": "SC_InventoryTool_PainterGray"
+ },
+ "InventoryTool_PainterGreen": {
+  "file": "icons/InventoryTool_PainterGreen.webp",
+  "file_1x": "icons/64/InventoryTool_PainterGreen.webp",
+  "size": "128x128",
+  "texture": "SC_InventoryTool_PainterGreen"
+ },
+ "InventoryTool_PainterLightGray": {
+  "file": "icons/InventoryTool_PainterLightGray.webp",
+  "file_1x": "icons/64/InventoryTool_PainterLightGray.webp",
+  "size": "128x128",
+  "texture": "SC_InventoryTool_PainterLightGray"
+ },
+ "InventoryTool_PainterMoss": {
+  "file": "icons/InventoryTool_PainterMoss.webp",
+  "file_1x": "icons/64/InventoryTool_PainterMoss.webp",
+  "size": "128x128",
+  "texture": "SC_InventoryTool_PainterMoss"
+ },
+ "InventoryTool_PainterOrange": {
+  "file": "icons/InventoryTool_PainterOrange.webp",
+  "file_1x": "icons/64/InventoryTool_PainterOrange.webp",
+  "size": "128x128",
+  "texture": "SC_InventoryTool_PainterOrange"
+ },
+ "InventoryTool_PainterPeriwinkle": {
+  "file": "icons/InventoryTool_PainterPeriwinkle.webp",
+  "file_1x": "icons/64/InventoryTool_PainterPeriwinkle.webp",
+  "size": "128x128",
+  "texture": "SC_InventoryTool_PainterPeriwinkle"
+ },
+ "InventoryTool_PainterPetrol": {
+  "file": "icons/InventoryTool_PainterPetrol.webp",
+  "file_1x": "icons/64/InventoryTool_PainterPetrol.webp",
+  "size": "128x128",
+  "texture": "SC_InventoryTool_PainterPetrol"
+ },
+ "InventoryTool_PainterPink": {
+  "file": "icons/InventoryTool_PainterPink.webp",
+  "file_1x": "icons/64/InventoryTool_PainterPink.webp",
+  "size": "128x128",
+  "texture": "SC_InventoryTool_PainterPink"
+ },
+ "InventoryTool_PainterPurple": {
+  "file": "icons/InventoryTool_PainterPurple.webp",
+  "file_1x": "icons/64/InventoryTool_PainterPurple.webp",
+  "size": "128x128",
+  "texture": "SC_InventoryTool_PainterPurple"
+ },
+ "InventoryTool_PainterRed": {
+  "file": "icons/InventoryTool_PainterRed.webp",
+  "file_1x": "icons/64/InventoryTool_PainterRed.webp",
+  "size": "128x128",
+  "texture": "SC_InventoryTool_PainterRed"
+ },
+ "InventoryTool_PainterTeal": {
+  "file": "icons/InventoryTool_PainterTeal.webp",
+  "file_1x": "icons/64/InventoryTool_PainterTeal.webp",
+  "size": "128x128",
+  "texture": "SC_InventoryTool_PainterTeal"
+ },
+ "InventoryTool_PainterTerracotta": {
+  "file": "icons/InventoryTool_PainterTerracotta.webp",
+  "file_1x": "icons/64/InventoryTool_PainterTerracotta.webp",
+  "size": "128x128",
+  "texture": "SC_InventoryTool_PainterTerracotta"
+ },
+ "InventoryTool_PainterViolet": {
+  "file": "icons/InventoryTool_PainterViolet.webp",
+  "file_1x": "icons/64/InventoryTool_PainterViolet.webp",
+  "size": "128x128",
+  "texture": "SC_InventoryTool_PainterViolet"
+ },
+ "InventoryTool_PainterWhite": {
+  "file": "icons/InventoryTool_PainterWhite.webp",
+  "file_1x": "icons/64/InventoryTool_PainterWhite.webp",
+  "size": "128x128",
+  "texture": "SC_InventoryTool_PainterWhite"
+ },
+ "InventoryTool_PainterYellow": {
+  "file": "icons/InventoryTool_PainterYellow.webp",
+  "file_1x": "icons/64/InventoryTool_PainterYellow.webp",
+  "size": "128x128",
+  "texture": "SC_InventoryTool_PainterYellow"
+ },
+ "InventoryTool_Welder": {
+  "file": "icons/InventoryTool_Welder.webp",
+  "file_1x": "icons/64/InventoryTool_Welder.webp",
+  "size": "128x128",
+  "texture": "SC_InventoryTool_Welder"
+ },
+ "Joystick2D": {
+  "file": "icons/Joystick2D.webp",
+  "file_1x": "icons/64/Joystick2D.webp",
+  "size": "128x128",
+  "texture": "SC_Joystick2D"
+ },
+ "Joystick3D": {
+  "file": "icons/Joystick3D.webp",
+  "file_1x": "icons/64/Joystick3D.webp",
+  "size": "128x128",
+  "texture": "SC_Joystick3D"
+ },
+ "JoystickHorizontal": {
+  "file": "icons/JoystickHorizontal.webp",
+  "file_1x": "icons/64/JoystickHorizontal.webp",
+  "size": "128x128",
+  "texture": "SC_JoystickHorizontal"
+ },
+ "JoystickSplitter": {
+  "file": "icons/JoystickSplitter.webp",
+  "file_1x": "icons/64/JoystickSplitter.webp",
+  "size": "128x128",
+  "texture": "SC_JoystickSplitter"
+ },
+ "JoystickVertical": {
+  "file": "icons/JoystickVertical.webp",
+  "file_1x": "icons/64/JoystickVertical.webp",
+  "size": "128x128",
+  "texture": "SC_JoystickVertical"
+ },
+ "LabelMedium": {
+  "file": "icons/LabelMedium.webp",
+  "file_1x": "icons/64/LabelMedium.webp",
+  "size": "128x128",
+  "texture": "SC_LabelMedium"
+ },
+ "LabelSmall": {
+  "file": "icons/LabelSmall.webp",
+  "file_1x": "icons/64/LabelSmall.webp",
+  "size": "128x128",
+  "texture": "SC_LabelSmall"
+ },
+ "LargeDamper": {
+  "file": "icons/LargeDamper.webp",
+  "file_1x": "icons/64/LargeDamper.webp",
+  "size": "128x128",
+  "texture": "SC_LargeDamper"
+ },
+ "LargeDatameter": {
+  "file": "icons/LargeDatameter.webp",
+  "file_1x": "icons/64/LargeDatameter.webp",
+  "size": "128x128",
+  "texture": "SC_LargeDatameter"
+ },
+ "LargeDisposableBattery": {
+  "file": "icons/LargeDisposableBattery.webp",
+  "file_1x": "icons/64/LargeDisposableBattery.webp",
+  "size": "128x128",
+  "texture": "SC_LargeDisposableBattery"
+ },
+ "LargeElectricThruster": {
+  "file": "icons/LargeElectricThruster.webp",
+  "file_1x": "icons/64/LargeElectricThruster.webp",
+  "size": "128x128",
+  "texture": "SC_LargeElectricThruster"
+ },
+ "LargeFuelThruster": {
+  "file": "icons/LargeFuelThruster.webp",
+  "file_1x": "icons/64/LargeFuelThruster.webp",
+  "size": "128x128",
+  "texture": "SC_LargeFuelThruster"
+ },
+ "LargeGate": {
+  "file": "icons/LargeGate.webp",
+  "file_1x": "icons/64/LargeGate.webp",
+  "size": "128x128",
+  "texture": "SC_LargeGate"
+ },
+ "LargeManeuveringThruster": {
+  "file": "icons/LargeManeuveringThruster.webp",
+  "file_1x": "icons/64/LargeManeuveringThruster.webp",
+  "size": "128x128",
+  "texture": "SC_LargeManeuveringThruster"
+ },
+ "LargeNanogate": {
+  "file": "icons/LargeNanogate.webp",
+  "file_1x": "icons/64/LargeNanogate.webp",
+  "size": "128x128",
+  "texture": "SC_LargeNanogate"
+ },
+ "LargePowerRouter": {
+  "file": "icons/LargePowerRouter.webp",
+  "file_1x": "icons/64/LargePowerRouter.webp",
+  "size": "128x128",
+  "texture": "SC_LargePowerRouter"
+ },
+ "LargeRechargeableBattery": {
+  "file": "icons/LargeRechargeableBattery.webp",
+  "file_1x": "icons/64/LargeRechargeableBattery.webp",
+  "size": "128x128",
+  "texture": "SC_LargeRechargeableBattery"
+ },
+ "LavaSucker": {
+  "file": "icons/LavaSucker.webp",
+  "file_1x": "icons/64/LavaSucker.webp",
+  "size": "128x128",
+  "texture": "SC_LavaSucker"
+ },
+ "LeverHorizontal": {
+  "file": "icons/LeverHorizontal.webp",
+  "file_1x": "icons/64/LeverHorizontal.webp",
+  "size": "128x128",
+  "texture": "SC_LeverHorizontal"
+ },
+ "LeverVertical": {
+  "file": "icons/LeverVertical.webp",
+  "file_1x": "icons/64/LeverVertical.webp",
+  "size": "128x128",
+  "texture": "SC_LeverVertical"
+ },
+ "LeverVerticalHalf": {
+  "file": "icons/LeverVerticalHalf.webp",
+  "file_1x": "icons/64/LeverVerticalHalf.webp",
+  "size": "128x128",
+  "texture": "SC_LeverVerticalHalf"
+ },
+ "Log": {
+  "file": "icons/Log.webp",
+  "file_1x": "icons/64/Log.webp",
+  "size": "128x128",
+  "texture": "SC_Log"
+ },
+ "LogicGateAnd": {
+  "file": "icons/LogicGateAnd.webp",
+  "file_1x": "icons/64/LogicGateAnd.webp",
+  "size": "128x128",
+  "texture": "SC_LogicGateAnd"
+ },
+ "LogicGateNot": {
+  "file": "icons/LogicGateNot.webp",
+  "file_1x": "icons/64/LogicGateNot.webp",
+  "size": "128x128",
+  "texture": "SC_LogicGateNot"
+ },
+ "LogicGateOr": {
+  "file": "icons/LogicGateOr.webp",
+  "file_1x": "icons/64/LogicGateOr.webp",
+  "size": "128x128",
+  "texture": "SC_LogicGateOr"
+ },
+ "LogicGateXor": {
+  "file": "icons/LogicGateXor.webp",
+  "file_1x": "icons/64/LogicGateXor.webp",
+  "size": "128x128",
+  "texture": "SC_LogicGateXor"
+ },
+ "LogicValue": {
+  "file": "icons/LogicValue.webp",
+  "file_1x": "icons/64/LogicValue.webp",
+  "size": "128x128",
+  "texture": "SC_LogicValue"
+ },
+ "LongRangeDistanceMeter": {
+  "file": "icons/LongRangeDistanceMeter.webp",
+  "file_1x": "icons/64/LongRangeDistanceMeter.webp",
+  "size": "128x128",
+  "texture": "SC_LongRangeDistanceMeter"
+ },
+ "Magnetometer": {
+  "file": "icons/Magnetometer.webp",
+  "file_1x": "icons/64/Magnetometer.webp",
+  "size": "128x128",
+  "texture": "SC_Magnetometer"
+ },
+ "Massmeter": {
+  "file": "icons/Massmeter.webp",
+  "file_1x": "icons/64/Massmeter.webp",
+  "size": "128x128",
+  "texture": "SC_Massmeter"
+ },
+ "Maximum": {
+  "file": "icons/Maximum.webp",
+  "file_1x": "icons/64/Maximum.webp",
+  "size": "128x128",
+  "texture": "SC_Maximum"
+ },
+ "MediumDamper": {
+  "file": "icons/MediumDamper.webp",
+  "file_1x": "icons/64/MediumDamper.webp",
+  "size": "128x128",
+  "texture": "SC_MediumDamper"
+ },
+ "MediumDisposableBattery": {
+  "file": "icons/MediumDisposableBattery.webp",
+  "file_1x": "icons/64/MediumDisposableBattery.webp",
+  "size": "128x128",
+  "texture": "SC_MediumDisposableBattery"
+ },
+ "MediumElectricThruster": {
+  "file": "icons/MediumElectricThruster.webp",
+  "file_1x": "icons/64/MediumElectricThruster.webp",
+  "size": "128x128",
+  "texture": "SC_MediumElectricThruster"
+ },
+ "MediumFuelThruster": {
+  "file": "icons/MediumFuelThruster.webp",
+  "file_1x": "icons/64/MediumFuelThruster.webp",
+  "size": "128x128",
+  "texture": "SC_MediumFuelThruster"
+ },
+ "MediumGate": {
+  "file": "icons/MediumGate.webp",
+  "file_1x": "icons/64/MediumGate.webp",
+  "size": "128x128",
+  "texture": "SC_MediumGate"
+ },
+ "MediumManeuveringThruster": {
+  "file": "icons/MediumManeuveringThruster.webp",
+  "file_1x": "icons/64/MediumManeuveringThruster.webp",
+  "size": "128x128",
+  "texture": "SC_MediumManeuveringThruster"
+ },
+ "MediumNanogate": {
+  "file": "icons/MediumNanogate.webp",
+  "file_1x": "icons/64/MediumNanogate.webp",
+  "size": "128x128",
+  "texture": "SC_MediumNanogate"
+ },
+ "MediumRechargeableBattery": {
+  "file": "icons/MediumRechargeableBattery.webp",
+  "file_1x": "icons/64/MediumRechargeableBattery.webp",
+  "size": "128x128",
+  "texture": "SC_MediumRechargeableBattery"
+ },
+ "Memory": {
+  "file": "icons/Memory.webp",
+  "file_1x": "icons/64/Memory.webp",
+  "size": "128x128",
+  "texture": "SC_Memory"
+ },
+ "Minimum": {
+  "file": "icons/Minimum.webp",
+  "file_1x": "icons/64/Minimum.webp",
+  "size": "128x128",
+  "texture": "SC_Minimum"
+ },
+ "Mod": {
+  "file": "icons/Mod.webp",
+  "file_1x": "icons/64/Mod.webp",
+  "size": "128x128",
+  "texture": "SC_Mod"
+ },
+ "MonitorCRT": {
+  "file": "icons/MonitorCRT.webp",
+  "file_1x": "icons/64/MonitorCRT.webp",
+  "size": "128x128",
+  "texture": "SC_MonitorCRT"
+ },
+ "MonitorLargeLCD": {
+  "file": "icons/MonitorLargeLCD.webp",
+  "file_1x": "icons/64/MonitorLargeLCD.webp",
+  "size": "128x128",
+  "texture": "SC_MonitorLargeLCD"
+ },
+ "MonitorMediumLCD": {
+  "file": "icons/MonitorMediumLCD.webp",
+  "file_1x": "icons/64/MonitorMediumLCD.webp",
+  "size": "128x128",
+  "texture": "SC_MonitorMediumLCD"
+ },
+ "MonitorSmallLCD": {
+  "file": "icons/MonitorSmallLCD.webp",
+  "file_1x": "icons/64/MonitorSmallLCD.webp",
+  "size": "128x128",
+  "texture": "SC_MonitorSmallLCD"
+ },
+ "Multiplier": {
+  "file": "icons/Multiplier.webp",
+  "file_1x": "icons/64/Multiplier.webp",
+  "size": "128x128",
+  "texture": "SC_Multiplier"
+ },
+ "NanoframeA": {
+  "file": "icons/NanoframeA.webp",
+  "file_1x": "icons/64/NanoframeA.webp",
+  "size": "128x128",
+  "texture": "SC_NanoframeA"
+ },
+ "NanoframeB": {
+  "file": "icons/NanoframeB.webp",
+  "file_1x": "icons/64/NanoframeB.webp",
+  "size": "128x128",
+  "texture": "SC_NanoframeB"
+ },
+ "NanoframeC": {
+  "file": "icons/NanoframeC.webp",
+  "file_1x": "icons/64/NanoframeC.webp",
+  "size": "128x128",
+  "texture": "SC_NanoframeC"
+ },
+ "NanoframeD": {
+  "file": "icons/NanoframeD.webp",
+  "file_1x": "icons/64/NanoframeD.webp",
+  "size": "128x128",
+  "texture": "SC_NanoframeD"
+ },
+ "NanoframeE": {
+  "file": "icons/NanoframeE.webp",
+  "file_1x": "icons/64/NanoframeE.webp",
+  "size": "128x128",
+  "texture": "SC_NanoframeE"
+ },
+ "NanoframeF": {
+  "file": "icons/NanoframeF.webp",
+  "file_1x": "icons/64/NanoframeF.webp",
+  "size": "128x128",
+  "texture": "SC_NanoframeF"
+ },
+ "NanoframeG": {
+  "file": "icons/NanoframeG.webp",
+  "file_1x": "icons/64/NanoframeG.webp",
+  "size": "128x128",
+  "texture": "SC_NanoframeG"
+ },
+ "NanoframeH": {
+  "file": "icons/NanoframeH.webp",
+  "file_1x": "icons/64/NanoframeH.webp",
+  "size": "128x128",
+  "texture": "SC_NanoframeH"
+ },
+ "NanoframeHalfA": {
+  "file": "icons/NanoframeHalfA.webp",
+  "file_1x": "icons/64/NanoframeHalfA.webp",
+  "size": "128x128",
+  "texture": "SC_NanoframeHalfA"
+ },
+ "NanoframeHalfB": {
+  "file": "icons/NanoframeHalfB.webp",
+  "file_1x": "icons/64/NanoframeHalfB.webp",
+  "size": "128x128",
+  "texture": "SC_NanoframeHalfB"
+ },
+ "NanoframeHalfC": {
+  "file": "icons/NanoframeHalfC.webp",
+  "file_1x": "icons/64/NanoframeHalfC.webp",
+  "size": "128x128",
+  "texture": "SC_NanoframeHalfC"
+ },
+ "NanoframeHalfD": {
+  "file": "icons/NanoframeHalfD.webp",
+  "file_1x": "icons/64/NanoframeHalfD.webp",
+  "size": "128x128",
+  "texture": "SC_NanoframeHalfD"
+ },
+ "NanoframeHalfE": {
+  "file": "icons/NanoframeHalfE.webp",
+  "file_1x": "icons/64/NanoframeHalfE.webp",
+  "size": "128x128",
+  "texture": "SC_NanoframeHalfE"
+ },
+ "NanoframeHalfF": {
+  "file": "icons/NanoframeHalfF.webp",
+  "file_1x": "icons/64/NanoframeHalfF.webp",
+  "size": "128x128",
+  "texture": "SC_NanoframeHalfF"
+ },
+ "NanoframeHalfG": {
+  "file": "icons/NanoframeHalfG.webp",
+  "file_1x": "icons/64/NanoframeHalfG.webp",
+  "size": "128x128",
+  "texture": "SC_NanoframeHalfG"
+ },
+ "NanoframeHalfH": {
+  "file": "icons/NanoframeHalfH.webp",
+  "file_1x": "icons/64/NanoframeHalfH.webp",
+  "size": "128x128",
+  "texture": "SC_NanoframeHalfH"
+ },
+ "NanoframeHalfI": {
+  "file": "icons/NanoframeHalfI.webp",
+  "file_1x": "icons/64/NanoframeHalfI.webp",
+  "size": "128x128",
+  "texture": "SC_NanoframeHalfI"
+ },
+ "NanoframeQuarterA": {
+  "file": "icons/NanoframeQuarterA.webp",
+  "file_1x": "icons/64/NanoframeQuarterA.webp",
+  "size": "128x128",
+  "texture": "SC_NanoframeQuarterA"
+ },
+ "NanoframeQuarterB": {
+  "file": "icons/NanoframeQuarterB.webp",
+  "file_1x": "icons/64/NanoframeQuarterB.webp",
+  "size": "128x128",
+  "texture": "SC_NanoframeQuarterB"
+ },
+ "NanoframeQuarterC": {
+  "file": "icons/NanoframeQuarterC.webp",
+  "file_1x": "icons/64/NanoframeQuarterC.webp",
+  "size": "128x128",
+  "texture": "SC_NanoframeQuarterC"
+ },
+ "NanoframeQuarterD": {
+  "file": "icons/NanoframeQuarterD.webp",
+  "file_1x": "icons/64/NanoframeQuarterD.webp",
+  "size": "128x128",
+  "texture": "SC_NanoframeQuarterD"
+ },
+ "NanoframeQuarterE": {
+  "file": "icons/NanoframeQuarterE.webp",
+  "file_1x": "icons/64/NanoframeQuarterE.webp",
+  "size": "128x128",
+  "texture": "SC_NanoframeQuarterE"
+ },
+ "NanoframeQuarterF": {
+  "file": "icons/NanoframeQuarterF.webp",
+  "file_1x": "icons/64/NanoframeQuarterF.webp",
+  "size": "128x128",
+  "texture": "SC_NanoframeQuarterF"
+ },
+ "NanoframeQuarterPipe": {
+  "file": "icons/NanoframeQuarterPipe.webp",
+  "file_1x": "icons/64/NanoframeQuarterPipe.webp",
+  "size": "128x128",
+  "texture": "SC_NanoframeQuarterPipe"
+ },
+ "NanoframeQuarterPorts": {
+  "file": "icons/NanoframeQuarterPorts.webp",
+  "file_1x": "icons/64/NanoframeQuarterPorts.webp",
+  "size": "128x128",
+  "texture": "SC_NanoframeQuarterPorts"
+ },
+ "NanoframeQuarterPortsCorner": {
+  "file": "icons/NanoframeQuarterPortsCorner.webp",
+  "file_1x": "icons/64/NanoframeQuarterPortsCorner.webp",
+  "size": "128x128",
+  "texture": "SC_NanoframeQuarterPortsCorner"
+ },
+ "NanopipeCorner": {
+  "file": "icons/NanopipeCorner.webp",
+  "file_1x": "icons/64/NanopipeCorner.webp",
+  "size": "128x128",
+  "texture": "SC_NanopipeCorner"
+ },
+ "NanopipeCross": {
+  "file": "icons/NanopipeCross.webp",
+  "file_1x": "icons/64/NanopipeCross.webp",
+  "size": "128x128",
+  "texture": "SC_NanopipeCross"
+ },
+ "NanopipeDecoupling": {
+  "file": "icons/NanopipeDecoupling.webp",
+  "file_1x": "icons/64/NanopipeDecoupling.webp",
+  "size": "128x128",
+  "texture": "SC_NanopipeDecouping"
+ },
+ "NanopipeElectricValve": {
+  "file": "icons/NanopipeElectricValve.webp",
+  "file_1x": "icons/64/NanopipeElectricValve.webp",
+  "size": "128x128",
+  "texture": "SC_NanopipeElectricValve"
+ },
+ "NanopipeFull": {
+  "file": "icons/NanopipeFull.webp",
+  "file_1x": "icons/64/NanopipeFull.webp",
+  "size": "128x128",
+  "texture": "SC_NanopipeFull"
+ },
+ "NanopipeHalf": {
+  "file": "icons/NanopipeHalf.webp",
+  "file_1x": "icons/64/NanopipeHalf.webp",
+  "size": "128x128",
+  "texture": "SC_NanopipeHalf"
+ },
+ "NanopipeManualValve": {
+  "file": "icons/NanopipeManualValve.webp",
+  "file_1x": "icons/64/NanopipeManualValve.webp",
+  "size": "128x128",
+  "texture": "SC_NanopipeManualValve"
+ },
+ "NanopipeMeter": {
+  "file": "icons/NanopipeMeter.webp",
+  "file_1x": "icons/64/NanopipeMeter.webp",
+  "size": "128x128",
+  "texture": "SC_NanopipeMeter"
+ },
+ "NanopipeQuarter": {
+  "file": "icons/NanopipeQuarter.webp",
+  "file_1x": "icons/64/NanopipeQuarter.webp",
+  "size": "128x128",
+  "texture": "SC_NanopipeQuarter"
+ },
+ "NanopipeThreeway": {
+  "file": "icons/NanopipeThreeway.webp",
+  "file_1x": "icons/64/NanopipeThreeway.webp",
+  "size": "128x128",
+  "texture": "SC_NanopipeThreeway"
+ },
+ "NanowindowDual": {
+  "file": "icons/NanowindowDual.webp",
+  "file_1x": "icons/64/NanowindowDual.webp",
+  "size": "128x128",
+  "texture": "SC_NanowindowDual"
+ },
+ "NanowindowDualA": {
+  "file": "icons/NanowindowDualA.webp",
+  "file_1x": "icons/64/NanowindowDualA.webp",
+  "size": "128x128",
+  "texture": "SC_NanowindowDualA"
+ },
+ "NanowindowDualB": {
+  "file": "icons/NanowindowDualB.webp",
+  "file_1x": "icons/64/NanowindowDualB.webp",
+  "size": "128x128",
+  "texture": "SC_NanowindowDualB"
+ },
+ "NanowindowEdge": {
+  "file": "icons/NanowindowEdge.webp",
+  "file_1x": "icons/64/NanowindowEdge.webp",
+  "size": "128x128",
+  "texture": "SC_NanowindowEdge"
+ },
+ "NanowindowEnd": {
+  "file": "icons/NanowindowEnd.webp",
+  "file_1x": "icons/64/NanowindowEnd.webp",
+  "size": "128x128",
+  "texture": "SC_NanowindowEnd"
+ },
+ "NanowindowEndA": {
+  "file": "icons/NanowindowEndA.webp",
+  "file_1x": "icons/64/NanowindowEndA.webp",
+  "size": "128x128",
+  "texture": "SC_NanowindowEndA"
+ },
+ "NanowindowEndB": {
+  "file": "icons/NanowindowEndB.webp",
+  "file_1x": "icons/64/NanowindowEndB.webp",
+  "size": "128x128",
+  "texture": "SC_NanowindowEndB"
+ },
+ "NanowindowEndC": {
+  "file": "icons/NanowindowEndC.webp",
+  "file_1x": "icons/64/NanowindowEndC.webp",
+  "size": "128x128",
+  "texture": "SC_NanowindowEndC"
+ },
+ "NanowindowRound": {
+  "file": "icons/NanowindowRound.webp",
+  "file_1x": "icons/64/NanowindowRound.webp",
+  "size": "128x128",
+  "texture": "SC_NanowindowRound"
+ },
+ "NanowindowRoundA": {
+  "file": "icons/NanowindowRoundA.webp",
+  "file_1x": "icons/64/NanowindowRoundA.webp",
+  "size": "128x128",
+  "texture": "SC_NanowindowRoundA"
+ },
+ "NightVisionCamera": {
+  "file": "icons/NightVisionCamera.webp",
+  "file_1x": "icons/64/NightVisionCamera.webp",
+  "size": "128x128",
+  "texture": "SC_NightVisionCamera"
+ },
+ "OutcastPolarAnchor": {
+  "file": "icons/OutcastPolarAnchor.webp",
+  "file_1x": "icons/64/OutcastPolarAnchor.webp",
+  "size": "128x128",
+  "texture": "SC_OutcastPolarAnchor"
+ },
+ "OverloadingCrystal": {
+  "file": "icons/OverloadingCrystal.webp",
+  "file_1x": "icons/64/OverloadingCrystal.webp",
+  "size": "128x128",
+  "texture": "SC_OverloadingCrystal"
+ },
+ "PipeCorner": {
+  "file": "icons/PipeCorner.webp",
+  "file_1x": "icons/64/PipeCorner.webp",
+  "size": "128x128",
+  "texture": "SC_PipeCorner"
+ },
+ "PipeCross": {
+  "file": "icons/PipeCross.webp",
+  "file_1x": "icons/64/PipeCross.webp",
+  "size": "128x128",
+  "texture": "SC_PipeCross"
+ },
+ "PipeDecoupling": {
+  "file": "icons/PipeDecoupling.webp",
+  "file_1x": "icons/64/PipeDecoupling.webp",
+  "size": "128x128",
+  "texture": "SC_PipeDecouping"
+ },
+ "PipeElectricValve": {
+  "file": "icons/PipeElectricValve.webp",
+  "file_1x": "icons/64/PipeElectricValve.webp",
+  "size": "128x128",
+  "texture": "SC_PipeElectricValve"
+ },
+ "PipeFull": {
+  "file": "icons/PipeFull.webp",
+  "file_1x": "icons/64/PipeFull.webp",
+  "size": "128x128",
+  "texture": "SC_PipeFull"
+ },
+ "PipeHalf": {
+  "file": "icons/PipeHalf.webp",
+  "file_1x": "icons/64/PipeHalf.webp",
+  "size": "128x128",
+  "texture": "SC_PipeHalf"
+ },
+ "PipeManualValve": {
+  "file": "icons/PipeManualValve.webp",
+  "file_1x": "icons/64/PipeManualValve.webp",
+  "size": "128x128",
+  "texture": "SC_PipeManualValve"
+ },
+ "PipeMeter": {
+  "file": "icons/PipeMeter.webp",
+  "file_1x": "icons/64/PipeMeter.webp",
+  "size": "128x128",
+  "texture": "SC_PipeMeter"
+ },
+ "PipeQuarter": {
+  "file": "icons/PipeQuarter.webp",
+  "file_1x": "icons/64/PipeQuarter.webp",
+  "size": "128x128",
+  "texture": "SC_PipeQuarter"
+ },
+ "PipeThreeway": {
+  "file": "icons/PipeThreeway.webp",
+  "file_1x": "icons/64/PipeThreeway.webp",
+  "size": "128x128",
+  "texture": "SC_PipeThreeway"
+ },
+ "PlasmaCable": {
+  "file": "icons/PlasmaCable.webp",
+  "file_1x": "icons/64/PlasmaCable.webp",
+  "size": "128x128",
+  "texture": "SC_PlasmaCable"
+ },
+ "Pow": {
+  "file": "icons/Pow.webp",
+  "file_1x": "icons/64/Pow.webp",
+  "size": "128x128",
+  "texture": "SC_Pow"
+ },
+ "PowerBlocker": {
+  "file": "icons/PowerBlocker.webp",
+  "file_1x": "icons/64/PowerBlocker.webp",
+  "size": "128x128",
+  "texture": "SC_PowerBlocker"
+ },
+ "PowerCable": {
+  "file": "icons/PowerCable.webp",
+  "file_1x": "icons/64/PowerCable.webp",
+  "size": "128x128",
+  "texture": "SC_PowerCable"
+ },
+ "PowerGenerationMeter": {
+  "file": "icons/PowerGenerationMeter.webp",
+  "file_1x": "icons/64/PowerGenerationMeter.webp",
+  "size": "128x128",
+  "texture": "SC_PowerGenerationMeter"
+ },
+ "PowerNanocable": {
+  "file": "icons/PowerNanocable.webp",
+  "file_1x": "icons/64/PowerNanocable.webp",
+  "size": "128x128",
+  "texture": "SC_PowerNanocable"
+ },
+ "PowerRouter": {
+  "file": "icons/PowerRouter.webp",
+  "file_1x": "icons/64/PowerRouter.webp",
+  "size": "128x128",
+  "texture": "SC_PowerRouter"
+ },
+ "PowerUsageMeter": {
+  "file": "icons/PowerUsageMeter.webp",
+  "file_1x": "icons/64/PowerUsageMeter.webp",
+  "size": "128x128",
+  "texture": "SC_PowerUsageMeter"
+ },
+ "Radar": {
+  "file": "icons/Radar.webp",
+  "file_1x": "icons/64/Radar.webp",
+  "size": "128x128",
+  "texture": "SC_Radar"
+ },
+ "RedAlertLight": {
+  "file": "icons/RedAlertLight.webp",
+  "file_1x": "icons/64/RedAlertLight.webp",
+  "size": "128x128",
+  "texture": "SC_RedAlertLight"
+ },
+ "RedTank": {
+  "file": "icons/RedTank.webp",
+  "file_1x": "icons/64/RedTank.webp",
+  "size": "128x128",
+  "texture": "SC_CryogenTank"
+ },
+ "Remapper": {
+  "file": "icons/Remapper.webp",
+  "file_1x": "icons/64/Remapper.webp",
+  "size": "128x128",
+  "texture": "SC_Remapper"
+ },
+ "RimcoreTurbo": {
+  "file": "icons/RimcoreTurbo.webp",
+  "file_1x": "icons/64/RimcoreTurbo.webp",
+  "size": "128x128",
+  "texture": "SC_RimcoreTurbo"
+ },
+ "RotationalTelescope": {
+  "file": "icons/RotationalTelescope.webp",
+  "file_1x": "icons/64/RotationalTelescope.webp",
+  "size": "128x128",
+  "texture": "SC_RotationalTelescope"
+ },
+ "Round": {
+  "file": "icons/Round.webp",
+  "file_1x": "icons/64/Round.webp",
+  "size": "128x128",
+  "texture": "SC_Round"
+ },
+ "Router2": {
+  "file": "icons/Router2.webp",
+  "file_1x": "icons/64/Router2.webp",
+  "size": "128x128",
+  "texture": "SC_Router2"
+ },
+ "Router4": {
+  "file": "icons/Router4.webp",
+  "file_1x": "icons/64/Router4.webp",
+  "size": "128x128",
+  "texture": "SC_Router4"
+ },
+ "Seat": {
+  "file": "icons/Seat.webp",
+  "file_1x": "icons/64/Seat.webp",
+  "size": "128x128",
+  "texture": "SC_Seat"
+ },
+ "SignalRouter3": {
+  "file": "icons/SignalRouter3.webp",
+  "file_1x": "icons/64/SignalRouter3.webp",
+  "size": "128x128",
+  "texture": "SC_SignalRouter3"
+ },
+ "SimpleThreshold": {
+  "file": "icons/SimpleThreshold.webp",
+  "file_1x": "icons/64/SimpleThreshold.webp",
+  "size": "128x128",
+  "texture": "SC_SimpleThreshold"
+ },
+ "Sin": {
+  "file": "icons/Sin.webp",
+  "file_1x": "icons/64/Sin.webp",
+  "size": "128x128",
+  "texture": "SC_Sin"
+ },
+ "SmallButton": {
+  "file": "icons/SmallButton.webp",
+  "file_1x": "icons/64/SmallButton.webp",
+  "size": "128x128",
+  "texture": "SC_SmallButton"
+ },
+ "SmallDamper": {
+  "file": "icons/SmallDamper.webp",
+  "file_1x": "icons/64/SmallDamper.webp",
+  "size": "128x128",
+  "texture": "SC_SmallDamper"
+ },
+ "SmallDisposableBattery": {
+  "file": "icons/SmallDisposableBattery.webp",
+  "file_1x": "icons/64/SmallDisposableBattery.webp",
+  "size": "128x128",
+  "texture": "SC_SmallDisposableBattery"
+ },
+ "SmallElectricThruster": {
+  "file": "icons/SmallElectricThruster.webp",
+  "file_1x": "icons/64/SmallElectricThruster.webp",
+  "size": "128x128",
+  "texture": "SC_SmallElectricThruster"
+ },
+ "SmallFuelThruster": {
+  "file": "icons/SmallFuelThruster.webp",
+  "file_1x": "icons/64/SmallFuelThruster.webp",
+  "size": "128x128",
+  "texture": "SC_SmallFuelThruster"
+ },
+ "SmallGate": {
+  "file": "icons/SmallGate.webp",
+  "file_1x": "icons/64/SmallGate.webp",
+  "size": "128x128",
+  "texture": "SC_SmallGate"
+ },
+ "SmallKnob": {
+  "file": "icons/SmallKnob.webp",
+  "file_1x": "icons/64/SmallKnob.webp",
+  "size": "128x128",
+  "texture": "SC_SmallKnob"
+ },
+ "SmallManeuveringThruster": {
+  "file": "icons/SmallManeuveringThruster.webp",
+  "file_1x": "icons/64/SmallManeuveringThruster.webp",
+  "size": "128x128",
+  "texture": "SC_SmallManeuveringThruster"
+ },
+ "SmallNanogate": {
+  "file": "icons/SmallNanogate.webp",
+  "file_1x": "icons/64/SmallNanogate.webp",
+  "size": "128x128",
+  "texture": "SC_SmallNanogate"
+ },
+ "SmallPlasmaGenerator": {
+  "file": "icons/SmallPlasmaGenerator.webp",
+  "file_1x": "icons/64/SmallPlasmaGenerator.webp",
+  "size": "128x128",
+  "texture": "SC_SmallPlasmaGenerator"
+ },
+ "SmallRechargeableBattery": {
+  "file": "icons/SmallRechargeableBattery.webp",
+  "file_1x": "icons/64/SmallRechargeableBattery.webp",
+  "size": "128x128",
+  "texture": "SC_SmallRechargeableBattery"
+ },
+ "SmallSolidFuelThruster": {
+  "file": "icons/SmallSolidFuelThruster.webp",
+  "file_1x": "icons/64/SmallSolidFuelThruster.webp",
+  "size": "128x128",
+  "texture": "SC_SmallSolidFuelThruster"
+ },
+ "SmallSwitch": {
+  "file": "icons/SmallSwitch.webp",
+  "file_1x": "icons/64/SmallSwitch.webp",
+  "size": "128x128",
+  "texture": "SC_SmallSwitch"
+ },
+ "SmallToggleableLight": {
+  "file": "icons/SmallToggleableLight.webp",
+  "file_1x": "icons/64/SmallToggleableLight.webp",
+  "size": "128x128",
+  "texture": "SC_SmallToggleableLight"
+ },
+ "SolarPanel": {
+  "file": "icons/SolarPanel.webp",
+  "file_1x": "icons/64/SolarPanel.webp",
+  "size": "128x128",
+  "texture": "SC_SolarPanel"
+ },
+ "SolarShieldGenerator": {
+  "file": "icons/SolarShieldGenerator.webp",
+  "file_1x": "icons/64/SolarShieldGenerator.webp",
+  "size": "128x128",
+  "texture": "SC_SolarShieldGenerator"
+ },
+ "SpaceGPS": {
+  "file": "icons/SpaceGPS.webp",
+  "file_1x": "icons/64/SpaceGPS.webp",
+  "size": "128x128",
+  "texture": "SC_SpaceGPS"
+ },
+ "SpaceScanner": {
+  "file": "icons/SpaceScanner.webp",
+  "file_1x": "icons/64/SpaceScanner.webp",
+  "size": "128x128",
+  "texture": "SC_SpaceScanner"
+ },
+ "Sqrt": {
+  "file": "icons/Sqrt.webp",
+  "file_1x": "icons/64/Sqrt.webp",
+  "size": "128x128",
+  "texture": "SC_Sqrt"
+ },
+ "StickSwitch": {
+  "file": "icons/StickSwitch.webp",
+  "file_1x": "icons/64/StickSwitch.webp",
+  "size": "128x128",
+  "texture": "SC_StickSwitch"
+ },
+ "Submarine": {
+  "file": "icons/Submarine.webp",
+  "file_1x": "icons/64/Submarine.webp",
+  "size": "128x128",
+  "texture": "SC_Submarine"
+ },
+ "Subtractor": {
+  "file": "icons/Subtractor.webp",
+  "file_1x": "icons/64/Subtractor.webp",
+  "size": "128x128",
+  "texture": "SC_Subtractor"
+ },
+ "SunflowerPot": {
+  "file": "icons/SunflowerPot.webp",
+  "file_1x": "icons/64/SunflowerPot.webp",
+  "size": "128x128",
+  "texture": "SC_SunflowerPot"
+ },
+ "Switch": {
+  "file": "icons/Switch.webp",
+  "file_1x": "icons/64/Switch.webp",
+  "size": "128x128",
+  "texture": "SC_Switch"
+ },
+ "Tan": {
+  "file": "icons/Tan.webp",
+  "file_1x": "icons/64/Tan.webp",
+  "size": "128x128",
+  "texture": "SC_Tan"
+ },
+ "Thermometer": {
+  "file": "icons/Thermometer.webp",
+  "file_1x": "icons/64/Thermometer.webp",
+  "size": "128x128",
+  "texture": "SC_Thermometer"
+ },
+ "Thermoscan": {
+  "file": "icons/Thermoscan.webp",
+  "file_1x": "icons/64/Thermoscan.webp",
+  "size": "128x128",
+  "texture": "SC_Themoscan"
+ },
+ "TrajectoryCurvatureMeter": {
+  "file": "icons/TrajectoryCurvatureMeter.webp",
+  "file_1x": "icons/64/TrajectoryCurvatureMeter.webp",
+  "size": "128x128",
+  "texture": "SC_TrajectoryCurvatureMeter"
+ },
+ "TungstenNanocube": {
+  "file": "icons/TungstenNanocube.webp",
+  "file_1x": "icons/64/TungstenNanocube.webp",
+  "size": "128x128",
+  "texture": "SC_TungstenNanocube"
+ },
+ "UnstableLightingCell": {
+  "file": "icons/UnstableLightingCell.webp",
+  "file_1x": "icons/64/UnstableLightingCell.webp",
+  "size": "128x128",
+  "texture": "SC_UnstableLightingCell"
+ },
+ "VelocityMeter": {
+  "file": "icons/VelocityMeter.webp",
+  "file_1x": "icons/64/VelocityMeter.webp",
+  "size": "128x128",
+  "texture": "SC_VelocityMeter"
+ },
+ "VerticalMeter": {
+  "file": "icons/VerticalMeter.webp",
+  "file_1x": "icons/64/VerticalMeter.webp",
+  "size": "128x128",
+  "texture": "SC_VerticalMeter"
+ },
+ "Whiteboard": {
+  "file": "icons/Whiteboard.webp",
+  "file_1x": "icons/64/Whiteboard.webp",
+  "size": "128x128",
+  "texture": "SC_Whiteboard"
+ },
+ "WindShieldGenerator": {
+  "file": "icons/WindShieldGenerator.webp",
+  "file_1x": "icons/64/WindShieldGenerator.webp",
+  "size": "128x128",
+  "texture": "SC_WindShieldGenerator"
+ },
+ "Windmeter": {
+  "file": "icons/Windmeter.webp",
+  "file_1x": "icons/64/Windmeter.webp",
+  "size": "128x128",
+  "texture": "SC_Windmeter"
+ },
+ "WindowDual": {
+  "file": "icons/WindowDual.webp",
+  "file_1x": "icons/64/WindowDual.webp",
+  "size": "128x128",
+  "texture": "SC_WindowDual"
+ },
+ "WindowDualA": {
+  "file": "icons/WindowDualA.webp",
+  "file_1x": "icons/64/WindowDualA.webp",
+  "size": "128x128",
+  "texture": "SC_WindowDualA"
+ },
+ "WindowDualB": {
+  "file": "icons/WindowDualB.webp",
+  "file_1x": "icons/64/WindowDualB.webp",
+  "size": "128x128",
+  "texture": "SC_WindowDualB"
+ },
+ "WindowEdge": {
+  "file": "icons/WindowEdge.webp",
+  "file_1x": "icons/64/WindowEdge.webp",
+  "size": "128x128",
+  "texture": "SC_WindowEdge"
+ },
+ "WindowEnd": {
+  "file": "icons/WindowEnd.webp",
+  "file_1x": "icons/64/WindowEnd.webp",
+  "size": "128x128",
+  "texture": "SC_WindowEnd"
+ },
+ "WindowEndA": {
+  "file": "icons/WindowEndA.webp",
+  "file_1x": "icons/64/WindowEndA.webp",
+  "size": "128x128",
+  "texture": "SC_WindowEndA"
+ },
+ "WindowEndB": {
+  "file": "icons/WindowEndB.webp",
+  "file_1x": "icons/64/WindowEndB.webp",
+  "size": "128x128",
+  "texture": "SC_WindowEndB"
+ },
+ "WindowEndC": {
+  "file": "icons/WindowEndC.webp",
+  "file_1x": "icons/64/WindowEndC.webp",
+  "size": "128x128",
+  "texture": "SC_WindowEndC"
+ },
+ "WindowRound": {
+  "file": "icons/WindowRound.webp",
+  "file_1x": "icons/64/WindowRound.webp",
+  "size": "128x128",
+  "texture": "SC_WindowRound"
+ },
+ "WindowRoundA": {
+  "file": "icons/WindowRoundA.webp",
+  "file_1x": "icons/64/WindowRoundA.webp",
+  "size": "128x128",
+  "texture": "SC_WindowRoundA"
+ },
+ "WirelessTransmitter": {
+  "file": "icons/WirelessTransmitter.webp",
+  "file_1x": "icons/64/WirelessTransmitter.webp",
+  "size": "128x128",
+  "texture": "SC_WirelessTransmitter"
+ },
+ "ZoomCamera": {
+  "file": "icons/ZoomCamera.webp",
+  "file_1x": "icons/64/ZoomCamera.webp",
+  "size": "128x128",
+  "texture": "SC_ZoomCamera"
+ }
+}

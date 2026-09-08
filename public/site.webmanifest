@@ -1,0 +1,24 @@
+{
+  "name": "Approximately Up — Unofficial Fan Wiki",
+  "short_name": "AUp Wiki",
+  "description": "Components, planets, stations and missions for the spaceship-building game Approximately Up.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#05070d",
+  "theme_color": "#05070d",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

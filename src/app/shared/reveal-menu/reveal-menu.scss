@@ -1,0 +1,177 @@
+@use 'styles/hud' as *;
+
+// Fixed, exactly like the feedback bubble in the opposite corner: this control
+// belongs to the site rather than to the page under it, and a sticky element
+// in normal flow would still reserve its own height and push every page down
+// by it. The top offset is --header-h because the header wraps at some widths
+// -- see app.ts.
+:host {
+  position: fixed;
+  top: calc(var(--header-h, 3.75rem) + 0.6rem);
+  right: 1.5rem;
+  z-index: 40;
+  display: block;
+}
+
+// The same control as the feedback bubble in the opposite corner: both float
+// over the page rather than sitting in it, and a reader who has learned what
+// one is should not have to learn the other.
+.trigger {
+  @include panel;
+  @include glow-hover;
+  @include label;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 0.9rem;
+  cursor: pointer;
+  color: var(--text-dim);
+  white-space: nowrap;
+  box-shadow: 0 8px 32px -16px #000;
+
+  svg {
+    width: 1.05rem;
+    height: 1.05rem;
+    flex: none;
+  }
+
+  &:hover,
+  &.open {
+    color: var(--accent);
+    border-color: var(--line-hi);
+  }
+
+  // Something is revealed: the button says so in the warning colour, since
+  // the reader is no longer looking at what the game has shown them. This
+  // wins over the hover and open colours -- it is a state, not a mood.
+  &.on,
+  &.on:hover {
+    color: var(--warn);
+    border-color: rgba(255, 180, 84, 0.4);
+  }
+
+  .count {
+    font-size: 0.8rem;
+  }
+
+  // Never both: once something is revealed the button is reporting a state,
+  // and a control cannot be asking to be noticed and reporting at once.
+  &.hint:not(.on) {
+    @include attention;
+  }
+}
+
+// Narrow screens: the word costs width the icon already carries. Hidden from
+// the layout, not from a screen reader -- same as the feedback bubble.
+@media (max-width: 34rem) {
+  :host {
+    right: 1rem;
+  }
+
+  .trigger {
+    padding: 0.7rem;
+    gap: 0.35rem;
+
+    .text {
+      @include visually-hidden;
+    }
+  }
+}
+
+.panel {
+  @include panel;
+  position: absolute;
+  top: calc(100% + 0.6rem);
+  right: 0;
+  z-index: 20;
+  box-shadow: 0 12px 48px -20px #000;
+  width: min(20rem, calc(100vw - 2rem));
+  padding: 0.9rem 1rem;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.intro {
+  margin: 0 0 0.4rem;
+  color: var(--text-faint);
+  font-size: 0.72rem;
+  line-height: 1.4;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0;
+  cursor: pointer;
+  .lbl {
+    @include label;
+    color: var(--text-dim);
+    font-size: 0.68rem;
+  }
+  &:hover .lbl {
+    color: var(--accent);
+  }
+  input {
+    accent-color: var(--accent);
+    cursor: pointer;
+  }
+  // The one switch that drives the other four, held apart by a rule so it is
+  // not read as a fifth thing to reveal.
+  &.total {
+    margin-top: 0.35rem;
+    padding-top: 0.6rem;
+    border-top: 1px solid var(--line);
+    .lbl {
+      color: var(--text);
+    }
+  }
+}
+
+.warn {
+  margin-top: 0.7rem;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid rgba(255, 180, 84, 0.4);
+  border-radius: var(--radius);
+  background: rgba(255, 180, 84, 0.08);
+  color: var(--text-dim);
+  font-size: 0.75rem;
+  line-height: 1.45;
+  p {
+    margin: 0 0 0.5rem;
+  }
+  .head {
+    @include label;
+    color: var(--warn);
+    font-size: 0.7rem;
+  }
+  strong {
+    color: var(--text);
+  }
+}
+
+.acts {
+  display: flex;
+  gap: 0.5rem;
+  button {
+    @include label;
+    cursor: pointer;
+    padding: 0.3rem 0.6rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--line);
+    background: none;
+    color: var(--text-faint);
+    &:hover {
+      border-color: var(--line-hi);
+      color: var(--text);
+    }
+  }
+  .go {
+    color: var(--warn);
+    border-color: rgba(255, 180, 84, 0.4);
+    &:hover {
+      color: var(--warn);
+      border-color: var(--warn);
+    }
+  }
+}

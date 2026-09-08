@@ -1,0 +1,80 @@
+@if (comp(); as c) {
+  <a class="back" routerLink="/components">← Components</a>
+  <header class="head">
+    @if (c.in_build) {
+      <img [src]="data.iconUrl(c.id)" [alt]="c.name" width="96" height="96" />
+    }
+    <div>
+      <h1>{{ c.name }}</h1>
+      @if (!c.in_build) {
+        <p class="not-in-build">
+          Not in this build — a stale or upcoming string with no live prefab.
+        </p>
+      }
+      <!-- One row for what the part is and what the save says about it. It
+           renders for the weldable tag alone, with no save loaded. -->
+      @if (world.hasWorld() || weldable()) {
+        <p class="state">
+          @if (world.hasWorld()) {
+            <status-pill
+              [state]="world.stateOf(c.id)"
+              [text]="world.stateOf(c.id) === 'have' ? 'placeable' : 'locked'"
+            />
+            @if (world.stateOf(c.id) === 'locked' && world.gateOf(c.id)) {
+              <span class="gate">unlocks with {{ world.gateOf(c.id) }}</span>
+            }
+          }
+          @if (weldable()) {
+            <span class="tag" title="Has per-face weld geometry (_faceSetupData)">weldable</span>
+          }
+        </p>
+      }
+      <p class="desc" [innerHTML]="desc() | richtext"></p>
+    </div>
+  </header>
+
+  <div class="cols">
+    @if (ports().length) {
+      <hud-panel title="Ports">
+        <ol class="ports">
+          @for (p of ports(); track $index) {
+            <li [innerHTML]="p | richtext"></li>
+          }
+        </ol>
+      </hud-panel>
+    }
+
+    @if (statRows().length) {
+      <hud-panel title="Stats"><stat-table [stats]="flat()" /></hud-panel>
+    }
+
+    @if (rewards().length) {
+      <hud-panel title="Rewarded by">
+        <p class="pool-note">
+          A reward stocks the whole pool this part draws from, not the part alone.
+        </p>
+        <ul class="links">
+          @for (r of rewards(); track r.objective.id) {
+            <li>
+              @if (r.known) {
+                <a [routerLink]="['/missions', r.objective.id]"
+                  ><objective-title [objective]="r.objective"
+                /></a>
+                <span class="num">×{{ r.amount | amount }}</span>
+              } @else {
+                <!-- Somewhere you have not been yet: that there is more stock
+                     to come is fair to say, where and how much is not. -->
+                <span class="unknown">?</span>
+                <span class="num">×?</span>
+              }
+            </li>
+          }
+        </ul>
+      </hud-panel>
+    }
+  </div>
+} @else if (!data.loading() && !data.failed()) {
+  <hud-panel title="Not found">
+    <p>No component with id “{{ id() }}”. <a routerLink="/components">Back to the list</a>.</p>
+  </hud-panel>
+}

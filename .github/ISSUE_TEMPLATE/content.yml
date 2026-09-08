@@ -1,0 +1,57 @@
+name: Add new content
+description: A guide, an explanation, or anything else you would like the wiki to cover
+labels: ['documentation']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The wiki's pages are generated from the game's own files, which makes them
+        good at numbers and silent on everything else. Guides, explanations and
+        walkthroughs are the part a person has to sit down and write — and what
+        gets written depends on knowing what people actually want to read.
+
+        So: what would you like to see here?
+
+  - type: textarea
+    id: what
+    attributes:
+      label: What you would like to see
+      description: Describe it the way you would ask someone for it.
+      placeholder: A guide to picking thrusters for a first orbital launch.
+    validations:
+      required: true
+
+  - type: textarea
+    id: covers
+    attributes:
+      label: What it should answer
+      description: The questions you want answered. This matters more than the title — it is what makes the difference between a page that helps and one that reads well.
+      placeholder: |
+        - How much thrust do I actually need to get off Earth?
+        - Why does stacking more of the same thruster stop helping?
+        - What do people usually get wrong the first time?
+
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What kind of thing is it
+      options:
+        - Guide or walkthrough — how to do something
+        - Explanation — how something works and why
+        - Reference or cheat sheet — something to look at while playing
+        - Not sure, or something else
+
+  - type: input
+    id: page
+    attributes:
+      label: Page
+      description: Where you were when you wanted this, if it was somewhere in particular. Filled in for you if you came from the wiki's feedback button.
+      placeholder: https://…/components
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before you send
+      options:
+        - label: I checked that this is not already an open issue.
+        - label: I would be willing to help write it. (Entirely optional — asking for something you cannot write yourself is a perfectly good contribution.)

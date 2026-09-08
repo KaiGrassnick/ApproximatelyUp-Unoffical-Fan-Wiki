@@ -1,0 +1,635 @@
+{
+ "bom": [
+  {
+   "count": 1,
+   "id": "Adder"
+  },
+  {
+   "count": 1,
+   "id": "Constant"
+  },
+  {
+   "count": 1,
+   "id": "Datameter"
+  },
+  {
+   "count": 1,
+   "id": "Differentiator"
+  },
+  {
+   "count": 1,
+   "id": "LogicValue"
+  },
+  {
+   "count": 1,
+   "id": "Remapper"
+  },
+  {
+   "count": 2,
+   "id": "WirelessTransmitter"
+  }
+ ],
+ "findings": [
+  {
+   "level": "warn",
+   "message": "needs 2, a new game holds 0",
+   "where": "pool WirelessTransmitter"
+  }
+ ],
+ "id": "vertical-speed-hold",
+ "needs": {
+  "DataCable": 51,
+  "DigitalOrAnalogMeter": 1,
+  "MathBlock": 5,
+  "WirelessTransmitter": 2
+ },
+ "newGame": false,
+ "notesHtml": "<p>The <a class=\"part\" href=\"/components/Differentiator\"><img src=\"data/icons/64/Differentiator.webp?v=37b35291\" alt=\"\" width=\"20\" height=\"20\" loading=\"lazy\" /><span>Differentiator</span></a> turns an altitude into a climb rate; the <a class=\"part\" href=\"/components/Remapper\"><img src=\"data/icons/64/Remapper.webp?v=c1f6094b\" alt=\"\" width=\"20\" height=\"20\" loading=\"lazy\" /><span>Remapper</span></a> scales that rate into the 0 to 1 a thruster wants; the <a class=\"part\" href=\"/components/Adder\"><img src=\"data/icons/64/Adder.webp?v=98961d2c\" alt=\"\" width=\"20\" height=\"20\" loading=\"lazy\" /><span>Adder</span></a> mixes in the setpoint. Both ends are a <a class=\"part\" href=\"/components/WirelessTransmitter\"><img src=\"data/icons/64/WirelessTransmitter.webp?v=35af9ae7\" alt=\"\" width=\"20\" height=\"20\" loading=\"lazy\" /><span>Wireless Transmitter</span></a>, so the loop needs no cable to the rest of the ship -- one channel in, one channel out.</p>\n\n",
+ "placed": {
+  "cables": [
+   {
+    "cells": [
+     {
+      "x": 1,
+      "y": 0,
+      "z": 2
+     },
+     {
+      "x": 1,
+      "y": 0,
+      "z": 3
+     },
+     {
+      "x": 1,
+      "y": 0,
+      "z": 4
+     },
+     {
+      "x": 1,
+      "y": 0,
+      "z": 5
+     }
+    ],
+    "from": {
+     "part": "set",
+     "port": "out"
+    },
+    "kind": "data",
+    "to": {
+     "part": "gate",
+     "port": "in"
+    }
+   },
+   {
+    "cells": [
+     {
+      "x": 1,
+      "y": 0,
+      "z": 8
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "z": 8
+     },
+     {
+      "x": -1,
+      "y": 0,
+      "z": 8
+     },
+     {
+      "x": -1,
+      "y": 0,
+      "z": 9
+     },
+     {
+      "x": -1,
+      "y": 0,
+      "z": 10
+     },
+     {
+      "x": -1,
+      "y": 0,
+      "z": 11
+     },
+     {
+      "x": -1,
+      "y": 0,
+      "z": 12
+     },
+     {
+      "x": -1,
+      "y": 0,
+      "z": 13
+     },
+     {
+      "x": -1,
+      "y": 0,
+      "z": 14
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "z": 14
+     }
+    ],
+    "from": {
+     "part": "gate",
+     "port": "out"
+    },
+    "kind": "data",
+    "to": {
+     "part": "meter",
+     "port": "in"
+    }
+   },
+   {
+    "cells": [
+     {
+      "x": 1,
+      "y": 0,
+      "z": 14
+     },
+     {
+      "x": 1,
+      "y": 0,
+      "z": 15
+     },
+     {
+      "x": 1,
+      "y": 0,
+      "z": 16
+     },
+     {
+      "x": 1,
+      "y": 0,
+      "z": 17
+     },
+     {
+      "x": 2,
+      "y": 0,
+      "z": 17
+     },
+     {
+      "x": 3,
+      "y": 0,
+      "z": 17
+     }
+    ],
+    "from": {
+     "part": "meter",
+     "port": "out"
+    },
+    "kind": "data",
+    "to": {
+     "part": "sum",
+     "port": "in1"
+    }
+   },
+   {
+    "cells": [
+     {
+      "x": 6,
+      "y": 0,
+      "z": 2
+     },
+     {
+      "x": 6,
+      "y": 0,
+      "z": 3
+     },
+     {
+      "x": 6,
+      "y": 0,
+      "z": 4
+     },
+     {
+      "x": 6,
+      "y": 0,
+      "z": 5
+     }
+    ],
+    "from": {
+     "part": "rx",
+     "port": "io"
+    },
+    "kind": "data",
+    "to": {
+     "part": "rate",
+     "port": "in"
+    }
+   },
+   {
+    "cells": [
+     {
+      "x": 6,
+      "y": 0,
+      "z": 8
+     },
+     {
+      "x": 5,
+      "y": 0,
+      "z": 8
+     },
+     {
+      "x": 4,
+      "y": 0,
+      "z": 8
+     },
+     {
+      "x": 4,
+      "y": 0,
+      "z": 9
+     },
+     {
+      "x": 4,
+      "y": 0,
+      "z": 10
+     },
+     {
+      "x": 4,
+      "y": 0,
+      "z": 11
+     },
+     {
+      "x": 4,
+      "y": 0,
+      "z": 12
+     },
+     {
+      "x": 4,
+      "y": 0,
+      "z": 13
+     },
+     {
+      "x": 4,
+      "y": 0,
+      "z": 14
+     },
+     {
+      "x": 5,
+      "y": 0,
+      "z": 14
+     }
+    ],
+    "from": {
+     "part": "rate",
+     "port": "out"
+    },
+    "kind": "data",
+    "to": {
+     "part": "map",
+     "port": "in"
+    }
+   },
+   {
+    "cells": [
+     {
+      "x": 8,
+      "y": 0,
+      "z": 14
+     },
+     {
+      "x": 8,
+      "y": 0,
+      "z": 15
+     },
+     {
+      "x": 8,
+      "y": 0,
+      "z": 16
+     },
+     {
+      "x": 8,
+      "y": 0,
+      "z": 17
+     },
+     {
+      "x": 7,
+      "y": 0,
+      "z": 17
+     },
+     {
+      "x": 6,
+      "y": 0,
+      "z": 17
+     },
+     {
+      "x": 5,
+      "y": 0,
+      "z": 17
+     },
+     {
+      "x": 4,
+      "y": 0,
+      "z": 17
+     }
+    ],
+    "from": {
+     "part": "map",
+     "port": "out"
+    },
+    "kind": "data",
+    "to": {
+     "part": "sum",
+     "port": "in2"
+    }
+   },
+   {
+    "cells": [
+     {
+      "x": 3,
+      "y": 0,
+      "z": 20
+     },
+     {
+      "x": 2,
+      "y": 0,
+      "z": 20
+     },
+     {
+      "x": 2,
+      "y": 0,
+      "z": 21
+     },
+     {
+      "x": 2,
+      "y": 0,
+      "z": 22
+     },
+     {
+      "x": 2,
+      "y": 0,
+      "z": 23
+     },
+     {
+      "x": 2,
+      "y": 0,
+      "z": 24
+     },
+     {
+      "x": 2,
+      "y": 0,
+      "z": 25
+     },
+     {
+      "x": 2,
+      "y": 0,
+      "z": 26
+     },
+     {
+      "x": 3,
+      "y": 0,
+      "z": 26
+     }
+    ],
+    "from": {
+     "part": "sum",
+     "port": "out"
+    },
+    "kind": "data",
+    "to": {
+     "part": "tx",
+     "port": "io"
+    }
+   }
+  ],
+  "parts": [
+   {
+    "at": {
+     "x": 1,
+     "y": 0,
+     "z": 0
+    },
+    "id": "set",
+    "label": "Setpoint",
+    "rot": 0,
+    "size": {
+     "x": 2,
+     "y": 1,
+     "z": 2
+    },
+    "type": "Constant",
+    "value": "200.0"
+   },
+   {
+    "at": {
+     "x": 6,
+     "y": 0,
+     "z": 0
+    },
+    "id": "rx",
+    "label": "Altitude in",
+    "rot": 0,
+    "size": {
+     "x": 2,
+     "y": 2,
+     "z": 2
+    },
+    "type": "WirelessTransmitter",
+    "value": "11"
+   },
+   {
+    "at": {
+     "x": 1,
+     "y": 0,
+     "z": 6
+    },
+    "id": "gate",
+    "rot": 0,
+    "size": {
+     "x": 2,
+     "y": 1,
+     "z": 2
+    },
+    "type": "LogicValue"
+   },
+   {
+    "at": {
+     "x": 0,
+     "y": 0,
+     "z": 12
+    },
+    "id": "meter",
+    "rot": 0,
+    "size": {
+     "x": 2,
+     "y": 1,
+     "z": 2
+    },
+    "type": "Datameter"
+   },
+   {
+    "at": {
+     "x": 6,
+     "y": 0,
+     "z": 6
+    },
+    "id": "rate",
+    "rot": 0,
+    "size": {
+     "x": 2,
+     "y": 1,
+     "z": 2
+    },
+    "type": "Differentiator"
+   },
+   {
+    "at": {
+     "x": 5,
+     "y": 0,
+     "z": 12
+    },
+    "id": "map",
+    "rot": 0,
+    "size": {
+     "x": 4,
+     "y": 1,
+     "z": 2
+    },
+    "type": "Remapper"
+   },
+   {
+    "at": {
+     "x": 3,
+     "y": 0,
+     "z": 18
+    },
+    "id": "sum",
+    "rot": 0,
+    "size": {
+     "x": 2,
+     "y": 1,
+     "z": 2
+    },
+    "type": "Adder"
+   },
+   {
+    "at": {
+     "x": 3,
+     "y": 0,
+     "z": 24
+    },
+    "id": "tx",
+    "label": "Throttle out",
+    "rot": 0,
+    "size": {
+     "x": 2,
+     "y": 2,
+     "z": 2
+    },
+    "type": "WirelessTransmitter",
+    "value": "12"
+   }
+  ]
+ },
+ "source": {
+  "notes": [
+   {
+    "body": "The [[part:Differentiator]] turns an altitude into a climb rate; the [[part:Remapper]] scales that rate into the 0 to 1 a thruster wants; the [[part:Adder]] mixes in the setpoint. Both ends are a [[part:WirelessTransmitter]], so the loop needs no cable to the rest of the ship -- one channel in, one channel out.",
+    "kind": "md"
+   }
+  ],
+  "order": 20,
+  "parts": [
+   {
+    "id": "set",
+    "label": "Setpoint",
+    "type": "Constant",
+    "value": "200.0"
+   },
+   {
+    "id": "rx",
+    "label": "Altitude in",
+    "type": "WirelessTransmitter",
+    "value": "11"
+   },
+   {
+    "id": "gate",
+    "type": "LogicValue"
+   },
+   {
+    "id": "meter",
+    "type": "Datameter"
+   },
+   {
+    "id": "rate",
+    "type": "Differentiator"
+   },
+   {
+    "id": "map",
+    "type": "Remapper"
+   },
+   {
+    "id": "sum",
+    "type": "Adder"
+   },
+   {
+    "id": "tx",
+    "label": "Throttle out",
+    "type": "WirelessTransmitter",
+    "value": "12"
+   }
+  ],
+  "spoiler": "components",
+  "summary": "Hold a climb rate: the setpoint against the altimeter's rate of change, sent back by wireless.",
+  "title": "Vertical speed hold",
+  "updated": "2026-09-07",
+  "view": "top",
+  "wires": [
+   {
+    "from": "set:out",
+    "to": "gate:in"
+   },
+   {
+    "from": "gate:out",
+    "to": "meter:in"
+   },
+   {
+    "from": "meter:out",
+    "to": "sum:in1"
+   },
+   {
+    "from": "rx:io",
+    "to": "rate:in"
+   },
+   {
+    "from": "rate:out",
+    "to": "map:in"
+   },
+   {
+    "from": "map:out",
+    "to": "sum:in2"
+   },
+   {
+    "from": "sum:out",
+    "to": "tx:io"
+   }
+  ]
+ },
+ "stats": {
+  "cableCells": {
+   "data": 51,
+   "nano": 0,
+   "plasma": 0,
+   "power": 0
+  },
+  "mass": 70.5,
+  "parts": {
+   "Adder": 1,
+   "Constant": 1,
+   "Datameter": 1,
+   "Differentiator": 1,
+   "LogicValue": 1,
+   "Remapper": 1,
+   "WirelessTransmitter": 2
+  },
+  "pools": {
+   "DataCable": 51,
+   "DigitalOrAnalogMeter": 1,
+   "MathBlock": 5,
+   "WirelessTransmitter": 2
+  },
+  "power": 0
+ }
+}

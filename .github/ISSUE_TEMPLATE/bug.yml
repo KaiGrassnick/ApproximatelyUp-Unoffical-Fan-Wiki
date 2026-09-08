@@ -1,0 +1,54 @@
+name: Report an issue
+description: A wrong number, a broken page, something that does not work
+labels: ['bug']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting. If a value is wrong, it is almost always a decoding
+        bug in the extraction pipeline rather than a typo — so the exact number
+        you saw is the most useful thing you can give us.
+
+  - type: textarea
+    id: what
+    attributes:
+      label: What is wrong
+      description: What you saw, and where.
+      placeholder: The Frame A component lists a mass of 0 kg.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What the game shows instead
+      description: If this is about a value, the game's own number settles it.
+      placeholder: The in-game inventory panel says 12 kg.
+
+  - type: input
+    id: page
+    attributes:
+      label: Page
+      description: The address you were on. Filled in for you if you came from the wiki's feedback button.
+      placeholder: https://…/components/FrameA
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Where in the wiki
+      options:
+        - Components
+        - Planets
+        - Stations
+        - Missions
+        - Galaxy map
+        - Save loading / spoiler reveal
+        - Somewhere else
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before you send
+      options:
+        - label: I checked that this is not already an open issue.
+        - label: This is about the wiki, not about the game itself.

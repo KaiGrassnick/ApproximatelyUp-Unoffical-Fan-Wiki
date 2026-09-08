@@ -1,0 +1,56 @@
+<header class="shell-nav" #shellNav>
+  <a class="brand" routerLink="/">
+    <span class="title">APPROXIMATELY&nbsp;UP</span>
+    <span class="sub">Unofficial Fan Wiki</span>
+  </a>
+  <nav>
+    <a routerLink="/components" routerLinkActive="on">Components</a>
+    <a routerLink="/planets" routerLinkActive="on">Planets</a>
+    <a routerLink="/stations" routerLinkActive="on">Stations</a>
+    <a routerLink="/missions" routerLinkActive="on">Missions</a>
+    <a routerLink="/guides" routerLinkActive="on">Guides</a>
+    <a routerLink="/circuits" routerLinkActive="on">Circuits</a>
+  </nav>
+  <!-- The game's own links. The Discord invite is the one its main menu's
+       "Join Discord" button opens, taken from the game rather than typed
+       from memory (it is a string literal in global-metadata.dat).
+
+       The website is not in the game files at all — no build string carries
+       it — so it comes from the "Visit the website" link on the game's own
+       Steam store page for app 3904850, which the developer sets. That is
+       the nearest thing to a first-party source there is for it. -->
+  <div class="official">
+    <a
+      class="site"
+      href="https://www.approximatelyup.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+      >Official website</a
+    >
+    <a
+      class="discord"
+      href="https://discord.gg/vHFa4h56V5"
+      target="_blank"
+      rel="noopener noreferrer"
+      >Join (official) Discord</a
+    >
+  </div>
+  <world-drop class="world" />
+</header>
+<!-- Not in the nav: the wiki's default is to show what a new game would, and
+     this is the reader's way out of that — a decision about the whole site,
+     rather than another page to visit. It floats in the top-right corner the
+     way the feedback bubble floats in the bottom-right, and like it takes no
+     space in the layout. -->
+<reveal-menu />
+@if (data.failed()) {
+  <p class="data-error">
+    <strong>The wiki's data could not be loaded.</strong>
+    <code>data/</code> 404s — this host is serving the app without its assets. Check that
+    <code>data/</code> was deployed alongside the app.
+  </p>
+}
+<limited-view />
+<main><router-outlet /></main>
+<site-footer />
+<feedback-bubble />

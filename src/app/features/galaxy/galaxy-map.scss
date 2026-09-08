@@ -1,0 +1,213 @@
+@use 'styles/hud' as *;
+
+// Embedded in the home page rather than filling a route, so the host element
+// has to lay itself out; a bare custom element is inline by default and would
+// collapse the map's aspect-ratio box.
+:host {
+  display: block;
+  margin-top: 3rem;
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.bar h2 {
+  margin: 0;
+}
+.how {
+  @include label;
+  margin: 0 auto 0 0;
+  color: var(--text-faint);
+  font-size: 0.62rem;
+}
+.worlds {
+  display: flex;
+  gap: 0.4rem;
+}
+.worlds button {
+  @include label;
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--text-dim);
+  padding: 0.2rem 0.5rem;
+  cursor: pointer;
+  border-radius: var(--radius);
+  font-size: 0.6rem;
+  &.on {
+    color: var(--accent);
+    border-color: var(--line-hi);
+    background: var(--accent-dim);
+  }
+}
+.zoom {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.zoom button {
+  @include label;
+  width: 26px;
+  height: 26px;
+  background: none;
+  cursor: pointer;
+  border: 1px solid var(--line);
+  color: var(--text-dim);
+  &:hover:not(:disabled) {
+    border-color: var(--line-hi);
+    color: var(--accent);
+  }
+  &:disabled {
+    opacity: 0.35;
+    cursor: default;
+  }
+}
+.zoom .reset {
+  width: auto;
+  padding: 0 0.5rem;
+}
+.zoom .num {
+  color: var(--text-faint);
+  font-size: 0.8rem;
+  min-width: 2.6rem;
+  text-align: center;
+}
+
+.galaxy {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  margin: 1rem 0 2rem;
+  overflow: hidden;
+  cursor: grab;
+  @include panel;
+  background: radial-gradient(120% 90% at 50% 100%, #0a1224 0%, #04060c 70%);
+
+  &:focus-visible {
+    outline: 1px solid var(--accent);
+    outline-offset: 2px;
+  }
+  &.pressed {
+    cursor: grabbing;
+  }
+  // Bodies go inert for the rest of a drag, so the pointer-up lands on the
+  // map rather than on an <a> and ending an orbit over a planet does not
+  // navigate away. Set only past the drag slop, so a plain click still opens.
+  &.dragging {
+    user-select: none;
+  }
+  &.dragging .body {
+    pointer-events: none;
+  }
+}
+
+// The canvas carries no interaction of its own: it is painted, the overlay is
+// pointed at. alpha:true, so the panel's gradient shows through as deep space.
+.gl {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+// One transparent hit area per body, sitting exactly over its sphere.
+.body {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+
+  // Sits on the unlit sphere itself, so it needs its own contrast rather
+  // than the panel's. No ring: the sphere is already the shape.
+  .qm {
+    display: grid;
+    place-items: center;
+    line-height: 1;
+    color: rgba(210, 235, 255, 0.85);
+    font-family: var(--font-head);
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.9);
+  }
+
+  // The black hole renders as an unlit black sphere, which against a black
+  // panel is indistinguishable from empty space. The ring is how the map
+  // says something is there — presentation, not the accretion disk, whose
+  // geometry we do not have.
+  &.hole::before {
+    content: '';
+    position: absolute;
+    inset: -12%;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 176, 96, 0.55);
+    box-shadow: 0 0 12px rgba(255, 140, 60, 0.35);
+    pointer-events: none;
+  }
+
+  .lbl {
+    @include label;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    color: var(--text-dim);
+    font-size: 0.6rem;
+  }
+
+  // Hovering cannot brighten the sphere itself without a second render pass,
+  // so a glow around it does the work. A radial gradient on a pseudo-element
+  // rather than a box-shadow: the shadow is cast by the anchor's BOX, a
+  // square around the disc, and against a dark panel its falloff read as a
+  // soft rectangle with a dark edge under the body.
+  //
+  // The gradient is empty where the sphere is and only lights up outside it.
+  // The element is 160% of the body (inset -30%), so with closest-side the
+  // sphere's edge sits at 62.5% of the gradient's length — hence the first
+  // stop. Everything inside that stays transparent, so the halo rings the
+  // planet instead of tinting it.
+  &::after {
+    content: '';
+    position: absolute;
+    inset: -30%;
+    border-radius: 50%;
+    background: radial-gradient(
+      closest-side,
+      transparent 60%,
+      rgba(79, 216, 255, 0.38) 64%,
+      transparent 100%
+    );
+    opacity: 0;
+    transition: opacity 0.12s ease;
+    pointer-events: none;
+  }
+  &:hover::after {
+    opacity: 1;
+  }
+  &:hover .lbl {
+    color: var(--accent);
+  }
+  &:focus-visible {
+    outline: 1px solid var(--accent);
+    outline-offset: 3px;
+  }
+}
+
+.readout {
+  @include panel;
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 2000;
+  display: grid;
+  gap: 0.15rem;
+  padding: 0.7rem 0.9rem;
+  min-width: 150px;
+  strong {
+    font-family: var(--font-head);
+    color: var(--accent);
+  }
+  .num {
+    color: var(--text-faint);
+    font-size: 0.78rem;
+  }
+}

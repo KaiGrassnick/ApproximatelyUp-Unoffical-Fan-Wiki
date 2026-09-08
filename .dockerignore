@@ -1,0 +1,27 @@
+# The build context is the repo root, so the first job is excluding
+# everything that is not the wiki. tools/ carries the extraction pipeline,
+# its virtualenv and ~45 MB of IL2CPP dump; none of it reaches the image.
+tools
+.venv
+.git
+.github
+docs
+.serena
+.superpowers
+
+# Everything the build stage would only have to delete or rebuild.
+node_modules
+dist
+.angular
+
+# Local tooling output.
+.vscode
+*.log
+npm-debug.log*
+
+# Tests do not run in the image build; CI runs them against the same source.
+**/*.spec.ts
+
+# Not source.
+Dockerfile
+.dockerignore

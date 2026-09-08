@@ -1,0 +1,2562 @@
+{
+ "Abs": {
+  "name": "Absolute",
+  "ports": [
+   {
+    "desc": "Input value.",
+    "kind": "in",
+    "name": "in"
+   },
+   {
+    "desc": "Output value.",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "Accelerometer": {
+  "name": "Accelerometer",
+  "ports": [
+   {
+    "desc": "Outputs the current _acceleration_ in m/s².",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "Accumulator": {
+  "name": "Accumulator",
+  "ports": [
+   {
+    "desc": "Value added to the internal total.",
+    "kind": "in",
+    "name": "in1"
+   },
+   {
+    "desc": "Resets the total to 0 (Continuous or Pulse mode).",
+    "kind": "in",
+    "name": "in2"
+   },
+   {
+    "desc": "Current accumulated total.",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "Acos": {
+  "name": "Arc Cosine",
+  "ports": [
+   {
+    "desc": "Input value (expected in range [-1, 1]).",
+    "kind": "in",
+    "name": "in"
+   },
+   {
+    "desc": "Output value in radians.",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "Adder": {
+  "name": "Adder",
+  "ports": [
+   {
+    "desc": "Input data for A.\nX = **A** + B",
+    "kind": "in",
+    "name": "in1"
+   },
+   {
+    "desc": "Input data for B.\nX = A + **B**",
+    "kind": "in",
+    "name": "in2"
+   },
+   {
+    "desc": "Outputs data for X.\n**X** = A + B",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "AdditionArray": {
+  "name": "Addition Array",
+  "ports": [
+   {
+    "desc": "Additive input signal.",
+    "kind": "in",
+    "name": "in1"
+   },
+   {
+    "desc": "Additive input signal.",
+    "kind": "in",
+    "name": "in2"
+   },
+   {
+    "desc": "Additive input signal.",
+    "kind": "in",
+    "name": "in3"
+   },
+   {
+    "desc": "Additive input signal.",
+    "kind": "in",
+    "name": "in4"
+   },
+   {
+    "desc": "Additive input signal.",
+    "kind": "in",
+    "name": "in5"
+   },
+   {
+    "desc": "Additive input signal.",
+    "kind": "in",
+    "name": "in6"
+   },
+   {
+    "desc": "Additive input signal.",
+    "kind": "in",
+    "name": "in7"
+   },
+   {
+    "desc": "Sum of all input signals.",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "Aerometer": {
+  "name": "Aerometer",
+  "ports": [
+   {
+    "desc": "Outputs the current aerodynamics of the spaceship in range from 0 (worst) to 1 (best).",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "Altimeter": {
+  "name": "Altimeter",
+  "ports": [
+   {
+    "desc": "Outputs the _height above sea level_ in meters.",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "Arc270Meter": {
+  "name": "Arc-270 Meter",
+  "ports": [
+   {
+    "desc": "Input signal to be shown on the display.",
+    "kind": "in",
+    "name": "in"
+   }
+  ]
+ },
+ "Arc90Meter": {
+  "name": "Arc-90 Meter",
+  "ports": [
+   {
+    "desc": "Input signal to be shown on the display.",
+    "kind": "in",
+    "name": "in"
+   }
+  ]
+ },
+ "Asin": {
+  "name": "Arc Sine",
+  "ports": [
+   {
+    "desc": "Input value (expected in range [-1, 1]).",
+    "kind": "in",
+    "name": "in"
+   },
+   {
+    "desc": "Output value in radians.",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "Atan": {
+  "name": "Arc Tangent",
+  "ports": [
+   {
+    "desc": "Input value.",
+    "kind": "in",
+    "name": "in"
+   },
+   {
+    "desc": "Output value in radians.",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "Atan2": {
+  "name": "Arc Tangent 2",
+  "ports": [
+   {
+    "desc": "Y-coordinate input.",
+    "kind": "in",
+    "name": "in1"
+   },
+   {
+    "desc": "X-coordinate input.",
+    "kind": "in",
+    "name": "in2"
+   },
+   {
+    "desc": "Output angle in radians.",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "Atmometer": {
+  "name": "Atmometer",
+  "ports": [
+   {
+    "desc": "Outputs the _atmosphere density_ in range from 0 to 1.",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "AtmosphericFan": {
+  "name": "Atmospheric Fan",
+  "ports": [
+   {
+    "desc": "The input signal ranges from -1 (full reverse), through 0 (stop), to 1 (full forward), and controls the _speed_.",
+    "kind": "in",
+    "name": "in"
+   },
+   {
+    "desc": "Requires {0} P/s.",
+    "kind": "pwr",
+    "name": "pwr"
+   }
+  ]
+ },
+ "AtmosphericLiftFan": {
+  "name": "Atmospheric Flat Fan",
+  "ports": [
+   {
+    "desc": "Input data signal from 0 (off) to 1 (max) to control _speed_.",
+    "kind": "in",
+    "name": "in"
+   },
+   {
+    "desc": "Requires {0} P/s.",
+    "kind": "pwr",
+    "name": "pwr"
+   }
+  ]
+ },
+ "AtmosphericThruster": {
+  "name": "Atmospheric Thruster",
+  "ports": [
+   {
+    "desc": "Input data signal from 0 (off) to 1 (max) to control _speed_.",
+    "kind": "in",
+    "name": "in"
+   },
+   {
+    "desc": "Requires {0} P/s.",
+    "kind": "pwr",
+    "name": "pwr"
+   }
+  ]
+ },
+ "AutohemisphereSolarPanel": {
+  "name": "Auto-Hemisphere Solar Panel",
+  "ports": [
+   {
+    "desc": "Can generate up to {0} P/s.",
+    "kind": "pwr",
+    "name": "pwr"
+   }
+  ]
+ },
+ "AxisRotometer": {
+  "name": "Axis Rotometer",
+  "ports": [
+   {
+    "desc": "Outputs the current angular velocity in degrees per second.",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "Ballast": {
+  "name": "Ballast",
+  "ports": [
+   {
+    "desc": "Input value in range from 0 (no buoyancy) to 1 (max buoyancy).",
+    "kind": "in",
+    "name": "in"
+   },
+   {
+    "desc": "Requires up to {0} P/s.",
+    "kind": "pwr",
+    "name": "pwr"
+   }
+  ]
+ },
+ "Beeper": {
+  "name": "Beeper",
+  "ports": [
+   {
+    "desc": "Input signal from 0 (mute) to 1 (static beep), with beep period increasing with the value.",
+    "kind": "in",
+    "name": "in"
+   }
+  ]
+ },
+ "BidirectionalElectricManeuveringThruster": {
+  "name": "Bidirectional Maneuvering Thruster",
+  "ports": [
+   {
+    "desc": "Input data signal from 0 (backwards) to 1 (forwards) to control _speed_.",
+    "kind": "in",
+    "name": "in"
+   },
+   {
+    "desc": "Requires {0} P/s.",
+    "kind": "pwr",
+    "name": "pwr"
+   }
+  ]
+ },
+ "BlueTank": {
+  "name": "Blue Tank",
+  "ports": [
+   {
+    "desc": "Outputs _fuel level_ from 0 (empty) to 1 (full).",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "BombC4": {
+  "name": "C4 Bomb",
+  "ports": [
+   {
+    "desc": "Detonates at input signal ≥ 0.5.",
+    "kind": "in",
+    "name": "in"
+   }
+  ]
+ },
+ "BrakingPointSystem": {
+  "name": "Braking Point System (BPS)",
+  "ports": [
+   {
+    "desc": "Input for _distance_ to planet in meters.",
+    "kind": "in",
+    "name": "in1"
+   },
+   {
+    "desc": "Input for _velocity_ in m/s.",
+    "kind": "in",
+    "name": "in2"
+   },
+   {
+    "desc": "Input for _acceleration_ in m/s².",
+    "kind": "in",
+    "name": "in3"
+   },
+   {
+    "desc": "Outputs the indicator position from -1 (left/red), through 0 (center/white), to 1 (right/green).",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "Button": {
+  "name": "Button",
+  "ports": [
+   {
+    "desc": "Outputs 1 when pressed, 0 when not pressed.",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "Camera": {
+  "name": "Camera",
+  "ports": [
+   {
+    "desc": "Outputs _video signal_.",
+    "kind": "out",
+    "name": "out"
+   },
+   {
+    "desc": "Requires {0} P/s.",
+    "kind": "pwr",
+    "name": "pwr"
+   }
+  ]
+ },
+ "CameraOverlay": {
+  "name": "Camera Overlay",
+  "ports": [
+   {
+    "desc": "Outputs _video signal_.",
+    "kind": "out",
+    "name": "out"
+   },
+   {
+    "desc": "Input data for row 1.",
+    "kind": "in",
+    "name": "in1"
+   },
+   {
+    "desc": "Input data for row 2.",
+    "kind": "in",
+    "name": "in2"
+   },
+   {
+    "desc": "Input data for row 3.",
+    "kind": "in",
+    "name": "in3"
+   },
+   {
+    "desc": "Input data for row 4.",
+    "kind": "in",
+    "name": "in4"
+   },
+   {
+    "desc": "Requires {0} P/s.",
+    "kind": "pwr",
+    "name": "pwr"
+   }
+  ]
+ },
+ "ClimaBomb": {
+  "name": "Clima Bomb",
+  "ports": [
+   {
+    "desc": "Input a value ≥ 0.5 to decouple from your spaceship. Detonation will occur 5 seconds after separation.",
+    "kind": "in",
+    "name": "in"
+   }
+  ]
+ },
+ "ColoredLightController": {
+  "name": "Colored Light Controller",
+  "ports": [
+   {
+    "desc": "Data input value for the _red_ channel, ranging from 0 to 1.",
+    "kind": "in",
+    "name": "in1"
+   },
+   {
+    "desc": "Data input value for the _green_ channel, ranging from 0 to 1.",
+    "kind": "in",
+    "name": "in2"
+   },
+   {
+    "desc": "Data input value for the _blue_ channel, ranging from 0 to 1.",
+    "kind": "in",
+    "name": "in3"
+   }
+  ]
+ },
+ "Condition": {
+  "name": "Condition",
+  "ports": [
+   {
+    "desc": "Input port A",
+    "kind": "in",
+    "name": "in1"
+   },
+   {
+    "desc": "Input port B",
+    "kind": "in",
+    "name": "in2"
+   },
+   {
+    "desc": "True input port. If unconnected, defaults to 1.",
+    "kind": "in",
+    "name": "in3"
+   },
+   {
+    "desc": "False input port. If unconnected, defaults to 0.",
+    "kind": "in",
+    "name": "in4"
+   },
+   {
+    "desc": "Outputs the value chosen by the condition - either the True value or the False value.",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "Constant": {
+  "name": "Constant",
+  "ports": [
+   {
+    "desc": "Outputs the displayed value.",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "Cos": {
+  "name": "Cosine",
+  "ports": [
+   {
+    "desc": "Input angle in radians.",
+    "kind": "in",
+    "name": "in"
+   },
+   {
+    "desc": "Output value.",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "DataHub": {
+  "name": "Data Hub",
+  "ports": [
+   {
+    "desc": "Input signal for channel 1.",
+    "kind": "in",
+    "name": "in1"
+   },
+   {
+    "desc": "Input signal for channel 2.",
+    "kind": "in",
+    "name": "in2"
+   },
+   {
+    "desc": "Input signal for channel 3.",
+    "kind": "in",
+    "name": "in3"
+   },
+   {
+    "desc": "Input signal for channel 4.",
+    "kind": "in",
+    "name": "in4"
+   },
+   {
+    "desc": "Input signal for channel 5.",
+    "kind": "in",
+    "name": "in5"
+   },
+   {
+    "desc": "Outputs one of five input signals determined by pressed channel button.",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "Datameter": {
+  "name": "Datameter",
+  "ports": [
+   {
+    "desc": "Input signal to be shown on the display.",
+    "kind": "in",
+    "name": "in"
+   },
+   {
+    "desc": "Outputs the signal from the input port.",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "DecouplerQuarter": {
+  "name": "Decoupler Small",
+  "ports": [
+   {
+    "desc": "Input a value of 0.5 or higher to break suction.",
+    "kind": "in",
+    "name": "in"
+   }
+  ]
+ },
+ "Delay": {
+  "name": "Delay",
+  "ports": [
+   {
+    "desc": "Input signal.",
+    "kind": "in",
+    "name": "in"
+   },
+   {
+    "desc": "Outputs the delayed signal.",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "Differentiator": {
+  "name": "Differentiator",
+  "ports": [
+   {
+    "desc": "Input signal to measure.",
+    "kind": "in",
+    "name": "in"
+   },
+   {
+    "desc": "Change in the signal over the selected time interval (current value minus earlier value).",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "DistanceMeter": {
+  "name": "Distance Meter",
+  "ports": [
+   {
+    "desc": "Outputs _distance to nearest object_ in meters (up to 1000 meters).",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "Divider": {
+  "name": "Divider",
+  "ports": [
+   {
+    "desc": "Input data for A.\nX = **A** / B",
+    "kind": "in",
+    "name": "in1"
+   },
+   {
+    "desc": "Input data for B.\nX = A / **B**",
+    "kind": "in",
+    "name": "in2"
+   },
+   {
+    "desc": "Outputs data for X.\n**X** = A / B",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "DuctedFan": {
+  "name": "Ducted Fan",
+  "ports": [
+   {
+    "desc": "Input data signal from -1 (backward), through 0 (off), to 1 (forward) to control _speed_.",
+    "kind": "in",
+    "name": "in1"
+   },
+   {
+    "desc": "Requires {0} P/s.",
+    "kind": "pwr",
+    "name": "pwr"
+   },
+   {
+    "desc": "Input data signal to control _fan rotation_: -1 (full reverse), 0 (upwards), 1 (full forward).",
+    "kind": "in",
+    "name": "in2"
+   }
+  ]
+ },
+ "DynamoBox": {
+  "name": "Dynamo Box",
+  "ports": [
+   {
+    "desc": "Can generate up to {0} P/s.",
+    "kind": "pwr",
+    "name": "pwr"
+   }
+  ]
+ },
+ "ElectricLiftThruster": {
+  "name": "Electric Flat Thruster",
+  "ports": [
+   {
+    "desc": "Input data signal from 0 (off) to 1 (max) to control _speed_.",
+    "kind": "in",
+    "name": "in"
+   },
+   {
+    "desc": "Requires {0} P/s.",
+    "kind": "pwr",
+    "name": "pwr"
+   }
+  ]
+ },
+ "Exp": {
+  "name": "Exponential",
+  "ports": [
+   {
+    "desc": "Input value.",
+    "kind": "in",
+    "name": "in"
+   },
+   {
+    "desc": "Output value.",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "Fader": {
+  "name": "Fader",
+  "ports": [
+   {
+    "desc": "Input signal to be multiplied by fader. If unconnected, defaults to 1.",
+    "kind": "in",
+    "name": "in"
+   },
+   {
+    "desc": "Outputs input signal multiplied by fader.",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "Floodlight": {
+  "name": "Floodlight",
+  "ports": [
+   {
+    "desc": "Input data signal from 0 (off) to 1 (full power) to adjust light _intensity_.",
+    "kind": "in",
+    "name": "in1"
+   },
+   {
+    "desc": "Input data signal from 0 to 1 to control _horizontal rotation_.",
+    "kind": "in",
+    "name": "in2"
+   },
+   {
+    "desc": "Input data signal from -1 to 1 to control _vertical rotation_.",
+    "kind": "in",
+    "name": "in3"
+   },
+   {
+    "desc": "Requires {0} P/s.",
+    "kind": "pwr",
+    "name": "pwr"
+   }
+  ]
+ },
+ "FrameQuarterPorts": {
+  "name": "Frame Quarter With Ports",
+  "ports": [
+   {
+    "desc": "A",
+    "kind": "unset",
+    "name": "port1"
+   },
+   {
+    "desc": "B",
+    "kind": "unset",
+    "name": "port2"
+   },
+   {
+    "desc": "C",
+    "kind": "unset",
+    "name": "port3"
+   },
+   {
+    "desc": "D",
+    "kind": "unset",
+    "name": "port4"
+   },
+   {
+    "desc": "A",
+    "kind": "unset",
+    "name": "port5"
+   },
+   {
+    "desc": "B",
+    "kind": "unset",
+    "name": "port6"
+   },
+   {
+    "desc": "C",
+    "kind": "unset",
+    "name": "port7"
+   },
+   {
+    "desc": "D",
+    "kind": "unset",
+    "name": "port8"
+   }
+  ]
+ },
+ "FrameQuarterPortsCorner": {
+  "name": "Frame Quarter With Ports Corner",
+  "ports": [
+   {
+    "desc": "A",
+    "kind": "unset",
+    "name": "port1"
+   },
+   {
+    "desc": "B",
+    "kind": "unset",
+    "name": "port2"
+   },
+   {
+    "desc": "C",
+    "kind": "unset",
+    "name": "port3"
+   },
+   {
+    "desc": "D",
+    "kind": "unset",
+    "name": "port4"
+   },
+   {
+    "desc": "A",
+    "kind": "unset",
+    "name": "port5"
+   },
+   {
+    "desc": "B",
+    "kind": "unset",
+    "name": "port6"
+   },
+   {
+    "desc": "C",
+    "kind": "unset",
+    "name": "port7"
+   },
+   {
+    "desc": "D",
+    "kind": "unset",
+    "name": "port8"
+   }
+  ]
+ },
+ "FuelAnalyzer": {
+  "name": "Fuel Analyzer",
+  "ports": [
+   {
+    "desc": "Input data in the range 0-1 to estimate fuel performance at the specified value.",
+    "kind": "in",
+    "name": "in"
+   },
+   {
+    "desc": "Outputs the estimated fuel performance for the input value.",
+    "kind": "out",
+    "name": "out1"
+   },
+   {
+    "desc": "Outputs the overall fuel stability.",
+    "kind": "out",
+    "name": "out2"
+   },
+   {
+    "desc": "Requires {0} P/s.",
+    "kind": "pwr",
+    "name": "pwr"
+   }
+  ]
+ },
+ "FuseBox": {
+  "name": "Fuse Box",
+  "ports": [
+   {
+    "desc": "Power port.",
+    "kind": "pwr",
+    "name": "pwr1"
+   },
+   {
+    "desc": "Power port.",
+    "kind": "pwr",
+    "name": "pwr2"
+   }
+  ]
+ },
+ "GimbalController": {
+  "name": "RCS Controller",
+  "ports": [
+   {
+    "desc": "Input signal for the _yaw axis_ from joystick.",
+    "kind": "in",
+    "name": "in1"
+   },
+   {
+    "desc": "Input signal for the _pitch axis_ from joystick.",
+    "kind": "in",
+    "name": "in2"
+   },
+   {
+    "desc": "Input signal for the _roll axis_ from joystick.",
+    "kind": "in",
+    "name": "in3"
+   },
+   {
+    "desc": "Requires {0} P/s.",
+    "kind": "pwr",
+    "name": "pwr"
+   }
+  ]
+ },
+ "Gravitymeter": {
+  "name": "Gravitymeter",
+  "ports": [
+   {
+    "desc": "Outputs current gravity in m/s².",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "GreenTank": {
+  "name": "Green Tank",
+  "ports": [
+   {
+    "desc": "Outputs _fuel level_ from 0 (empty) to 1 (full).",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "GreenTrenchPump": {
+  "name": "Green Trench Pump",
+  "ports": [
+   {
+    "desc": "Requires {0} P/s.",
+    "kind": "pwr",
+    "name": "pwr"
+   }
+  ]
+ },
+ "GyroLine": {
+  "name": "Gyro-Line",
+  "ports": [
+   {
+    "desc": "Outputs _pitch_ tilt in degrees.",
+    "kind": "out",
+    "name": "out1"
+   },
+   {
+    "desc": "Outputs _roll_ tilt in degrees.",
+    "kind": "out",
+    "name": "out2"
+   },
+   {
+    "desc": "Requires {0} P/s.",
+    "kind": "pwr",
+    "name": "pwr"
+   }
+  ]
+ },
+ "HorizontalMeter": {
+  "name": "Horizontal Meter",
+  "ports": [
+   {
+    "desc": "Input signal to be shown on the display.",
+    "kind": "in",
+    "name": "in"
+   }
+  ]
+ },
+ "IceCreamFreezer": {
+  "name": "Ice Cream Freezer",
+  "ports": [
+   {
+    "desc": "Requires {0} P/s for cooling.",
+    "kind": "pwr",
+    "name": "pwr"
+   }
+  ]
+ },
+ "Inclinometer": {
+  "name": "Inclinometer",
+  "ports": [
+   {
+    "desc": "Outputs the difference in degrees between the component's down direction and gravity direction.",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "Joystick2D": {
+  "name": "Joystick 2D",
+  "ports": [
+   {
+    "desc": "Outputs the signal for the _horizontal axis_: -1 = left, 0 = middle, 1 = right.",
+    "kind": "out",
+    "name": "out1"
+   },
+   {
+    "desc": "Outputs the signal for the _vertical axis_: -1 = down, 0 = middle, 1 = up.",
+    "kind": "out",
+    "name": "out2"
+   }
+  ]
+ },
+ "Joystick3D": {
+  "name": "Joystick 3D",
+  "ports": [
+   {
+    "desc": "Outputs the signal for the _yaw axis_: -1 = left, 0 = middle, 1 = right.",
+    "kind": "out",
+    "name": "out1"
+   },
+   {
+    "desc": "Outputs the signal for the _pitch axis_: -1 = down, 0 = middle, 1 = up.",
+    "kind": "out",
+    "name": "out2"
+   },
+   {
+    "desc": "Outputs the signal for the _roll axis_: -1 = left, 0 = middle, 1 = right.",
+    "kind": "out",
+    "name": "out3"
+   }
+  ]
+ },
+ "JoystickHorizontal": {
+  "name": "Joystick Horizontal",
+  "ports": [
+   {
+    "desc": "Outputs the signal for the _horizontal axis_: -1 = left, 0 = middle, 1 = right.",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "JoystickSplitter": {
+  "name": "Sign Splitter",
+  "ports": [
+   {
+    "desc": "Input value.",
+    "kind": "in",
+    "name": "in"
+   },
+   {
+    "desc": "Negative output: Outputs negative input values as positive values.",
+    "kind": "out",
+    "name": "out1"
+   },
+   {
+    "desc": "Positive output: Outputs positive input values.",
+    "kind": "out",
+    "name": "out2"
+   }
+  ]
+ },
+ "JoystickVertical": {
+  "name": "Joystick Vertical",
+  "ports": [
+   {
+    "desc": "Outputs the signal for the _vertical axis_: -1 = down, 0 = middle, 1 = up.",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "LargeDatameter": {
+  "name": "Large Datameter",
+  "ports": [
+   {
+    "desc": "Input signal to be shown on the display.",
+    "kind": "in",
+    "name": "in"
+   },
+   {
+    "desc": "Outputs the signal from the input port.",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "LargeDisposableBattery": {
+  "name": "Large Disposable Battery",
+  "ports": [
+   {
+    "desc": "Provides the available power.",
+    "kind": "pwr",
+    "name": "pwr"
+   },
+   {
+    "desc": "Outputs the current battery level in Units.",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "LargeElectricThruster": {
+  "name": "Large Electric Thruster",
+  "ports": [
+   {
+    "desc": "Input data signal from 0 (off) to 1 (max) to control _speed_.",
+    "kind": "in",
+    "name": "in"
+   },
+   {
+    "desc": "Requires {0} P/s.",
+    "kind": "pwr",
+    "name": "pwr"
+   }
+  ]
+ },
+ "LargeFuelThruster": {
+  "name": "Large Fuel Thruster",
+  "ports": [
+   {
+    "desc": "Input data signal from 0 (off) to 1 (max) to control _speed_.",
+    "kind": "in",
+    "name": "in"
+   }
+  ]
+ },
+ "LargeGate": {
+  "name": "Large Gate",
+  "ports": [
+   {
+    "desc": "Input data from 0 to 1 to control the gate state.",
+    "kind": "in",
+    "name": "in"
+   },
+   {
+    "desc": "Requires {0} P/s to open or close the gate.",
+    "kind": "pwr",
+    "name": "pwr"
+   }
+  ]
+ },
+ "LargeManeuveringThruster": {
+  "name": "Large Maneuvering Thruster",
+  "ports": [
+   {
+    "desc": "Input data signal from 0 (off) to 1 (max) to control _speed_.",
+    "kind": "in",
+    "name": "in"
+   },
+   {
+    "desc": "Requires {0} P/s.",
+    "kind": "pwr",
+    "name": "pwr"
+   }
+  ]
+ },
+ "LargeNanogate": {
+  "name": "Large Nanogate",
+  "ports": [
+   {
+    "desc": "Input data from 0 to 1 to control the gate state.",
+    "kind": "in",
+    "name": "in"
+   },
+   {
+    "desc": "Requires {0} P/s to open or close the gate.",
+    "kind": "pwr",
+    "name": "pwr"
+   }
+  ]
+ },
+ "LargePowerRouter": {
+  "name": "Large Power Router",
+  "ports": [
+   {
+    "desc": "Power port.",
+    "kind": "pwr",
+    "name": "pwr1"
+   },
+   {
+    "desc": "Power port.",
+    "kind": "pwr",
+    "name": "pwr2"
+   },
+   {
+    "desc": "Power port.",
+    "kind": "pwr",
+    "name": "pwr3"
+   },
+   {
+    "desc": "Power port.",
+    "kind": "pwr",
+    "name": "pwr4"
+   },
+   {
+    "desc": "Power port.",
+    "kind": "pwr",
+    "name": "pwr5"
+   },
+   {
+    "desc": "Power port.",
+    "kind": "pwr",
+    "name": "pwr6"
+   },
+   {
+    "desc": "Power port.",
+    "kind": "pwr",
+    "name": "pwr7"
+   },
+   {
+    "desc": "Power port.",
+    "kind": "pwr",
+    "name": "pwr8"
+   }
+  ]
+ },
+ "LargeRechargeableBattery": {
+  "name": "Large Rechargeable Battery",
+  "ports": [
+   {
+    "desc": "Provides the available power and can be used to recharge the battery.",
+    "kind": "pwr",
+    "name": "pwr"
+   },
+   {
+    "desc": "Outputs the current battery level in Units.",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "LavaSucker": {
+  "name": "Lava Pumping Tank",
+  "ports": [
+   {
+    "desc": "Input data value ≥ 0.5 to turn on.",
+    "kind": "in",
+    "name": "in1"
+   },
+   {
+    "desc": "Input data range from 0 (retracted) to 1 (fully extended) to control intake pipe length.",
+    "kind": "in",
+    "name": "in2"
+   },
+   {
+    "desc": "Requires {0} P/s.",
+    "kind": "pwr",
+    "name": "pwr"
+   }
+  ]
+ },
+ "LeverHorizontal": {
+  "name": "Lever Horizontal",
+  "ports": [
+   {
+    "desc": "Outputs the signal for the _vertical axis_.",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "LeverVertical": {
+  "name": "Lever Vertical",
+  "ports": [
+   {
+    "desc": "Outputs the signal for the _vertical axis_.",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "LeverVerticalHalf": {
+  "name": "Lever Vertical Small",
+  "ports": [
+   {
+    "desc": "Outputs the signal for the _vertical axis_.",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "Log": {
+  "name": "Natural Logarithm",
+  "ports": [
+   {
+    "desc": "Input value (must be > 0).",
+    "kind": "in",
+    "name": "in"
+   },
+   {
+    "desc": "Output value.",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "LogicGateAnd": {
+  "name": "Logic Gate AND",
+  "ports": [
+   {
+    "desc": "Input data for A.\nX = **A** ∧ B",
+    "kind": "in",
+    "name": "in1"
+   },
+   {
+    "desc": "Input data for B.\nX = A ∧ **B**",
+    "kind": "in",
+    "name": "in2"
+   },
+   {
+    "desc": "Outputs data for X. **X** = A ∧ B",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "LogicGateNot": {
+  "name": "Logic Gate NOT",
+  "ports": [
+   {
+    "desc": "Input data for A.\nX = 1 - **A**",
+    "kind": "in",
+    "name": "in"
+   },
+   {
+    "desc": "Outputs data for X.\n**X** = 1 - A",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "LogicGateOr": {
+  "name": "Logic Gate OR",
+  "ports": [
+   {
+    "desc": "Input data for A.\nX = **A** ∨ B",
+    "kind": "in",
+    "name": "in1"
+   },
+   {
+    "desc": "Input data for B.\nX = A ∨ **B**",
+    "kind": "in",
+    "name": "in2"
+   },
+   {
+    "desc": "Outputs data for X. **X** = A ∨ B",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "LogicGateXor": {
+  "name": "Logic Gate XOR",
+  "ports": [
+   {
+    "desc": "Input data for A.\nX = **A** ⊕ B",
+    "kind": "in",
+    "name": "in1"
+   },
+   {
+    "desc": "Input data for B.\nX = A ⊕ **B**",
+    "kind": "in",
+    "name": "in2"
+   },
+   {
+    "desc": "Outputs data for X.\n**X** = A ⊕ B",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "LogicValue": {
+  "name": "Logic Value",
+  "ports": [
+   {
+    "desc": "Input signal.",
+    "kind": "in",
+    "name": "in"
+   },
+   {
+    "desc": "Outputs 1 when the input signal is greater than or equal to 0.5, otherwise outputs 0.",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "LongRangeDistanceMeter": {
+  "name": "Long Range Distance Meter",
+  "ports": [
+   {
+    "desc": "Outputs _distance to the closest object_ in front of the LRDM in meters.",
+    "kind": "out",
+    "name": "out"
+   },
+   {
+    "desc": "Requires {0} P/s.",
+    "kind": "pwr",
+    "name": "pwr"
+   }
+  ]
+ },
+ "Magnetometer": {
+  "name": "Magnetometer",
+  "ports": [
+   {
+    "desc": "Outputs current electromagnetic activity levels on a scale from 0 to 1.",
+    "kind": "out",
+    "name": "out"
+   },
+   {
+    "desc": "Requires {0} P/s.",
+    "kind": "pwr",
+    "name": "pwr"
+   }
+  ]
+ },
+ "Massmeter": {
+  "name": "Massmeter",
+  "ports": [
+   {
+    "desc": "Outputs the mass of the spaceship it is mounted on.",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "Maximum": {
+  "name": "Maximum",
+  "ports": [
+   {
+    "desc": "Input value.",
+    "kind": "in",
+    "name": "in1"
+   },
+   {
+    "desc": "Input value.",
+    "kind": "in",
+    "name": "in2"
+   },
+   {
+    "desc": "The largest value among all inputs.",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "MediumDisposableBattery": {
+  "name": "Medium Disposable Battery",
+  "ports": [
+   {
+    "desc": "Provides the available power.",
+    "kind": "pwr",
+    "name": "pwr"
+   },
+   {
+    "desc": "Outputs the current battery level in Units.",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "MediumElectricThruster": {
+  "name": "Medium Electric Thruster",
+  "ports": [
+   {
+    "desc": "Input data signal from 0 (off) to 1 (max) to control _speed_.",
+    "kind": "in",
+    "name": "in"
+   },
+   {
+    "desc": "Requires {0} P/s.",
+    "kind": "pwr",
+    "name": "pwr"
+   }
+  ]
+ },
+ "MediumFuelThruster": {
+  "name": "Medium Fuel Thruster",
+  "ports": [
+   {
+    "desc": "Input data signal from 0 (off) to 1 (max) to control _speed_.",
+    "kind": "in",
+    "name": "in"
+   }
+  ]
+ },
+ "MediumGate": {
+  "name": "Medium Gate",
+  "ports": [
+   {
+    "desc": "Input data from 0 to 1 to control the gate state.",
+    "kind": "in",
+    "name": "in"
+   },
+   {
+    "desc": "Requires {0} P/s to open or close the gate.",
+    "kind": "pwr",
+    "name": "pwr"
+   }
+  ]
+ },
+ "MediumManeuveringThruster": {
+  "name": "Medium Maneuvering Thruster",
+  "ports": [
+   {
+    "desc": "Input data signal from 0 (off) to 1 (max) to control _speed_.",
+    "kind": "in",
+    "name": "in"
+   },
+   {
+    "desc": "Requires {0} P/s.",
+    "kind": "pwr",
+    "name": "pwr"
+   }
+  ]
+ },
+ "MediumNanogate": {
+  "name": "Medium Nanogate",
+  "ports": [
+   {
+    "desc": "Input data from 0 to 1 to control the gate state.",
+    "kind": "in",
+    "name": "in"
+   },
+   {
+    "desc": "Requires {0} P/s to open or close the gate.",
+    "kind": "pwr",
+    "name": "pwr"
+   }
+  ]
+ },
+ "MediumRechargeableBattery": {
+  "name": "Medium Rechargeable Battery",
+  "ports": [
+   {
+    "desc": "Provides the available power and can be used to recharge the battery.",
+    "kind": "pwr",
+    "name": "pwr"
+   },
+   {
+    "desc": "Outputs the current battery level in Units.",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "Memory": {
+  "name": "Memory",
+  "ports": [
+   {
+    "desc": "Value to store when the block is triggered.",
+    "kind": "in",
+    "name": "in1"
+   },
+   {
+    "desc": "Control signal that determines when the stored value is updated.",
+    "kind": "in",
+    "name": "in2"
+   },
+   {
+    "desc": "Currently stored value.",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "Minimum": {
+  "name": "Minimum",
+  "ports": [
+   {
+    "desc": "Input value.",
+    "kind": "in",
+    "name": "in1"
+   },
+   {
+    "desc": "Input value.",
+    "kind": "in",
+    "name": "in2"
+   },
+   {
+    "desc": "The smallest value among all inputs.",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "Mod": {
+  "name": "Modulo",
+  "ports": [
+   {
+    "desc": "Dividend input.",
+    "kind": "in",
+    "name": "in1"
+   },
+   {
+    "desc": "Divisor input.",
+    "kind": "in",
+    "name": "in2"
+   },
+   {
+    "desc": "Output remainder.",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "MonitorCRT": {
+  "name": "Monitor CRT",
+  "ports": [
+   {
+    "desc": "Input _video signal_.",
+    "kind": "in",
+    "name": "in"
+   },
+   {
+    "desc": "Requires {0} P/s.",
+    "kind": "pwr",
+    "name": "pwr"
+   }
+  ]
+ },
+ "MonitorLargeLCD": {
+  "name": "Monitor Large LCD",
+  "ports": [
+   {
+    "desc": "Input _primary video signal_.",
+    "kind": "in",
+    "name": "in1"
+   },
+   {
+    "desc": "Input _secondary video signal_.",
+    "kind": "in",
+    "name": "in2"
+   },
+   {
+    "desc": "Requires {0} P/s.",
+    "kind": "pwr",
+    "name": "pwr"
+   }
+  ]
+ },
+ "MonitorMediumLCD": {
+  "name": "Monitor Medium LCD",
+  "ports": [
+   {
+    "desc": "Input _primary video signal_.",
+    "kind": "in",
+    "name": "in1"
+   },
+   {
+    "desc": "Input _secondary video signal_.",
+    "kind": "in",
+    "name": "in2"
+   },
+   {
+    "desc": "Requires {0} P/s.",
+    "kind": "pwr",
+    "name": "pwr"
+   }
+  ]
+ },
+ "MonitorSmallLCD": {
+  "name": "Monitor Small LCD",
+  "ports": [
+   {
+    "desc": "Input _primary video signal_.",
+    "kind": "in",
+    "name": "in1"
+   },
+   {
+    "desc": "Input _secondary video signal_.",
+    "kind": "in",
+    "name": "in2"
+   },
+   {
+    "desc": "Requires {0} P/s.",
+    "kind": "pwr",
+    "name": "pwr"
+   }
+  ]
+ },
+ "Multiplier": {
+  "name": "Multiplier",
+  "ports": [
+   {
+    "desc": "Input data for A.\nX = **A** * B",
+    "kind": "in",
+    "name": "in1"
+   },
+   {
+    "desc": "Input data for B.\nX = A * **B**",
+    "kind": "in",
+    "name": "in2"
+   },
+   {
+    "desc": "Outputs data for X.\n**X** = A * B",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "NanoframeQuarterPorts": {
+  "name": "Nanoframe Quarter With Ports",
+  "ports": [
+   {
+    "desc": "A",
+    "kind": "unset",
+    "name": "port1"
+   },
+   {
+    "desc": "B",
+    "kind": "unset",
+    "name": "port2"
+   },
+   {
+    "desc": "C",
+    "kind": "unset",
+    "name": "port3"
+   },
+   {
+    "desc": "D",
+    "kind": "unset",
+    "name": "port4"
+   },
+   {
+    "desc": "A",
+    "kind": "unset",
+    "name": "port5"
+   },
+   {
+    "desc": "B",
+    "kind": "unset",
+    "name": "port6"
+   },
+   {
+    "desc": "C",
+    "kind": "unset",
+    "name": "port7"
+   },
+   {
+    "desc": "D",
+    "kind": "unset",
+    "name": "port8"
+   }
+  ]
+ },
+ "NanoframeQuarterPortsCorner": {
+  "name": "Nanoframe Quarter With Ports Corner",
+  "ports": [
+   {
+    "desc": "A",
+    "kind": "unset",
+    "name": "port1"
+   },
+   {
+    "desc": "B",
+    "kind": "unset",
+    "name": "port2"
+   },
+   {
+    "desc": "C",
+    "kind": "unset",
+    "name": "port3"
+   },
+   {
+    "desc": "D",
+    "kind": "unset",
+    "name": "port4"
+   },
+   {
+    "desc": "A",
+    "kind": "unset",
+    "name": "port5"
+   },
+   {
+    "desc": "B",
+    "kind": "unset",
+    "name": "port6"
+   },
+   {
+    "desc": "C",
+    "kind": "unset",
+    "name": "port7"
+   },
+   {
+    "desc": "D",
+    "kind": "unset",
+    "name": "port8"
+   }
+  ]
+ },
+ "NanopipeElectricValve": {
+  "name": "Nanopipe With Electric Valve",
+  "ports": [
+   {
+    "desc": "Input data signal from 0 (close) to 1 (open).",
+    "kind": "in",
+    "name": "in"
+   },
+   {
+    "desc": "Requires {0} P/s when changing the valve state.",
+    "kind": "pwr",
+    "name": "pwr"
+   }
+  ]
+ },
+ "NightVisionCamera": {
+  "name": "Night Vision Camera",
+  "ports": [
+   {
+    "desc": "Outputs _video signal_.",
+    "kind": "out",
+    "name": "out"
+   },
+   {
+    "desc": "Requires {0} P/s.",
+    "kind": "pwr",
+    "name": "pwr"
+   }
+  ]
+ },
+ "OutcastPolarAnchor": {
+  "name": "Outcast Polar Anchor",
+  "ports": [
+   {
+    "desc": "Requires up to {0} P/s.",
+    "kind": "pwr",
+    "name": "pwr"
+   }
+  ]
+ },
+ "PipeElectricValve": {
+  "name": "Pipe With Electric Valve",
+  "ports": [
+   {
+    "desc": "Input data signal from 0 (close) to 1 (open).",
+    "kind": "in",
+    "name": "in"
+   },
+   {
+    "desc": "Requires {0} P/s when changing the valve state.",
+    "kind": "pwr",
+    "name": "pwr"
+   }
+  ]
+ },
+ "Pow": {
+  "name": "Power",
+  "ports": [
+   {
+    "desc": "Base input.",
+    "kind": "in",
+    "name": "in1"
+   },
+   {
+    "desc": "Exponent input.",
+    "kind": "in",
+    "name": "in2"
+   },
+   {
+    "desc": "Output value.",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "PowerBlocker": {
+  "name": "Power Blocker",
+  "ports": [
+   {
+    "desc": "Input data signal of 0.5 or higher to block power between the two power ports.",
+    "kind": "in",
+    "name": "in"
+   },
+   {
+    "desc": "Power port.",
+    "kind": "pwr",
+    "name": "pwr1"
+   },
+   {
+    "desc": "Power port.",
+    "kind": "pwr",
+    "name": "pwr2"
+   }
+  ]
+ },
+ "PowerGenerationMeter": {
+  "name": "Power Generation Meter",
+  "ports": [
+   {
+    "desc": "Outputs power generation in P/s of the connected electric circuit.",
+    "kind": "out",
+    "name": "out"
+   },
+   {
+    "desc": "Power port.",
+    "kind": "pwr",
+    "name": "pwr"
+   }
+  ]
+ },
+ "PowerRouter": {
+  "name": "Power Router",
+  "ports": [
+   {
+    "desc": "Power port.",
+    "kind": "pwr",
+    "name": "pwr1"
+   },
+   {
+    "desc": "Power port.",
+    "kind": "pwr",
+    "name": "pwr2"
+   },
+   {
+    "desc": "Power port.",
+    "kind": "pwr",
+    "name": "pwr3"
+   },
+   {
+    "desc": "Power port.",
+    "kind": "pwr",
+    "name": "pwr4"
+   }
+  ]
+ },
+ "PowerUsageMeter": {
+  "name": "Power Usage Meter",
+  "ports": [
+   {
+    "desc": "Outputs power usage in P/s of the connected electric circuit.",
+    "kind": "out",
+    "name": "out"
+   },
+   {
+    "desc": "Power port.",
+    "kind": "pwr",
+    "name": "pwr"
+   }
+  ]
+ },
+ "Radar": {
+  "name": "Radar",
+  "ports": [
+   {
+    "desc": "Requires {0} P/s.",
+    "kind": "pwr",
+    "name": "pwr"
+   }
+  ]
+ },
+ "RedAlertLight": {
+  "name": "Red Alert Light",
+  "ports": [
+   {
+    "desc": "Input signal of 0.5 or higher to turn on the light.",
+    "kind": "in",
+    "name": "in"
+   }
+  ]
+ },
+ "RedTank": {
+  "name": "Red Tank",
+  "ports": [
+   {
+    "desc": "Outputs _fuel level_ from 0 (empty) to 1 (full).",
+    "kind": "out",
+    "name": "out1"
+   },
+   {
+    "desc": "Outputs the _cooling state_: 1 is normal, 0 indicates imminent failure.",
+    "kind": "out",
+    "name": "out2"
+   },
+   {
+    "desc": "Requires {0} P/s for cooling.",
+    "kind": "pwr",
+    "name": "pwr"
+   }
+  ]
+ },
+ "Remapper": {
+  "name": "Remapper",
+  "ports": [
+   {
+    "desc": "Input data signal to be remapped.",
+    "kind": "in",
+    "name": "in"
+   },
+   {
+    "desc": "Outputs remapped data signal.",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "RimcoreTurbo": {
+  "name": "Rimcore Turbopump",
+  "ports": [
+   {
+    "desc": "Turns on at input signal ≥ 0.5.",
+    "kind": "in",
+    "name": "in"
+   },
+   {
+    "desc": "Requires {0} P/s.",
+    "kind": "pwr",
+    "name": "pwr"
+   }
+  ]
+ },
+ "RotationalTelescope": {
+  "name": "Rotational Telescopic Camera",
+  "ports": [
+   {
+    "desc": "Outputs _video signal_.",
+    "kind": "out",
+    "name": "out"
+   },
+   {
+    "desc": "Input data signal from 0 to 1 to control _horizontal rotation_.",
+    "kind": "in",
+    "name": "in1"
+   },
+   {
+    "desc": "Input data signal from -1 to 1 to control _vertical rotation_.",
+    "kind": "in",
+    "name": "in2"
+   },
+   {
+    "desc": "Input data signal from 0 to 1 to control _roll rotation_.",
+    "kind": "in",
+    "name": "in3"
+   },
+   {
+    "desc": "Input data signal from 0 to 1 to control _camera zoom_.",
+    "kind": "in",
+    "name": "in4"
+   },
+   {
+    "desc": "Requires {0} P/s.",
+    "kind": "pwr",
+    "name": "pwr"
+   }
+  ]
+ },
+ "Round": {
+  "name": "Round",
+  "ports": [
+   {
+    "desc": "Input value.",
+    "kind": "in",
+    "name": "in"
+   },
+   {
+    "desc": "Rounded output value.",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "Router2": {
+  "name": "Data Router 2",
+  "ports": [
+   {
+    "desc": "Input signal is sent to both output ports.",
+    "kind": "in",
+    "name": "in"
+   },
+   {
+    "desc": "Outputs the signal from the input port.",
+    "kind": "out",
+    "name": "out1"
+   },
+   {
+    "desc": "Outputs the signal from the input port.",
+    "kind": "out",
+    "name": "out2"
+   }
+  ]
+ },
+ "Router4": {
+  "name": "Data Router 4",
+  "ports": [
+   {
+    "desc": "Input signal is sent to all four output ports.",
+    "kind": "in",
+    "name": "in"
+   },
+   {
+    "desc": "Outputs the signal from the input port.",
+    "kind": "out",
+    "name": "out1"
+   },
+   {
+    "desc": "Outputs the signal from the input port.",
+    "kind": "out",
+    "name": "out2"
+   },
+   {
+    "desc": "Outputs the signal from the input port.",
+    "kind": "out",
+    "name": "out3"
+   },
+   {
+    "desc": "Outputs the signal from the input port.",
+    "kind": "out",
+    "name": "out4"
+   }
+  ]
+ },
+ "SignalRouter3": {
+  "name": "Data Redirector 3",
+  "ports": [
+   {
+    "desc": "Input signal A.",
+    "kind": "in",
+    "name": "in1"
+   },
+   {
+    "desc": "Input signal B.",
+    "kind": "in",
+    "name": "in2"
+   },
+   {
+    "desc": "Input signal C.",
+    "kind": "in",
+    "name": "in3"
+   },
+   {
+    "desc": "Input signal from 0 to 1 to determine which of the three input ports (A, B, C) is sent to the output port.",
+    "kind": "in",
+    "name": "in4"
+   },
+   {
+    "desc": "Outputs one of three input signals (A, B, C) based on the value of the D input port.",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "SimpleThreshold": {
+  "name": "Simple Threshold",
+  "ports": [
+   {
+    "desc": "Input signal for comparison with set value",
+    "kind": "in",
+    "name": "in"
+   },
+   {
+    "desc": "Outputs data signal 1 when the input signal is greater than or equal to the set value, otherwise outputs 0.",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "Sin": {
+  "name": "Sine",
+  "ports": [
+   {
+    "desc": "Input angle in radians.",
+    "kind": "in",
+    "name": "in"
+   },
+   {
+    "desc": "Output value.",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "SmallButton": {
+  "name": "Small Button",
+  "ports": [
+   {
+    "desc": "Outputs 1 when pressed, 0 when not pressed.",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "SmallDisposableBattery": {
+  "name": "Small Disposable Battery",
+  "ports": [
+   {
+    "desc": "Provides the available power.",
+    "kind": "pwr",
+    "name": "pwr"
+   }
+  ]
+ },
+ "SmallElectricThruster": {
+  "name": "Small Electric Thruster",
+  "ports": [
+   {
+    "desc": "Input data signal from 0 (off) to 1 (max) to control _speed_.",
+    "kind": "in",
+    "name": "in"
+   },
+   {
+    "desc": "Requires {0} P/s.",
+    "kind": "pwr",
+    "name": "pwr"
+   }
+  ]
+ },
+ "SmallFuelThruster": {
+  "name": "Small Fuel Thruster",
+  "ports": [
+   {
+    "desc": "Input data signal from 0 (off) to 1 (max) to control _speed_.",
+    "kind": "in",
+    "name": "in"
+   }
+  ]
+ },
+ "SmallGate": {
+  "name": "Small Gate",
+  "ports": [
+   {
+    "desc": "Input data from 0 to 1 to control the gate state.",
+    "kind": "in",
+    "name": "in"
+   },
+   {
+    "desc": "Requires {0} P/s to open or close the gate.",
+    "kind": "pwr",
+    "name": "pwr"
+   }
+  ]
+ },
+ "SmallKnob": {
+  "name": "Small Knob",
+  "ports": [
+   {
+    "desc": "Outputs signal in the range from 0 to 1.",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "SmallManeuveringThruster": {
+  "name": "Small Maneuvering Thruster",
+  "ports": [
+   {
+    "desc": "Input data signal from 0 (off) to 1 (max) to control _speed_.",
+    "kind": "in",
+    "name": "in"
+   },
+   {
+    "desc": "Requires {0} P/s.",
+    "kind": "pwr",
+    "name": "pwr"
+   }
+  ]
+ },
+ "SmallNanogate": {
+  "name": "Small Nanogate",
+  "ports": [
+   {
+    "desc": "Input data from 0 to 1 to control the gate state.",
+    "kind": "in",
+    "name": "in"
+   },
+   {
+    "desc": "Requires {0} P/s to open or close the gate.",
+    "kind": "pwr",
+    "name": "pwr"
+   }
+  ]
+ },
+ "SmallPlasmaGenerator": {
+  "name": "Small Plasma Generator",
+  "ports": [
+   {
+    "desc": "Input data signal from 0 (off) to 1 (max) to control _speed_.",
+    "kind": "in",
+    "name": "in"
+   },
+   {
+    "desc": "Requires up to {0} P/s.",
+    "kind": "pwr",
+    "name": "pwr"
+   },
+   {
+    "desc": "Plasma output.",
+    "kind": "plasma",
+    "name": "plasma"
+   }
+  ]
+ },
+ "SmallRechargeableBattery": {
+  "name": "Small Rechargeable Battery",
+  "ports": [
+   {
+    "desc": "Provides the available power and can be used to recharge the battery.",
+    "kind": "pwr",
+    "name": "pwr"
+   }
+  ]
+ },
+ "SmallSolidFuelThruster": {
+  "name": "Small Solid Fuel Thruster",
+  "ports": [
+   {
+    "desc": "Requires {0} P/s to ignite.",
+    "kind": "pwr",
+    "name": "pwr"
+   }
+  ]
+ },
+ "SmallSwitch": {
+  "name": "Small Switch",
+  "ports": [
+   {
+    "desc": "Outputs 1 when on (I), 0 when off (O).",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "SolarPanel": {
+  "name": "Solar Panel",
+  "ports": [
+   {
+    "desc": "Can generate up to {0} P/s.",
+    "kind": "pwr",
+    "name": "pwr1"
+   },
+   {
+    "desc": "Can generate up to {0} P/s.",
+    "kind": "pwr",
+    "name": "pwr2"
+   }
+  ]
+ },
+ "SolarShieldGenerator": {
+  "name": "Solar Shield Generator",
+  "ports": [
+   {
+    "desc": "Plasma port.",
+    "kind": "plasma",
+    "name": "plasma"
+   },
+   {
+    "desc": "Input data in meters to control shield radius.",
+    "kind": "in",
+    "name": "in"
+   },
+   {
+    "desc": "Outputs the maximum amount of heat absorbed by the shield.",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "SpaceGPS": {
+  "name": "Space GPS",
+  "ports": [
+   {
+    "desc": "Outputs distance.",
+    "kind": "out",
+    "name": "out1"
+   },
+   {
+    "desc": "Outputs longitude in degrees (-180 to 180).",
+    "kind": "out",
+    "name": "out2"
+   },
+   {
+    "desc": "Outputs latitude in degrees (-90 to 90).",
+    "kind": "out",
+    "name": "out3"
+   },
+   {
+    "desc": "Requires {0} P/s.",
+    "kind": "pwr",
+    "name": "pwr"
+   }
+  ]
+ },
+ "SpaceScanner": {
+  "name": "Space Scanner",
+  "ports": [
+   {
+    "desc": "Input data signal from 0 (50 degrees) to 1 (1 degrees) to control _cone angle_.",
+    "kind": "in",
+    "name": "in"
+   },
+   {
+    "desc": "Outputs the _distance to the closest object_ in the front cone of the satellite, in meters.",
+    "kind": "out",
+    "name": "out"
+   },
+   {
+    "desc": "Requires {0} P/s.",
+    "kind": "pwr",
+    "name": "pwr"
+   }
+  ]
+ },
+ "Sqrt": {
+  "name": "Square Root",
+  "ports": [
+   {
+    "desc": "Input value (must be ≥ 0).",
+    "kind": "in",
+    "name": "in"
+   },
+   {
+    "desc": "Output value.",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "StickSwitch": {
+  "name": "Stick Switch",
+  "ports": [
+   {
+    "desc": "Outputs 1 when up, 0 when down.",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "Subtractor": {
+  "name": "Subtractor",
+  "ports": [
+   {
+    "desc": "Input data for A.\nX = **A** - B",
+    "kind": "in",
+    "name": "in1"
+   },
+   {
+    "desc": "Input data for B.\nX = A - **B**",
+    "kind": "in",
+    "name": "in2"
+   },
+   {
+    "desc": "Outputs data for X.\n**X** = A - B",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "Switch": {
+  "name": "Switch",
+  "ports": [
+   {
+    "desc": "Outputs 1 when on (I), 0 when off (O).",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "Tan": {
+  "name": "Tangent",
+  "ports": [
+   {
+    "desc": "Input angle in radians.",
+    "kind": "in",
+    "name": "in"
+   },
+   {
+    "desc": "Output value.",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "Thermometer": {
+  "name": "Thermometer",
+  "ports": [
+   {
+    "desc": "Outputs the _temperature_.",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "Thermoscan": {
+  "name": "Thermoscan",
+  "ports": [
+   {
+    "desc": "Outputs _temperature of the first detected object_.",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "TrajectoryCurvatureMeter": {
+  "name": "Trajectory Curvature Meter",
+  "ports": [
+   {
+    "desc": "Outputs the difference in degrees between the spaceship's trajectory and the component's facing direction.",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "VelocityMeter": {
+  "name": "Velocity Meter",
+  "ports": [
+   {
+    "desc": "Outputs the current _velocity_ in m/s.",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "VerticalMeter": {
+  "name": "Vertical Meter",
+  "ports": [
+   {
+    "desc": "Input signal to be shown on the display.",
+    "kind": "in",
+    "name": "in"
+   }
+  ]
+ },
+ "WindShieldGenerator": {
+  "name": "Wind Shield Generator",
+  "ports": [
+   {
+    "desc": "Plasma port.",
+    "kind": "plasma",
+    "name": "plasma"
+   },
+   {
+    "desc": "Input data in meters to control shield radius.",
+    "kind": "in",
+    "name": "in"
+   },
+   {
+    "desc": "Outputs the maximum wind speed the shield can absorb, in m/s.",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "Windmeter": {
+  "name": "Windmeter",
+  "ports": [
+   {
+    "desc": "Outputs the _current wind speed_ in m/s².",
+    "kind": "out",
+    "name": "out"
+   }
+  ]
+ },
+ "WirelessTransmitter": {
+  "name": "Wireless Transmitter",
+  "ports": [
+   {
+    "desc": "Input/output port to send or receive via transmitter.",
+    "kind": "io",
+    "name": "io"
+   }
+  ]
+ },
+ "ZoomCamera": {
+  "name": "Camera With Zoom",
+  "ports": [
+   {
+    "desc": "Outputs _video signal_.",
+    "kind": "out",
+    "name": "out"
+   },
+   {
+    "desc": "Input data signal from 0 to 1 to control _camera zoom_.",
+    "kind": "in",
+    "name": "in"
+   },
+   {
+    "desc": "Requires {0} P/s.",
+    "kind": "pwr",
+    "name": "pwr"
+   }
+  ]
+ }
+}

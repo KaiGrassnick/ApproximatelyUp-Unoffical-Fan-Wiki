@@ -1,0 +1,55 @@
+@use '@fontsource/chakra-petch/500.css' as *;
+@use '@fontsource/chakra-petch/600.css' as *;
+@use '@fontsource/inter/400.css' as *;
+@use '@fontsource/inter/600.css' as *;
+@use '@fontsource/jetbrains-mono/400.css' as *;
+@use 'styles/tokens';
+@use 'styles/hud' as *;
+@use 'styles/reader';
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(1200px 700px at 70% -10%, rgba(79, 216, 255, 0.07), transparent 60%),
+    radial-gradient(900px 600px at 10% 110%, rgba(160, 107, 255, 0.06), transparent 60%),
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.012) 0 1px, transparent 1px 3px);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-head);
+  letter-spacing: 0.02em;
+  font-weight: 600;
+}
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.12s ease;
+}
+a:hover {
+  color: var(--accent-hi);
+}
+code,
+.num {
+  font-family: var(--font-mono);
+}

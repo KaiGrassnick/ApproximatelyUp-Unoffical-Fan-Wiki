@@ -1,0 +1,59 @@
+@use 'styles/hud' as *;
+
+.back {
+  @include label;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+.head h1 {
+  margin: 0;
+}
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  margin: 0.4rem 0 2rem;
+}
+.kind {
+  @include label;
+}
+.where {
+  @include label;
+  color: var(--violet);
+}
+.objective {
+  @include panel;
+  padding: 1rem 1.2rem;
+  max-width: 70ch;
+  border-left: 2px solid var(--accent);
+}
+.desc {
+  max-width: 70ch;
+  color: var(--text-dim);
+}
+.cols {
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  align-items: start;
+  margin-top: 2rem;
+}
+.links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.links li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.25rem 0;
+}
+.links .num {
+  color: var(--text-faint);
+}
+.unknown {
+  color: var(--text-faint);
+  font-family: var(--font-head);
+}

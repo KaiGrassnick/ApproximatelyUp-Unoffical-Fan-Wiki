@@ -1,0 +1,187 @@
+@use 'styles/hud' as *;
+
+// Swapped in for the <img> of the picture, so it lays itself out the way the
+// image did; a bare custom element is inline and would collapse the box.
+:host {
+  display: block;
+}
+
+.stage {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  cursor: grab;
+  // The picture's panel colour, so the swap does not flash, and so the view
+  // without WebGL is still a panel the labels sit on.
+  background: #45484d;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+
+  &:focus-visible {
+    outline: 1px solid var(--accent);
+    outline-offset: 2px;
+  }
+  &.pressed {
+    cursor: grabbing;
+  }
+  // Parts go inert for the rest of a drag, so the pointer-up lands on the
+  // stage rather than on an <a> and ending an orbit over a part does not
+  // navigate away. Set only past the drag slop, so a plain click still opens.
+  &.dragging {
+    user-select: none;
+  }
+  &.dragging .part {
+    pointer-events: none;
+  }
+  // Over the whole window, above the header and the feedback bubble.
+  &.full {
+    position: fixed;
+    inset: 0;
+    aspect-ratio: auto;
+    z-index: 10000;
+    border: 0;
+    border-radius: 0;
+  }
+}
+
+.tools {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.7rem;
+  display: flex;
+  gap: 0.3rem;
+  z-index: 2000;
+
+  button {
+    @include label;
+    display: inline-flex;
+    align-items: center;
+    height: 1.5rem;
+    padding: 0 0.5rem;
+    font-size: 0.6rem;
+    color: var(--text-dim);
+    background: rgba(10, 14, 22, 0.72);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: var(--radius);
+    cursor: pointer;
+
+    &[aria-pressed='true'] {
+      color: var(--accent);
+      border-color: var(--accent-dim);
+    }
+    &:hover {
+      color: var(--accent);
+    }
+  }
+}
+
+// The canvas carries no interaction of its own: it is painted, the overlay is
+// pointed at.
+.gl {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+// One small pill per part, centred on the block it names.
+.part {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.05em;
+  padding: 0.2rem 0.55rem;
+  border-radius: 0.6rem;
+  background: rgba(10, 14, 22, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  white-space: nowrap;
+  text-decoration: none;
+
+  .lbl {
+    @include label;
+    font-size: 0.6rem;
+    color: var(--text-dim);
+  }
+  .val {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--accent);
+  }
+  // The picture writes these under the block; here they wrap onto their own
+  // line under the name, in the same yellow and cyan.
+  .tag,
+  .mode {
+    font-size: 0.55rem;
+    line-height: 1.2;
+  }
+  .tag {
+    color: #ffd23c;
+  }
+  .mode {
+    color: #4fd8ff;
+  }
+  &:hover .lbl,
+  &:focus-visible .lbl {
+    color: var(--accent);
+  }
+  &:focus-visible {
+    outline: 1px solid var(--accent);
+    outline-offset: 2px;
+  }
+  // Nearly behind the camera: dimmed, so it does not claim a place it is not at.
+  &.far {
+    opacity: 0.4;
+  }
+}
+
+.how {
+  @include label;
+  position: absolute;
+  bottom: 0.7rem;
+  left: 0.8rem;
+  margin: 0;
+  font-size: 0.6rem;
+  color: var(--text-faint);
+  pointer-events: none;
+}
+
+.nogl {
+  @include label;
+  position: absolute;
+  top: 0.6rem;
+  left: 0.8rem;
+  margin: 0;
+  font-size: 0.6rem;
+  color: var(--text-faint);
+}
+
+.zoom {
+  position: absolute;
+  right: 0.6rem;
+  bottom: 0.6rem;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.zoom button {
+  @include label;
+  width: 26px;
+  height: 26px;
+  background: rgba(10, 14, 22, 0.72);
+  cursor: pointer;
+  border: 1px solid var(--line);
+  color: var(--text-dim);
+  &:hover {
+    border-color: var(--line-hi);
+    color: var(--accent);
+  }
+}
+.zoom .reset {
+  width: auto;
+  padding: 0 0.5rem;
+}

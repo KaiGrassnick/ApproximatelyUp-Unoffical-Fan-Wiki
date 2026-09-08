@@ -1,0 +1,78 @@
+<div class="two-pane guides">
+  <nav class="list" aria-label="Guides">
+    <div class="head">
+      <h1>Guides</h1>
+      <!-- Not a route: adding a guide means a Markdown file and a pull
+           request, and the issue form is where that conversation starts. The
+           same form the feedback bubble's "Add new content" opens. -->
+      <a
+        class="add"
+        [href]="addGuideUrl()"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Ask for a guide, or offer to write one"
+        >Add guide</a
+      >
+    </div>
+
+    @if (guides.loading()) {
+      <p class="muted">Loading…</p>
+    } @else if (!guides.all().length) {
+      <p class="muted">
+        No guides yet. The feedback button in the corner is how you ask for one — what people want
+        to read is what decides what gets written.
+      </p>
+    } @else {
+      <ul>
+        @for (g of guides.all(); track g.id) {
+          <li>
+            <a [routerLink]="['/guides', g.id]" routerLinkActive="on">
+              <span class="t">{{ g.title }}</span>
+              <span class="s">{{ g.summary }}</span>
+              @if (g.spoiler !== 'none') {
+                <span class="gated">Spoilers: {{ g.spoiler }}</span>
+              }
+            </a>
+          </li>
+        }
+      </ul>
+    }
+  </nav>
+
+  <!-- The reading pane. A guide is prose, so it gets a measure it can be read
+       at rather than the full width of the page. -->
+  <section class="reader">
+    @if (missing()) {
+      <div class="empty">
+        <h2>No such guide</h2>
+        <p>Nothing here has that address. Pick one from the list.</p>
+      </div>
+    } @else if (!current()) {
+      <div class="empty">
+        <h2>Guides</h2>
+        <p>
+          The rest of this wiki is generated from the game's own files, which makes it good at
+          numbers and silent on everything else. These are the pages someone wrote.
+        </p>
+        <p>Pick one from the list to start reading.</p>
+      </div>
+    } @else {
+      <article>
+        <header>
+          <h2>{{ current()!.title }}</h2>
+          <p class="updated">Updated {{ current()!.updated }}</p>
+          <!-- Said again here, not only in the list: a reader can arrive on a
+               guide by link and never see the list entry that warned them. -->
+          @if (current()!.spoiler !== 'none') {
+            <p class="gives">Gives away {{ current()!.spoiler }}</p>
+          }
+        </header>
+        @if (bodyLoading()) {
+          <p class="muted">Loading…</p>
+        } @else if (body()) {
+          <div class="prose" [innerHTML]="body()"></div>
+        }
+      </article>
+    }
+  </section>
+</div>

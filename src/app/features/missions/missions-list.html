@@ -1,0 +1,68 @@
+<h1>Missions</h1>
+<div class="filters">
+  <div class="groups" role="group" aria-label="Filter by type">
+    <span class="what">type</span>
+    @for (k of kinds(); track k) {
+      <button
+        type="button"
+        [class.on]="kind() === k"
+        [attr.aria-pressed]="kind() === k"
+        (click)="kind.set(k)"
+      >
+        {{ k }}
+      </button>
+    }
+  </div>
+  @if (world.hasWorld()) {
+    <div class="groups" role="group" aria-label="Filter by progress">
+      <span class="what">state</span>
+      @for (s of ['all', 'completed', 'open']; track s) {
+        <button
+          type="button"
+          [class.on]="state() === s"
+          [attr.aria-pressed]="state() === s"
+          (click)="state.set($any(s))"
+        >
+          {{ s }}
+        </button>
+      }
+    </div>
+  }
+  <div class="groups" role="group" aria-label="Filter by planet">
+    <span class="what">planet</span>
+    @for (p of planets(); track p) {
+      <button
+        type="button"
+        [class.on]="activePlanet() === p"
+        [attr.aria-pressed]="activePlanet() === p"
+        (click)="planet.set(p)"
+      >
+        {{ p }}
+      </button>
+    }
+  </div>
+</div>
+
+<ul class="list">
+  @for (o of shown(); track o.id) {
+    <li>
+      <a [routerLink]="['/missions', o.id]">
+        <span class="ttl"><objective-title [objective]="o" /></span>
+        <span class="meta">
+          <span class="kind">{{ o.type }}</span>
+          @if (data.locationLabel(o.start); as where) {
+            <span class="where">{{ where }}</span>
+          }
+          <span class="num">{{ o.reward.length }} rewards</span>
+          @if (world.hasWorld()) {
+            <status-pill
+              [state]="world.isCompleted(o.id) ? 'have' : 'locked'"
+              [text]="world.isCompleted(o.id) ? 'completed' : 'open'"
+            />
+          }
+        </span>
+      </a>
+    </li>
+  }
+</ul>
+<to-come [count]="toCome()" />

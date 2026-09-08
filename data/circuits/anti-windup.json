@@ -1,0 +1,2043 @@
+{
+ "bom": [
+  {
+   "count": 1,
+   "id": "Accumulator"
+  },
+  {
+   "count": 1,
+   "id": "Adder"
+  },
+  {
+   "count": 1,
+   "id": "Constant"
+  },
+  {
+   "count": 2,
+   "id": "LogicGateAnd"
+  },
+  {
+   "count": 3,
+   "id": "LogicGateNot"
+  },
+  {
+   "count": 1,
+   "id": "LogicValue"
+  },
+  {
+   "count": 2,
+   "id": "Multiplier"
+  },
+  {
+   "count": 4,
+   "id": "Router2"
+  },
+  {
+   "count": 2,
+   "id": "SimpleThreshold"
+  },
+  {
+   "count": 3,
+   "id": "WirelessTransmitter"
+  }
+ ],
+ "findings": [
+  {
+   "level": "warn",
+   "message": "needs 3, a new game holds 0",
+   "where": "pool WirelessTransmitter"
+  }
+ ],
+ "id": "anti-windup",
+ "needs": {
+  "DataCable": 206,
+  "MathBlock": 17,
+  "WirelessTransmitter": 3
+ },
+ "newGame": false,
+ "notesHtml": "<p><strong>Working principle.</strong> SCALE starts at 1. If the integral is below MIN and the error is still negative, or above MAX and the error is still positive, SCALE drops to 0 and the <a class=\"part\" href=\"/components/Accumulator\"><img src=\"data/icons/64/Accumulator.webp?v=3c4ea5c1\" alt=\"\" width=\"20\" height=\"20\" loading=\"lazy\" /><span>Accumulator</span></a> stops taking input. MIN and MAX are not hard limits -- the integral can drift a little past them -- but this is good enough for most ships.</p>\n<p>The <a class=\"part\" href=\"/components/Accumulator\"><img src=\"data/icons/64/Accumulator.webp?v=3c4ea5c1\" alt=\"\" width=\"20\" height=\"20\" loading=\"lazy\" /><span>Accumulator</span></a> must be in <strong>Pulse</strong> mode, clocked by the Reset_Clock channel, or it races.</p>\n<p>Tune the two thresholds and the I constant for your ship.</p>\n\n",
+ "placed": {
+  "cables": [
+   {
+    "cells": [
+     {
+      "x": 0,
+      "y": 0,
+      "z": 2
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "z": 3
+     }
+    ],
+    "from": {
+     "part": "err",
+     "port": "io"
+    },
+    "kind": "data",
+    "to": {
+     "part": "esplit",
+     "port": "in"
+    }
+   },
+   {
+    "cells": [
+     {
+      "x": 0,
+      "y": 0,
+      "z": 6
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "z": 7
+     }
+    ],
+    "from": {
+     "part": "esplit",
+     "port": "out1"
+    },
+    "kind": "data",
+    "to": {
+     "part": "sign",
+     "port": "in"
+    }
+   },
+   {
+    "cells": [
+     {
+      "x": 0,
+      "y": 0,
+      "z": 10
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "z": 11
+     }
+    ],
+    "from": {
+     "part": "sign",
+     "port": "out1"
+    },
+    "kind": "data",
+    "to": {
+     "part": "pos",
+     "port": "in"
+    }
+   },
+   {
+    "cells": [
+     {
+      "x": 1,
+      "y": 0,
+      "z": 10
+     },
+     {
+      "x": 2,
+      "y": 0,
+      "z": 10
+     },
+     {
+      "x": 3,
+      "y": 0,
+      "z": 10
+     },
+     {
+      "x": 4,
+      "y": 0,
+      "z": 10
+     },
+     {
+      "x": 4,
+      "y": 0,
+      "z": 11
+     }
+    ],
+    "from": {
+     "part": "sign",
+     "port": "out2"
+    },
+    "kind": "data",
+    "to": {
+     "part": "neg",
+     "port": "in"
+    }
+   },
+   {
+    "cells": [
+     {
+      "x": 20,
+      "y": 0,
+      "z": 2
+     },
+     {
+      "x": 19,
+      "y": 0,
+      "z": 2
+     },
+     {
+      "x": 18,
+      "y": 0,
+      "z": 2
+     },
+     {
+      "x": 18,
+      "y": 0,
+      "z": 3
+     }
+    ],
+    "from": {
+     "part": "gain",
+     "port": "out"
+    },
+    "kind": "data",
+    "to": {
+     "part": "mul",
+     "port": "in2"
+    }
+   },
+   {
+    "cells": [
+     {
+      "x": 17,
+      "y": 0,
+      "z": 6
+     },
+     {
+      "x": 17,
+      "y": 0,
+      "z": 7
+     }
+    ],
+    "from": {
+     "part": "mul",
+     "port": "out"
+    },
+    "kind": "data",
+    "to": {
+     "part": "gate",
+     "port": "in1"
+    }
+   },
+   {
+    "cells": [
+     {
+      "x": 17,
+      "y": 0,
+      "z": 10
+     },
+     {
+      "x": 17,
+      "y": 0,
+      "z": 11
+     }
+    ],
+    "from": {
+     "part": "gate",
+     "port": "out"
+    },
+    "kind": "data",
+    "to": {
+     "part": "acc",
+     "port": "in1"
+    }
+   },
+   {
+    "cells": [
+     {
+      "x": 21,
+      "y": 0,
+      "z": 10
+     },
+     {
+      "x": 20,
+      "y": 0,
+      "z": 10
+     },
+     {
+      "x": 19,
+      "y": 0,
+      "z": 10
+     },
+     {
+      "x": 18,
+      "y": 0,
+      "z": 10
+     },
+     {
+      "x": 18,
+      "y": 0,
+      "z": 11
+     }
+    ],
+    "from": {
+     "part": "clock",
+     "port": "io"
+    },
+    "kind": "data",
+    "to": {
+     "part": "acc",
+     "port": "in2"
+    }
+   },
+   {
+    "cells": [
+     {
+      "x": 17,
+      "y": 0,
+      "z": 14
+     },
+     {
+      "x": 17,
+      "y": 0,
+      "z": 15
+     }
+    ],
+    "from": {
+     "part": "acc",
+     "port": "out"
+    },
+    "kind": "data",
+    "to": {
+     "part": "iout",
+     "port": "in"
+    }
+   },
+   {
+    "cells": [
+     {
+      "x": 17,
+      "y": 0,
+      "z": 18
+     },
+     {
+      "x": 17,
+      "y": 0,
+      "z": 19
+     }
+    ],
+    "from": {
+     "part": "iout",
+     "port": "out1"
+    },
+    "kind": "data",
+    "to": {
+     "part": "isplit",
+     "port": "in"
+    }
+   },
+   {
+    "cells": [
+     {
+      "x": 18,
+      "y": 0,
+      "z": 18
+     },
+     {
+      "x": 19,
+      "y": 0,
+      "z": 18
+     },
+     {
+      "x": 19,
+      "y": 0,
+      "z": 19
+     },
+     {
+      "x": 19,
+      "y": 0,
+      "z": 20
+     },
+     {
+      "x": 20,
+      "y": 0,
+      "z": 20
+     }
+    ],
+    "from": {
+     "part": "iout",
+     "port": "out2"
+    },
+    "kind": "data",
+    "to": {
+     "part": "tx",
+     "port": "io"
+    }
+   },
+   {
+    "cells": [
+     {
+      "x": 17,
+      "y": 0,
+      "z": 22
+     },
+     {
+      "x": 16,
+      "y": 0,
+      "z": 22
+     },
+     {
+      "x": 15,
+      "y": 0,
+      "z": 22
+     },
+     {
+      "x": 14,
+      "y": 0,
+      "z": 22
+     },
+     {
+      "x": 13,
+      "y": 0,
+      "z": 22
+     },
+     {
+      "x": 12,
+      "y": 0,
+      "z": 22
+     },
+     {
+      "x": 11,
+      "y": 0,
+      "z": 22
+     },
+     {
+      "x": 10,
+      "y": 0,
+      "z": 22
+     },
+     {
+      "x": 10,
+      "y": 0,
+      "z": 23
+     },
+     {
+      "x": 10,
+      "y": 0,
+      "z": 24
+     }
+    ],
+    "from": {
+     "part": "isplit",
+     "port": "out1"
+    },
+    "kind": "data",
+    "to": {
+     "part": "min",
+     "port": "in"
+    }
+   },
+   {
+    "cells": [
+     {
+      "x": 18,
+      "y": 0,
+      "z": 22
+     },
+     {
+      "x": 18,
+      "y": 0,
+      "z": 23
+     },
+     {
+      "x": 18,
+      "y": 0,
+      "z": 24
+     },
+     {
+      "x": 17,
+      "y": 0,
+      "z": 24
+     },
+     {
+      "x": 16,
+      "y": 0,
+      "z": 24
+     },
+     {
+      "x": 15,
+      "y": 0,
+      "z": 24
+     },
+     {
+      "x": 14,
+      "y": 0,
+      "z": 24
+     }
+    ],
+    "from": {
+     "part": "isplit",
+     "port": "out2"
+    },
+    "kind": "data",
+    "to": {
+     "part": "max",
+     "port": "in"
+    }
+   },
+   {
+    "cells": [
+     {
+      "x": 10,
+      "y": 0,
+      "z": 27
+     },
+     {
+      "x": 10,
+      "y": 0,
+      "z": 28
+     }
+    ],
+    "from": {
+     "part": "min",
+     "port": "out"
+    },
+    "kind": "data",
+    "to": {
+     "part": "notmin",
+     "port": "in"
+    }
+   },
+   {
+    "cells": [
+     {
+      "x": 10,
+      "y": 0,
+      "z": 31
+     },
+     {
+      "x": 11,
+      "y": 0,
+      "z": 31
+     },
+     {
+      "x": 11,
+      "y": 0,
+      "z": 32
+     }
+    ],
+    "from": {
+     "part": "notmin",
+     "port": "out"
+    },
+    "kind": "data",
+    "to": {
+     "part": "andlo",
+     "port": "in2"
+    }
+   },
+   {
+    "cells": [
+     {
+      "x": 10,
+      "y": 0,
+      "z": 35
+     },
+     {
+      "x": 11,
+      "y": 0,
+      "z": 35
+     },
+     {
+      "x": 12,
+      "y": 0,
+      "z": 35
+     },
+     {
+      "x": 12,
+      "y": 0,
+      "z": 36
+     }
+    ],
+    "from": {
+     "part": "andlo",
+     "port": "out"
+    },
+    "kind": "data",
+    "to": {
+     "part": "either",
+     "port": "in1"
+    }
+   },
+   {
+    "cells": [
+     {
+      "x": 14,
+      "y": 0,
+      "z": 35
+     },
+     {
+      "x": 13,
+      "y": 0,
+      "z": 35
+     },
+     {
+      "x": 13,
+      "y": 0,
+      "z": 36
+     }
+    ],
+    "from": {
+     "part": "andhi",
+     "port": "out"
+    },
+    "kind": "data",
+    "to": {
+     "part": "either",
+     "port": "in2"
+    }
+   },
+   {
+    "cells": [
+     {
+      "x": 12,
+      "y": 0,
+      "z": 39
+     },
+     {
+      "x": 12,
+      "y": 0,
+      "z": 40
+     }
+    ],
+    "from": {
+     "part": "either",
+     "port": "out"
+    },
+    "kind": "data",
+    "to": {
+     "part": "scale",
+     "port": "in"
+    }
+   },
+   {
+    "cells": [
+     {
+      "x": 4,
+      "y": 0,
+      "z": 14
+     },
+     {
+      "x": 4,
+      "y": 0,
+      "z": 15
+     },
+     {
+      "x": 4,
+      "y": 0,
+      "z": 16
+     },
+     {
+      "x": 4,
+      "y": 0,
+      "z": 17
+     },
+     {
+      "x": 4,
+      "y": 0,
+      "z": 18
+     },
+     {
+      "x": 4,
+      "y": 0,
+      "z": 19
+     },
+     {
+      "x": 4,
+      "y": 0,
+      "z": 20
+     },
+     {
+      "x": 4,
+      "y": 0,
+      "z": 21
+     },
+     {
+      "x": 4,
+      "y": 0,
+      "z": 22
+     },
+     {
+      "x": 4,
+      "y": 0,
+      "z": 23
+     },
+     {
+      "x": 4,
+      "y": 0,
+      "z": 24
+     },
+     {
+      "x": 4,
+      "y": 0,
+      "z": 25
+     },
+     {
+      "x": 4,
+      "y": 0,
+      "z": 26
+     },
+     {
+      "x": 4,
+      "y": 0,
+      "z": 27
+     },
+     {
+      "x": 4,
+      "y": 0,
+      "z": 28
+     },
+     {
+      "x": 4,
+      "y": 0,
+      "z": 29
+     },
+     {
+      "x": 4,
+      "y": 0,
+      "z": 30
+     },
+     {
+      "x": 4,
+      "y": 0,
+      "z": 31
+     },
+     {
+      "x": 4,
+      "y": 0,
+      "z": 32
+     },
+     {
+      "x": 5,
+      "y": 0,
+      "z": 32
+     },
+     {
+      "x": 6,
+      "y": 0,
+      "z": 32
+     },
+     {
+      "x": 7,
+      "y": 0,
+      "z": 32
+     },
+     {
+      "x": 8,
+      "y": 0,
+      "z": 32
+     },
+     {
+      "x": 9,
+      "y": 0,
+      "z": 32
+     },
+     {
+      "x": 10,
+      "y": 0,
+      "z": 32
+     }
+    ],
+    "from": {
+     "part": "neg",
+     "port": "out"
+    },
+    "kind": "data",
+    "to": {
+     "part": "andlo",
+     "port": "in1"
+    }
+   },
+   {
+    "cells": [
+     {
+      "x": 0,
+      "y": 0,
+      "z": 14
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "z": 15
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "z": 16
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "z": 17
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "z": 18
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "z": 19
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "z": 20
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "z": 21
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "z": 22
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "z": 23
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "z": 24
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "z": 25
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "z": 26
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "z": 27
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "z": 28
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "z": 29
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "z": 30
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "z": 31
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "z": 32
+     },
+     {
+      "x": 0,
+      "y": 0,
+      "z": 33
+     },
+     {
+      "x": 1,
+      "y": 0,
+      "z": 33
+     },
+     {
+      "x": 2,
+      "y": 0,
+      "z": 33
+     },
+     {
+      "x": 3,
+      "y": 0,
+      "z": 33
+     },
+     {
+      "x": 4,
+      "y": 0,
+      "z": 33
+     },
+     {
+      "x": 5,
+      "y": 0,
+      "z": 33
+     },
+     {
+      "x": 6,
+      "y": 0,
+      "z": 33
+     },
+     {
+      "x": 7,
+      "y": 0,
+      "z": 33
+     },
+     {
+      "x": 8,
+      "y": 0,
+      "z": 33
+     },
+     {
+      "x": 9,
+      "y": 0,
+      "z": 33
+     },
+     {
+      "x": 9,
+      "y": 1,
+      "z": 33
+     },
+     {
+      "x": 10,
+      "y": 1,
+      "z": 33
+     },
+     {
+      "x": 11,
+      "y": 1,
+      "z": 33
+     },
+     {
+      "x": 12,
+      "y": 1,
+      "z": 33
+     },
+     {
+      "x": 13,
+      "y": 1,
+      "z": 33
+     },
+     {
+      "x": 14,
+      "y": 1,
+      "z": 33
+     },
+     {
+      "x": 14,
+      "y": 1,
+      "z": 32
+     },
+     {
+      "x": 14,
+      "y": 0,
+      "z": 32
+     }
+    ],
+    "from": {
+     "part": "pos",
+     "port": "out"
+    },
+    "kind": "data",
+    "to": {
+     "part": "andhi",
+     "port": "in1"
+    }
+   },
+   {
+    "cells": [
+     {
+      "x": 14,
+      "y": 0,
+      "z": 27
+     },
+     {
+      "x": 15,
+      "y": 0,
+      "z": 27
+     },
+     {
+      "x": 15,
+      "y": 0,
+      "z": 28
+     },
+     {
+      "x": 15,
+      "y": 0,
+      "z": 29
+     },
+     {
+      "x": 15,
+      "y": 0,
+      "z": 30
+     },
+     {
+      "x": 15,
+      "y": 0,
+      "z": 31
+     },
+     {
+      "x": 15,
+      "y": 0,
+      "z": 32
+     }
+    ],
+    "from": {
+     "part": "max",
+     "port": "out"
+    },
+    "kind": "data",
+    "to": {
+     "part": "andhi",
+     "port": "in2"
+    }
+   },
+   {
+    "cells": [
+     {
+      "x": 1,
+      "y": 0,
+      "z": 6
+     },
+     {
+      "x": 2,
+      "y": 0,
+      "z": 6
+     },
+     {
+      "x": 3,
+      "y": 0,
+      "z": 6
+     },
+     {
+      "x": 4,
+      "y": 0,
+      "z": 6
+     },
+     {
+      "x": 5,
+      "y": 0,
+      "z": 6
+     },
+     {
+      "x": 6,
+      "y": 0,
+      "z": 6
+     },
+     {
+      "x": 7,
+      "y": 0,
+      "z": 6
+     },
+     {
+      "x": 8,
+      "y": 0,
+      "z": 6
+     },
+     {
+      "x": 9,
+      "y": 0,
+      "z": 6
+     },
+     {
+      "x": 10,
+      "y": 0,
+      "z": 6
+     },
+     {
+      "x": 11,
+      "y": 0,
+      "z": 6
+     },
+     {
+      "x": 12,
+      "y": 0,
+      "z": 6
+     },
+     {
+      "x": 13,
+      "y": 0,
+      "z": 6
+     },
+     {
+      "x": 14,
+      "y": 0,
+      "z": 6
+     },
+     {
+      "x": 15,
+      "y": 0,
+      "z": 6
+     },
+     {
+      "x": 16,
+      "y": 0,
+      "z": 6
+     },
+     {
+      "x": 16,
+      "y": 0,
+      "z": 5
+     },
+     {
+      "x": 16,
+      "y": 0,
+      "z": 4
+     },
+     {
+      "x": 16,
+      "y": 0,
+      "z": 3
+     },
+     {
+      "x": 17,
+      "y": 0,
+      "z": 3
+     }
+    ],
+    "from": {
+     "part": "esplit",
+     "port": "out2"
+    },
+    "kind": "data",
+    "to": {
+     "part": "mul",
+     "port": "in1"
+    }
+   },
+   {
+    "cells": [
+     {
+      "x": 12,
+      "y": 0,
+      "z": 43
+     },
+     {
+      "x": 13,
+      "y": 0,
+      "z": 43
+     },
+     {
+      "x": 14,
+      "y": 0,
+      "z": 43
+     },
+     {
+      "x": 15,
+      "y": 0,
+      "z": 43
+     },
+     {
+      "x": 16,
+      "y": 0,
+      "z": 43
+     },
+     {
+      "x": 17,
+      "y": 0,
+      "z": 43
+     },
+     {
+      "x": 18,
+      "y": 0,
+      "z": 43
+     },
+     {
+      "x": 19,
+      "y": 0,
+      "z": 43
+     },
+     {
+      "x": 20,
+      "y": 0,
+      "z": 43
+     },
+     {
+      "x": 21,
+      "y": 0,
+      "z": 43
+     },
+     {
+      "x": 22,
+      "y": 0,
+      "z": 43
+     },
+     {
+      "x": 23,
+      "y": 0,
+      "z": 43
+     },
+     {
+      "x": 23,
+      "y": 0,
+      "z": 42
+     },
+     {
+      "x": 23,
+      "y": 0,
+      "z": 41
+     },
+     {
+      "x": 23,
+      "y": 0,
+      "z": 40
+     },
+     {
+      "x": 23,
+      "y": 0,
+      "z": 39
+     },
+     {
+      "x": 23,
+      "y": 0,
+      "z": 38
+     },
+     {
+      "x": 23,
+      "y": 0,
+      "z": 37
+     },
+     {
+      "x": 23,
+      "y": 0,
+      "z": 36
+     },
+     {
+      "x": 23,
+      "y": 0,
+      "z": 35
+     },
+     {
+      "x": 23,
+      "y": 0,
+      "z": 34
+     },
+     {
+      "x": 23,
+      "y": 0,
+      "z": 33
+     },
+     {
+      "x": 23,
+      "y": 0,
+      "z": 32
+     },
+     {
+      "x": 23,
+      "y": 0,
+      "z": 31
+     },
+     {
+      "x": 23,
+      "y": 0,
+      "z": 30
+     },
+     {
+      "x": 23,
+      "y": 0,
+      "z": 29
+     },
+     {
+      "x": 23,
+      "y": 0,
+      "z": 28
+     },
+     {
+      "x": 23,
+      "y": 0,
+      "z": 27
+     },
+     {
+      "x": 23,
+      "y": 0,
+      "z": 26
+     },
+     {
+      "x": 23,
+      "y": 0,
+      "z": 25
+     },
+     {
+      "x": 23,
+      "y": 0,
+      "z": 24
+     },
+     {
+      "x": 23,
+      "y": 0,
+      "z": 23
+     },
+     {
+      "x": 23,
+      "y": 0,
+      "z": 22
+     },
+     {
+      "x": 23,
+      "y": 0,
+      "z": 21
+     },
+     {
+      "x": 23,
+      "y": 0,
+      "z": 20
+     },
+     {
+      "x": 23,
+      "y": 0,
+      "z": 19
+     },
+     {
+      "x": 23,
+      "y": 0,
+      "z": 18
+     },
+     {
+      "x": 23,
+      "y": 0,
+      "z": 17
+     },
+     {
+      "x": 23,
+      "y": 0,
+      "z": 16
+     },
+     {
+      "x": 23,
+      "y": 0,
+      "z": 15
+     },
+     {
+      "x": 23,
+      "y": 0,
+      "z": 14
+     },
+     {
+      "x": 23,
+      "y": 0,
+      "z": 13
+     },
+     {
+      "x": 23,
+      "y": 0,
+      "z": 12
+     },
+     {
+      "x": 23,
+      "y": 0,
+      "z": 11
+     },
+     {
+      "x": 23,
+      "y": 0,
+      "z": 10
+     },
+     {
+      "x": 23,
+      "y": 0,
+      "z": 9
+     },
+     {
+      "x": 23,
+      "y": 0,
+      "z": 8
+     },
+     {
+      "x": 23,
+      "y": 0,
+      "z": 7
+     },
+     {
+      "x": 22,
+      "y": 0,
+      "z": 7
+     },
+     {
+      "x": 21,
+      "y": 0,
+      "z": 7
+     },
+     {
+      "x": 20,
+      "y": 0,
+      "z": 7
+     },
+     {
+      "x": 19,
+      "y": 0,
+      "z": 7
+     },
+     {
+      "x": 18,
+      "y": 0,
+      "z": 7
+     }
+    ],
+    "from": {
+     "part": "scale",
+     "port": "out"
+    },
+    "kind": "data",
+    "to": {
+     "part": "gate",
+     "port": "in2"
+    }
+   }
+  ],
+  "parts": [
+   {
+    "at": {
+     "x": 0,
+     "y": 0,
+     "z": 0
+    },
+    "id": "err",
+    "label": "Error_Term",
+    "rot": 0,
+    "size": {
+     "x": 2,
+     "y": 2,
+     "z": 2
+    },
+    "type": "WirelessTransmitter",
+    "value": "12"
+   },
+   {
+    "at": {
+     "x": 0,
+     "y": 0,
+     "z": 4
+    },
+    "id": "esplit",
+    "rot": 0,
+    "size": {
+     "x": 2,
+     "y": 1,
+     "z": 2
+    },
+    "type": "Router2"
+   },
+   {
+    "at": {
+     "x": 0,
+     "y": 0,
+     "z": 8
+    },
+    "id": "sign",
+    "rot": 0,
+    "size": {
+     "x": 2,
+     "y": 1,
+     "z": 2
+    },
+    "type": "Router2"
+   },
+   {
+    "at": {
+     "x": 0,
+     "y": 0,
+     "z": 12
+    },
+    "id": "pos",
+    "rot": 0,
+    "size": {
+     "x": 2,
+     "y": 1,
+     "z": 2
+    },
+    "type": "LogicValue"
+   },
+   {
+    "at": {
+     "x": 4,
+     "y": 0,
+     "z": 12
+    },
+    "id": "neg",
+    "rot": 0,
+    "size": {
+     "x": 2,
+     "y": 1,
+     "z": 2
+    },
+    "type": "LogicGateNot"
+   },
+   {
+    "at": {
+     "x": 17,
+     "y": 0,
+     "z": 20
+    },
+    "id": "isplit",
+    "rot": 0,
+    "size": {
+     "x": 2,
+     "y": 1,
+     "z": 2
+    },
+    "type": "Router2"
+   },
+   {
+    "at": {
+     "x": 20,
+     "y": 0,
+     "z": 0
+    },
+    "id": "gain",
+    "label": "I constant",
+    "rot": 0,
+    "size": {
+     "x": 2,
+     "y": 1,
+     "z": 2
+    },
+    "type": "Constant",
+    "value": "1.200"
+   },
+   {
+    "at": {
+     "x": 17,
+     "y": 0,
+     "z": 4
+    },
+    "id": "mul",
+    "rot": 0,
+    "size": {
+     "x": 2,
+     "y": 1,
+     "z": 2
+    },
+    "type": "Multiplier"
+   },
+   {
+    "at": {
+     "x": 17,
+     "y": 0,
+     "z": 12
+    },
+    "id": "acc",
+    "mode": "Pulse",
+    "rot": 0,
+    "size": {
+     "x": 2,
+     "y": 1,
+     "z": 2
+    },
+    "type": "Accumulator"
+   },
+   {
+    "at": {
+     "x": 21,
+     "y": 0,
+     "z": 8
+    },
+    "id": "clock",
+    "label": "Reset_Clock",
+    "rot": 0,
+    "size": {
+     "x": 2,
+     "y": 2,
+     "z": 2
+    },
+    "type": "WirelessTransmitter",
+    "value": "19"
+   },
+   {
+    "at": {
+     "x": 17,
+     "y": 0,
+     "z": 16
+    },
+    "id": "iout",
+    "rot": 0,
+    "size": {
+     "x": 2,
+     "y": 1,
+     "z": 2
+    },
+    "type": "Router2"
+   },
+   {
+    "at": {
+     "x": 20,
+     "y": 0,
+     "z": 18
+    },
+    "id": "tx",
+    "label": "I_Term",
+    "rot": 0,
+    "size": {
+     "x": 2,
+     "y": 2,
+     "z": 2
+    },
+    "type": "WirelessTransmitter",
+    "value": "21"
+   },
+   {
+    "at": {
+     "x": 10,
+     "y": 0,
+     "z": 25
+    },
+    "id": "min",
+    "label": "I < MIN",
+    "rot": 0,
+    "size": {
+     "x": 2,
+     "y": 1,
+     "z": 2
+    },
+    "type": "SimpleThreshold",
+    "value": "-1.50"
+   },
+   {
+    "at": {
+     "x": 14,
+     "y": 0,
+     "z": 25
+    },
+    "id": "max",
+    "label": "I > MAX",
+    "rot": 0,
+    "size": {
+     "x": 2,
+     "y": 1,
+     "z": 2
+    },
+    "type": "SimpleThreshold",
+    "value": "100.0"
+   },
+   {
+    "at": {
+     "x": 10,
+     "y": 0,
+     "z": 29
+    },
+    "id": "notmin",
+    "rot": 0,
+    "size": {
+     "x": 2,
+     "y": 1,
+     "z": 2
+    },
+    "type": "LogicGateNot"
+   },
+   {
+    "at": {
+     "x": 10,
+     "y": 0,
+     "z": 33
+    },
+    "id": "andlo",
+    "rot": 0,
+    "size": {
+     "x": 2,
+     "y": 1,
+     "z": 2
+    },
+    "type": "LogicGateAnd"
+   },
+   {
+    "at": {
+     "x": 14,
+     "y": 0,
+     "z": 33
+    },
+    "id": "andhi",
+    "rot": 0,
+    "size": {
+     "x": 2,
+     "y": 1,
+     "z": 2
+    },
+    "type": "LogicGateAnd"
+   },
+   {
+    "at": {
+     "x": 12,
+     "y": 0,
+     "z": 37
+    },
+    "id": "either",
+    "rot": 0,
+    "size": {
+     "x": 2,
+     "y": 1,
+     "z": 2
+    },
+    "type": "Adder"
+   },
+   {
+    "at": {
+     "x": 12,
+     "y": 0,
+     "z": 41
+    },
+    "id": "scale",
+    "label": "SCALE (0/1)",
+    "rot": 0,
+    "size": {
+     "x": 2,
+     "y": 1,
+     "z": 2
+    },
+    "type": "LogicGateNot"
+   },
+   {
+    "at": {
+     "x": 17,
+     "y": 0,
+     "z": 8
+    },
+    "id": "gate",
+    "rot": 0,
+    "size": {
+     "x": 2,
+     "y": 1,
+     "z": 2
+    },
+    "type": "Multiplier"
+   }
+  ]
+ },
+ "source": {
+  "notes": [
+   {
+    "color": "green",
+    "kind": "group",
+    "parts": [
+     "sign",
+     "pos",
+     "neg"
+    ],
+    "text": "Error sign (+/-)"
+   },
+   {
+    "color": "magenta",
+    "kind": "group",
+    "parts": [
+     "min",
+     "max",
+     "notmin",
+     "andlo",
+     "andhi",
+     "either",
+     "scale"
+    ],
+    "text": "Anti windup"
+   },
+   {
+    "body": "**Working principle.** SCALE starts at 1. If the integral is below MIN and the error is still negative, or above MAX and the error is still positive, SCALE drops to 0 and the [[part:Accumulator]] stops taking input. MIN and MAX are not hard limits -- the integral can drift a little past them -- but this is good enough for most ships.\n\nThe [[part:Accumulator]] must be in **Pulse** mode, clocked by the Reset_Clock channel, or it races.\n\nTune the two thresholds and the I constant for your ship.",
+    "kind": "md"
+   }
+  ],
+  "order": 30,
+  "parts": [
+   {
+    "at": [
+     0,
+     0
+    ],
+    "id": "err",
+    "label": "Error_Term",
+    "type": "WirelessTransmitter",
+    "value": "12"
+   },
+   {
+    "at": [
+     0,
+     4
+    ],
+    "id": "esplit",
+    "type": "Router2"
+   },
+   {
+    "at": [
+     0,
+     8
+    ],
+    "id": "sign",
+    "type": "Router2"
+   },
+   {
+    "at": [
+     0,
+     12
+    ],
+    "id": "pos",
+    "type": "LogicValue"
+   },
+   {
+    "at": [
+     4,
+     12
+    ],
+    "id": "neg",
+    "type": "LogicGateNot"
+   },
+   {
+    "at": [
+     17,
+     20
+    ],
+    "id": "isplit",
+    "type": "Router2"
+   },
+   {
+    "at": [
+     20,
+     0
+    ],
+    "id": "gain",
+    "label": "I constant",
+    "type": "Constant",
+    "value": "1.200"
+   },
+   {
+    "at": [
+     17,
+     4
+    ],
+    "id": "mul",
+    "type": "Multiplier"
+   },
+   {
+    "at": [
+     17,
+     12
+    ],
+    "id": "acc",
+    "mode": "Pulse",
+    "type": "Accumulator"
+   },
+   {
+    "at": [
+     21,
+     8
+    ],
+    "id": "clock",
+    "label": "Reset_Clock",
+    "type": "WirelessTransmitter",
+    "value": "19"
+   },
+   {
+    "at": [
+     17,
+     16
+    ],
+    "id": "iout",
+    "type": "Router2"
+   },
+   {
+    "at": [
+     20,
+     18
+    ],
+    "id": "tx",
+    "label": "I_Term",
+    "type": "WirelessTransmitter",
+    "value": "21"
+   },
+   {
+    "at": [
+     10,
+     25
+    ],
+    "id": "min",
+    "label": "I < MIN",
+    "type": "SimpleThreshold",
+    "value": "-1.50"
+   },
+   {
+    "at": [
+     14,
+     25
+    ],
+    "id": "max",
+    "label": "I > MAX",
+    "type": "SimpleThreshold",
+    "value": "100.0"
+   },
+   {
+    "at": [
+     10,
+     29
+    ],
+    "id": "notmin",
+    "type": "LogicGateNot"
+   },
+   {
+    "at": [
+     10,
+     33
+    ],
+    "id": "andlo",
+    "type": "LogicGateAnd"
+   },
+   {
+    "at": [
+     14,
+     33
+    ],
+    "id": "andhi",
+    "type": "LogicGateAnd"
+   },
+   {
+    "at": [
+     12,
+     37
+    ],
+    "id": "either",
+    "type": "Adder"
+   },
+   {
+    "at": [
+     12,
+     41
+    ],
+    "id": "scale",
+    "label": "SCALE (0/1)",
+    "type": "LogicGateNot"
+   },
+   {
+    "at": [
+     17,
+     8
+    ],
+    "id": "gate",
+    "type": "Multiplier"
+   }
+  ],
+  "spoiler": "components",
+  "summary": "An I term that stops accumulating once it is past a limit and the error still points the same way.",
+  "title": "Integrator with anti-windup",
+  "updated": "2026-09-07",
+  "view": "top",
+  "wires": [
+   {
+    "from": "err:io",
+    "to": "esplit:in"
+   },
+   {
+    "from": "esplit:out1",
+    "to": "sign:in"
+   },
+   {
+    "from": "sign:out1",
+    "to": "pos:in"
+   },
+   {
+    "from": "sign:out2",
+    "to": "neg:in"
+   },
+   {
+    "from": "gain:out",
+    "to": "mul:in2"
+   },
+   {
+    "from": "mul:out",
+    "to": "gate:in1"
+   },
+   {
+    "from": "gate:out",
+    "to": "acc:in1"
+   },
+   {
+    "from": "clock:io",
+    "to": "acc:in2"
+   },
+   {
+    "from": "acc:out",
+    "to": "iout:in"
+   },
+   {
+    "from": "iout:out1",
+    "to": "isplit:in"
+   },
+   {
+    "from": "iout:out2",
+    "to": "tx:io"
+   },
+   {
+    "from": "isplit:out1",
+    "to": "min:in"
+   },
+   {
+    "from": "isplit:out2",
+    "to": "max:in"
+   },
+   {
+    "from": "min:out",
+    "to": "notmin:in"
+   },
+   {
+    "from": "notmin:out",
+    "to": "andlo:in2"
+   },
+   {
+    "from": "andlo:out",
+    "to": "either:in1"
+   },
+   {
+    "from": "andhi:out",
+    "to": "either:in2"
+   },
+   {
+    "from": "either:out",
+    "to": "scale:in"
+   },
+   {
+    "from": "neg:out",
+    "to": "andlo:in1"
+   },
+   {
+    "from": "pos:out",
+    "to": "andhi:in1"
+   },
+   {
+    "from": "max:out",
+    "to": "andhi:in2"
+   },
+   {
+    "from": "esplit:out2",
+    "to": "mul:in1"
+   },
+   {
+    "from": "scale:out",
+    "to": "gate:in2"
+   }
+  ]
+ },
+ "stats": {
+  "cableCells": {
+   "data": 206,
+   "nano": 0,
+   "plasma": 0,
+   "power": 0
+  },
+  "mass": 206,
+  "parts": {
+   "Accumulator": 1,
+   "Adder": 1,
+   "Constant": 1,
+   "LogicGateAnd": 2,
+   "LogicGateNot": 3,
+   "LogicValue": 1,
+   "Multiplier": 2,
+   "Router2": 4,
+   "SimpleThreshold": 2,
+   "WirelessTransmitter": 3
+  },
+  "pools": {
+   "DataCable": 206,
+   "MathBlock": 17,
+   "WirelessTransmitter": 3
+  },
+  "power": 0
+ }
+}

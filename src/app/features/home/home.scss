@@ -1,0 +1,80 @@
+@use 'styles/hud' as *;
+
+.hero {
+  padding: 3rem 0 2rem;
+  max-width: 70ch;
+}
+h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  margin: 0.4rem 0 1rem;
+}
+.hint {
+  color: var(--text-faint);
+  font-size: 0.9rem;
+}
+
+.progress {
+  margin-top: 1.5rem;
+  display: grid;
+  gap: 0.85rem;
+}
+.who {
+  @include label;
+  margin: 0;
+  color: var(--text-dim);
+}
+.row {
+  display: grid;
+  gap: 0.35rem;
+}
+.what {
+  color: var(--text-dim);
+  margin-right: 0.4rem;
+}
+.bar {
+  height: 4px;
+  background: var(--panel-hi);
+  border: 1px solid var(--line);
+  overflow: hidden;
+  span {
+    display: block;
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent), var(--violet));
+    box-shadow: 0 0 12px var(--accent);
+  }
+}
+.progress .row .num {
+  @include label;
+  margin: 0;
+  color: var(--text-faint);
+}
+
+.cards-head {
+  @include label;
+  font-size: 0.8rem;
+  margin: 2rem 0 0.75rem;
+}
+
+.cards {
+  display: grid;
+  gap: var(--gap);
+  margin: 0 0 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  a {
+    @include panel;
+    @include glow-hover;
+    display: grid;
+    gap: 0.25rem;
+    padding: 1.4rem 1.2rem;
+    color: var(--text);
+    font-family: var(--font-head);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+  }
+  .num {
+    font-size: 2rem;
+    letter-spacing: 0;
+    color: var(--accent);
+  }
+}

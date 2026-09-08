@@ -1,0 +1,69 @@
+@use 'styles/hud' as *;
+
+.filters {
+  display: grid;
+  gap: 0.5rem;
+  margin: 1.25rem 0;
+}
+.groups {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  align-items: center;
+}
+// Two filter rows need saying which is which; one did not.
+.what {
+  @include label;
+  color: var(--text-faint);
+  min-width: 3.5rem;
+}
+.groups button {
+  @include label;
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--text-dim);
+  padding: 0.35rem 0.7rem;
+  cursor: pointer;
+  border-radius: var(--radius);
+  &.on {
+    color: var(--accent);
+    border-color: var(--line-hi);
+    background: var(--accent-dim);
+  }
+}
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+.list a {
+  @include panel;
+  @include glow-hover;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 0.8rem 1rem;
+  color: var(--text);
+}
+.ttl {
+  font-family: var(--font-head);
+}
+.meta {
+  display: flex;
+  gap: 1rem;
+  align-items: baseline;
+}
+.kind,
+.where {
+  @include label;
+}
+.where {
+  color: var(--violet);
+}
+.meta .num {
+  color: var(--text-faint);
+  font-size: 0.8rem;
+}

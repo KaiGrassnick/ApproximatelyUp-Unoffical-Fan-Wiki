@@ -1,0 +1,112 @@
+{
+ "_name": "Story-Welt",
+ "_objectives": {
+  "m_Keys": [
+   1002000,
+   1002001,
+   2000001,
+   2000012,
+   1003001,
+   1003002,
+   2000003,
+   2000005,
+   1006002,
+   2000006,
+   1006000,
+   1006001,
+   1003000,
+   2000034,
+   2000002
+  ],
+  "m_Values": [
+   {
+    "_completed": 2,
+    "_cheats": false,
+    "_fastForward": false
+   },
+   {
+    "_completed": 2,
+    "_cheats": false,
+    "_fastForward": false
+   },
+   {
+    "_completed": 2,
+    "_cheats": false,
+    "_fastForward": false
+   },
+   {
+    "_completed": 2,
+    "_cheats": false,
+    "_fastForward": false
+   },
+   {
+    "_completed": 1,
+    "_cheats": false,
+    "_fastForward": false
+   },
+   {
+    "_completed": 1,
+    "_cheats": false,
+    "_fastForward": false
+   },
+   {
+    "_completed": 1,
+    "_cheats": false,
+    "_fastForward": false
+   },
+   {
+    "_completed": 1,
+    "_cheats": false,
+    "_fastForward": false
+   },
+   {
+    "_completed": 1,
+    "_cheats": false,
+    "_fastForward": false
+   },
+   {
+    "_completed": 2,
+    "_cheats": false,
+    "_fastForward": false
+   },
+   {
+    "_completed": 1,
+    "_cheats": false,
+    "_fastForward": false
+   },
+   {
+    "_completed": 2,
+    "_cheats": false,
+    "_fastForward": false
+   },
+   {
+    "_completed": 2,
+    "_cheats": false,
+    "_fastForward": false
+   },
+   {
+    "_completed": 2,
+    "_cheats": false,
+    "_fastForward": false
+   },
+   {
+    "_completed": 1,
+    "_cheats": false,
+    "_fastForward": true
+   }
+  ]
+ },
+ "_universeLocations": {
+  "m_Keys": [
+   1,
+   2,
+   2999,
+   2000,
+   3,
+   3000,
+   6,
+   6000,
+   6001
+  ]
+ }
+}

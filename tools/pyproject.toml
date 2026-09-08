@@ -1,0 +1,75 @@
+[project]
+name = "approximately-up-extraction"
+version = "0.1.0"
+description = "Component/planet/objective data extraction for the Approximately Up wiki"
+requires-python = ">=3.10"
+
+# UnityPy and TypeTreeGeneratorAPI are pinned exactly: both reach into Unity's
+# serialized-file internals and have changed their APIs across patch releases,
+# and the committed data in web/data/ was produced by these versions. numpy and
+# Pillow are only used for array maths and PNG I/O, so a major-version bound is
+# enough there.
+dependencies = [
+    "UnityPy==1.25.3",
+    "TypeTreeGeneratorAPI==0.0.10",
+    "numpy>=2.0,<3",
+    "Pillow>=11,<13",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8",
+    "ruff>=0.16",
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+# `generator` is a real package, so `pip install -e ".[dev]"` puts it on the
+# path and every tool runs as `python -m generator.<name>` from anywhere.
+[tool.setuptools]
+packages = ["generator"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-q"
+# This directory, so `from generator import config` resolves without the
+# package having to be pip-installed first.
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 96
+target-version = "py310"
+
+[tool.ruff.lint]
+select = [
+    "E", "W",    # pycodestyle
+    "F",         # pyflakes
+    "I",         # import sorting
+    "UP",        # pyupgrade
+    "B",         # bugbear
+    "C4",        # comprehensions
+    "SIM",       # simplify
+    "RET",       # return style
+]
+ignore = [
+    # The extraction tools deliberately swallow per-item failures from UnityPy
+    # and the type-tree generator: a stub DLL that will not load, or a
+    # MonoBehaviour whose script reference is stripped, is an expected outcome
+    # for some inputs, not a reason to abandon the run. Where the failure means
+    # data loss it is collected into a `warnings` list and printed instead.
+    "S110",
+    # `except Exception` around third-party binary parsing is intentional --
+    # UnityPy raises a wide and undocumented range of types.
+    "BLE001",
+]
+
+[tool.ruff.lint.per-file-ignores]
+# Tests read tool sources as text to assert structural properties; a context
+# manager for a one-line read adds noise without adding safety.
+"tests/*" = ["SIM115"]
+# The il2cpp.cs fixture is a verbatim excerpt of the dumper's output, tabs and
+# all, so that the parser under test sees the whitespace it sees in the wild.
+"tests/test_parse_cs.py" = ["E101", "W191"]

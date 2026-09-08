@@ -1,0 +1,64 @@
+<h1>Planets</h1>
+<p class="lede">
+  The bodies your save has been to, with the game's own radii, gravity, air and wind.
+  <a routerLink="/" fragment="galaxy">See them on the map →</a> Their orbital stations have
+  <a routerLink="/stations">a page of their own</a>.
+</p>
+
+<div class="grid">
+  @for (p of planets(); track p.id) {
+    <ng-container *ngTemplateOutlet="card; context: { $implicit: p }" />
+  }
+</div>
+
+<h2 class="special">Special</h2>
+<div class="grid">
+  @for (p of special(); track p.id) {
+    <ng-container *ngTemplateOutlet="card; context: { $implicit: p }" />
+  }
+</div>
+
+<!-- One card, used by both sections: they differ in what they list, not in
+     how a body is drawn. -->
+<ng-template #card let-p>
+  @let known = isKnown(p);
+  <!-- routerLink takes null for an unvisited body, which leaves the anchor
+       with no href: it is then not a link at all, so the card cannot be
+       clicked or tabbed into. -->
+  <a class="body" [class.unknown]="!known" [routerLink]="known ? ['/planets', p.id] : null">
+    @if (known) {
+      @if (p.type === 'blackhole') {
+        <!-- No globe is rendered for it, and none should be: it is a black
+             sphere, and that is the whole picture. -->
+        <span class="globe hole" aria-hidden="true"></span>
+      } @else {
+        <img
+          [src]="data.globeUrl(p.id)"
+          [alt]="p.id + ', rendered from the game’s terrain data'"
+          width="110"
+          height="110"
+          loading="lazy"
+          decoding="async"
+        />
+      }
+      <span class="name">{{ p.id }}</span>
+      <span class="meta num"
+        >{{ p.radius | number: '1.0-0' }} m · {{ p.gravity | number: '1.1-1' }} g</span
+      >
+    } @else {
+      <span class="globe" aria-hidden="true">?</span>
+      <span class="name">Unknown</span>
+      <span class="meta num">? m · ? g</span>
+    }
+    <!-- The pill reports the save, not what the page is willing to show: a
+         body named only because the reader turned the reveal on is still one
+         they have never been to. -->
+    @if (world.hasWorld() && world.tracksVisit(p.id)) {
+      @let visited = world.isVisited(p.object_id);
+      <status-pill
+        [state]="visited ? 'have' : 'locked'"
+        [text]="visited ? 'visited' : 'unvisited'"
+      />
+    }
+  </a>
+</ng-template>

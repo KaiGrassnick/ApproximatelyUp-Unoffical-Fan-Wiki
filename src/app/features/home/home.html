@@ -1,0 +1,48 @@
+<section class="hero">
+  <h1>Approximately Up - Unofficial Fan Wiki</h1>
+
+  @if (world.hasWorld()) {
+    <div class="progress">
+      <p class="who num">{{ world.name() }}</p>
+      @for (r of progress(); track r.label) {
+        <div class="row">
+          <p class="num">
+            <span class="what">{{ r.label }}</span> {{ r.done }} of {{ r.total }} ({{ r.pct }}%)
+          </p>
+          <div class="bar"><span [style.width.%]="r.pct"></span></div>
+        </div>
+      }
+    </div>
+  } @else {
+    <p class="hint">
+      Showing a new game: the parts you start with, and the places you start in. Drop a
+      <code>.world</code> save in the header and the wiki opens up as far as you have played, and no
+      further. Nothing is uploaded — read locally in your browser.
+    </p>
+  }
+</section>
+
+<h2 id="unlocked" class="cards-head">Unlocked</h2>
+<nav class="cards" aria-labelledby="unlocked">
+  <a routerLink="/components"
+    ><span class="num">{{ buildable() }}</span
+    >Components</a
+  >
+  <!-- "Planets / Stars" here and "Planets" in the nav: this number counts both,
+       and a card whose figure disagrees with its own label is worse than a
+       slightly long one. The route keeps its name. -->
+  <a routerLink="/planets"
+    ><span class="num">{{ bodies() }}</span
+    >Planets / Stars</a
+  >
+  <a routerLink="/stations"
+    ><span class="num">{{ stations() }}</span
+    >Stations</a
+  >
+  <a routerLink="/missions"
+    ><span class="num">{{ missions() }}</span
+    >Missions</a
+  >
+</nav>
+
+<galaxy-map id="galaxy" />

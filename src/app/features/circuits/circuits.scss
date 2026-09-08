@@ -1,0 +1,108 @@
+@use 'styles/hud' as *;
+
+/* The picture/3D switch, right-aligned above whichever of the two is showing.
+   The galaxy map's zoom buttons, in words rather than glyphs. */
+.viewbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-bottom: 0.4rem;
+
+  // The one control on the page that opens something new, so it is drawn
+  // like a call to action rather than like the quiet zoom buttons.
+  .view3d {
+    @include label;
+    @include glow-hover;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    cursor: pointer;
+    border: 1px solid var(--accent-dim);
+    border-radius: var(--radius);
+    padding: 0.55rem 1.1rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    background: linear-gradient(160deg, var(--panel-hi), var(--panel));
+
+    svg {
+      width: 1.1em;
+      height: 1.1em;
+    }
+    &[aria-pressed='true'] {
+      color: var(--bg);
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+    &:disabled {
+      opacity: 0.35;
+      cursor: default;
+    }
+  }
+
+  .muted {
+    font-size: 0.8rem;
+  }
+}
+
+.reader img.circuit {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 0 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #45484d;
+}
+
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.short,
+.findings {
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0.6rem 0.8rem;
+  border-left: 2px solid var(--warn);
+  color: var(--text-dim);
+  font-size: 0.85rem;
+}
+
+/* The objective that hands out a missing part -- an aside on the line it follows. */
+.short .gate {
+  color: var(--text-faint);
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.3rem 1rem;
+  margin: 0 0 1.5rem;
+
+  dt {
+    @include label;
+  }
+  dd {
+    margin: 0;
+    font-family: var(--font-mono);
+  }
+}
+
+.bom {
+  list-style: none;
+  margin: 0 0 1.5rem;
+  padding: 0;
+
+  li + li {
+    margin-top: 0.3rem;
+  }
+  a {
+    color: var(--accent);
+  }
+}

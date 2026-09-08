@@ -1,0 +1,181 @@
+<div class="two-pane circuits">
+  <nav class="list" aria-label="Circuits">
+    <div class="head">
+      <h1>Circuits</h1>
+      <!-- Not a route: a circuit arrives as a JSON file and a pull request,
+           and the issue form is where that starts. -->
+      <a
+        class="add"
+        [href]="addCircuitUrl()"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Ask for a circuit, or offer to write one"
+        >Add circuit</a
+      >
+    </div>
+
+    @if (circuits.loading()) {
+      <p class="muted">Loading…</p>
+    } @else if (!circuits.all().length) {
+      <p class="muted">
+        No circuits yet. The feedback button in the corner is how you ask for one.
+      </p>
+    } @else {
+      <ul>
+        @for (c of circuits.all(); track c.id) {
+          <li>
+            <a [routerLink]="['/circuits', c.id]" routerLinkActive="on">
+              <span class="t">{{ c.title }}</span>
+              <span class="s">{{ c.summary }}</span>
+              @if (c.spoiler !== 'none') {
+                <span class="gated">Spoilers: {{ c.spoiler }}</span>
+              }
+            </a>
+          </li>
+        }
+      </ul>
+    }
+  </nav>
+
+  <section class="reader">
+    @if (missing()) {
+      <div class="empty">
+        <h2>No such circuit</h2>
+        <p>Nothing here has that address. Pick one from the list.</p>
+      </div>
+    } @else if (!current()) {
+      <div class="empty">
+        <h2>Circuits</h2>
+        <p>
+          Signal circuits people build in the game, drawn from the game's own parts, with what each
+          one weighs, draws and needs -- and whether your save can build it.
+        </p>
+        <p>Pick one from the list.</p>
+      </div>
+    } @else {
+      <article>
+        <header>
+          <h2>{{ current()!.title }}</h2>
+          <p class="updated">Updated {{ current()!.updated }}</p>
+          @if (current()!.spoiler !== 'none') {
+            <p class="gives">Gives away {{ current()!.spoiler }}</p>
+          }
+        </header>
+
+        <div class="viewbar">
+          <button
+            type="button"
+            class="view3d"
+            [attr.aria-pressed]="view3d()"
+            [disabled]="!detail()"
+            (click)="toggle3d()"
+          >
+            <!-- The name stays put; aria-pressed carries the state, so a screen
+                 reader says "3D, pressed" rather than renaming the control. -->
+            <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+              <path
+                d="M8 1.5 14 5v6l-6 3.5L2 11V5l6-3.5Zm0 0v13M2 5l6 3.5L14 5"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linejoin="round"
+              />
+            </svg>
+            3D
+          </button>
+          <!-- The mesh file is 220 kB, so the picture stays up until it lands. -->
+          @if (view3d() && !scene()) {
+            <span class="muted">loading 3D&hellip;</span>
+          }
+        </div>
+
+        @if (scene(); as s) {
+          <circuit-3d [placed]="s.placed" [meshes]="s.meshes" [title]="current()!.title" />
+        } @else {
+          <img
+            class="circuit"
+            [src]="imageUrl(current()!.id)"
+            [alt]="current()!.title + ', drawn as the game would build it'"
+          />
+        }
+
+        <div class="pills">
+          <status-pill
+            [state]="current()!.newGame ? 'have' : 'locked'"
+            [text]="current()!.newGame ? 'new game' : 'not a new game'"
+          />
+          <status-pill state="have" text="everything unlocked" />
+          @if (world.hasWorld()) {
+            <status-pill
+              [state]="saveShort().length ? 'locked' : 'have'"
+              [text]="saveShort().length ? 'not your save' : 'your save'"
+            />
+          }
+        </div>
+
+        @if (saveShort().length) {
+          <ul class="short">
+            @for (s of saveShort(); track s.pool) {
+              <li>
+                {{ poolName(s.pool) }}: needs {{ s.need }}, your save holds {{ s.have }}
+                @if (unlockHint(s.pool); as hint) {
+                  <span class="gate">&mdash; unlocked by {{ hint }}</span>
+                }
+              </li>
+            }
+          </ul>
+        } @else if (!current()!.newGame) {
+          <ul class="short">
+            @for (need of current()!.needs | keyvalue; track need.key) {
+              <li>{{ poolName(need.key) }}: {{ need.value }}</li>
+            }
+          </ul>
+        }
+
+        <dl class="stats">
+          <dt>Mass</dt>
+          <dd>{{ current()!.stats.mass }}</dd>
+          <dt>Power draw</dt>
+          <dd>{{ current()!.stats.power }} P/s</dd>
+          <dt>Data cable</dt>
+          <dd>
+            {{ current()!.stats.cableCells.data }} cells ({{
+              metres(current()!.stats.cableCells.data)
+            }}
+            m)
+          </dd>
+        </dl>
+
+        @if (detailLoading()) {
+          <p class="muted">Loading…</p>
+        } @else if (detail(); as d) {
+          <h3>Parts</h3>
+          <ul class="bom">
+            @for (b of d.bom; track b.id) {
+              <li>
+                @if (world.isListed(b.id)) {
+                  <a [routerLink]="['/components', b.id]">{{ partName(b.id) }}</a>
+                } @else {
+                  <span>{{ partName(b.id) }}</span>
+                }
+                ×{{ b.count }}
+              </li>
+            }
+          </ul>
+
+          @if (warnings().length) {
+            <ul class="findings">
+              @for (f of warnings(); track $index) {
+                <li>{{ f.where }}: {{ f.message }}</li>
+              }
+            </ul>
+          }
+
+          @if (notes()) {
+            <div class="notes prose" [innerHTML]="notes()"></div>
+          }
+        }
+      </article>
+    }
+  </section>
+</div>

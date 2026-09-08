@@ -1,0 +1,11 @@
+# Commits that changed formatting only. `git blame` should walk through them
+# to the commit that actually wrote the line.
+#
+# Enable once, per clone:
+#
+#     git config blame.ignoreRevsFile .git-blame-ignore-revs
+#
+# GitHub honours this file automatically in its own blame view.
+
+# style(web): format the whole tree with Prettier, and gate CI on it
+2a3b993a99e00b8abb0477f4ab52477d21906713

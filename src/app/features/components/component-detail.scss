@@ -1,0 +1,90 @@
+@use 'styles/hud' as *;
+
+.back {
+  @include label;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+.head {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+.head img {
+  width: 96px;
+  height: 96px;
+  object-fit: contain;
+  flex: none;
+  background: radial-gradient(circle at 50% 40%, rgba(79, 216, 255, 0.12), transparent 70%);
+}
+h1 {
+  margin: 0;
+}
+.state {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0.4rem 0 0.8rem;
+}
+.not-in-build {
+  color: var(--warn);
+  font-size: 0.85rem;
+  margin: 0 0 0.8rem;
+}
+.gate {
+  color: var(--text-faint);
+  font-size: 0.85rem;
+}
+.desc {
+  max-width: 65ch;
+  margin: 0;
+}
+.cols {
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  align-items: start;
+}
+.ports {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: var(--text-dim);
+}
+.links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.links li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.25rem 0;
+}
+.links .num {
+  color: var(--text-faint);
+}
+.pool-note {
+  color: var(--text-faint);
+  font-size: 0.85rem;
+  margin-top: 0;
+}
+// A mission the loaded save has not found yet: present, unnamed.
+.unknown {
+  color: var(--text-faint);
+  font-family: var(--font-head);
+}
+
+// Derived from the prefab's face geometry, not from its description — see
+// isWeldable(). Sits with the id and class because it is a fact about what
+// the part is, not a stat of it.
+.tag {
+  @include label;
+  padding: 0.1rem 0.4rem;
+  font-size: 0.6rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  color: var(--text-dim);
+}

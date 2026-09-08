@@ -1,0 +1,33 @@
+{
+  "title": "Vertical speed hold",
+  "summary": "Hold a climb rate: the setpoint against the altimeter's rate of change, sent back by wireless.",
+  "spoiler": "components",
+  "updated": "2026-09-07",
+  "order": 20,
+  "view": "top",
+  "parts": [
+    { "id": "set", "type": "Constant", "value": "200.0", "label": "Setpoint" },
+    { "id": "rx", "type": "WirelessTransmitter", "value": "11", "label": "Altitude in" },
+    { "id": "gate", "type": "LogicValue" },
+    { "id": "meter", "type": "Datameter" },
+    { "id": "rate", "type": "Differentiator" },
+    { "id": "map", "type": "Remapper" },
+    { "id": "sum", "type": "Adder" },
+    { "id": "tx", "type": "WirelessTransmitter", "value": "12", "label": "Throttle out" }
+  ],
+  "wires": [
+    { "from": "set:out", "to": "gate:in" },
+    { "from": "gate:out", "to": "meter:in" },
+    { "from": "meter:out", "to": "sum:in1" },
+    { "from": "rx:io", "to": "rate:in" },
+    { "from": "rate:out", "to": "map:in" },
+    { "from": "map:out", "to": "sum:in2" },
+    { "from": "sum:out", "to": "tx:io" }
+  ],
+  "notes": [
+    {
+      "kind": "md",
+      "body": "The [[part:Differentiator]] turns an altitude into a climb rate; the [[part:Remapper]] scales that rate into the 0 to 1 a thruster wants; the [[part:Adder]] mixes in the setpoint. Both ends are a [[part:WirelessTransmitter]], so the loop needs no cable to the rest of the ship -- one channel in, one channel out."
+    }
+  ]
+}

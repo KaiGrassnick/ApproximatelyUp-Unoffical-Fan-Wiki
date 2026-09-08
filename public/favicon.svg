@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The tab icon. One silhouette only: a ship's-worth of chevron climbing off
+     a planet horizon, which is the whole game in two shapes. It has to survive
+     16x16 on both a light and a dark tab bar, so the mark itself is bright and
+     the dark field is what carries it on a light bar; nothing here is thinner
+     than a pixel and a half at that size. Colours are the wiki's tokens from
+     src/styles/_tokens.scss (XML comments cannot spell a double hyphen, hence
+     the prose names below). The .ico and apple-touch-icon carry the same
+     geometry, redrawn from these numbers rather than authored separately, so
+     changing the mark means changing it here first. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- Field: the panel colour, rounded like a panel and not a circle so it
+       still reads as a tile next to the neighbours' icons. The same rounded
+       rect clips the planet, or the disc would square off the bottom corners
+       and the tile would stop looking like a tile. -->
+  <defs><clipPath id="tile"><rect x="0" y="0" width="32" height="32" rx="6"/></clipPath></defs>
+  <rect x="0" y="0" width="32" height="32" rx="6" fill="#0b1020"/>
+  <!-- Planet horizon: a disc mostly below the frame, so only the crown shows.
+       Solid accent cyan rather than a ring; a ring is the first thing to
+       vanish at 16px. -->
+  <circle cx="16" cy="36" r="15" fill="#4fd8ff" clip-path="url(#tile)"/>
+  <!-- The "up": a heavy chevron lifting clear of the horizon, in the text
+       colour so it stays brighter than the cyan beneath it and does not read
+       as one blob. -->
+  <polyline points="7.5,18.5 16,7.5 24.5,18.5" fill="none" stroke="#dfe8f5"
+            stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

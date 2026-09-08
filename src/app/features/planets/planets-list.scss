@@ -1,0 +1,75 @@
+@use 'styles/hud' as *;
+
+.lede {
+  color: var(--text-dim);
+  max-width: 70ch;
+}
+.special {
+  @include label;
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  margin: 2.5rem 0 0.75rem;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 0.4rem;
+}
+.grid {
+  display: grid;
+  gap: var(--gap);
+  margin-top: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+}
+.body {
+  @include panel;
+  @include glow-hover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 1.2rem 0.8rem;
+  color: var(--text);
+  text-align: center;
+  img {
+    width: 110px;
+    height: 110px;
+    object-fit: contain;
+    border-radius: 50%;
+  }
+  .name {
+    font-family: var(--font-head);
+    letter-spacing: 0.08em;
+  }
+  .meta {
+    @include label;
+    font-size: 0.62rem;
+  }
+
+  // An unvisited body: a dark globe with a "?" on it, matching the galaxy
+  // map. Not a link, so it must not glow or lift under the pointer either —
+  // that would promise a page it will not open.
+  .globe {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: radial-gradient(circle at 38% 30%, #26313f 0%, #131a25 55%, #080b11 100%);
+    color: rgba(210, 235, 255, 0.85);
+    font-family: var(--font-head);
+    font-size: 2.6rem;
+    line-height: 1;
+  }
+  // The black hole: a plain black sphere, no texture and no ring. It reads
+  // against the panel, which is lighter than it is.
+  .globe.hole {
+    background: #000;
+    box-shadow: inset 0 0 24px rgba(0, 0, 0, 0.9);
+  }
+  &.unknown {
+    cursor: default;
+    &:hover {
+      border-color: var(--line);
+      box-shadow: none;
+      transform: none;
+    }
+  }
+}

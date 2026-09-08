@@ -1,0 +1,74 @@
+@use 'styles/hud' as *;
+
+.back {
+  @include label;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+.head {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.head img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: contain;
+}
+// The black hole, drawn rather than rendered — same sphere as its card.
+.head .globe.hole {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  flex: 0 0 auto;
+  background: #000;
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.9);
+}
+h1 {
+  margin: 0;
+}
+.kind {
+  @include label;
+  margin: 0.3rem 0 0;
+}
+.cols {
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  align-items: start;
+}
+dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.35rem 1rem;
+}
+dt {
+  color: var(--text-dim);
+}
+dd {
+  margin: 0;
+  text-align: right;
+  color: var(--accent);
+}
+.links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+// The station a mission is handed over at, pushed to the right of the row so
+// a column of them reads down the panel.
+.links.missions li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+.links.missions .at {
+  @include label;
+  margin-left: auto;
+  font-size: 0.62rem;
+  color: var(--text-faint);
+  white-space: nowrap;
+}

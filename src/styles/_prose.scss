@@ -1,0 +1,112 @@
+/*
+ * The rules for a block of Markdown someone wrote, compiled at build time by
+ * scripts/lib/markdown.mjs. Included once, globally, by styles/_reader.scss
+ * as the `.prose` class: the pages that show prose bind it with [innerHTML],
+ * which no component's scoped styles can reach.
+ *
+ * Everything here styles markup the compiler produced, so the selectors are
+ * plain elements — there are no classes to hook, and adding some would mean
+ * an author had to know them.
+ */
+@mixin prose {
+  /* Prose wants a measure, not a container. Past about 70 characters the eye
+     loses the start of the next line. */
+  max-width: 38rem;
+  line-height: 1.7;
+  color: var(--text-dim);
+
+  h2,
+  h3 {
+    color: var(--text);
+    margin: 2rem 0 0.6rem;
+  }
+
+  h2 {
+    font-size: 1.15rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+  }
+
+  > :first-child {
+    margin-top: 0;
+  }
+
+  p,
+  li {
+    margin: 0 0 0.9rem;
+  }
+
+  ul,
+  ol {
+    padding-left: 1.2rem;
+  }
+
+  strong {
+    color: var(--text);
+  }
+
+  a {
+    color: var(--accent);
+    &:hover {
+      color: var(--accent-hi);
+    }
+  }
+
+  code {
+    font-family: var(--font-mono);
+    font-size: 0.85em;
+    background: var(--panel-hi);
+    padding: 0 0.3em;
+    border-radius: var(--radius);
+  }
+
+  /* A component named with `[[part:Id]]`, which gen-guides.mjs compiles to the
+     part's icon followed by its name, linked to its page.
+
+     Deliberately inline rather than inline-flex: a chip has to wrap inside a
+     paragraph like the words around it, and a flex box would neither break nor
+     sit on the baseline. The icon is sized in `em` so it tracks the text when
+     the reader zooms, and the width/height attributes on the element match its
+     rendered size at the default font so nothing reflows as icons arrive. */
+  a.part {
+    img {
+      width: 1.25em;
+      height: 1.25em;
+      vertical-align: -0.28em;
+      margin-right: 0.25em;
+      border-radius: 2px;
+      /* The icons are transparent PNG-alikes cut for a dark grid. A tint of
+         the panel behind them keeps a pale part from dissolving into the
+         page. */
+      background: var(--panel-hi);
+    }
+
+    &:hover img {
+      background: var(--bg-raise);
+    }
+  }
+
+  /* A path or a command can be longer than the measure, and wrapping one is
+     worse than scrolling it. */
+  pre {
+    background: var(--bg-raise);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 0.8rem 1rem;
+    overflow-x: auto;
+
+    code {
+      background: none;
+      padding: 0;
+    }
+  }
+
+  blockquote {
+    margin: 0 0 0.9rem;
+    padding-left: 1rem;
+    border-left: 2px solid var(--line-hi);
+    color: var(--text-faint);
+  }
+}

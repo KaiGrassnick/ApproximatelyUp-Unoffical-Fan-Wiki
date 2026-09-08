@@ -1,0 +1,14 @@
+# Line endings are normalised to LF, both in the repository and in the working
+# tree, whatever core.autocrlf a given clone happens to have set.
+#
+# Without the explicit `eol=lf`, a clone with autocrlf=true (the Git for
+# Windows default, and what a WSL checkout often inherits) writes CRLF to disk.
+# Prettier's endOfLine default is lf, so `npm run format:check` then fails on
+# every file in the tree -- including files nobody has touched -- while CI,
+# which checks out on Linux, passes. That divergence is the bug this prevents.
+* text=auto eol=lf
+
+# Extracted assets. Never line-ending-converted, never diffed as text.
+*.webp binary
+*.png  binary
+*.ico  binary
