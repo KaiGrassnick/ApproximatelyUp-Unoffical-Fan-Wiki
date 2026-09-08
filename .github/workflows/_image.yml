@@ -61,8 +61,17 @@ jobs:
       - name: smoke test the image
         run: |
           docker run -d --rm --name wiki -p 8080:8080 approximatelyup-unoffical-fan-wiki:ci
+
+          # `-fs` and not `-fsS` here, unlike every other curl below. Docker
+          # publishes the port mapping the moment the container starts, before
+          # nginx inside is accepting, so the first poll connects and is then
+          # reset -- curl (56), not the (7) a closed port would give. That is
+          # the race this loop exists to absorb, but -S prints it anyway, and a
+          # "Recv failure: Connection reset by peer" in a green log reads
+          # exactly like a broken container. Failures that matter still surface:
+          # the loop dumps `docker logs` and exits 1 after 30s.
           for i in $(seq 1 30); do
-            curl -fsS http://127.0.0.1:8080/healthz >/dev/null && break
+            curl -fs http://127.0.0.1:8080/healthz >/dev/null 2>&1 && break
             [ "$i" = 30 ] && { docker logs wiki; echo "container never came up"; exit 1; }
             sleep 1
           done
@@ -70,8 +79,11 @@ jobs:
           # Each page is fetched once and asserted against in memory. Piping
           # curl into `grep -q` makes grep close the pipe on its first match,
           # which curl then reports as "Recv failure: Connection reset by
-          # peer" -- noise that reads exactly like a broken container. The
-          # prerendered pages are 40 kB, so it would happen on every one.
+          # peer" -- the same (56) the startup race above produces, reached a
+          # different way, and equally misleading. The prerendered pages are
+          # 40 kB, so it would happen on every one.
+          #
+          # These keep -S: past readiness, a curl error is a real failure.
           get() { curl -fsS "http://127.0.0.1:8080$1"; }
           code() { curl -so /dev/null -w '%{http_code}' "http://127.0.0.1:8080$1"; }
 
