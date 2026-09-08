@@ -127,5 +127,10 @@ jobs:
             echo
             echo "Retagged from \`$SOURCE\` -- no rebuild."
             echo
-            printf '- \`%s\`\n' "${tags[@]}"
+            # `--` because bash's printf reads a format that starts with a
+            # dash as an option and aborts. And no backslashes: these are
+            # single quotes, where a backtick needs no escaping and `\`` would
+            # print literally -- unlike the double-quoted echoes above, where
+            # the escape is what stops command substitution.
+            printf -- '- `%s`\n' "${tags[@]}"
           } >> "$GITHUB_STEP_SUMMARY"
