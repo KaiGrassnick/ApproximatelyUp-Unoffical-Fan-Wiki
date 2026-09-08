@@ -24,7 +24,7 @@ import { RouterLink } from '@angular/router';
         <a routerLink="/imprint">Imprint</a>
         <a routerLink="/privacy">Privacy</a>
         <a
-          href="https://github.com/KaiGrassnick/ApproximatelyUp-Unoffical-Wiki"
+          href="https://github.com/KaiGrassnick/ApproximatelyUp-Unoffical-Fan-Wiki"
           target="_blank"
           rel="noopener noreferrer"
           >Source on GitHub</a

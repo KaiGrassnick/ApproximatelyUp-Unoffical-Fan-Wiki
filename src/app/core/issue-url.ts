@@ -1,5 +1,5 @@
 /** The wiki's own repository. Everything that links to it goes through here. */
-export const REPO = 'https://github.com/KaiGrassnick/ApproximatelyUp-Unoffical-Wiki';
+export const REPO = 'https://github.com/KaiGrassnick/ApproximatelyUp-Unoffical-Fan-Wiki';
 
 /**
  * A link to one of the issue forms in .github/ISSUE_TEMPLATE/, with the page

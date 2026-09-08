@@ -38,8 +38,8 @@ You need **Node 22 or newer** and npm. Nothing else — the extracted game data
 is committed, so a fresh clone runs without the game installed.
 
 ```bash
-git clone git@github.com:KaiGrassnick/ApproximatelyUp-Unoffical-Wiki.git
-cd ApproximatelyUp-Unoffical-Wiki
+git clone git@github.com:KaiGrassnick/ApproximatelyUp-Unoffical-Fan-Wiki.git
+cd ApproximatelyUp-Unoffical-Fan-Wiki
 npm ci
 npm start
 ```
